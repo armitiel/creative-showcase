@@ -1,5 +1,6 @@
 import { Palette, Layers, Package, Share2, FileText } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const services = [
   {
@@ -30,10 +31,16 @@ const services = [
 ];
 
 export const ServicesSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({ threshold: 0.05 });
+
   return (
     <section id="services" className="py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
             Moje <span className="text-gradient">Usługi</span>
           </h2>
@@ -42,11 +49,14 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
             <Card
               key={service.title}
-              className="bg-card border-border hover:border-primary group transition-all duration-300"
+              className={`bg-card border-border hover:border-primary group transition-all duration-300 opacity-0 ${
+                cardsVisible ? 'animate-fade-in' : ''
+              }`}
+              style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
             >
               <CardHeader>
                 <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:glow-cyan transition-all duration-300">

@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const socialLinks = [
   { name: 'Behance', href: '#', icon: 'Be' },
@@ -18,6 +19,8 @@ export const ContactSection = () => {
     email: '',
     message: '',
   });
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +33,10 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-24 bg-card/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
             <span className="text-gradient">Kontakt</span>
           </h2>
@@ -39,7 +45,12 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div
+          ref={contentRef}
+          className={`grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto opacity-0 ${
+            contentVisible ? 'animate-fade-in' : ''
+          }`}
+        >
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="space-y-6">
