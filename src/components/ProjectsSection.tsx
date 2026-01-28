@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const categories = ['Wszystkie', 'Logo', 'Branding', 'Packaging', 'Social Media', 'Print'];
 
@@ -16,6 +17,8 @@ const projects = [
 export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState('Wszystkie');
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
 
   const filteredProjects = activeCategory === 'Wszystkie'
     ? projects
@@ -24,7 +27,10 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 bg-card/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
             Moje <span className="text-gradient">Projekty</span>
           </h2>
@@ -51,12 +57,18 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
+        <div
+          ref={gridRef}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300"
+              className={`group cursor-pointer bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 opacity-0 ${
+                gridVisible ? 'animate-scale-in' : ''
+              }`}
+              style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
             >
               <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
                 <img

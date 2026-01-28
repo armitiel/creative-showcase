@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skills = [
   'Logo Design',
@@ -22,12 +23,18 @@ const tools = [
 ];
 
 export const AboutSection = () => {
+  const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation();
+  const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation();
+
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Avatar & Info */}
-          <div className="space-y-8">
+          <div
+            ref={leftRef}
+            className={`space-y-8 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
+          >
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
               <Avatar className="w-48 h-48 border-4 border-primary glow-cyan relative">
@@ -53,7 +60,10 @@ export const AboutSection = () => {
           </div>
 
           {/* Right - Description & Skills */}
-          <div className="space-y-8">
+          <div
+            ref={rightRef}
+            className={`space-y-8 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+          >
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
                 O <span className="text-gradient">mnie</span>
