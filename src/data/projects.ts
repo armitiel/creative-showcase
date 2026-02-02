@@ -5,6 +5,12 @@ export interface ProjectImage {
   displayMode?: 'cover' | 'centered';
   backgroundColor?: string;
   imageScale?: number;
+  gridLayout?: '2x2';
+}
+
+export interface GridImageGroup {
+  layout: '2x2';
+  images: { src: string; alt: string }[];
 }
 
 export interface ProjectFont {
@@ -20,6 +26,12 @@ export interface ProjectColor {
   cmyk?: string;
 }
 
+export interface RealPhotosGrid {
+  layout: '2x2';
+  title?: string;
+  images: { src: string; alt: string }[];
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -32,6 +44,7 @@ export interface Project {
   year: string;
   tools: string[];
   images: ProjectImage[];
+  realPhotos?: RealPhotosGrid;
   challenge?: string;
   solution?: string;
   results?: string;
@@ -109,7 +122,7 @@ export const projects: Project[] = [
     slug: 'aloha-centrum-desk',
     title: 'Aloha Centrum Reception Desk',
     category: 'Branding',
-    thumbnail: '/projects/aloha-centrum/desk-front.jpg',
+    thumbnail: '/projects/aloha-centrum/real-front.jpg',
     description: 'Futurystyczny projekt biurka recepcji dla centrum pracy ze świadomością',
     fullDescription: 'Projekt futurystycznego biurka recepcji dla "Aloha Centrum" w Szczecinie - innowacyjnego centrum pracy promującego świadomość i mindfulness w środowisku biurowym. Organiczne, płynne formy mebla łączą funkcjonalność z estetyką przyszłości, tworząc przyjazną przestrzeń dla pierwszego kontaktu z gośćmi.',
     client: 'Aloha Centrum',
@@ -119,11 +132,18 @@ export const projects: Project[] = [
     solution: 'Zaprojektowałem organiczną formę z płynnym łukiem osłaniającym stanowisko pracy. Zintegrowane oświetlenie LED podkreśla futurystyczny charakter, a minimalistyczna kolorystyka w odcieniach bieli i szarości tworzy spokojną atmosferę.',
     results: 'Projekt został wdrożony jako centralny element recepcji Aloha Centrum, stając się wizytówką przestrzeni i przyciągając uwagę odwiedzających.',
     images: [
-      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - widok główny', caption: 'Widok perspektywiczny biurka z organicznym łukiem osłonowym' },
-      { src: '/projects/aloha-centrum/desk-detail.jpg', alt: 'Biurko recepcji - detal LED', caption: 'Zintegrowane oświetlenie LED w strukturze mebla' },
-      { src: '/projects/aloha-centrum/desk-close.jpg', alt: 'Biurko recepcji - blat roboczy', caption: 'Blat roboczy z detalami wykończenia' },
-      { src: '/projects/aloha-centrum/desk-top.jpg', alt: 'Biurko recepcji - widok z góry', caption: 'Widok z góry ukazujący organiczną formę' },
+      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - wizualizacja 3D', caption: 'Wizualizacja 3D biurka recepcji' },
     ],
+    realPhotos: {
+      layout: '2x2' as const,
+      title: 'Realizacja projektu',
+      images: [
+        { src: '/projects/aloha-centrum/real-front.jpg', alt: 'Gotowe biurko - widok główny' },
+        { src: '/projects/aloha-centrum/real-detail.jpg', alt: 'Gotowe biurko - detal' },
+        { src: '/projects/aloha-centrum/real-montage.jpg', alt: 'Montaż biurka' },
+        { src: '/projects/aloha-centrum/real-interior.jpg', alt: 'Biurko we wnętrzu' },
+      ],
+    },
   },
   {
     id: 3,
