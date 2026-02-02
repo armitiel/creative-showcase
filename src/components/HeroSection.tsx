@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/badge';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const specializations = [
   'Logo',
@@ -14,8 +15,12 @@ export const HeroSection = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
-      {/* Pure black background */}
-      <div className="absolute inset-0 bg-black" />
+      {/* Background image with gradient overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">

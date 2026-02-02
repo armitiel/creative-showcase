@@ -1,4 +1,4 @@
-import { Palette, Layers, Package, Share2, FileText, Monitor } from 'lucide-react';
+import { Palette, Layers, Box, Share2, Building2, Monitor } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -14,9 +14,9 @@ const services = [
     description: 'Kompleksowa identyfikacja wizualna: kolory, typografia, wzory i wszystkie elementy budujące spójny wizerunek.',
   },
   {
-    icon: Package,
-    title: 'Packaging Design',
-    description: 'Projektowanie opakowań, które przyciągają wzrok na półce i komunikują wartości produktu.',
+    icon: Box,
+    title: 'Modelowanie 3D',
+    description: 'Tworzenie realistycznych wizualizacji 3D produktów, wnętrz i obiektów architektonicznych.',
   },
   {
     icon: Monitor,
@@ -29,9 +29,9 @@ const services = [
     description: 'Angażujące grafiki na social media, które budują rozpoznawalność i zwiększają zasięgi.',
   },
   {
-    icon: FileText,
-    title: 'Print Materials',
-    description: 'Wizytówki, ulotki, plakaty i inne materiały drukowane najwyższej jakości.',
+    icon: Building2,
+    title: 'Projektowanie Przestrzenne',
+    description: 'Projektowanie stoisk, ekspozycji i przestrzeni komercyjnych z dbałością o detale.',
   },
 ];
 
