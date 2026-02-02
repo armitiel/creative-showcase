@@ -132,7 +132,10 @@ export const projects: Project[] = [
     solution: 'Zaprojektowałem organiczną formę z płynnym łukiem osłaniającym stanowisko pracy. Zintegrowane oświetlenie LED podkreśla futurystyczny charakter, a minimalistyczna kolorystyka w odcieniach bieli i szarości tworzy spokojną atmosferę.',
     results: 'Projekt został wdrożony jako centralny element recepcji Aloha Centrum, stając się wizytówką przestrzeni i przyciągając uwagę odwiedzających.',
     images: [
-      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - wizualizacja 3D', caption: 'Wizualizacja 3D biurka recepcji' },
+      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - widok główny', caption: 'Widok perspektywiczny biurka z organicznym łukiem osłonowym' },
+      { src: '/projects/aloha-centrum/desk-detail.jpg', alt: 'Biurko recepcji - detal LED', caption: 'Zintegrowane oświetlenie LED w strukturze mebla' },
+      { src: '/projects/aloha-centrum/desk-close.jpg', alt: 'Biurko recepcji - blat roboczy', caption: 'Blat roboczy z detalami wykończenia' },
+      { src: '/projects/aloha-centrum/desk-top.jpg', alt: 'Biurko recepcji - widok z góry', caption: 'Widok z góry ukazujący organiczną formę' },
     ],
     realPhotos: {
       layout: '2x2' as const,
