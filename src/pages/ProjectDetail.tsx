@@ -240,35 +240,8 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Real Photos 2x2 Grid */}
-      {project.realPhotos && (
-        <section className="py-16 bg-card/30">
-          <div className="container mx-auto px-0">
-            {project.realPhotos.title && (
-              <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center px-4">
-                {project.realPhotos.title}
-              </h2>
-            )}
-            <div className="grid grid-cols-2 gap-1">
-              {project.realPhotos.images.map((image, index) => (
-                <div 
-                  key={index}
-                  className="aspect-[4/3] overflow-hidden"
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Project Gallery */}
-      <section className="py-16">
+      <section className="py-16 bg-card/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {project.images.map((image, index) => {
@@ -334,6 +307,33 @@ const ProjectDetail = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-gradient">Rezultaty</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">{project.results}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Real Photos 2x2 Grid - at bottom */}
+      {project.realPhotos && (
+        <section className="py-16 bg-card/30">
+          <div className="container mx-auto px-0">
+            {project.realPhotos.title && (
+              <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center px-4">
+                {project.realPhotos.title}
+              </h2>
+            )}
+            <div className="grid grid-cols-2 gap-1">
+              {project.realPhotos.images.map((image, index) => (
+                <div 
+                  key={index}
+                  className="aspect-[4/3] overflow-hidden"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
