@@ -240,6 +240,61 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Mobile Screens Section - Phone Mockups */}
+      {project.mobileScreens && (
+        <section className="py-16 bg-gradient-to-b from-background to-card/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              {project.mobileScreens.title && (
+                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient text-center">
+                  {project.mobileScreens.title}
+                </h2>
+              )}
+              {project.mobileScreens.description && (
+                <p className="text-muted-foreground mb-12 max-w-2xl mx-auto text-center">
+                  {project.mobileScreens.description}
+                </p>
+              )}
+              
+              {/* Phone frames grid */}
+              <div className="flex justify-center gap-4 md:gap-6 flex-wrap">
+                {project.mobileScreens.screens.map((screen, index) => (
+                  <div key={index} className="flex flex-col items-center">
+                    {/* Phone Frame */}
+                    <div className="relative w-[180px] md:w-[220px] lg:w-[240px]">
+                      {/* Phone outer bezel */}
+                      <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
+                        {/* Notch */}
+                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-10" />
+                        
+                        {/* Screen container */}
+                        <div className="bg-black rounded-[2rem] overflow-hidden">
+                          <img
+                            src={screen.src}
+                            alt={screen.alt}
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                        
+                        {/* Home indicator */}
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-600 rounded-full" />
+                      </div>
+                    </div>
+                    
+                    {/* Caption */}
+                    {screen.caption && (
+                      <p className="mt-4 text-sm text-muted-foreground text-center">
+                        {screen.caption}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Project Gallery */}
       <section className="py-16 bg-card/30">
         <div className="container mx-auto px-4">

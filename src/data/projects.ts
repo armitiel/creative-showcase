@@ -32,6 +32,19 @@ export interface RealPhotosGrid {
   images: { src: string; alt: string }[];
 }
 
+export interface MobileScreensSection {
+  title?: string;
+  description?: string;
+  screens: { src: string; alt: string; caption?: string }[];
+}
+
+export interface DeviceMockupSection {
+  title?: string;
+  description?: string;
+  image: string;
+  alt: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -45,6 +58,8 @@ export interface Project {
   tools: string[];
   images: ProjectImage[];
   realPhotos?: RealPhotosGrid;
+  mobileScreens?: MobileScreensSection;
+  deviceMockup?: DeviceMockupSection;
   challenge?: string;
   solution?: string;
   results?: string;
@@ -145,6 +160,65 @@ export const projects: Project[] = [
         { src: '/projects/aloha-centrum/real-detail.jpg', alt: 'Gotowe biurko - detal' },
         { src: '/projects/aloha-centrum/real-montage.jpg', alt: 'Montaż biurka' },
         { src: '/projects/aloha-centrum/real-interior.jpg', alt: 'Biurko we wnętrzu' },
+      ],
+    },
+  },
+  {
+    id: 7,
+    slug: 'portal-smart-checkout',
+    title: 'Portal Smart Checkout',
+    category: 'Branding',
+    thumbnail: '/projects/portal/devices-presentation.png',
+    description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
+    fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
+    client: 'Portal',
+    year: '2024',
+    tools: ['Figma', 'Photoshop', 'After Effects'],
+    challenge: 'Zaprojektowanie intuicyjnego interfejsu dla aplikacji obsługującej weryfikację biometryczną, która musi być jednocześnie bezpieczna, szybka i przyjazna dla użytkownika końcowego oraz sprzedawców.',
+    solution: 'Stworzyłem ciemny, nowoczesny interfejs z akcentami w kolorze niebieskim, który komunikuje profesjonalizm i bezpieczeństwo. Aplikacja została zaprojektowana z myślą o szybkiej nawigacji i minimalnej liczbie kroków do weryfikacji wieku.',
+    results: 'System osiągnął 98% skuteczności wykrywania fałszywych dokumentów tożsamości, znacznie przewyższając średnią branżową wynoszącą 40%.',
+    images: [
+      { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
+      { src: '/projects/portal/device-mockup.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
+    ],
+    mobileScreens: {
+      title: 'Aplikacja mobilna',
+      description: 'Projektowałem i prototypowałem interfejs aplikacji mobilnej Portal, umożliwiającej użytkownikom zarządzanie kontem, portfelem i personalizowanymi ofertami.',
+      screens: [
+        { src: '/projects/portal/app-screen-1.png', alt: 'Portal - Ekran tworzenia profilu', caption: 'Ekran rejestracji' },
+        { src: '/projects/portal/app-screen-2.png', alt: 'Portal - Główny feed', caption: 'Feed produktów' },
+        { src: '/projects/portal/app-screen-3.png', alt: 'Portal - Dashboard użytkownika', caption: 'Panel użytkownika' },
+        { src: '/projects/portal/app-screen-4.png', alt: 'Portal - Ustawienia konta', caption: 'Ustawienia' },
+      ],
+    },
+    deviceMockup: {
+      title: 'Urządzenie weryfikacyjne',
+      description: 'Portal Smart Checkout to dedykowane urządzenie POS z wbudowaną kamerą do skanowania twarzy, umożliwiające natychmiastową weryfikację wieku klienta.',
+      image: '/projects/portal/device-mockup.png',
+      alt: 'Portal Smart Checkout Device',
+    },
+    typography: {
+      description: 'System typograficzny Portal opiera się na nowoczesnych, czytelnych krojach pisma, które zapewniają doskonałą czytelność zarówno na urządzeniach mobilnych jak i terminalach POS.',
+      fonts: [
+        {
+          name: 'Inter',
+          usage: 'Headlines & Body',
+          weights: [
+            { name: 'Bold', sample: 'Smart Checkout for Retailers' },
+            { name: 'SemiBold', sample: 'Verify your Identity' },
+            { name: 'Regular', sample: 'Biometric verification system' },
+          ],
+        },
+      ],
+    },
+    colors: {
+      description: 'Ciemna paleta kolorów z akcentami w odcieniach niebieskiego komunikuje bezpieczeństwo, profesjonalizm i nowoczesność technologii.',
+      palette: [
+        { name: 'Portal Dark', hex: '#1d272e', rgb: '29 39 46', cmyk: '37 15 0 82' },
+        { name: 'Portal Blue', hex: '#4A90D9', rgb: '74 144 217', cmyk: '66 34 0 15' },
+        { name: 'Surface Dark', hex: '#0d1117', rgb: '13 17 23', cmyk: '43 26 0 91' },
+        { name: 'Accent Light', hex: '#58A6FF', rgb: '88 166 255', cmyk: '65 35 0 0' },
+        { name: 'Text Primary', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
   },
