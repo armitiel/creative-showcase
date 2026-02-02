@@ -210,15 +210,16 @@ export const projects: Project[] = [
       alt: 'Portal Smart Checkout Device',
     },
     typography: {
-      description: 'System typograficzny Portal opiera się na nowoczesnych, czytelnych krojach pisma, które zapewniają doskonałą czytelność zarówno na urządzeniach mobilnych jak i terminalach POS.',
+      description: 'System typograficzny Portal opiera się na foncie Cabin - nowoczesnym, czytelnym kroju pisma, który zapewnia doskonałą czytelność zarówno na urządzeniach mobilnych jak i terminalach POS.',
       fonts: [
         {
-          name: 'Inter',
+          name: 'Cabin',
           usage: 'Headlines & Body',
           weights: [
             { name: 'Bold', sample: 'Smart Checkout for Retailers' },
             { name: 'SemiBold', sample: 'Verify your Identity' },
-            { name: 'Regular', sample: 'Biometric verification system' },
+            { name: 'Medium', sample: 'Biometric verification system' },
+            { name: 'Regular', sample: 'Secure and fast age verification' },
           ],
         },
       ],

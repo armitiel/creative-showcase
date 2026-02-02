@@ -225,7 +225,7 @@ const ProjectDetail = () => {
                           <p 
                             className="text-2xl md:text-3xl flex-1"
                             style={{ 
-                              fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : 'Inter, sans-serif',
+                              fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : font.name === 'Cabin' ? 'Cabin, sans-serif' : 'Inter, sans-serif',
                               fontWeight: weight.name === 'Bold' ? 700 : weight.name === 'SemiBold' ? 600 : weight.name === 'Medium' ? 500 : weight.name === 'Light' ? 300 : 400
                             }}
                           >
