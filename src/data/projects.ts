@@ -100,7 +100,7 @@ export const projects: Project[] = [
   {
     id: 1,
     slug: 'v17-vision-branding',
-    title: 'V17 Vision Branding',
+    title: 'V17 Vision - Identyfikacja Wizualna',
     category: 'Branding',
     thumbnail: '/projects/v17-vision/designing-your-space.jpg',
     description: 'Kompletna identyfikacja wizualna dla studia projektowego specjalizującego się w futurystycznych wnętrzach',
@@ -156,7 +156,7 @@ export const projects: Project[] = [
   {
     id: 2,
     slug: 'aloha-centrum-desk',
-    title: 'Aloha Centrum Reception Desk',
+    title: 'Aloha Centrum - Biurko Recepcji',
     category: 'Branding',
     thumbnail: '/projects/aloha-centrum/desk-front.jpg',
     description: 'Futurystyczny projekt biurka recepcji dla centrum pracy ze świadomością - od wizualizacji 3D po nadzór nad wykonaniem CNC',
@@ -187,7 +187,7 @@ export const projects: Project[] = [
   {
     id: 7,
     slug: 'portal-smart-checkout',
-    title: 'Portal Smart Checkout',
+    title: 'Portal - Inteligentna Kasa',
     category: 'Branding',
     thumbnail: '/projects/portal/device-mockup.png',
     description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
@@ -252,7 +252,7 @@ export const projects: Project[] = [
   {
     id: 8,
     slug: 'nft-generative-system',
-    title: 'NFT Generative System',
+    title: 'System Generatywny NFT',
     category: 'AI/NFT',
     thumbnail: '/projects/nft-system/thumbnail.png',
     description: 'System generowania kolekcji NFT z wykorzystaniem Stable Diffusion i automatyzacji Photoshop',
@@ -284,7 +284,7 @@ export const projects: Project[] = [
   {
     id: 9,
     slug: 'hubble-rx',
-    title: 'HubbleRx',
+    title: 'HubbleRx - Branding i UI',
     category: 'Branding',
     thumbnail: '/projects/hubble/website-presentation.jpg',
     description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
