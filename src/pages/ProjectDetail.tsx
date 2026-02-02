@@ -105,20 +105,56 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Main Hero Image */}
-      <section className="pb-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-border">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
+      {/* Thumbnail Grid - for NFT projects */}
+      {project.thumbnailGrid && (
+        <section className="pb-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              {project.thumbnailGrid.title && (
+                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient text-center">
+                  {project.thumbnailGrid.title}
+                </h2>
+              )}
+              {project.thumbnailGrid.description && (
+                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-center">
+                  {project.thumbnailGrid.description}
+                </p>
+              )}
+              <div className="grid grid-cols-5 gap-2 md:gap-3">
+                {project.thumbnailGrid.images.map((image, index) => (
+                  <div 
+                    key={index}
+                    className="aspect-square overflow-hidden rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Main Hero Image */}
+      {project.images.length > 0 && (
+        <section className="pb-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={project.thumbnail}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Project Info */}
       <section 
