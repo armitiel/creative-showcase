@@ -45,6 +45,12 @@ export interface DeviceMockupSection {
   alt: string;
 }
 
+export interface ThumbnailGrid {
+  title?: string;
+  description?: string;
+  images: { src: string; alt: string }[];
+}
+
 export interface RetailerImage {
   src: string;
   alt: string;
@@ -65,6 +71,7 @@ export interface Project {
   realPhotos?: RealPhotosGrid;
   mobileScreens?: MobileScreensSection;
   deviceMockup?: DeviceMockupSection;
+  thumbnailGrid?: ThumbnailGrid;
   heroAnimation?: string;
   retailerImages?: RetailerImage[];
   challenge?: string;
@@ -80,7 +87,7 @@ export interface Project {
   };
 }
 
-export const categories = ['Wszystkie', 'Logo', 'Branding', 'Packaging', 'Social Media', 'Print'];
+export const categories = ['Wszystkie', 'Logo', 'Branding', 'Packaging', 'Social Media', 'Print', 'AI/NFT'];
 
 export const projects: Project[] = [
   {
@@ -234,6 +241,38 @@ export const projects: Project[] = [
         { name: 'Text Primary', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
+  },
+  {
+    id: 8,
+    slug: 'nft-generative-system',
+    title: 'NFT Generative System',
+    category: 'AI/NFT',
+    thumbnail: '/projects/nft-system/2.png',
+    description: 'System generowania kolekcji NFT z wykorzystaniem Stable Diffusion i automatyzacji Photoshop',
+    fullDescription: 'Projekt polegał na stworzeniu kompleksowego systemu do generowania unikalnych grafik NFT. System opierał się na trenowaniu własnych modeli AI w Stable Diffusion oraz automatyzacji procesu post-produkcji za pomocą akcji Photoshop. Pozwoliło to na szybkie generowanie tysięcy spójnych stylowo grafik.',
+    client: 'Projekt NFT',
+    year: '2023',
+    tools: ['Stable Diffusion', 'Photoshop'],
+    challenge: 'Wygenerowanie dużej kolekcji unikalnych grafik NFT przy zachowaniu spójności stylistycznej. Każda grafika musiała być wyjątkowa, ale jednocześnie rozpoznawalna jako część tej samej kolekcji.',
+    solution: 'Wytrenowałem własne modele AI w Stable Diffusion na specjalnie przygotowanym zbiorze danych. Następnie stworzyłem serię zautomatyzowanych akcji Photoshop do post-produkcji - korekty kolorów, dodawania efektów i finalizacji grafik.',
+    results: 'System pozwolił na wygenerowanie ponad 10,000 unikalnych grafik w spójnym stylu, znacznie przyspieszając proces tworzenia kolekcji NFT.',
+    thumbnailGrid: {
+      title: 'Wygenerowane grafiki',
+      description: 'Przykładowe wyniki z systemu generatywnego - każda grafika jest unikalna, ale zachowuje spójność stylistyczną całej kolekcji.',
+      images: [
+        { src: '/projects/nft-system/2.png', alt: 'NFT #2' },
+        { src: '/projects/nft-system/9.png', alt: 'NFT #9' },
+        { src: '/projects/nft-system/14.png', alt: 'NFT #14' },
+        { src: '/projects/nft-system/18.png', alt: 'NFT #18' },
+        { src: '/projects/nft-system/21.png', alt: 'NFT #21' },
+        { src: '/projects/nft-system/22.png', alt: 'NFT #22' },
+        { src: '/projects/nft-system/25.png', alt: 'NFT #25' },
+        { src: '/projects/nft-system/27.png', alt: 'NFT #27' },
+        { src: '/projects/nft-system/34.png', alt: 'NFT #34' },
+        { src: '/projects/nft-system/46.png', alt: 'NFT #46' },
+      ],
+    },
+    images: [],
   },
   {
     id: 3,
