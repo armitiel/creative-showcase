@@ -7,7 +7,6 @@ const specializations = [
   'Modelowanie 3D',
   'Web & App',
   'Social Media',
-  'Projektowanie Przestrzenne',
 ];
 
 export const HeroSection = () => {
