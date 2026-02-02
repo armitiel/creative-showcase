@@ -4,22 +4,23 @@ import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skills = [
-  'Logo Design',
-  'Brand Identity',
-  'Typography',
-  'Color Theory',
-  'Print Design',
-  'UI/UX',
-  'Packaging',
-  'Illustration',
+  'Branding',
+  'Grafika 3D',
+  'Programowanie',
+  'Projektowanie przestrzenne',
+  'UI/UX Design',
+  'Storytelling',
+  'AI & Automatyzacja',
+  'Kreatywna strategia',
 ];
 
 const tools = [
   { name: 'Adobe Illustrator', icon: 'Ai' },
   { name: 'Adobe Photoshop', icon: 'Ps' },
   { name: 'Figma', icon: 'Fg' },
-  { name: 'Adobe InDesign', icon: 'Id' },
-  { name: 'After Effects', icon: 'Ae' },
+  { name: 'Blender', icon: '3D' },
+  { name: 'ZBrush', icon: 'Zb' },
+  { name: 'Stable Diffusion', icon: 'SD' },
 ];
 
 export const AboutSection = () => {
@@ -68,10 +69,17 @@ export const AboutSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
                 O <span className="text-gradient">mnie</span>
               </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                Nie jestem projektantem jednej dziedziny. Pokazanie tylko wycinka moich umiejętności 
+                byłoby po prostu nieprawdziwe — dlatego zdecydowałem się przedstawić pełen obraz tego, 
+                kim jestem jako twórca.
+              </p>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Jestem pasjonatem designu z ponad 5-letnim doświadczeniem w tworzeniu 
-                wizualnych identyfikacji marek. Specjalizuję się w projektowaniu logo, 
-                materiałów brandingowych oraz opakowań, które wyróżniają się na tle konkurencji.
+                Projektuję branding i identyfikacje wizualne, tworzę rozwiązania programistyczne, 
+                modeluję grafikę 3D, projektuję przestrzenie oraz buduję narracje storytellingowe. 
+                Te wszystkie umiejętności współpracują ze sobą w moich projektach, tworząc kompleksowe 
+                rozwiązania. Nazywam siebie <span className="text-primary font-medium">wielopoziomowym projektantem</span> — 
+                bo właśnie tak pracuję: łącząc perspektywy i narzędzia z różnych dziedzin kreatywnych.
               </p>
             </div>
 
