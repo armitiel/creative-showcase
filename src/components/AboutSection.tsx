@@ -70,17 +70,8 @@ export const AboutSection = () => {
               <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
                 O <span className="text-gradient">mnie</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
-                Nie jestem projektantem jednej dziedziny. Pokazanie tylko wycinka moich umiejętności 
-                byłoby po prostu nieprawdziwe — dlatego zdecydowałem się przedstawić pełen obraz tego, 
-                kim jestem jako twórca.
-              </p>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Projektuję branding i identyfikacje wizualne, tworzę rozwiązania programistyczne, 
-                modeluję grafikę 3D, projektuję przestrzenie oraz buduję narracje storytellingowe. 
-                Te wszystkie umiejętności współpracują ze sobą w moich projektach, tworząc kompleksowe 
-                rozwiązania. Nazywam siebie <span className="text-primary font-medium">wielopoziomowym projektantem</span> — 
-                bo właśnie tak pracuję: łącząc perspektywy i narzędzia z różnych dziedzin kreatywnych.
+                Jestem projektantem działającym interdyscyplinarnie. Projektuję branding i identyfikacje wizualne, tworzę rozwiązania programistyczne, modeluję grafikę 3D oraz projektuję przestrzenie i narracje storytellingowe. Łączę te kompetencje w spójne, kompleksowe rozwiązania projektowe. Pracuję jako <span className="text-primary font-medium">wielopoziomowy projektant</span>, integrując perspektywy i narzędzia z różnych dziedzin kreatywnych.
               </p>
             </div>
 
