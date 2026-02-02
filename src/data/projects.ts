@@ -2,6 +2,9 @@ export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
+  displayMode?: 'cover' | 'centered';
+  backgroundColor?: string;
+  imageScale?: number;
 }
 
 export interface ProjectFont {
@@ -61,8 +64,8 @@ export const projects: Project[] = [
     results: 'Branding skutecznie pozycjonuje V17 Vision jako lidera w segmencie premium futurystycznego designu wnętrz. Marka zyskała rozpoznawalność w branży architektonicznej i przyciąga klientów poszukujących innowacyjnych rozwiązań.',
     images: [
       { src: '/projects/v17-vision/designing-your-space.jpg', alt: 'V17 Vision Key Visual', caption: '"Designing your space" - główny motyw reklamowy z double exposure' },
-      { src: '/projects/v17-vision/logo.png', alt: 'V17 Vision Logo', caption: 'Minimalistyczne logo tekstowe marki' },
-      { src: '/projects/v17-vision/logo-sign.png', alt: 'V17 Vision Znak graficzny', caption: 'Geometryczny symbol marki' },
+      { src: '/projects/v17-vision/logo.png', alt: 'V17 Vision Logo', caption: 'Minimalistyczne logo tekstowe marki', displayMode: 'centered', backgroundColor: '#365065', imageScale: 0.6 },
+      { src: '/projects/v17-vision/logo-sign.png', alt: 'V17 Vision Znak graficzny', caption: 'Geometryczny symbol marki', displayMode: 'centered', backgroundColor: '#365065', imageScale: 0.6 },
       { src: '/projects/v17-vision/brand-presentation.jpg', alt: 'V17 Vision Prezentacja brandingu', caption: 'Prezentacja brandingu z ikonami usług' },
       { src: '/projects/v17-vision/interior.png', alt: 'V17 Vision Futurystyczne wnętrze', caption: 'Wizualizacja salonu z organicznymi, płynnymi formami' },
       { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem' },
@@ -94,9 +97,9 @@ export const projects: Project[] = [
       description: 'Minimalistyczna paleta kolorów oparta na czystej bieli i głębokich odcieniach szarości, podkreślająca futurystyczny i premium charakter marki.',
       palette: [
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
+        { name: 'Vision Blue', hex: '#365065', rgb: '54 80 101', cmyk: '47 21 0 60' },
         { name: 'Light Gray', hex: '#F5F5F5', rgb: '245 245 245', cmyk: '0 0 0 4' },
         { name: 'Silver', hex: '#C0C0C0', rgb: '192 192 192', cmyk: '0 0 0 25' },
-        { name: 'Charcoal', hex: '#2D2D2D', rgb: '45 45 45', cmyk: '0 0 0 82' },
         { name: 'Deep Black', hex: '#0A0A0A', rgb: '10 10 10', cmyk: '0 0 0 96' },
       ],
     },

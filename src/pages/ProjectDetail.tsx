@@ -261,12 +261,31 @@ const ProjectDetail = () => {
               return (
                 <ImageWrapper key={index}>
                   <div className="bg-card rounded-2xl overflow-hidden border border-border">
-                    <div className="aspect-video">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                      />
+                    <div 
+                      className="aspect-video flex items-center justify-center"
+                      style={{ 
+                        backgroundColor: image.displayMode === 'centered' && image.backgroundColor 
+                          ? image.backgroundColor 
+                          : undefined 
+                      }}
+                    >
+                      {image.displayMode === 'centered' ? (
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="object-contain"
+                          style={{ 
+                            maxWidth: `${(image.imageScale || 1) * 100}%`,
+                            maxHeight: `${(image.imageScale || 1) * 100}%`
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
                     </div>
                     {image.caption && (
                       <div className="p-4 text-center">
