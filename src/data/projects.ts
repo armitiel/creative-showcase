@@ -293,7 +293,7 @@ export const projects: Project[] = [
     year: '2023',
     tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
     challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
-    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do idei nieograniczonego dostępu poprzez symbol nieskończoności.',
+    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     images: [
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
@@ -322,11 +322,10 @@ export const projects: Project[] = [
     colors: {
       description: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
       palette: [
-        { name: 'Hubble Teal', hex: '#1AB3A6', rgb: '26 179 166', cmyk: '85 0 7 30' },
+        { name: 'Hubble Teal', hex: '#00B1A9', rgb: '0 177 169', cmyk: '100 0 5 31' },
+        { name: 'Mint Light', hex: '#E9FFFD', rgb: '233 255 253', cmyk: '9 0 1 0' },
+        { name: 'Text Gray', hex: '#565656', rgb: '86 86 86', cmyk: '0 0 0 66' },
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
-        { name: 'Light Gray', hex: '#F5F5F5', rgb: '245 245 245', cmyk: '0 0 0 4' },
-        { name: 'Text Dark', hex: '#333333', rgb: '51 51 51', cmyk: '0 0 0 80' },
-        { name: 'Accent Teal', hex: '#17A89B', rgb: '23 168 155', cmyk: '86 0 8 34' },
       ],
     },
   },
