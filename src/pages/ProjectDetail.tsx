@@ -315,7 +315,7 @@ const ProjectDetail = () => {
       {/* Real Photos 2x2 Grid - at bottom */}
       {project.realPhotos && (
         <section className="py-16 bg-card/30">
-          <div className="container mx-auto px-0">
+          <div className="container mx-auto px-4">
             {project.realPhotos.title && (
               <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center px-4">
                 {project.realPhotos.title}
