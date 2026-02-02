@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { projects, categories } from '@/data/projects';
 import { useState } from 'react';
+import { withBaseUrl } from '@/lib/utils';
 
 export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState('Wszystkie');
@@ -61,7 +62,7 @@ export const ProjectsSection = () => {
             >
               <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
                 <img
-                  src={project.thumbnail}
+                  src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

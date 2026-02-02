@@ -4,6 +4,7 @@ import { getProjectBySlug } from '@/data/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { withBaseUrl } from '@/lib/utils';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -71,7 +72,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               <div className="bg-card rounded-2xl overflow-hidden border border-border">
                 <img
-                  src={project.heroAnimation}
+                  src={withBaseUrl(project.heroAnimation)}
                   alt={`${project.title} - Animation`}
                   className="w-full h-auto object-cover"
                 />
@@ -93,7 +94,7 @@ const ProjectDetail = () => {
                     className="bg-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
-                      src={img.src}
+                      src={withBaseUrl(img.src)}
                       alt={img.alt}
                       className="w-full h-auto object-cover"
                     />
@@ -127,7 +128,7 @@ const ProjectDetail = () => {
                     className="aspect-square overflow-hidden rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
                   >
                     <img
-                      src={image.src}
+                      src={withBaseUrl(image.src)}
                       alt={image.alt}
                       className="w-full h-full object-cover"
                     />
@@ -146,7 +147,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-border">
                 <img
-                  src={project.thumbnail}
+                  src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
@@ -347,7 +348,7 @@ const ProjectDetail = () => {
                         {/* Screen container */}
                         <div className="bg-black rounded-[2rem] overflow-hidden">
                           <img
-                            src={screen.src}
+                            src={withBaseUrl(screen.src)}
                             alt={screen.alt}
                             className="w-full h-auto object-cover"
                           />
@@ -384,7 +385,7 @@ const ProjectDetail = () => {
                     className="bg-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
-                      src={gif.src}
+                      src={withBaseUrl(gif.src)}
                       alt={gif.alt}
                       className="w-full h-auto object-cover"
                     />
@@ -432,7 +433,7 @@ const ProjectDetail = () => {
                     >
                       {image.displayMode === 'centered' ? (
                         <img
-                          src={image.src}
+                          src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="object-contain"
                           style={{ 
@@ -442,7 +443,7 @@ const ProjectDetail = () => {
                         />
                       ) : (
                         <img
-                          src={image.src}
+                          src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="w-full h-full object-cover"
                         />
@@ -490,7 +491,7 @@ const ProjectDetail = () => {
                     className="aspect-[4/3] overflow-hidden rounded-2xl"
                   >
                     <img
-                      src={image.src}
+                      src={withBaseUrl(image.src)}
                       alt={image.alt}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />

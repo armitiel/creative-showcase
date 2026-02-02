@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { withBaseUrl } from '@/lib/utils';
 
 const skills = [
   'Branding',
@@ -39,7 +40,7 @@ export const AboutSection = () => {
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
               <Avatar className="w-48 h-48 border-4 border-primary glow-cyan relative">
-                <AvatarImage src="/avatar.png" alt="Avatar" className="scale-115 object-cover" />
+                <AvatarImage src={withBaseUrl('/avatar.png')} alt="Avatar" className="scale-115 object-cover" />
                 <AvatarFallback className="text-4xl bg-secondary text-primary">MK</AvatarFallback>
               </Avatar>
             </div>
