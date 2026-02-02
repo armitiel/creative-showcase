@@ -4,7 +4,6 @@ import { getProjectBySlug } from '@/data/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { assetUrl } from '@/lib/utils';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -72,7 +71,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               <div className="bg-card rounded-2xl overflow-hidden border border-border">
                 <img
-                  src={assetUrl(project.heroAnimation)}
+                  src={project.heroAnimation}
                   alt={`${project.title} - Animation`}
                   className="w-full h-auto object-cover"
                 />
@@ -94,7 +93,7 @@ const ProjectDetail = () => {
                     className="bg-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
-                      src={assetUrl(img.src)}
+                      src={img.src}
                       alt={img.alt}
                       className="w-full h-auto object-cover"
                     />
@@ -128,7 +127,7 @@ const ProjectDetail = () => {
                     className="aspect-square overflow-hidden rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
                   >
                     <img
-                      src={assetUrl(image.src)}
+                      src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover"
                     />
@@ -147,7 +146,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-border">
                 <img
-                  src={assetUrl(project.thumbnail)}
+                  src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
@@ -348,7 +347,7 @@ const ProjectDetail = () => {
                         {/* Screen container */}
                         <div className="bg-black rounded-[2rem] overflow-hidden">
                           <img
-                            src={assetUrl(screen.src)}
+                            src={screen.src}
                             alt={screen.alt}
                             className="w-full h-auto object-cover"
                           />
@@ -385,7 +384,7 @@ const ProjectDetail = () => {
                     className="bg-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
-                      src={assetUrl(gif.src)}
+                      src={gif.src}
                       alt={gif.alt}
                       className="w-full h-auto object-cover"
                     />
@@ -433,7 +432,7 @@ const ProjectDetail = () => {
                     >
                       {image.displayMode === 'centered' ? (
                         <img
-                          src={assetUrl(image.src)}
+                          src={image.src}
                           alt={image.alt}
                           className="object-contain"
                           style={{ 
@@ -443,7 +442,7 @@ const ProjectDetail = () => {
                         />
                       ) : (
                         <img
-                          src={assetUrl(image.src)}
+                          src={image.src}
                           alt={image.alt}
                           className="w-full h-full object-cover"
                         />
@@ -491,7 +490,7 @@ const ProjectDetail = () => {
                     className="aspect-[4/3] overflow-hidden rounded-2xl"
                   >
                     <img
-                      src={assetUrl(image.src)}
+                      src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
@@ -510,13 +509,13 @@ const ProjectDetail = () => {
             <h3 className="text-2xl font-bold mb-4 font-['Poppins']">Zainteresowany współpracą?</h3>
             <p className="text-muted-foreground mb-8">Zobacz więcej moich projektów lub skontaktuj się ze mną.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/?section=projects">
+              <Link to="/#projects">
                 <Button variant="outline" size="lg">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Zobacz więcej projektów
                 </Button>
               </Link>
-              <Link to="/?section=contact">
+              <Link to="/#contact">
                 <Button size="lg" className="glow-cyan">
                   Skontaktuj się
                 </Button>
