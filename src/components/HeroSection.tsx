@@ -4,9 +4,10 @@ import heroBg from '@/assets/hero-bg.jpg';
 const specializations = [
   'Logo',
   'Branding',
-  'Packaging',
+  'Modelowanie 3D',
+  'Web & App',
   'Social Media',
-  'Print Design',
+  'Projektowanie Przestrzenne',
 ];
 
 export const HeroSection = () => {
@@ -24,11 +25,6 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Year Badge - minimal style */}
-          <Badge className="bg-primary/20 text-foreground border border-primary/30 px-4 py-1.5 text-sm font-medium tracking-wider">
-            2025
-          </Badge>
-
           {/* Main Title - clean, no 3D effect */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-foreground">
             PORTFOLIO

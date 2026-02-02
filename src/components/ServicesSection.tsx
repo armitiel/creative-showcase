@@ -5,12 +5,12 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const services = [
   {
     icon: Palette,
-    title: 'Logo Design',
+    title: 'Projektowanie Logo',
     description: 'Tworzę unikalne, zapamiętywalne logo, które oddaje charakter Twojej marki i wyróżnia ją na rynku.',
   },
   {
     icon: Layers,
-    title: 'Brand Identity',
+    title: 'Identyfikacja Wizualna',
     description: 'Kompleksowa identyfikacja wizualna: kolory, typografia, wzory i wszystkie elementy budujące spójny wizerunek.',
   },
   {
@@ -20,12 +20,12 @@ const services = [
   },
   {
     icon: Monitor,
-    title: 'Web & App Design',
+    title: 'Strony i Aplikacje',
     description: 'Projektowanie stron internetowych i aplikacji mobilnych z naciskiem na UX/UI i nowoczesną estetykę.',
   },
   {
     icon: Share2,
-    title: 'Social Media Graphics',
+    title: 'Grafika Social Media',
     description: 'Angażujące grafiki na social media, które budują rozpoznawalność i zwiększają zasięgi.',
   },
   {
