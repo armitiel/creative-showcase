@@ -152,6 +152,94 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Typography Section */}
+      {project.typography && (
+        <section className="py-16 bg-card/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">Typography</h2>
+              <p className="text-muted-foreground mb-12 max-w-2xl">
+                {project.typography.description}
+              </p>
+              
+              <div className="space-y-12">
+                {project.typography.fonts.map((font, fontIndex) => (
+                  <div key={fontIndex} className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-xl font-semibold text-primary">{font.name}</h3>
+                      <span className="text-sm text-muted-foreground px-3 py-1 rounded-full bg-primary/10">
+                        {font.usage}
+                      </span>
+                    </div>
+                    
+                    <div className="grid gap-6">
+                      {font.weights.map((weight, weightIndex) => (
+                        <div 
+                          key={weightIndex}
+                          className="flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-card border border-border"
+                        >
+                          <div className="md:w-32 flex-shrink-0">
+                            <span className="text-sm text-muted-foreground">{weight.name}</span>
+                          </div>
+                          <p 
+                            className="text-2xl md:text-3xl flex-1"
+                            style={{ 
+                              fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : 'Inter, sans-serif',
+                              fontWeight: weight.name === 'Bold' ? 700 : weight.name === 'SemiBold' ? 600 : weight.name === 'Medium' ? 500 : weight.name === 'Light' ? 300 : 400
+                            }}
+                          >
+                            {weight.sample}
+                          </p>
+                          <div className="text-right text-muted-foreground font-mono text-sm hidden lg:block">
+                            Aa Bb Cc Dd Ee
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Brand Colors Section */}
+      {project.colors && (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">Brand Colors</h2>
+              <p className="text-muted-foreground mb-12 max-w-2xl">
+                {project.colors.description}
+              </p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {project.colors.palette.map((color, index) => (
+                  <div 
+                    key={index}
+                    className="group rounded-xl overflow-hidden border border-border bg-card hover:border-primary/50 transition-all duration-300"
+                  >
+                    <div 
+                      className="aspect-square w-full"
+                      style={{ backgroundColor: color.hex }}
+                    />
+                    <div className="p-4 space-y-2">
+                      <h4 className="font-semibold text-sm">{color.name}</h4>
+                      <div className="space-y-1 text-xs text-muted-foreground font-mono">
+                        <p>HEX: {color.hex}</p>
+                        <p>RGB: {color.rgb}</p>
+                        {color.cmyk && <p>CMYK: {color.cmyk}</p>}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Project Gallery */}
       <section className="py-16 bg-card/30">
         <div className="container mx-auto px-4">

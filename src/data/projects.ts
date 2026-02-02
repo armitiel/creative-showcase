@@ -4,6 +4,19 @@ export interface ProjectImage {
   caption?: string;
 }
 
+export interface ProjectFont {
+  name: string;
+  usage: string;
+  weights: { name: string; sample: string }[];
+}
+
+export interface ProjectColor {
+  name: string;
+  hex: string;
+  rgb: string;
+  cmyk?: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -19,6 +32,14 @@ export interface Project {
   challenge?: string;
   solution?: string;
   results?: string;
+  typography?: {
+    description: string;
+    fonts: ProjectFont[];
+  };
+  colors?: {
+    description: string;
+    palette: ProjectColor[];
+  };
 }
 
 export const categories = ['Wszystkie', 'Logo', 'Branding', 'Packaging', 'Social Media', 'Print'];
@@ -47,6 +68,38 @@ export const projects: Project[] = [
       { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem' },
       { src: '/projects/v17-vision/texture.jpg', alt: 'V17 Vision Tekstura 3D', caption: 'Geometryczne tło wykorzystywane w materiałach' },
     ],
+    typography: {
+      description: 'Khand został wybrany dla nagłówków, dodając futurystyczny charakter i technologiczną precyzję. Font podkreśla nowoczesność marki i jej innowacyjne podejście do projektowania przestrzeni.',
+      fonts: [
+        {
+          name: 'Khand',
+          usage: 'Headlines',
+          weights: [
+            { name: 'Bold', sample: 'Designing Your Space' },
+            { name: 'SemiBold', sample: 'V17 Vision Studio' },
+            { name: 'Medium', sample: 'Futuristic Interiors' },
+          ],
+        },
+        {
+          name: 'Inter',
+          usage: 'Body Text',
+          weights: [
+            { name: 'Regular', sample: 'Innowacyjne rozwiązania architektoniczne' },
+            { name: 'Light', sample: 'Przestrzenie wyprzedzające swoją epokę' },
+          ],
+        },
+      ],
+    },
+    colors: {
+      description: 'Minimalistyczna paleta kolorów oparta na czystej bieli i głębokich odcieniach szarości, podkreślająca futurystyczny i premium charakter marki.',
+      palette: [
+        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
+        { name: 'Light Gray', hex: '#F5F5F5', rgb: '245 245 245', cmyk: '0 0 0 4' },
+        { name: 'Silver', hex: '#C0C0C0', rgb: '192 192 192', cmyk: '0 0 0 25' },
+        { name: 'Charcoal', hex: '#2D2D2D', rgb: '45 45 45', cmyk: '0 0 0 82' },
+        { name: 'Deep Black', hex: '#0A0A0A', rgb: '10 10 10', cmyk: '0 0 0 96' },
+      ],
+    },
   },
   {
     id: 2,
