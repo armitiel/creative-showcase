@@ -122,7 +122,7 @@ export const projects: Project[] = [
     slug: 'aloha-centrum-desk',
     title: 'Aloha Centrum Reception Desk',
     category: 'Branding',
-    thumbnail: '/projects/aloha-centrum/real-front.jpg',
+    thumbnail: '/projects/aloha-centrum/desk-front.jpg',
     description: 'Futurystyczny projekt biurka recepcji dla centrum pracy ze świadomością - od wizualizacji 3D po nadzór nad wykonaniem CNC',
     fullDescription: 'Projekt futurystycznego biurka recepcji dla "Aloha Centrum" w Szczecinie - innowacyjnego centrum pracy promującego świadomość i mindfulness w środowisku biurowym. Byłem odpowiedzialny za całość grafiki 3D, wizualizacje oraz nadzór nad wykonaniem fizycznego modelu przez 5-osiowe frezowanie CNC. Organiczne, płynne formy mebla łączą funkcjonalność z estetyką przyszłości, tworząc przyjazną przestrzeń dla pierwszego kontaktu z gośćmi.',
     client: 'Aloha Centrum',
