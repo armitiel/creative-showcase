@@ -1,4 +1,4 @@
-import { Palette, Layers, Package, Share2, FileText } from 'lucide-react';
+import { Palette, Layers, Package, Share2, FileText, Monitor } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -17,6 +17,11 @@ const services = [
     icon: Package,
     title: 'Packaging Design',
     description: 'Projektowanie opakowań, które przyciągają wzrok na półce i komunikują wartości produktu.',
+  },
+  {
+    icon: Monitor,
+    title: 'Web & App Design',
+    description: 'Projektowanie stron internetowych i aplikacji mobilnych z naciskiem na UX/UI i nowoczesną estetykę.',
   },
   {
     icon: Share2,
