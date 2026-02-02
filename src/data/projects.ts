@@ -56,6 +56,12 @@ export interface RetailerImage {
   alt: string;
 }
 
+export interface GifPairItem {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -74,6 +80,7 @@ export interface Project {
   thumbnailGrid?: ThumbnailGrid;
   heroAnimation?: string;
   retailerImages?: RetailerImage[];
+  gifPair?: GifPairItem[];
   challenge?: string;
   solution?: string;
   results?: string;
@@ -279,22 +286,24 @@ export const projects: Project[] = [
     slug: 'hubble-rx',
     title: 'HubbleRx',
     category: 'Branding',
-    thumbnail: '/projects/hubble/logo-icon.png',
+    thumbnail: '/projects/hubble/website-presentation.jpg',
     description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
     fullDescription: 'HubbleRx to platforma subskrypcji medykamentów oferująca nielimitowany dostęp do leków w ramach przystępnego abonamentu. Projekt zakładał stworzenie przyjaznego, dostępnego brandingu, który budzi zaufanie użytkowników. Byłem odpowiedzialny za projektowanie serii ilustracji UI, layoutu strony internetowej, animacji do płatnych reklam oraz kompletny branding z logo.',
     client: 'HubbleRx',
     year: '2023',
-    tools: ['Illustrator', 'Photoshop', 'After Effects', 'Figma'],
+    tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
     challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
     solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do idei nieograniczonego dostępu poprzez symbol nieskończoności.',
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     images: [
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
-      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
-      { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski' },
+      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
+      { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
       { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
-      { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy z ilustracją krajobrazową' },
-      { src: '/projects/hubble/mobile-mockup.gif', alt: 'HubbleRx App Mockup', caption: 'Animowany mockup interfejsu aplikacji' },
+    ],
+    gifPair: [
+      { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
+      { src: '/projects/hubble/mobile-mockup.gif', alt: 'HubbleRx App Mockup', caption: 'Animowany mockup interfejsu' },
     ],
     typography: {
       description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',

@@ -372,6 +372,35 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* GIF Pair - Side by Side */}
+      {project.gifPair && project.gifPair.length >= 2 && (
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.gifPair.map((gif, index) => (
+                  <div 
+                    key={index}
+                    className="bg-card rounded-2xl overflow-hidden border border-border"
+                  >
+                    <img
+                      src={gif.src}
+                      alt={gif.alt}
+                      className="w-full h-auto object-cover"
+                    />
+                    {gif.caption && (
+                      <div className="p-4 text-center">
+                        <p className="text-sm text-muted-foreground">{gif.caption}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Project Gallery */}
       <section className="py-16 bg-card/30">
         <div className="container mx-auto px-4">
