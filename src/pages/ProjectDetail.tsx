@@ -316,24 +316,26 @@ const ProjectDetail = () => {
       {project.realPhotos && (
         <section className="py-16 bg-card/30">
           <div className="container mx-auto px-4">
-            {project.realPhotos.title && (
-              <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center px-4">
-                {project.realPhotos.title}
-              </h2>
-            )}
-            <div className="grid grid-cols-2 gap-1">
-              {project.realPhotos.images.map((image, index) => (
-                <div 
-                  key={index}
-                  className="aspect-[4/3] overflow-hidden"
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
+            <div className="max-w-5xl mx-auto">
+              {project.realPhotos.title && (
+                <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center">
+                  {project.realPhotos.title}
+                </h2>
+              )}
+              <div className="grid grid-cols-2 gap-4">
+                {project.realPhotos.images.map((image, index) => (
+                  <div 
+                    key={index}
+                    className="aspect-[4/3] overflow-hidden rounded-2xl"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
