@@ -14,14 +14,8 @@ export const HeroSection = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
-      {/* Pure black background with subtle gradient */}
+      {/* Pure black background */}
       <div className="absolute inset-0 bg-black" />
-      
-      {/* Subtle vignette effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/50" />
-      
-      {/* Minimal accent glow - very subtle */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
