@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Portfolio is served from CV under /portfolio/dist/
+  // (static hosting without rewrites)
+  base: "/portfolio/dist/",
   server: {
     host: "::",
     port: 8080,
