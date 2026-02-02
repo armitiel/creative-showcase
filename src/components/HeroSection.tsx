@@ -25,7 +25,7 @@ export const HeroSection = () => {
           </Badge>
 
           {/* Main Title - clean, no 3D effect */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-['Poppins'] tracking-tight text-foreground">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-foreground">
             PORTFOLIO
           </h1>
 
