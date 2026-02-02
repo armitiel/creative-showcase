@@ -1,5 +1,7 @@
-import { Badge } from '@/components/ui/badge';
+import { Suspense } from 'react';
 import heroBg from '@/assets/hero-bg.jpg';
+import { ParticleField } from './ParticleField';
+import { useParallax } from '@/hooks/useParallax';
 
 const specializations = [
   'Logo',
@@ -10,24 +12,44 @@ const specializations = [
 ];
 
 export const HeroSection = () => {
+  const parallaxOffset = useParallax(0.4);
+
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
-      {/* Background image with gradient overlay */}
+      {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        style={{ 
+          backgroundImage: `url(${heroBg})`,
+          transform: `translateY(${parallaxOffset}px) scale(1.1)`,
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
 
+      {/* Particle effect around title */}
+      <Suspense fallback={null}>
+        <div 
+          className="absolute inset-0 will-change-transform"
+          style={{ transform: `translateY(${parallaxOffset * 0.2}px)` }}
+        >
+          <ParticleField />
+        </div>
+      </Suspense>
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center space-y-8 animate-fade-in">
-          {/* Main Title - clean, no 3D effect */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-foreground">
-            PORTFOLIO
-          </h1>
+        <div 
+          className="text-center space-y-8 animate-fade-in will-change-transform"
+          style={{ transform: `translateY(${parallaxOffset * 0.6}px)` }}
+        >
+          {/* Main Title with particle field behind */}
+          <div className="relative">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-foreground relative z-10">
+              PORTFOLIO
+            </h1>
+          </div>
 
           {/* Name & Title */}
           <div className="space-y-3">
