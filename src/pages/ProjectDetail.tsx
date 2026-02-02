@@ -64,6 +64,47 @@ const ProjectDetail = () => {
         </div>
       </section>
 
+      {/* Hero Animation (GIF) - if available */}
+      {project.heroAnimation && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-card rounded-2xl overflow-hidden border border-border">
+                <img
+                  src={project.heroAnimation}
+                  alt={`${project.title} - Animation`}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Retailer Images - Side by Side */}
+      {project.retailerImages && project.retailerImages.length >= 2 && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.retailerImages.map((img, index) => (
+                  <div 
+                    key={index}
+                    className="bg-card rounded-2xl overflow-hidden border border-border"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Main Hero Image */}
       <section className="pb-12">
         <div className="container mx-auto px-4">

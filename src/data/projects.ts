@@ -45,6 +45,11 @@ export interface DeviceMockupSection {
   alt: string;
 }
 
+export interface RetailerImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -60,6 +65,8 @@ export interface Project {
   realPhotos?: RealPhotosGrid;
   mobileScreens?: MobileScreensSection;
   deviceMockup?: DeviceMockupSection;
+  heroAnimation?: string;
+  retailerImages?: RetailerImage[];
   challenge?: string;
   solution?: string;
   results?: string;
@@ -177,6 +184,11 @@ export const projects: Project[] = [
     challenge: 'Zaprojektowanie intuicyjnego interfejsu dla aplikacji obsługującej weryfikację biometryczną, która musi być jednocześnie bezpieczna, szybka i przyjazna dla użytkownika końcowego oraz sprzedawców.',
     solution: 'Stworzyłem ciemny, nowoczesny interfejs z akcentami w kolorze niebieskim, który komunikuje profesjonalizm i bezpieczeństwo. Aplikacja została zaprojektowana z myślą o szybkiej nawigacji i minimalnej liczbie kroków do weryfikacji wieku.',
     results: 'System osiągnął 98% skuteczności wykrywania fałszywych dokumentów tożsamości, znacznie przewyższając średnią branżową wynoszącą 40%.',
+    heroAnimation: '/projects/portal/hero-animation.gif',
+    retailerImages: [
+      { src: '/projects/portal/retailer-1.png', alt: 'Portal Smart Checkout for Retailers' },
+      { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store' },
+    ],
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
       { src: '/projects/portal/device-mockup.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
