@@ -66,7 +66,7 @@ export const AboutSection = () => {
             className={`space-y-8 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
           >
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Poppins']">
+              <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
                 O <span className="text-gradient">mnie</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
