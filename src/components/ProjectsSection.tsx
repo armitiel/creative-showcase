@@ -1,22 +1,11 @@
-import { useState } from 'react';
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-
-const categories = ['Wszystkie', 'Logo', 'Branding', 'Packaging', 'Social Media', 'Print'];
-
-const projects = [
-  { id: 1, title: 'TechStart Logo', category: 'Logo', image: '/placeholder.svg', description: 'Nowoczesne logo dla startupu technologicznego' },
-  { id: 2, title: 'CaféBella Branding', category: 'Branding', image: '/placeholder.svg', description: 'Kompletna identyfikacja wizualna kawiarni' },
-  { id: 3, title: 'EcoBox Packaging', category: 'Packaging', image: '/placeholder.svg', description: 'Ekologiczne opakowania dla marki kosmetycznej' },
-  { id: 4, title: 'FitLife Social', category: 'Social Media', image: '/placeholder.svg', description: 'Grafiki social media dla klubu fitness' },
-  { id: 5, title: 'Urban Fashion Logo', category: 'Logo', image: '/placeholder.svg', description: 'Minimalistyczne logo dla marki odzieżowej' },
-  { id: 6, title: 'Artisan Bakery Print', category: 'Print', image: '/placeholder.svg', description: 'Materiały drukowane dla piekarni rzemieślniczej' },
-];
+import { projects, categories } from '@/data/projects';
+import { useState } from 'react';
 
 export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState('Wszystkie');
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
 
@@ -62,21 +51,26 @@ export const ProjectsSection = () => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {filteredProjects.map((project, index) => (
-            <div
+            <Link
               key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className={`group cursor-pointer bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 opacity-0 ${
+              to={`/project/${project.slug}`}
+              className={`group block bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 opacity-0 ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
             >
               <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
                 <img
-                  src={project.image}
+                  src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="px-4 py-2 bg-background/90 rounded-full text-sm font-medium">
+                    Zobacz projekt
+                  </span>
+                </div>
               </div>
               <div className="p-4">
                 <Badge variant="outline" className="mb-2 text-xs">
@@ -85,33 +79,13 @@ export const ProjectsSection = () => {
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
+                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                  {project.description}
+                </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-
-        {/* Modal */}
-        <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-3xl bg-card border-border">
-            <DialogTitle className="sr-only">{selectedProject?.title}</DialogTitle>
-            {selectedProject && (
-              <div>
-                <div className="aspect-video bg-secondary rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <Badge variant="outline" className="mb-2">
-                  {selectedProject.category}
-                </Badge>
-                <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
-                <p className="text-muted-foreground">{selectedProject.description}</p>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
       </div>
     </section>
   );
