@@ -6,13 +6,6 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-const socialLinks = [
-  { name: 'Behance', href: '#', icon: 'Be' },
-  { name: 'Dribbble', href: '#', icon: 'Dr' },
-  { name: 'LinkedIn', href: '#', icon: 'Li' },
-  { name: 'Instagram', href: '#', icon: 'Ig' },
-];
-
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -60,7 +53,7 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">kontakt@jankowalski.pl</p>
+                  <p className="font-medium">armitiel@gmail.com</p>
                 </div>
               </div>
 
@@ -70,7 +63,7 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Telefon</p>
-                  <p className="font-medium">+48 123 456 789</p>
+                  <p className="font-medium">+48 577 237 417</p>
                 </div>
               </div>
 
@@ -85,22 +78,6 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div>
-              <p className="text-sm text-muted-foreground mb-4">Social Media</p>
-              <div className="flex gap-3">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-sm font-bold text-muted-foreground hover:text-primary hover:glow-cyan transition-all duration-300"
-                    title={link.name}
-                  >
-                    {link.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
