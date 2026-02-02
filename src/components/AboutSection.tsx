@@ -39,8 +39,8 @@ export const AboutSection = () => {
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
               <Avatar className="w-48 h-48 border-4 border-primary glow-cyan relative">
-                <AvatarImage src="/placeholder.svg" alt="Jan Kowalski" />
-                <AvatarFallback className="text-4xl bg-secondary text-primary">JK</AvatarFallback>
+                <AvatarImage src="/avatar.png" alt="Avatar" />
+                <AvatarFallback className="text-4xl bg-secondary text-primary">MK</AvatarFallback>
               </Avatar>
             </div>
 
@@ -51,11 +51,11 @@ export const AboutSection = () => {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Briefcase className="w-5 h-5 text-primary" />
-                <span>5+ lat doświadczenia</span>
+                <span>15+ lat doświadczenia</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <GraduationCap className="w-5 h-5 text-primary" />
-                <span>Akademia Sztuk Pięknych</span>
+                <span>Southampton Solent University, Middlesex London University</span>
               </div>
             </div>
           </div>
