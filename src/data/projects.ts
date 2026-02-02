@@ -247,7 +247,7 @@ export const projects: Project[] = [
     slug: 'nft-generative-system',
     title: 'NFT Generative System',
     category: 'AI/NFT',
-    thumbnail: '/projects/nft-system/2.png',
+    thumbnail: '/projects/nft-system/thumbnail.png',
     description: 'System generowania kolekcji NFT z wykorzystaniem Stable Diffusion i automatyzacji Photoshop',
     fullDescription: 'Projekt polegał na stworzeniu kompleksowego systemu do generowania unikalnych grafik NFT. System opierał się na trenowaniu własnych modeli AI w Stable Diffusion oraz automatyzacji procesu post-produkcji za pomocą akcji Photoshop. Pozwoliło to na szybkie generowanie tysięcy spójnych stylowo grafik.',
     client: 'Projekt NFT',
