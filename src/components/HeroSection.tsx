@@ -14,39 +14,43 @@ export const HeroSection = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      {/* Pure black background with subtle gradient */}
+      <div className="absolute inset-0 bg-black" />
+      
+      {/* Subtle vignette effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/50" />
+      
+      {/* Minimal accent glow - very subtle */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Year Badge */}
-          <Badge className="bg-primary text-primary-foreground px-4 py-1.5 text-sm font-semibold">
+          {/* Year Badge - minimal style */}
+          <Badge className="bg-primary/20 text-foreground border border-primary/30 px-4 py-1.5 text-sm font-medium tracking-wider">
             2025
           </Badge>
 
-          {/* Main Title */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-['Poppins'] text-3d tracking-tight">
+          {/* Main Title - clean, no 3D effect */}
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-['Poppins'] tracking-tight text-foreground">
             PORTFOLIO
           </h1>
 
           {/* Name & Title */}
-          <div className="space-y-2">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-              Jan Kowalski
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-wide">
+              Amitiel Angelisme
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Graphic Designer
+            <p className="text-base text-muted-foreground tracking-widest uppercase">
+              Creative Designer
             </p>
           </div>
 
-          {/* Specializations */}
-          <div className="flex flex-wrap justify-center gap-3 pt-4">
+          {/* Specializations - minimal borders */}
+          <div className="flex flex-wrap justify-center gap-3 pt-6">
             {specializations.map((spec, index) => (
               <span
                 key={spec}
-                className="px-4 py-2 border border-border rounded-full text-sm text-muted-foreground hover:border-primary hover:text-primary transition-all duration-300"
+                className="px-5 py-2 border border-border/50 rounded-full text-sm text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-500"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {spec}
@@ -54,10 +58,11 @@ export const HeroSection = () => {
             ))}
           </div>
 
-          {/* Scroll indicator */}
-          <div className="pt-12">
-            <div className="w-6 h-10 border-2 border-muted-foreground rounded-full mx-auto flex justify-center">
-              <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-bounce" />
+          {/* Scroll indicator - minimal */}
+          <div className="pt-16">
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-xs text-muted-foreground/50 tracking-[0.3em] uppercase">Scroll</span>
+              <div className="w-px h-12 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
             </div>
           </div>
         </div>
