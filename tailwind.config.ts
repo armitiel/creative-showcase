@@ -53,6 +53,7 @@ export default {
         vision: {
           blue: "hsl(var(--vision-blue))",
         },
+        "image-card": "hsl(var(--image-card))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

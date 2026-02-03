@@ -37,6 +37,7 @@
     --radius: 1rem;
 
     --vision-blue: 214 100% 50%;
+    --image-card: 0 0% 45%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
@@ -78,6 +79,7 @@
     --ring: 214 100% 50%;
 
     --vision-blue: 214 100% 50%;
+    --image-card: 0 0% 45%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
