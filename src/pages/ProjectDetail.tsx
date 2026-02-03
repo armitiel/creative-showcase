@@ -527,13 +527,13 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/#projects">
+              <Link to="/" state={{ scrollToProjects: true }}>
                 <Button variant="outline" size="lg" className={isDark ? 'border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white' : ''}>
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   {t.projectDetail.backToPortfolio}
                 </Button>
               </Link>
-              <Link to="/#contact">
+              <Link to="/#contact" state={{ scrollToContact: true }}>
                 <Button size="lg" className="glow-cyan">
                   {t.contact.title}
                 </Button>
