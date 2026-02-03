@@ -456,20 +456,19 @@ const ProjectDetail = () => {
                       }}
                     >
                       {image.displayMode === 'centered' ? (
-                        <img
+                        <ImageMagnifier
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="object-contain"
-                          style={{ 
-                            maxWidth: `${(image.imageScale || 1) * 100}%`,
-                            maxHeight: `${(image.imageScale || 1) * 100}%`
-                          }}
+                          magnifierSize={150}
+                          zoomLevel={2.5}
                         />
                       ) : (
-                        <img
+                        <ImageMagnifier
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
-                          className="w-full h-full object-cover"
+                          magnifierSize={150}
+                          zoomLevel={2.5}
                         />
                       )}
                     </div>
