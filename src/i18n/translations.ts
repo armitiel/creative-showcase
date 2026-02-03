@@ -142,8 +142,8 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Tworzenie rozwiązań z wykorzystaniem narzędzi AI w sprawdzonym workflow – automatyzacja, prototypowanie i integracje.',
         },
         {
-          title: 'Elastyczność',
-          description: 'Powyższa lista jest jedynie orientacyjna. Z doświadczenia wiem, że szybko przyswajam nowe narzędzia i technologie – liczy się rezultat, nie ograniczenia.',
+          title: 'Animacje',
+          description: 'Animuję w Spine i Blender, tworzę efekty wizualne i motion graphics. Rozwijam się również w kierunku kompozycji video z wykorzystaniem narzędzi AI.',
         },
       ],
     },
@@ -248,8 +248,8 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Building solutions using AI tools in proven workflows – automation, prototyping and integrations.',
         },
         {
-          title: 'Flexibility',
-          description: 'This list is only indicative. From experience, I quickly pick up new tools and technologies – what matters is the result, not the limitations.',
+          title: 'Animations',
+          description: 'I animate in Spine and Blender, creating visual effects and motion graphics. Also expanding into AI-powered video composition.',
         },
       ],
     },
