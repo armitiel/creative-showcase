@@ -175,8 +175,24 @@ const ProjectDetail = () => {
                 
                 {/* Parallax box overlay - positioned on the left */}
                 <div 
-                  className="absolute left-[5%] top-1/2 -translate-y-1/2 w-[25%]"
-                  style={{ perspective: '1000px' }}
+                  className="absolute left-[15%] top-1/2 w-[17%] parallax-scroll-box"
+                  style={{ 
+                    perspective: '1000px',
+                    transform: 'translateY(-50%)',
+                  }}
+                  ref={(el) => {
+                    if (!el) return;
+                    const handleScroll = () => {
+                      const rect = el.getBoundingClientRect();
+                      const windowHeight = window.innerHeight;
+                      const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+                      const yOffset = (clampedProgress - 0.5) * 40; // -20px to +20px movement
+                      el.style.transform = `translateY(calc(-50% + ${yOffset}px))`;
+                    };
+                    window.addEventListener('scroll', handleScroll);
+                    handleScroll();
+                  }}
                 >
                   <div
                     className="transition-transform duration-150 ease-out cursor-pointer"
