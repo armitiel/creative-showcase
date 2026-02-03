@@ -107,7 +107,7 @@ export interface Project {
   };
 }
 
-export const categories = ['Wszystkie', 'Branding', 'AI/NFT'];
+export const categories = ['Wszystkie', 'Branding', 'UI/UX', '3D', 'Art'];
 
 export const projects: Project[] = [
   {
@@ -293,7 +293,7 @@ export const projects: Project[] = [
     id: 7,
     slug: 'portal-smart-checkout',
     title: 'Portal - Inteligentna Kasa',
-    category: 'Branding',
+    category: 'UI/UX',
     thumbnail: '/projects/portal/hero-animation.gif',
     description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
     fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
@@ -359,7 +359,7 @@ export const projects: Project[] = [
     id: 2,
     slug: 'aloha-centrum-desk',
     title: 'Aloha Centrum - Biurko Recepcji',
-    category: 'Branding',
+    category: '3D',
     thumbnail: '/projects/aloha-centrum/desk-front.jpg',
     description: 'Futurystyczny projekt biurka recepcji dla centrum pracy ze świadomością - od wizualizacji 3D po nadzór nad wykonaniem CNC',
     fullDescription: 'Projekt futurystycznego biurka recepcji dla "Aloha Centrum" w Szczecinie - innowacyjnego centrum pracy promującego świadomość i mindfulness w środowisku biurowym. Byłem odpowiedzialny za całość grafiki 3D, wizualizacje oraz nadzór nad wykonaniem fizycznego modelu przez 5-osiowe frezowanie CNC. Organiczne, płynne formy mebla łączą funkcjonalność z estetyką przyszłości, tworząc przyjazną przestrzeń dla pierwszego kontaktu z gośćmi.',
@@ -422,7 +422,7 @@ export const projects: Project[] = [
     id: 8,
     slug: 'nft-generative-system',
     title: 'System Generatywny NFT',
-    category: 'AI/NFT',
+    category: 'Art',
     thumbnail: '/projects/nft-system/thumbnail.png',
     description: 'System generowania kolekcji NFT z wykorzystaniem Stable Diffusion i automatyzacji Photoshop',
     fullDescription: 'Projekt polegał na stworzeniu kompleksowego systemu do generowania unikalnych grafik NFT. System opierał się na trenowaniu własnych modeli AI w Stable Diffusion oraz automatyzacji procesu post-produkcji za pomocą akcji Photoshop. Pozwoliło to na szybkie generowanie tysięcy spójnych stylowo grafik.',
