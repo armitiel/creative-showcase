@@ -32,8 +32,8 @@ export const ProjectsSection = () => {
       {/* SVG Filters for glitch effect */}
       <svg className="absolute w-0 h-0">
         <defs>
-          <filter id="redChannel">
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" />
+          <filter id="cyanChannel">
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" />
           </filter>
           <filter id="blueChannel">
             <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" />
@@ -98,7 +98,7 @@ export const ProjectsSection = () => {
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none"
                   style={{ 
-                    filter: 'url(#redChannel)',
+                    filter: 'url(#cyanChannel)',
                     animation: `glitch-1 ${4 + (index % 3)}s ease-in-out infinite`,
                     animationDelay: `${index * 0.7}s`,
                   }}
