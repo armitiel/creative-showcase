@@ -124,6 +124,27 @@ export default {
           "0%": { opacity: "0", transform: "scale(1.1)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        "glitch-1": {
+          "0%, 90%, 100%": { opacity: "0", transform: "translateX(0)" },
+          "92%": { opacity: "0.4", transform: "translateX(4px)" },
+          "94%": { opacity: "0", transform: "translateX(-2px)" },
+          "96%": { opacity: "0.3", transform: "translateX(3px)" },
+          "98%": { opacity: "0", transform: "translateX(0)" },
+        },
+        "glitch-2": {
+          "0%, 85%, 100%": { opacity: "0", transform: "translateX(0)" },
+          "87%": { opacity: "0.3", transform: "translateX(-4px)" },
+          "89%": { opacity: "0", transform: "translateX(2px)" },
+          "91%": { opacity: "0.4", transform: "translateX(-3px)" },
+          "93%": { opacity: "0", transform: "translateX(0)" },
+        },
+        "scanline-glitch": {
+          "0%, 88%, 100%": { opacity: "0" },
+          "90%": { opacity: "0.06" },
+          "92%": { opacity: "0" },
+          "94%": { opacity: "0.04" },
+          "96%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
