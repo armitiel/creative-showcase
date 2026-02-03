@@ -128,7 +128,7 @@ export const translations: Record<Language, TranslationsType> = {
         },
         {
           title: 'Modelowanie 3D',
-          description: 'Tworzenie realistycznych wizualizacji 3D produktów, wnętrz i obiektów architektonicznych.',
+          description: 'Tworzenie realistycznych wizualizacji 3D produktów, wnętrz i obiektów architektonicznych. Modele game-ready z mapami tekstur, UV i optymalizacją pod silniki gier.',
         },
         {
           title: 'Strony i Aplikacje',
@@ -231,7 +231,7 @@ export const translations: Record<Language, TranslationsType> = {
         },
         {
           title: '3D Modeling',
-          description: 'Creating realistic 3D visualizations of products, interiors and architectural objects.',
+          description: 'Creating realistic 3D visualizations of products, interiors and architectural objects. Game-ready models with texture maps, UV mapping and optimization for game engines.',
         },
         {
           title: 'Websites & Apps',
