@@ -310,7 +310,7 @@ export const projects: Project[] = [
     ],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
-      { src: '/projects/hubble/logo-animation.gif', alt: 'HubbleRx Logo Animation', caption: 'Animacja logo — częściowo wykonana w Blenderze' },
+      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
     ],
     deviceMockup: {
       title: 'Animowany mockup interfejsu',
