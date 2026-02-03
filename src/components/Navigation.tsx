@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
+import logo from '@/assets/logo.png';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,8 +36,8 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#hero" className="text-lg font-semibold text-foreground tracking-wide">
-            Amitiel Angelisme
+          <a href="#hero" className="flex items-center">
+            <img src={logo} alt="Amitiel Angelisme" className="h-10 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
