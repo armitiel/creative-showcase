@@ -17,6 +17,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     backgroundColor?: string;
     imageScale?: number;
     gridLayout?: '2x2';
+    noMagnifier?: boolean;
   }[];
   typography?: {
     description: string;
