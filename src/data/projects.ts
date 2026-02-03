@@ -101,37 +101,6 @@ export const categories = ['Wszystkie', 'Branding', 'AI/NFT'];
 
 export const projects: Project[] = [
   {
-    id: 11,
-    slug: 'nfc-card',
-    title: 'NFC Card - Wizytówki NFC',
-    category: 'Branding',
-    thumbnail: '/projects/nfc-card/logo-animation-1.gif',
-    description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
-    fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
-    client: 'NFC Card',
-    year: '2024',
-    tools: ['Illustrator', 'After Effects', 'Photoshop'],
-    theme: 'dark',
-    challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
-    solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
-    results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
-    gifPair: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo Animation', caption: 'Animacja logo z efektem transferu danych' },
-      { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC' },
-    ],
-    images: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki' },
-    ],
-    colors: {
-      description: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
-      palette: [
-        { name: 'Deep Black', hex: '#0a0a0a', rgb: '10 10 10', cmyk: '0 0 0 96' },
-        { name: 'Tech Blue', hex: '#00A3FF', rgb: '0 163 255', cmyk: '100 36 0 0' },
-        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
-      ],
-    },
-  },
-  {
     id: 10,
     slug: 'selva-rape',
     title: 'Selva Rapé - Sklep z Rapé',
@@ -436,6 +405,37 @@ export const projects: Project[] = [
       ],
     },
     images: [],
+  },
+  {
+    id: 11,
+    slug: 'nfc-card',
+    title: 'NFC Card - Wizytówki NFC',
+    category: 'Branding',
+    thumbnail: '/projects/nfc-card/logo-animation-1.gif',
+    description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
+    fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
+    client: 'NFC Card',
+    year: '2024',
+    tools: ['Illustrator', 'After Effects', 'Photoshop'],
+    theme: 'dark',
+    challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
+    solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
+    results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
+    gifPair: [
+      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo Animation', caption: 'Animacja logo z efektem transferu danych' },
+      { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC' },
+    ],
+    images: [
+      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki' },
+    ],
+    colors: {
+      description: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
+      palette: [
+        { name: 'Deep Black', hex: '#0a0a0a', rgb: '10 10 10', cmyk: '0 0 0 96' },
+        { name: 'Tech Blue', hex: '#00A3FF', rgb: '0 163 255', cmyk: '100 36 0 0' },
+        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
+      ],
+    },
   },
 ];
 
