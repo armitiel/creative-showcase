@@ -298,13 +298,13 @@ const ProjectDetail = () => {
       {project.colors && (
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.brandColors}</h2>
               <p className={`mb-12 max-w-2xl ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                 {project.colors.description}
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
