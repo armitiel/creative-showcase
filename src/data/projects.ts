@@ -101,6 +101,70 @@ export const categories = ['Wszystkie', 'Branding', 'AI/NFT'];
 
 export const projects: Project[] = [
   {
+    id: 9,
+    slug: 'hubble-rx',
+    title: 'HubbleRx - Branding i UI',
+    category: 'Branding',
+    thumbnail: '/projects/hubble/website-presentation.jpg',
+    description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
+    fullDescription: 'HubbleRx to platforma subskrypcji medykamentów oferująca nielimitowany dostęp do leków w ramach przystępnego abonamentu. Projekt zakładał stworzenie przyjaznego, dostępnego brandingu, który budzi zaufanie użytkowników. Byłem odpowiedzialny za projektowanie serii ilustracji UI, layoutu strony internetowej, animacji do płatnych reklam oraz kompletny branding z logo.',
+    client: 'HubbleRx',
+    year: '2023',
+    tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
+    theme: 'light',
+    challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
+    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
+    results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
+    images: [
+      { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
+      { src: '/projects/hubble/logo-full.png', alt: 'HubbleRx Logo', caption: 'Pełna wersja logo marki HubbleRx', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.6 },
+      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
+      { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
+      { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
+    ],
+    gifPair: [
+      { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
+      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
+    ],
+    mobileScreens: {
+      title: 'Minimalistyczne ilustracje',
+      description: 'Seria ilustracji tła z wyspami i miastem przyszłości, tworzących spójną narrację wizualną aplikacji.',
+      screens: [
+        { src: '/projects/hubble/illustration-1.png', alt: 'HubbleRx Ilustracja 1', caption: 'Ilustracja hero z krajobrazem' },
+        { src: '/projects/hubble/illustration-2.png', alt: 'HubbleRx Ilustracja 2', caption: 'Ilustracja z miastem przyszłości' },
+      ],
+    },
+    deviceMockup: {
+      title: 'Animowany mockup interfejsu',
+      description: 'Prezentacja interakcji użytkownika z interfejsem aplikacji mobilnej HubbleRx.',
+      image: '/projects/hubble/mobile-mockup.gif',
+      alt: 'HubbleRx App Mockup',
+    },
+    typography: {
+      description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
+      fonts: [
+        {
+          name: 'Nunito',
+          usage: 'Headlines & Body',
+          weights: [
+            { name: 'Bold', sample: 'Unlimited Access to Your Medications' },
+            { name: 'SemiBold', sample: 'Individual Membership' },
+            { name: 'Regular', sample: 'FREE Medications Up to 21 Day Supply' },
+          ],
+        },
+      ],
+    },
+    colors: {
+      description: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
+      palette: [
+        { name: 'Hubble Teal', hex: '#00B1A9', rgb: '0 177 169', cmyk: '100 0 5 31' },
+        { name: 'Mint Light', hex: '#E9FFFD', rgb: '233 255 253', cmyk: '9 0 1 0' },
+        { name: 'Text Gray', hex: '#565656', rgb: '86 86 86', cmyk: '0 0 0 66' },
+        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
+      ],
+    },
+  },
+  {
     id: 1,
     slug: 'v17-vision-branding',
     title: 'V17 Vision - Identyfikacja Wizualna',
@@ -286,62 +350,6 @@ export const projects: Project[] = [
       ],
     },
     images: [],
-  },
-  {
-    id: 9,
-    slug: 'hubble-rx',
-    title: 'HubbleRx - Branding i UI',
-    category: 'Branding',
-    thumbnail: '/projects/hubble/website-presentation.jpg',
-    description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
-    fullDescription: 'HubbleRx to platforma subskrypcji medykamentów oferująca nielimitowany dostęp do leków w ramach przystępnego abonamentu. Projekt zakładał stworzenie przyjaznego, dostępnego brandingu, który budzi zaufanie użytkowników. Byłem odpowiedzialny za projektowanie serii ilustracji UI, layoutu strony internetowej, animacji do płatnych reklam oraz kompletny branding z logo.',
-    client: 'HubbleRx',
-    year: '2023',
-    tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
-    theme: 'light',
-    challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
-    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
-    results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
-    images: [
-      { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
-      { src: '/projects/hubble/logo-full.png', alt: 'HubbleRx Logo', caption: 'Pełna wersja logo marki HubbleRx', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.6 },
-      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
-      { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
-      { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
-    ],
-    gifPair: [
-      { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
-      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
-    ],
-    deviceMockup: {
-      title: 'Animowany mockup interfejsu',
-      description: 'Prezentacja interakcji użytkownika z interfejsem aplikacji mobilnej HubbleRx.',
-      image: '/projects/hubble/mobile-mockup.gif',
-      alt: 'HubbleRx App Mockup',
-    },
-    typography: {
-      description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
-      fonts: [
-        {
-          name: 'Nunito',
-          usage: 'Headlines & Body',
-          weights: [
-            { name: 'Bold', sample: 'Unlimited Access to Your Medications' },
-            { name: 'SemiBold', sample: 'Individual Membership' },
-            { name: 'Regular', sample: 'FREE Medications Up to 21 Day Supply' },
-          ],
-        },
-      ],
-    },
-    colors: {
-      description: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
-      palette: [
-        { name: 'Hubble Teal', hex: '#00B1A9', rgb: '0 177 169', cmyk: '100 0 5 31' },
-        { name: 'Mint Light', hex: '#E9FFFD', rgb: '233 255 253', cmyk: '9 0 1 0' },
-        { name: 'Text Gray', hex: '#565656', rgb: '86 86 86', cmyk: '0 0 0 66' },
-        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
-      ],
-    },
   },
 ];
 
