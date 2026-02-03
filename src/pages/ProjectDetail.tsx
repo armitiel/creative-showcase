@@ -41,7 +41,11 @@ const ProjectDetail = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#0a0a0a]/80 border-white/10' : 'bg-[#f0f0f0]/80 border-border'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className={`flex items-center gap-2 transition-colors ${isDark ? 'text-white/60 hover:text-primary' : 'text-muted-foreground hover:text-primary'}`}>
+            <Link 
+              to="/" 
+              state={{ scrollToProjects: true }}
+              className={`flex items-center gap-2 transition-colors ${isDark ? 'text-white/60 hover:text-primary' : 'text-muted-foreground hover:text-primary'}`}
+            >
               <ArrowLeft className="h-4 w-4" />
               <span className="font-medium">{t.projectDetail.backToPortfolio}</span>
             </Link>
