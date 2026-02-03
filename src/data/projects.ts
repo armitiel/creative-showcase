@@ -147,9 +147,8 @@ export const projects: Project[] = [
       palette: [
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
         { name: 'Vision Blue', hex: '#365065', rgb: '54 80 101', cmyk: '47 21 0 60' },
-        { name: 'Light Gray', hex: '#F5F5F5', rgb: '245 245 245', cmyk: '0 0 0 4' },
         { name: 'Silver', hex: '#C0C0C0', rgb: '192 192 192', cmyk: '0 0 0 25' },
-        { name: 'Deep Black', hex: '#0A0A0A', rgb: '10 10 10', cmyk: '0 0 0 96' },
+        { name: 'Dark Gray', hex: '#333333', rgb: '51 51 51', cmyk: '0 0 0 80' },
       ],
     },
   },

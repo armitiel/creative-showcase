@@ -298,19 +298,19 @@ const ProjectDetail = () => {
                 {project.colors.description}
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
-                    className="group rounded-xl overflow-hidden border border-border bg-image-card hover:border-primary/50 transition-all duration-300"
+                    className="group rounded-xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300"
                   >
                     <div 
                       className="aspect-square w-full"
                       style={{ backgroundColor: color.hex }}
                     />
                     <div className="p-4 space-y-2">
-                      <h4 className="font-semibold text-sm">{color.name}</h4>
-                      <div className="space-y-1 text-xs text-muted-foreground font-mono">
+                      <h4 className="font-semibold text-sm text-foreground">{color.name}</h4>
+                      <div className="space-y-1 text-xs text-foreground/70 font-mono">
                         <p>HEX: {color.hex}</p>
                         <p>RGB: {color.rgb}</p>
                         {color.cmyk && <p>CMYK: {color.cmyk}</p>}
