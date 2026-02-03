@@ -91,7 +91,7 @@ export const AboutSection = () => {
                   <Badge
                     key={skill}
                     variant="outline"
-                    className="border-border hover:border-primary hover:text-primary transition-colors"
+                    className="border-border hover:border-primary hover:text-primary transition-colors text-sm px-4 py-2"
                   >
                     {skill}
                   </Badge>
