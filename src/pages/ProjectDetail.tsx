@@ -460,15 +460,15 @@ const ProjectDetail = () => {
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="object-contain"
-                          magnifierSize={150}
-                          zoomLevel={2.5}
+                          magnifierSize={220}
+                          zoomLevel={4}
                         />
                       ) : (
                         <ImageMagnifier
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
-                          magnifierSize={150}
-                          zoomLevel={2.5}
+                          magnifierSize={220}
+                          zoomLevel={4}
                         />
                       )}
                     </div>
