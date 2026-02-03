@@ -55,7 +55,8 @@ export const ServicesSection = () => {
         </div>
 
         <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto text-sm italic">
-          {t.services.footer}
+          <span className="block md:hidden mt-4">{t.services.footer}</span>
+          <span className="hidden md:inline">{t.services.footer}</span>
         </p>
       </div>
     </section>

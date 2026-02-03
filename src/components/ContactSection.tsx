@@ -36,7 +36,8 @@ export const ContactSection = () => {
             <span className="text-gradient">{t.contact.title}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t.contact.subtitle}
+            {t.contact.subtitle.split('?')[0]}?
+            <span className="block md:inline"> {t.contact.subtitle.split('?')[1]?.trim()}</span>
           </p>
         </div>
 
