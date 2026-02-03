@@ -37,8 +37,8 @@ export const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent animate-[shimmer_8s_ease-in-out_infinite]" />
         </div>
         
-        {/* Bottom gradient fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50" />
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
 
         {/* Particle effect around title */}
         <Suspense fallback={null}>
