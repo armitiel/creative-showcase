@@ -158,7 +158,7 @@ export const translations: Record<Language, TranslationsType> = {
     },
     contact: {
       title: 'Kontakt',
-      subtitle: 'Masz projekt do realizacji? Napisz do mnie!',
+      subtitle: 'Zapraszam do rozmowy',
       emailLabel: 'Email',
       phoneLabel: 'Telefon',
       locationLabel: 'Lokalizacja',
