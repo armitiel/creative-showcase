@@ -311,7 +311,7 @@ export const projects: Project[] = [
     slug: 'portal-smart-checkout',
     title: 'Portal - Inteligentna Kasa',
     category: 'Branding',
-    thumbnail: '/projects/portal/opener.png',
+    thumbnail: '/projects/portal/hero-animation.gif',
     description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
     fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
     client: 'Portal',
