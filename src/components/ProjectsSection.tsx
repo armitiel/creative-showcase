@@ -115,14 +115,6 @@ export const ProjectsSection = () => {
                     animationDelay: `${index * 0.5 + 1}s`,
                   }}
                 />
-                {/* Blue accent overlay - animated with glitch */}
-                <div 
-                  className="absolute inset-0 pointer-events-none bg-primary/20"
-                  style={{
-                    animation: `glitch-1 ${4 + (index % 3)}s ease-in-out infinite`,
-                    animationDelay: `${index * 0.7}s`,
-                  }}
-                />
                 {/* Animated scanlines */}
                 <div 
                   className="absolute inset-0 pointer-events-none"
