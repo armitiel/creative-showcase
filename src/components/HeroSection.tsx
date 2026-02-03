@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import heroTexture from '@/assets/hero-texture.png';
-import { ParticleField } from './ParticleField';
+import { TVNoiseEffect } from './TVNoiseEffect';
 import { useParallax } from '@/hooks/useParallax';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -40,13 +40,13 @@ export const HeroSection = () => {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
 
-        {/* Particle effect around title */}
+        {/* TV Noise/Glitch effect */}
         <Suspense fallback={null}>
           <div 
             className="absolute inset-0 will-change-transform"
             style={{ transform: `translateY(${parallaxOffset * 0.2}px)` }}
           >
-            <ParticleField />
+            <TVNoiseEffect />
           </div>
         </Suspense>
 
