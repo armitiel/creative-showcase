@@ -16,6 +16,12 @@ interface ProjectTranslation {
   deviceMockupDescription?: string;
   thumbnailGridTitle?: string;
   thumbnailGridDescription?: string;
+  // Image captions by index
+  imageCaptions?: Record<number, string>;
+  // Mobile screen captions by index
+  mobileScreenCaptions?: Record<number, string>;
+  // GIF pair captions by index
+  gifPairCaptions?: Record<number, string>;
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
@@ -57,6 +63,15 @@ export const projectTranslations: ProjectTranslations = {
       results: 'Branding skutecznie pozycjonuje V17 Vision jako lidera w segmencie premium futurystycznego designu wnętrz. Marka zyskała rozpoznawalność w branży architektonicznej i przyciąga klientów poszukujących innowacyjnych rozwiązań.',
       typographyDescription: 'Khand został wybrany dla nagłówków, dodając futurystyczny charakter i technologiczną precyzję. Font podkreśla nowoczesność marki i jej innowacyjne podejście do projektowania przestrzeni.',
       colorsDescription: 'Minimalistyczna paleta kolorów oparta na czystej bieli i głębokich odcieniach szarości, podkreślająca futurystyczny i premium charakter marki.',
+      imageCaptions: {
+        0: '"Designing your space" - główny motyw reklamowy z double exposure',
+        1: 'Minimalistyczne logo tekstowe marki',
+        2: 'Geometryczny symbol marki',
+        3: 'Prezentacja brandingu z ikonami usług',
+        4: 'Wizualizacja salonu z organicznymi, płynnymi formami',
+        5: 'Podkładka pod mysz z brandingiem',
+        6: 'Geometryczne tło wykorzystywane w materiałach',
+      },
     },
     en: {
       title: 'V17 Vision - Visual Identity',
@@ -67,6 +82,15 @@ export const projectTranslations: ProjectTranslations = {
       results: 'The branding effectively positions V17 Vision as a leader in the premium futuristic interior design segment. The brand has gained recognition in the architectural industry and attracts clients seeking innovative solutions.',
       typographyDescription: 'Khand was chosen for headlines, adding futuristic character and technological precision. The font emphasizes the brand\'s modernity and innovative approach to space design.',
       colorsDescription: 'A minimalist color palette based on pure white and deep shades of gray, emphasizing the futuristic and premium character of the brand.',
+      imageCaptions: {
+        0: '"Designing your space" - main advertising motif with double exposure',
+        1: 'Minimalist text logo of the brand',
+        2: 'Geometric brand symbol',
+        3: 'Branding presentation with service icons',
+        4: 'Living room visualization with organic, fluid forms',
+        5: 'Mousepad with branding',
+        6: 'Geometric background used in materials',
+      },
     },
   },
   'aloha-centrum-desk': {
@@ -78,6 +102,12 @@ export const projectTranslations: ProjectTranslations = {
       solution: 'Zaprojektowałem organiczną formę z płynnym łukiem osłaniającym stanowisko pracy w programie ZBrush, następnie zoptymalizowałem model pod kątem produkcji CNC w Blenderze. Zintegrowane oświetlenie LED podkreśla futurystyczny charakter, a minimalistyczna kolorystyka w odcieniach bieli i szarości tworzy spokojną atmosferę. Nadzorowałem cały proces wykonania fizycznego modelu.',
       results: 'Projekt został wdrożony jako centralny element recepcji Aloha Centrum, stając się wizytówką przestrzeni i przyciągając uwagę odwiedzających.',
       realPhotosTitle: 'Realizacja projektu',
+      imageCaptions: {
+        0: 'Widok perspektywiczny biurka z organicznym łukiem osłonowym',
+        1: 'Zintegrowane oświetlenie LED w strukturze mebla',
+        2: 'Blat roboczy z detalami wykończenia',
+        3: 'Widok z góry ukazujący organiczną formę',
+      },
     },
     en: {
       title: 'Aloha Centrum - Reception Desk',
@@ -87,6 +117,12 @@ export const projectTranslations: ProjectTranslations = {
       solution: 'I designed an organic form with a fluid arc shielding the workstation in ZBrush, then optimized the model for CNC production in Blender. Integrated LED lighting emphasizes the futuristic character, and minimalist coloring in shades of white and gray creates a calm atmosphere. I supervised the entire physical model production process.',
       results: 'The project was implemented as the central element of Aloha Centrum\'s reception, becoming the showcase of the space and attracting visitors\' attention.',
       realPhotosTitle: 'Project Realization',
+      imageCaptions: {
+        0: 'Perspective view of the desk with organic protective arc',
+        1: 'Integrated LED lighting in the furniture structure',
+        2: 'Work surface with finishing details',
+        3: 'Top view showing the organic form',
+      },
     },
   },
   'portal-smart-checkout': {
@@ -103,6 +139,16 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensDescription: 'Projektowałem i prototypowałem interfejs aplikacji mobilnej Portal, umożliwiającej użytkownikom zarządzanie kontem, portfelem i personalizowanymi ofertami.',
       deviceMockupTitle: 'Urządzenie weryfikacyjne',
       deviceMockupDescription: 'Portal Smart Checkout to dedykowane urządzenie POS z wbudowaną kamerą do skanowania twarzy, umożliwiające natychmiastową weryfikację wieku klienta.',
+      imageCaptions: {
+        0: 'Dashboard webowy i aplikacja mobilna Portal',
+        1: 'Urządzenie Portal z technologią skanowania twarzy',
+      },
+      mobileScreenCaptions: {
+        0: 'Ekran rejestracji',
+        1: 'Feed produktów',
+        2: 'Panel użytkownika',
+        3: 'Ustawienia',
+      },
     },
     en: {
       title: 'Portal - Smart Checkout',
@@ -117,6 +163,16 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensDescription: 'I designed and prototyped the Portal mobile application interface, enabling users to manage their account, wallet, and personalized offers.',
       deviceMockupTitle: 'Verification Device',
       deviceMockupDescription: 'Portal Smart Checkout is a dedicated POS device with a built-in face scanning camera, enabling instant customer age verification.',
+      imageCaptions: {
+        0: 'Web dashboard and Portal mobile application',
+        1: 'Portal device with face scanning technology',
+      },
+      mobileScreenCaptions: {
+        0: 'Registration screen',
+        1: 'Product feed',
+        2: 'User dashboard',
+        3: 'Settings',
+      },
     },
   },
   'nft-generative-system': {
@@ -151,6 +207,21 @@ export const projectTranslations: ProjectTranslations = {
       results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
       typographyDescription: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
+      imageCaptions: {
+        0: 'Kompleksowa prezentacja layoutu strony i elementów UI',
+        1: 'Pełna wersja logo marki HubbleRx',
+        2: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
+        3: 'Ilustracje procesu onboardingu i badge członkowski',
+        4: 'Responsywny design strony na urządzeniach mobilnych',
+      },
+      mobileScreenCaptions: {
+        0: 'Ilustracja hero z krajobrazem',
+        1: 'Ilustracja z miastem przyszłości',
+      },
+      gifPairCaptions: {
+        0: 'Animacja do płatnej reklamy',
+        1: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze',
+      },
     },
     en: {
       title: 'HubbleRx - Branding & UI',
@@ -161,6 +232,21 @@ export const projectTranslations: ProjectTranslations = {
       results: 'The branding effectively positions HubbleRx as a friendly and trustworthy medical platform. Advertising materials with animations significantly improved campaign conversion.',
       typographyDescription: 'HubbleRx\'s typographic system uses readable, rounded fonts that emphasize the friendly character of the medical platform.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
+      imageCaptions: {
+        0: 'Comprehensive website layout and UI elements presentation',
+        1: 'Full version of the HubbleRx brand logo',
+        2: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
+        3: 'Onboarding process illustrations and membership badge',
+        4: 'Responsive website design on mobile devices',
+      },
+      mobileScreenCaptions: {
+        0: 'Hero illustration with landscape',
+        1: 'Illustration with futuristic city',
+      },
+      gifPairCaptions: {
+        0: 'Paid advertisement animation',
+        1: 'Paid advertisement animation — partially made in Blender',
+      },
     },
   },
 };

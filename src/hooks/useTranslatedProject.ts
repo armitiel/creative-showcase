@@ -2,13 +2,22 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Project, getProjectBySlug, projects } from '@/data/projects';
 import { getProjectTranslation } from '@/data/projectTranslations';
 
-export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results'> {
+export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results' | 'images' | 'mobileScreens' | 'gifPair'> {
   title: string;
   description: string;
   fullDescription: string;
   challenge?: string;
   solution?: string;
   results?: string;
+  images: {
+    src: string;
+    alt: string;
+    caption?: string;
+    displayMode?: 'cover' | 'centered';
+    backgroundColor?: string;
+    imageScale?: number;
+    gridLayout?: '2x2';
+  }[];
   typography?: {
     description: string;
     fonts: Project['typography'] extends { fonts: infer F } ? F : never;
@@ -20,7 +29,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
   mobileScreens?: {
     title?: string;
     description?: string;
-    screens: NonNullable<Project['mobileScreens']>['screens'];
+    screens: { src: string; alt: string; caption?: string }[];
   };
   deviceMockup?: {
     title?: string;
@@ -38,6 +47,11 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     title?: string;
     images: NonNullable<Project['realPhotos']>['images'];
   };
+  gifPair?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
 }
 
 export const useTranslatedProject = (slug: string | undefined): TranslatedProject | undefined => {
@@ -55,6 +69,28 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     return project as TranslatedProject;
   }
   
+  // Translate image captions
+  const translatedImages = project.images.map((img, index) => ({
+    ...img,
+    caption: translation.imageCaptions?.[index] ?? img.caption,
+  }));
+
+  // Translate mobile screen captions
+  const translatedMobileScreens = project.mobileScreens ? {
+    title: translation.mobileScreensTitle ?? project.mobileScreens.title,
+    description: translation.mobileScreensDescription ?? project.mobileScreens.description,
+    screens: project.mobileScreens.screens.map((screen, index) => ({
+      ...screen,
+      caption: translation.mobileScreenCaptions?.[index] ?? screen.caption,
+    })),
+  } : undefined;
+
+  // Translate GIF pair captions
+  const translatedGifPair = project.gifPair?.map((gif, index) => ({
+    ...gif,
+    caption: translation.gifPairCaptions?.[index] ?? gif.caption,
+  }));
+  
   return {
     ...project,
     title: translation.title,
@@ -63,6 +99,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     challenge: translation.challenge ?? project.challenge,
     solution: translation.solution ?? project.solution,
     results: translation.results ?? project.results,
+    images: translatedImages,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,
@@ -71,11 +108,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       description: translation.colorsDescription ?? project.colors.description,
       palette: project.colors.palette,
     } : undefined,
-    mobileScreens: project.mobileScreens ? {
-      title: translation.mobileScreensTitle ?? project.mobileScreens.title,
-      description: translation.mobileScreensDescription ?? project.mobileScreens.description,
-      screens: project.mobileScreens.screens,
-    } : undefined,
+    mobileScreens: translatedMobileScreens,
     deviceMockup: project.deviceMockup ? {
       title: translation.deviceMockupTitle ?? project.deviceMockup.title,
       description: translation.deviceMockupDescription ?? project.deviceMockup.description,
@@ -92,6 +125,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       title: translation.realPhotosTitle ?? project.realPhotos.title,
       images: project.realPhotos.images,
     } : undefined,
+    gifPair: translatedGifPair,
   };
 };
 
