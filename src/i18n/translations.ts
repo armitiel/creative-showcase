@@ -38,7 +38,6 @@ interface TranslationsType {
     titleHighlight: string;
     subtitle: string;
     items: ServiceItem[];
-    footer: string;
   };
   about: {
     title: string;
@@ -142,8 +141,11 @@ export const translations: Record<Language, TranslationsType> = {
           title: 'AI & Kod',
           description: 'Tworzenie rozwiązań z wykorzystaniem narzędzi AI w sprawdzonym workflow – automatyzacja, prototypowanie i integracje.',
         },
+        {
+          title: 'Elastyczność',
+          description: 'Powyższa lista jest jedynie orientacyjna. Z doświadczenia wiem, że szybko przyswajam nowe narzędzia i technologie – liczy się rezultat, nie ograniczenia.',
+        },
       ],
-      footer: 'Powyższa lista jest jedynie orientacyjna. Z doświadczenia wiem, że szybko przyswajam nowe narzędzia i technologie – liczy się rezultat, nie ograniczenia.',
     },
     about: {
       title: 'O',
@@ -245,8 +247,11 @@ export const translations: Record<Language, TranslationsType> = {
           title: 'AI & Code',
           description: 'Building solutions using AI tools in proven workflows – automation, prototyping and integrations.',
         },
+        {
+          title: 'Flexibility',
+          description: 'This list is only indicative. From experience, I quickly pick up new tools and technologies – what matters is the result, not the limitations.',
+        },
       ],
-      footer: 'This list is only indicative. From experience, I quickly pick up new tools and technologies – what matters is the result, not the limitations.',
     },
     about: {
       title: 'About',
