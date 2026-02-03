@@ -68,6 +68,7 @@ export interface ParallaxImage {
   src: string;
   alt: string;
   title?: string;
+  backgroundImage?: string;
 }
 
 export interface Project {
@@ -125,10 +126,9 @@ export const projects: Project[] = [
     parallaxImage: {
       src: '/projects/selva-rape/box.png',
       alt: 'Selva Yawanawa - Pudełko produktu',
-      title: 'Opakowanie produktu',
+      backgroundImage: '/projects/selva-rape/display.png',
     },
     images: [
-      { src: '/projects/selva-rape/display.png', alt: 'Selva - Prezentacja sklepu', caption: 'Responsywny sklep Selva na urządzeniach mobilnych i desktopowych' },
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
       { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury' },
       { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli' },
