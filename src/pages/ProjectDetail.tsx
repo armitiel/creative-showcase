@@ -352,6 +352,11 @@ const ProjectDetail = () => {
                   <div key={index} className="flex flex-col items-center">
                     {/* Phone Frame */}
                     <div className="relative w-[180px] md:w-[220px] lg:w-[240px]">
+                      {/* Blue glow effect for dark theme */}
+                      {isDark && (
+                        <div className="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-60" />
+                      )}
+                      
                       {/* Phone outer bezel */}
                       <div className="relative bg-gradient-to-b from-neutral-800 to-neutral-900 rounded-[2.5rem] p-2 shadow-2xl">
                         {/* Notch */}
