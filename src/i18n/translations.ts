@@ -137,6 +137,10 @@ export const translations: Record<Language, TranslationsType> = {
           title: 'Ilustracje i Art',
           description: 'Unikalne ilustracje, grafiki koncepcyjne i asety artystyczne do gier, aplikacji i materiałów marketingowych.',
         },
+        {
+          title: 'AI & Kod',
+          description: 'Tworzenie rozwiązań z wykorzystaniem narzędzi AI w sprawdzonym workflow – automatyzacja, prototypowanie i integracje.',
+        },
       ],
     },
     about: {
@@ -234,6 +238,10 @@ export const translations: Record<Language, TranslationsType> = {
         {
           title: 'Illustrations & Art',
           description: 'Unique illustrations, concept art and artistic assets for games, apps and marketing materials.',
+        },
+        {
+          title: 'AI & Code',
+          description: 'Building solutions using AI tools in proven workflows – automation, prototyping and integrations.',
         },
       ],
     },
