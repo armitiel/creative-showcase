@@ -76,7 +76,7 @@ const ProjectDetail = () => {
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="bg-card rounded-2xl overflow-hidden border border-border">
+              <div className="bg-image-card rounded-2xl overflow-hidden border border-border">
                 <img
                   src={withBaseUrl(project.heroAnimation)}
                   alt={`${project.title} - Animation`}
@@ -97,7 +97,7 @@ const ProjectDetail = () => {
                 {project.retailerImages.map((img, index) => (
                   <div 
                     key={index}
-                    className="bg-card rounded-2xl overflow-hidden border border-border"
+                    className="bg-image-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
                       src={withBaseUrl(img.src)}
@@ -131,7 +131,7 @@ const ProjectDetail = () => {
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="aspect-square overflow-hidden rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                    className="aspect-square overflow-hidden rounded-lg border border-border bg-image-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -151,7 +151,7 @@ const ProjectDetail = () => {
         <section className="pb-12">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-border">
+              <div className="aspect-video bg-image-card rounded-2xl overflow-hidden border border-border">
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
@@ -302,7 +302,7 @@ const ProjectDetail = () => {
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
-                    className="group rounded-xl overflow-hidden border border-border bg-card hover:border-primary/50 transition-all duration-300"
+                    className="group rounded-xl overflow-hidden border border-border bg-image-card hover:border-primary/50 transition-all duration-300"
                   >
                     <div 
                       className="aspect-square w-full"
@@ -388,7 +388,7 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className="bg-card rounded-2xl overflow-hidden border border-border"
+                    className="bg-image-card rounded-2xl overflow-hidden border border-border"
                   >
                     <img
                       src={withBaseUrl(gif.src)}
@@ -428,7 +428,7 @@ const ProjectDetail = () => {
 
               return (
                 <ImageWrapper key={index}>
-                  <div className="rounded-2xl overflow-hidden border border-border/50">
+                  <div className="rounded-2xl overflow-hidden border border-border/50 bg-image-card">
                     <div 
                       className="aspect-video flex items-center justify-center"
                       style={{ 
