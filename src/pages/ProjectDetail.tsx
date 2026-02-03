@@ -390,7 +390,7 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
+                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
                   >
                     <img
                       src={withBaseUrl(gif.src)}
@@ -398,8 +398,8 @@ const ProjectDetail = () => {
                       className="w-full h-auto object-cover"
                     />
                     {gif.caption && (
-                      <div className="p-4 text-center">
-                        <p className={`text-sm ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{gif.caption}</p>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                        <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
                       </div>
                     )}
                   </div>
@@ -411,7 +411,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Project Gallery */}
-      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e8e8e8]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {project.images.map((image, index) => {
@@ -428,15 +428,20 @@ const ProjectDetail = () => {
                 );
               };
 
+              // Light theme uses mint/teal tint for image background
+              const lightImageBg = image.displayMode === 'centered' && image.backgroundColor 
+                ? image.backgroundColor 
+                : '#d0e8e4';
+
               return (
                 <ImageWrapper key={index}>
-                  <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border/50 bg-image-card'}`}>
+                  <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
                       className="aspect-video flex items-center justify-center"
                       style={{ 
-                        backgroundColor: image.displayMode === 'centered' && image.backgroundColor 
-                          ? image.backgroundColor 
-                          : undefined 
+                        backgroundColor: isDark 
+                          ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : undefined)
+                          : lightImageBg
                       }}
                     >
                       {image.displayMode === 'centered' ? (
@@ -458,8 +463,8 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#d5d5d5]'}`}>
-                        <p className={`text-sm ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{image.caption}</p>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                        <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{image.caption}</p>
                       </div>
                     )}
                   </div>
