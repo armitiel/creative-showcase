@@ -118,7 +118,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.thumbnailGrid.title && (
-                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient text-center">
+                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground text-center">
                   {project.thumbnailGrid.title}
                 </h2>
               )}
@@ -220,13 +220,13 @@ const ProjectDetail = () => {
               <div className="grid md:grid-cols-2 gap-12">
                 {project.challenge && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.challenge}</h2>
+                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.challenge}</h2>
                     <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.solution}</h2>
+                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.solution}</h2>
                     <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
                   </div>
                 )}
@@ -241,7 +241,7 @@ const ProjectDetail = () => {
         <section className="py-16 bg-card/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.typography}</h2>
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.typography}</h2>
               <p className="text-muted-foreground mb-12 max-w-2xl">
                 {project.typography.description}
               </p>
@@ -260,13 +260,13 @@ const ProjectDetail = () => {
                       {font.weights.map((weight, weightIndex) => (
                         <div 
                           key={weightIndex}
-                          className="flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-card border border-border"
+                          className="flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-muted/50 border border-border/50"
                         >
                           <div className="md:w-32 flex-shrink-0">
                             <span className="text-sm text-muted-foreground">{weight.name}</span>
                           </div>
                           <p 
-                            className="text-2xl md:text-3xl flex-1"
+                            className="text-2xl md:text-3xl flex-1 text-foreground"
                             style={{ 
                               fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : font.name === 'Cabin' ? 'Cabin, sans-serif' : 'Inter, sans-serif',
                               fontWeight: weight.name === 'Bold' ? 700 : weight.name === 'SemiBold' ? 600 : weight.name === 'Medium' ? 500 : weight.name === 'Light' ? 300 : 400
@@ -293,7 +293,7 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.brandColors}</h2>
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.brandColors}</h2>
               <p className="text-muted-foreground mb-12 max-w-2xl">
                 {project.colors.description}
               </p>
@@ -330,7 +330,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {project.mobileScreens.title && (
-                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient text-center">
+                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground text-center">
                   {project.mobileScreens.title}
                 </h2>
               )}
@@ -428,7 +428,7 @@ const ProjectDetail = () => {
 
               return (
                 <ImageWrapper key={index}>
-                  <div className="bg-card rounded-2xl overflow-hidden border border-border">
+                  <div className="rounded-2xl overflow-hidden border border-border/50">
                     <div 
                       className="aspect-video flex items-center justify-center"
                       style={{ 
@@ -456,7 +456,7 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className="p-4 text-center">
+                      <div className="p-4 text-center bg-muted/30">
                         <p className="text-sm text-muted-foreground">{image.caption}</p>
                       </div>
                     )}
@@ -473,7 +473,7 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-gradient">
+              <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-foreground">
                 {t.projectDetail.solution}
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">{project.results}</p>
@@ -488,7 +488,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.realPhotos.title && (
-                <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center">
+                <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-foreground text-center">
                   {t.projectDetail.realization}
                 </h2>
               )}
