@@ -166,38 +166,38 @@ const ProjectDetail = () => {
       {/* Project Info */}
       <section 
         ref={infoRef}
-        className={`py-12 bg-card/50 opacity-0 ${infoVisible ? 'animate-fade-in' : ''}`}
+        className={`py-12 bg-image-card opacity-0 ${infoVisible ? 'animate-fade-in' : ''}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <User className="h-5 w-5 text-primary" />
+                <div className="p-2 rounded-lg bg-white/20">
+                  <User className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.client}</p>
-                  <p className="font-medium">{project.client || t.projectDetail.personalProject}</p>
+                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.client}</p>
+                  <p className="font-medium text-white">{project.client || t.projectDetail.personalProject}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Calendar className="h-5 w-5 text-primary" />
+                <div className="p-2 rounded-lg bg-white/20">
+                  <Calendar className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.year}</p>
-                  <p className="font-medium">{project.year}</p>
+                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.year}</p>
+                  <p className="font-medium text-white">{project.year}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Wrench className="h-5 w-5 text-primary" />
+                <div className="p-2 rounded-lg bg-white/20">
+                  <Wrench className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.tools}</p>
+                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.tools}</p>
                   <div className="flex flex-wrap gap-1">
                     {project.tools.map((tool) => (
-                      <Badge key={tool} variant="outline" className="text-xs">
+                      <Badge key={tool} variant="outline" className="text-xs text-white border-white/50">
                         {tool}
                       </Badge>
                     ))}
