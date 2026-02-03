@@ -52,10 +52,10 @@ const Particles = ({ count = 200 }: ParticlesProps) => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
+        size={0.015}
         color="#00A3FF"
         transparent
-        opacity={0.6}
+        opacity={0.4}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
@@ -137,7 +137,7 @@ export const ParticleField = () => {
         onError={() => setHasError(true)}
         fallback={<CSSParticles />}
       >
-        <Particles count={150} />
+        <Particles count={80} />
       </Canvas>
     </div>
   );
