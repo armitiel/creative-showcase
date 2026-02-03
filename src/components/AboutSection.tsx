@@ -8,6 +8,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 const tools = [
   { name: 'Adobe Illustrator', icon: 'Ai' },
   { name: 'Adobe Photoshop', icon: 'Ps' },
+  { name: 'After Effects', icon: 'Ae' },
   { name: 'Figma', icon: 'Fg' },
   { name: 'Blender', icon: '3D' },
 ];
