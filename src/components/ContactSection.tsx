@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,11 +15,12 @@ export const ContactSection = () => {
   });
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Wiadomość wysłana!', {
-      description: 'Dziękuję za kontakt. Odpowiem najszybciej jak to możliwe.',
+    toast.success(t.contact.successTitle, {
+      description: t.contact.successDescription,
     });
     setFormData({ name: '', email: '', message: '' });
   };
@@ -31,10 +33,10 @@ export const ContactSection = () => {
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
         >
           <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
-            <span className="text-gradient">Kontakt</span>
+            <span className="text-gradient">{t.contact.title}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Masz projekt do realizacji? Napisz do mnie!
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -52,7 +54,7 @@ export const ContactSection = () => {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
+                  <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
                   <p className="font-medium">armitiel@gmail.com</p>
                 </div>
               </div>
@@ -62,7 +64,7 @@ export const ContactSection = () => {
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Telefon</p>
+                  <p className="text-sm text-muted-foreground">{t.contact.phoneLabel}</p>
                   <p className="font-medium">+48 577 237 417</p>
                 </div>
               </div>
@@ -72,8 +74,8 @@ export const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Lokalizacja</p>
-                  <p className="font-medium">Warszawa, Polska</p>
+                  <p className="text-sm text-muted-foreground">{t.contact.locationLabel}</p>
+                  <p className="font-medium">{t.contact.location}</p>
                 </div>
               </div>
             </div>
@@ -84,7 +86,7 @@ export const ContactSection = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Input
-                placeholder="Twoje imię"
+                placeholder={t.contact.namePlaceholder}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -94,7 +96,7 @@ export const ContactSection = () => {
             <div>
               <Input
                 type="email"
-                placeholder="Twój email"
+                placeholder={t.contact.emailPlaceholder}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -103,7 +105,7 @@ export const ContactSection = () => {
             </div>
             <div>
               <Textarea
-                placeholder="Twoja wiadomość..."
+                placeholder={t.contact.messagePlaceholder}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
@@ -113,7 +115,7 @@ export const ContactSection = () => {
             </div>
             <Button type="submit" className="w-full gap-2">
               <Send className="w-4 h-4" />
-              Wyślij wiadomość
+              {t.contact.send}
             </Button>
           </form>
         </div>

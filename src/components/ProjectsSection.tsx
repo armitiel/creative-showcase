@@ -1,18 +1,32 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { projects, categories } from '@/data/projects';
+import { projects } from '@/data/projects';
 import { useState } from 'react';
 import { withBaseUrl } from '@/lib/utils';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export const ProjectsSection = () => {
-  const [activeCategory, setActiveCategory] = useState('Wszystkie');
+  const { t } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState(t.projects.categories.all);
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
 
-  const filteredProjects = activeCategory === 'Wszystkie'
+  const categoryKeys = ['all', 'branding', 'web', 'threeD', 'spatial'] as const;
+  const categories = categoryKeys.map(key => t.projects.categories[key]);
+
+  // Map translated categories to original category names for filtering
+  const categoryMap: Record<string, string> = {
+    [t.projects.categories.all]: 'Wszystkie',
+    [t.projects.categories.branding]: 'Branding',
+    [t.projects.categories.web]: 'Web & App',
+    [t.projects.categories.threeD]: '3D',
+    [t.projects.categories.spatial]: 'Przestrzenne',
+  };
+
+  const filteredProjects = activeCategory === t.projects.categories.all
     ? projects
-    : projects.filter((p) => p.category === activeCategory);
+    : projects.filter((p) => p.category === categoryMap[activeCategory]);
 
   return (
     <section id="projects" className="py-24 bg-card/50">
@@ -22,10 +36,10 @@ export const ProjectsSection = () => {
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
         >
           <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
-            Moje <span className="text-gradient">Projekty</span>
+            {t.projects.title} <span className="text-gradient">{t.projects.titleHighlight}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Wybrane realizacje z ostatnich lat. Każdy projekt to unikalna historia i wyzwanie.
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -69,7 +83,7 @@ export const ProjectsSection = () => {
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="px-4 py-2 bg-background/90 rounded-full text-sm font-medium">
-                    Zobacz projekt
+                    {t.projects.viewProject}
                   </span>
                 </div>
               </div>

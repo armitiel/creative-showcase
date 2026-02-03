@@ -3,17 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { withBaseUrl } from '@/lib/utils';
-
-const skills = [
-  'Branding',
-  'Grafika 3D',
-  'Programowanie',
-  'Projektowanie przestrzenne',
-  'UI/UX Design',
-  'Storytelling',
-  'AI & Automatyzacja',
-  'Kreatywna strategia',
-];
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const tools = [
   { name: 'Adobe Illustrator', icon: 'Ai' },
@@ -27,6 +17,19 @@ const tools = [
 export const AboutSection = () => {
   const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation();
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation();
+  const { t } = useLanguage();
+
+  // Parse description with highlight
+  const renderDescription = () => {
+    const parts = t.about.description.split(/<highlight>(.*?)<\/highlight>/);
+    return parts.map((part, index) => 
+      index % 2 === 1 ? (
+        <span key={index} className="text-primary font-medium">{part}</span>
+      ) : (
+        part
+      )
+    );
+  };
 
   return (
     <section id="about" className="py-24 relative">
@@ -48,15 +51,15 @@ export const AboutSection = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>Warszawa, Polska</span>
+                <span>{t.about.location}</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Briefcase className="w-5 h-5 text-primary" />
-                <span>15+ lat doświadczenia</span>
+                <span>{t.about.experience}</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <GraduationCap className="w-5 h-5 text-primary" />
-                <span>Southampton Solent University, Middlesex London University</span>
+                <span>{t.about.education}</span>
               </div>
             </div>
           </div>
@@ -68,18 +71,18 @@ export const AboutSection = () => {
           >
             <div>
               <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
-                O <span className="text-gradient">mnie</span>
+                {t.about.title} <span className="text-gradient">{t.about.titleHighlight}</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Jestem projektantem działającym interdyscyplinarnie. Projektuję branding i identyfikacje wizualne, tworzę rozwiązania programistyczne, modeluję grafikę 3D oraz projektuję przestrzenie i narracje storytellingowe. Łączę te kompetencje w spójne, kompleksowe rozwiązania projektowe. Pracuję jako <span className="text-primary font-medium">wielopoziomowy projektant</span>, integrując perspektywy i narzędzia z różnych dziedzin kreatywnych.
+                {renderDescription()}
               </p>
             </div>
 
             {/* Skills */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Umiejętności</h3>
+              <h3 className="text-xl font-semibold mb-4">{t.about.skillsTitle}</h3>
               <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
+                {t.about.skills.map((skill) => (
                   <Badge
                     key={skill}
                     variant="outline"
@@ -93,7 +96,7 @@ export const AboutSection = () => {
 
             {/* Tools */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Narzędzia</h3>
+              <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
               <div className="flex flex-wrap gap-4">
                 {tools.map((tool) => (
                   <div

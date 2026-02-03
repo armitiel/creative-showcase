@@ -1,43 +1,14 @@
 import { Palette, Layers, Box, Share2, Building2, Monitor } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/i18n/LanguageContext';
 
-const services = [
-  {
-    icon: Palette,
-    title: 'Projektowanie Logo',
-    description: 'Tworzę unikalne, zapamiętywalne logo, które oddaje charakter Twojej marki i wyróżnia ją na rynku.',
-  },
-  {
-    icon: Layers,
-    title: 'Identyfikacja Wizualna',
-    description: 'Kompleksowa identyfikacja wizualna: kolory, typografia, wzory i wszystkie elementy budujące spójny wizerunek.',
-  },
-  {
-    icon: Box,
-    title: 'Modelowanie 3D',
-    description: 'Tworzenie realistycznych wizualizacji 3D produktów, wnętrz i obiektów architektonicznych.',
-  },
-  {
-    icon: Monitor,
-    title: 'Strony i Aplikacje',
-    description: 'Projektowanie stron internetowych i aplikacji mobilnych z naciskiem na UX/UI i nowoczesną estetykę.',
-  },
-  {
-    icon: Share2,
-    title: 'Grafika Social Media',
-    description: 'Angażujące grafiki na social media, które budują rozpoznawalność i zwiększają zasięgi.',
-  },
-  {
-    icon: Building2,
-    title: 'Projektowanie Przestrzenne',
-    description: 'Projektowanie stoisk, ekspozycji i przestrzeni komercyjnych z dbałością o detale.',
-  },
-];
+const serviceIcons = [Palette, Layers, Box, Monitor, Share2, Building2];
 
 export const ServicesSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { t } = useLanguage();
 
   return (
     <section id="services" className="py-24">
@@ -47,37 +18,40 @@ export const ServicesSection = () => {
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
         >
           <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
-            Moje <span className="text-gradient">Usługi</span>
+            {t.services.title} <span className="text-gradient">{t.services.titleHighlight}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Oferuję szeroki zakres usług graficznych dopasowanych do Twoich potrzeb.
+            {t.services.subtitle}
           </p>
         </div>
 
         <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <Card
-              key={service.title}
-              className={`bg-card border-border hover:border-primary group transition-all duration-300 opacity-0 ${
-                cardsVisible ? 'animate-fade-in' : ''
-              }`}
-              style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
-            >
-              <CardHeader>
-                <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:glow-cyan transition-all duration-300">
-                  <service.icon className="w-7 h-7 text-primary" />
-                </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {t.services.items.map((service, index) => {
+            const Icon = serviceIcons[index];
+            return (
+              <Card
+                key={service.title}
+                className={`bg-card border-border hover:border-primary group transition-all duration-300 opacity-0 ${
+                  cardsVisible ? 'animate-fade-in' : ''
+                }`}
+                style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
+              >
+                <CardHeader>
+                  <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:glow-cyan transition-all duration-300">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
