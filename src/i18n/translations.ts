@@ -119,7 +119,7 @@ export const translations: Record<Language, TranslationsType> = {
     services: {
       title: 'Moje',
       titleHighlight: 'Usługi',
-      subtitle: 'Oferuję szeroki zakres usług graficznych dopasowanych do Twoich potrzeb.',
+      subtitle: 'Oferuję szeroki zakres usług graficznych dopasowanych pod dany projekt.',
       items: [
         {
           title: 'Identyfikacja Wizualna',
