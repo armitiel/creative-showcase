@@ -10,8 +10,6 @@ const tools = [
   { name: 'Adobe Photoshop', icon: 'Ps' },
   { name: 'Figma', icon: 'Fg' },
   { name: 'Blender', icon: '3D' },
-  { name: 'ZBrush', icon: 'Zb' },
-  { name: 'Stable Diffusion', icon: 'SD' },
 ];
 
 export const AboutSection = () => {
@@ -103,7 +101,7 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-nowrap gap-4 overflow-x-auto md:flex-wrap">
                 {tools.map((tool) => (
                   <div
                     key={tool.name}
