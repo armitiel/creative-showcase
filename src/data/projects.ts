@@ -310,8 +310,14 @@ export const projects: Project[] = [
     ],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
-      { src: '/projects/hubble/mobile-mockup.gif', alt: 'HubbleRx App Mockup', caption: 'Animowany mockup interfejsu' },
+      { src: '/projects/hubble/logo-animation.gif', alt: 'HubbleRx Logo Animation', caption: 'Animacja logo — częściowo wykonana w Blenderze' },
     ],
+    deviceMockup: {
+      title: 'Animowany mockup interfejsu',
+      description: 'Prezentacja interakcji użytkownika z interfejsem aplikacji mobilnej HubbleRx.',
+      image: '/projects/hubble/mobile-mockup.gif',
+      alt: 'HubbleRx App Mockup',
+    },
     typography: {
       description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
       fonts: [
