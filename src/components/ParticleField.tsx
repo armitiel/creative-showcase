@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -14,7 +14,6 @@ const Particles = ({ count = 200 }: ParticlesProps) => {
     const sizes = new Float32Array(count);
     
     for (let i = 0; i < count; i++) {
-      // Spread particles in a sphere around center
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(Math.random() * 2 - 1);
       const radius = 2 + Math.random() * 3;
@@ -64,13 +63,79 @@ const Particles = ({ count = 200 }: ParticlesProps) => {
   );
 };
 
+// Check if WebGL is available
+const isWebGLAvailable = (): boolean => {
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    return gl !== null;
+  } catch {
+    return false;
+  }
+};
+
+// CSS-based fallback particles
+const CSSParticles = () => {
+  const particles = useMemo(() => 
+    Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      delay: Math.random() * 5,
+      duration: 3 + Math.random() * 4,
+    })), []
+  );
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="absolute rounded-full bg-primary/40 animate-pulse"
+          style={{
+            left: `${p.left}%`,
+            top: `${p.top}%`,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export const ParticleField = () => {
+  const [webGLSupported, setWebGLSupported] = useState<boolean | null>(null);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setWebGLSupported(isWebGLAvailable());
+  }, []);
+
+  // Still loading check
+  if (webGLSupported === null) {
+    return null;
+  }
+
+  // Use CSS fallback if WebGL not available or had error
+  if (!webGLSupported || hasError) {
+    return <CSSParticles />;
+  }
+
   return (
     <div className="absolute inset-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
         style={{ background: 'transparent' }}
-        gl={{ alpha: true, antialias: true }}
+        gl={{ alpha: true, antialias: true, powerPreference: 'low-power' }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
+        onError={() => setHasError(true)}
+        fallback={<CSSParticles />}
       >
         <Particles count={150} />
       </Canvas>
