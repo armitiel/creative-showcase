@@ -521,6 +521,12 @@ const ProjectDetail = () => {
                             }}
                           />
                         </div>
+                      ) : image.noMagnifier ? (
+                        <img
+                          src={withBaseUrl(image.src)}
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
                         <ImageMagnifier
                           src={withBaseUrl(image.src)}
