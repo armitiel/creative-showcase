@@ -17,6 +17,8 @@ const ProjectDetail = () => {
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
+  const isDark = project?.theme === 'dark';
+
   if (!project) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -34,12 +36,12 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-background'}`}>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#0a0a0a]/80 border-white/10' : 'bg-background/80 border-border'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/" className={`flex items-center gap-2 transition-colors ${isDark ? 'text-white/60 hover:text-primary' : 'text-muted-foreground hover:text-primary'}`}>
               <ArrowLeft className="h-4 w-4" />
               <span className="font-medium">{t.projectDetail.backToPortfolio}</span>
             </Link>
@@ -58,13 +60,13 @@ const ProjectDetail = () => {
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
+            <Badge className={`mb-4 ${isDark ? 'bg-primary/30 text-primary border-primary/40' : 'bg-primary/20 text-primary border-primary/30'}`}>
               {project.category}
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins']">
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
               {project.title}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
               {project.fullDescription}
             </p>
           </div>
@@ -76,7 +78,7 @@ const ProjectDetail = () => {
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="bg-image-card rounded-2xl overflow-hidden border border-border">
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
                 <img
                   src={withBaseUrl(project.heroAnimation)}
                   alt={`${project.title} - Animation`}
@@ -97,7 +99,7 @@ const ProjectDetail = () => {
                 {project.retailerImages.map((img, index) => (
                   <div 
                     key={index}
-                    className="bg-image-card rounded-2xl overflow-hidden border border-border"
+                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
                   >
                     <img
                       src={withBaseUrl(img.src)}
@@ -118,12 +120,12 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.thumbnailGrid.title && (
-                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground text-center">
+                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.thumbnailGrid.title}
                 </h2>
               )}
               {project.thumbnailGrid.description && (
-                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-center">
+                <p className={`mb-8 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                   {project.thumbnailGrid.description}
                 </p>
               )}
@@ -131,7 +133,7 @@ const ProjectDetail = () => {
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="aspect-square overflow-hidden rounded-lg border border-border bg-image-card hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                    className={`aspect-square overflow-hidden rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -151,7 +153,7 @@ const ProjectDetail = () => {
         <section className="pb-12">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="aspect-video bg-image-card rounded-2xl overflow-hidden border border-border">
+              <div className={`aspect-video rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
@@ -166,14 +168,14 @@ const ProjectDetail = () => {
       {/* Project Info */}
       <section 
         ref={infoRef}
-        className={`py-12 bg-image-card opacity-0 ${infoVisible ? 'animate-fade-in' : ''}`}
+        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1a1a1a]' : 'bg-image-card'}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-white/20">
-                  <User className="h-5 w-5 text-white" />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
+                  <User className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
                 </div>
                 <div>
                   <p className="text-sm text-white/70 mb-1">{t.projectDetail.client}</p>
@@ -181,8 +183,8 @@ const ProjectDetail = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-white/20">
-                  <Calendar className="h-5 w-5 text-white" />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
+                  <Calendar className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
                 </div>
                 <div>
                   <p className="text-sm text-white/70 mb-1">{t.projectDetail.year}</p>
@@ -190,8 +192,8 @@ const ProjectDetail = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-white/20">
-                  <Wrench className="h-5 w-5 text-white" />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
+                  <Wrench className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
                 </div>
                 <div>
                   <p className="text-sm text-white/70 mb-1">{t.projectDetail.tools}</p>
@@ -220,14 +222,14 @@ const ProjectDetail = () => {
               <div className="grid md:grid-cols-2 gap-12">
                 {project.challenge && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.challenge}</h2>
-                    <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                    <h2 className={`text-2xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.challenge}</h2>
+                    <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.challenge}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.solution}</h2>
-                    <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+                    <h2 className={`text-2xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.solution}</h2>
+                    <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.solution}</p>
                   </div>
                 )}
               </div>
@@ -238,11 +240,11 @@ const ProjectDetail = () => {
 
       {/* Typography Section */}
       {project.typography && (
-        <section className="py-16 bg-card/30">
+        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.typography}</h2>
-              <p className="text-muted-foreground mb-12 max-w-2xl">
+              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.typography}</h2>
+              <p className={`mb-12 max-w-2xl ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                 {project.typography.description}
               </p>
               
@@ -251,7 +253,7 @@ const ProjectDetail = () => {
                   <div key={fontIndex} className="space-y-6">
                     <div className="flex items-center gap-4">
                       <h3 className="text-xl font-semibold text-primary">{font.name}</h3>
-                      <span className="text-sm text-muted-foreground px-3 py-1 rounded-full bg-primary/10">
+                      <span className={`text-sm px-3 py-1 rounded-full bg-primary/10 ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                         {font.usage}
                       </span>
                     </div>
@@ -260,13 +262,13 @@ const ProjectDetail = () => {
                       {font.weights.map((weight, weightIndex) => (
                         <div 
                           key={weightIndex}
-                          className="flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl bg-muted/50 border border-border/50"
+                          className={`flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-muted/50 border-border/50'}`}
                         >
                           <div className="md:w-32 flex-shrink-0">
-                            <span className="text-sm text-muted-foreground">{weight.name}</span>
+                            <span className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>{weight.name}</span>
                           </div>
                           <p 
-                            className="text-2xl md:text-3xl flex-1 text-foreground"
+                            className={`text-2xl md:text-3xl flex-1 ${isDark ? 'text-white' : 'text-foreground'}`}
                             style={{ 
                               fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : font.name === 'Cabin' ? 'Cabin, sans-serif' : 'Inter, sans-serif',
                               fontWeight: weight.name === 'Bold' ? 700 : weight.name === 'SemiBold' ? 600 : weight.name === 'Medium' ? 500 : weight.name === 'Light' ? 300 : 400
@@ -274,7 +276,7 @@ const ProjectDetail = () => {
                           >
                             {weight.sample}
                           </p>
-                          <div className="text-right text-muted-foreground font-mono text-sm hidden lg:block">
+                          <div className={`text-right font-mono text-sm hidden lg:block ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
                             Aa Bb Cc Dd Ee
                           </div>
                         </div>
@@ -293,8 +295,8 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground">{t.projectDetail.brandColors}</h2>
-              <p className="text-muted-foreground mb-12 max-w-2xl">
+              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.brandColors}</h2>
+              <p className={`mb-12 max-w-2xl ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                 {project.colors.description}
               </p>
               
@@ -302,15 +304,15 @@ const ProjectDetail = () => {
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
-                    className="group rounded-xl overflow-hidden border border-border bg-white hover:border-primary/50 transition-all duration-300"
+                    className={`group rounded-xl overflow-hidden border hover:border-primary/50 transition-all duration-300 ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border bg-white'}`}
                   >
                     <div 
                       className="aspect-square w-full"
                       style={{ backgroundColor: color.hex }}
                     />
                     <div className="p-4 space-y-2">
-                      <h4 className="font-semibold text-sm text-foreground">{color.name}</h4>
-                      <div className="space-y-1 text-xs text-foreground/70 font-mono">
+                      <h4 className={`font-semibold text-sm ${isDark ? 'text-white' : 'text-foreground'}`}>{color.name}</h4>
+                      <div className={`space-y-1 text-xs font-mono ${isDark ? 'text-white/60' : 'text-foreground/70'}`}>
                         <p>HEX: {color.hex}</p>
                         <p>RGB: {color.rgb}</p>
                         {color.cmyk && <p>CMYK: {color.cmyk}</p>}
@@ -326,16 +328,16 @@ const ProjectDetail = () => {
 
       {/* Mobile Screens Section - Phone Mockups */}
       {project.mobileScreens && (
-        <section className="py-16 bg-gradient-to-b from-background to-card/30">
+        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]' : 'bg-gradient-to-b from-background to-card/30'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {project.mobileScreens.title && (
-                <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-foreground text-center">
+                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.mobileScreens.title}
                 </h2>
               )}
               {project.mobileScreens.description && (
-                <p className="text-muted-foreground mb-12 max-w-2xl mx-auto text-center">
+                <p className={`mb-12 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                   {project.mobileScreens.description}
                 </p>
               )}
@@ -347,7 +349,7 @@ const ProjectDetail = () => {
                     {/* Phone Frame */}
                     <div className="relative w-[180px] md:w-[220px] lg:w-[240px]">
                       {/* Phone outer bezel */}
-                      <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
+                      <div className="relative bg-gradient-to-b from-neutral-800 to-neutral-900 rounded-[2.5rem] p-2 shadow-2xl">
                         {/* Notch */}
                         <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-b-xl z-10" />
                         
@@ -361,13 +363,13 @@ const ProjectDetail = () => {
                         </div>
                         
                         {/* Home indicator */}
-                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-600 rounded-full" />
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-neutral-600 rounded-full" />
                       </div>
                     </div>
                     
                     {/* Caption */}
                     {screen.caption && (
-                      <p className="mt-4 text-sm text-muted-foreground text-center">
+                      <p className={`mt-4 text-sm text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                         {screen.caption}
                       </p>
                     )}
@@ -388,7 +390,7 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className="bg-image-card rounded-2xl overflow-hidden border border-border"
+                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
                   >
                     <img
                       src={withBaseUrl(gif.src)}
@@ -397,7 +399,7 @@ const ProjectDetail = () => {
                     />
                     {gif.caption && (
                       <div className="p-4 text-center">
-                        <p className="text-sm text-muted-foreground">{gif.caption}</p>
+                        <p className={`text-sm ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{gif.caption}</p>
                       </div>
                     )}
                   </div>
@@ -409,7 +411,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Project Gallery */}
-      <section className="py-16 bg-card/30">
+      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {project.images.map((image, index) => {
@@ -428,7 +430,7 @@ const ProjectDetail = () => {
 
               return (
                 <ImageWrapper key={index}>
-                  <div className="rounded-2xl overflow-hidden border border-border/50 bg-image-card">
+                  <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border/50 bg-image-card'}`}>
                     <div 
                       className="aspect-video flex items-center justify-center"
                       style={{ 
@@ -456,8 +458,8 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className="p-4 text-center bg-muted/30">
-                        <p className="text-sm text-muted-foreground">{image.caption}</p>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-muted/30'}`}>
+                        <p className={`text-sm ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{image.caption}</p>
                       </div>
                     )}
                   </div>
@@ -473,10 +475,10 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-foreground">
+              <h2 className={`text-3xl font-bold mb-6 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
                 {t.projectDetail.solution}
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">{project.results}</p>
+              <p className={`text-xl leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.results}</p>
             </div>
           </div>
         </section>
@@ -484,11 +486,11 @@ const ProjectDetail = () => {
 
       {/* Real Photos 2x2 Grid - at bottom */}
       {project.realPhotos && (
-        <section className="py-16 bg-card/30">
+        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.realPhotos.title && (
-                <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-foreground text-center">
+                <h2 className={`text-3xl font-bold mb-8 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {t.projectDetail.realization}
                 </h2>
               )}
@@ -512,12 +514,12 @@ const ProjectDetail = () => {
       )}
 
       {/* Back to Portfolio */}
-      <section className="py-16 bg-card/50">
+      <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-card/50'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/#projects">
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className={isDark ? 'border-white/20 text-white hover:bg-white/10' : ''}>
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   {t.projectDetail.backToPortfolio}
                 </Button>
@@ -533,9 +535,9 @@ const ProjectDetail = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border">
+      <footer className={`py-8 border-t ${isDark ? 'border-white/10' : 'border-border'}`}>
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground text-sm">
+          <p className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
             © 2025 Amitiel Angelisme. {t.footer.rights}
           </p>
         </div>
