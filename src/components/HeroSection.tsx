@@ -40,17 +40,17 @@ export const HeroSection = () => {
         >
           {/* Main Title with particle field behind */}
           <div className="relative">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-foreground relative z-10">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-white relative z-10">
               {t.hero.title}
             </h1>
           </div>
 
           {/* Name & Title */}
           <div className="space-y-3">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-wide">
+            <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-wide">
               {t.hero.name}
             </h2>
-            <p className="text-base text-muted-foreground tracking-widest uppercase">
+            <p className="text-base text-white/60 tracking-widest uppercase">
               {t.hero.role}
             </p>
           </div>
@@ -60,7 +60,7 @@ export const HeroSection = () => {
             {t.hero.specializations.map((spec, index) => (
               <span
                 key={spec}
-                className="px-5 py-2 border border-border/50 rounded-full text-sm text-muted-foreground hover:border-primary/50 hover:text-foreground transition-all duration-500"
+                className="px-5 py-2 border border-white/20 rounded-full text-sm text-white/70 hover:border-primary/50 hover:text-white transition-all duration-500"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {spec}
@@ -71,8 +71,8 @@ export const HeroSection = () => {
           {/* Scroll indicator - minimal */}
           <div className="pt-16">
             <div className="flex flex-col items-center gap-2">
-              <span className="text-xs text-muted-foreground/50 tracking-[0.3em] uppercase">{t.hero.scroll}</span>
-              <div className="w-px h-12 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
+              <span className="text-xs text-white/40 tracking-[0.3em] uppercase">{t.hero.scroll}</span>
+              <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
             </div>
           </div>
         </div>
