@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 205 100% 50%;
+    --primary: 214 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 90%;
@@ -24,7 +24,7 @@
     --muted: 0 0% 92%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 205 100% 50%;
+    --accent: 214 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,20 +32,20 @@
 
     --border: 0 0% 85%;
     --input: 0 0% 85%;
-    --ring: 205 100% 50%;
+    --ring: 214 100% 50%;
 
     --radius: 1rem;
 
-    --vision-blue: 205 100% 50%;
+    --vision-blue: 214 100% 50%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 205 100% 50%;
+    --sidebar-primary: 214 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 92%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 85%;
-    --sidebar-ring: 205 100% 50%;
+    --sidebar-ring: 214 100% 50%;
   }
 
   .dark {
@@ -58,7 +58,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 205 100% 50%;
+    --primary: 214 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 90%;
@@ -67,7 +67,7 @@
     --muted: 0 0% 92%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 205 100% 50%;
+    --accent: 214 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -75,18 +75,18 @@
 
     --border: 0 0% 85%;
     --input: 0 0% 85%;
-    --ring: 205 100% 50%;
+    --ring: 214 100% 50%;
 
-    --vision-blue: 205 100% 50%;
+    --vision-blue: 214 100% 50%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 205 100% 50%;
+    --sidebar-primary: 214 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 92%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 85%;
-    --sidebar-ring: 205 100% 50%;
+    --sidebar-ring: 214 100% 50%;
   }
 }
 
@@ -111,7 +111,7 @@
   }
 
   .glow-cyan {
-    box-shadow: 0 0 15px hsl(205 100% 50% / 0.15);
+    box-shadow: 0 0 15px hsl(214 100% 50% / 0.15);
   }
 
   .text-3d {
