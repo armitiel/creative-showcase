@@ -7,6 +7,7 @@ import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslatedProject } from '@/hooks/useTranslatedProject';
+import { ImageMagnifier } from '@/components/ImageMagnifier';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -364,10 +365,11 @@ const ProjectDetail = () => {
                         
                         {/* Screen container */}
                         <div className="bg-black rounded-[2rem] overflow-hidden">
-                          <img
+                          <ImageMagnifier
                             src={withBaseUrl(screen.src)}
                             alt={screen.alt}
-                            className="w-full h-auto object-cover"
+                            magnifierSize={120}
+                            zoomLevel={2.5}
                           />
                         </div>
                         
