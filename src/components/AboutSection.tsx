@@ -33,7 +33,7 @@ export const AboutSection = () => {
 
   return (
     <section id="about" className="py-32 relative">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Left - Avatar & Info */}
           <div

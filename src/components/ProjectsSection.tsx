@@ -29,7 +29,7 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-32">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-8">
         <div
           ref={headerRef}
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
