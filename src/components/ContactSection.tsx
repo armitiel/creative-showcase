@@ -90,7 +90,7 @@ export const ContactSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-card text-card-foreground border-transparent focus:border-primary rounded-xl"
+                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 rounded-xl"
               />
             </div>
             <div>
@@ -100,7 +100,7 @@ export const ContactSection = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-card text-card-foreground border-transparent focus:border-primary rounded-xl"
+                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 rounded-xl"
               />
             </div>
             <div>
@@ -110,7 +110,7 @@ export const ContactSection = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-card text-card-foreground border-transparent focus:border-primary resize-none rounded-xl"
+                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 resize-none rounded-xl"
               />
             </div>
             <Button type="submit" className="w-full gap-2">
