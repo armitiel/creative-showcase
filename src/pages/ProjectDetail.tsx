@@ -5,10 +5,13 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { withBaseUrl } from '@/lib/utils';
+import { useLanguage } from '@/i18n/LanguageContext';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
+  const { t } = useLanguage();
   
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
@@ -18,11 +21,11 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Projekt nie znaleziony</h1>
+          <h1 className="text-4xl font-bold mb-4">{t.projectDetail.notFound}</h1>
           <Link to="/">
             <Button variant="outline">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Powrót do portfolio
+              {t.projectDetail.backToPortfolio}
             </Button>
           </Link>
         </div>
@@ -38,9 +41,12 @@ const ProjectDetail = () => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4" />
-              <span className="font-medium">Powrót do portfolio</span>
+              <span className="font-medium">{t.projectDetail.backToPortfolio}</span>
             </Link>
-            <span className="text-xl font-bold text-primary font-['Poppins']">Portfolio</span>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
+              <span className="text-xl font-bold text-primary font-['Poppins']">Portfolio</span>
+            </div>
           </div>
         </div>
       </nav>
@@ -170,8 +176,8 @@ const ProjectDetail = () => {
                   <User className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Klient</p>
-                  <p className="font-medium">{project.client || 'Projekt osobisty'}</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.client}</p>
+                  <p className="font-medium">{project.client || t.projectDetail.personalProject}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -179,7 +185,7 @@ const ProjectDetail = () => {
                   <Calendar className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Rok</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.year}</p>
                   <p className="font-medium">{project.year}</p>
                 </div>
               </div>
@@ -188,7 +194,7 @@ const ProjectDetail = () => {
                   <Wrench className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Narzędzia</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t.projectDetail.tools}</p>
                   <div className="flex flex-wrap gap-1">
                     {project.tools.map((tool) => (
                       <Badge key={tool} variant="outline" className="text-xs">
@@ -214,13 +220,13 @@ const ProjectDetail = () => {
               <div className="grid md:grid-cols-2 gap-12">
                 {project.challenge && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">Wyzwanie</h2>
+                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.challenge}</h2>
                     <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div>
-                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">Rozwiązanie</h2>
+                    <h2 className="text-2xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.solution}</h2>
                     <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
                   </div>
                 )}
@@ -235,7 +241,7 @@ const ProjectDetail = () => {
         <section className="py-16 bg-card/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">Typography</h2>
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.typography}</h2>
               <p className="text-muted-foreground mb-12 max-w-2xl">
                 {project.typography.description}
               </p>
@@ -287,7 +293,7 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">Brand Colors</h2>
+              <h2 className="text-3xl font-bold mb-4 font-['Poppins'] text-gradient">{t.projectDetail.brandColors}</h2>
               <p className="text-muted-foreground mb-12 max-w-2xl">
                 {project.colors.description}
               </p>
@@ -467,7 +473,9 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-gradient">Rezultaty</h2>
+              <h2 className="text-3xl font-bold mb-6 font-['Poppins'] text-gradient">
+                {t.projectDetail.solution}
+              </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">{project.results}</p>
             </div>
           </div>
@@ -481,7 +489,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               {project.realPhotos.title && (
                 <h2 className="text-3xl font-bold mb-8 font-['Poppins'] text-gradient text-center">
-                  {project.realPhotos.title}
+                  {t.projectDetail.realization}
                 </h2>
               )}
               <div className="grid grid-cols-2 gap-4">
@@ -507,18 +515,16 @@ const ProjectDetail = () => {
       <section className="py-16 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 font-['Poppins']">Zainteresowany współpracą?</h3>
-            <p className="text-muted-foreground mb-8">Zobacz więcej moich projektów lub skontaktuj się ze mną.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/#projects">
                 <Button variant="outline" size="lg">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Zobacz więcej projektów
+                  {t.projectDetail.backToPortfolio}
                 </Button>
               </Link>
               <Link to="/#contact">
                 <Button size="lg" className="glow-cyan">
-                  Skontaktuj się
+                  {t.contact.title}
                 </Button>
               </Link>
             </div>
@@ -530,7 +536,7 @@ const ProjectDetail = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Portfolio. Wszystkie prawa zastrzeżone.
+            © 2025 Amitiel Angelisme. {t.footer.rights}
           </p>
         </div>
       </footer>
