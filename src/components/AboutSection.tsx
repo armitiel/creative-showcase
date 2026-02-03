@@ -40,8 +40,8 @@ export const AboutSection = () => {
             ref={leftRef}
             className={`flex flex-col opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
-            <div className="relative flex-1">
-              <div className="w-full h-full min-h-[320px] rounded-3xl overflow-hidden bg-muted/30">
+            <div className="relative">
+              <div className="w-64 h-64 rounded-3xl overflow-hidden bg-muted/30">
                 <img 
                   src={withBaseUrl('/avatar.png')} 
                   alt="Avatar" 
