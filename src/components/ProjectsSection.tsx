@@ -8,25 +8,23 @@ import { useLanguage } from '@/i18n/LanguageContext';
 
 export const ProjectsSection = () => {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState(t.projects.categories.all);
+  // Use 'all' as internal state to avoid language-dependent state issues
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
 
-  const categoryKeys = ['all', 'branding', 'web', 'threeD', 'spatial'] as const;
-  const categories = categoryKeys.map(key => t.projects.categories[key]);
+  // Get unique categories from actual projects data
+  const projectCategories = [...new Set(projects.map(p => p.category))];
+  
+  // Create display categories with 'all' as special key
+  const categoryOptions = [
+    { key: 'all', label: t.projects.categories.all },
+    ...projectCategories.map(cat => ({ key: cat, label: cat }))
+  ];
 
-  // Map translated categories to original category names for filtering
-  const categoryMap: Record<string, string> = {
-    [t.projects.categories.all]: 'Wszystkie',
-    [t.projects.categories.branding]: 'Branding',
-    [t.projects.categories.web]: 'Web & App',
-    [t.projects.categories.threeD]: '3D',
-    [t.projects.categories.spatial]: 'Przestrzenne',
-  };
-
-  const filteredProjects = activeCategory === t.projects.categories.all
+  const filteredProjects = activeCategory === 'all'
     ? projects
-    : projects.filter((p) => p.category === categoryMap[activeCategory]);
+    : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-24 bg-card/50">
@@ -45,17 +43,17 @@ export const ProjectsSection = () => {
 
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((cat) => (
+          {categoryOptions.map((option) => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
+              key={option.key}
+              onClick={() => setActiveCategory(option.key)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat
+                activeCategory === option.key
                   ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary text-muted-foreground hover:text-foreground'
               }`}
             >
-              {cat}
+              {option.label}
             </button>
           ))}
         </div>
