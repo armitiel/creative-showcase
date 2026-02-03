@@ -53,6 +53,10 @@ export const ServicesSection = () => {
             );
           })}
         </div>
+
+        <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto text-sm italic">
+          {t.services.footer}
+        </p>
       </div>
     </section>
   );
