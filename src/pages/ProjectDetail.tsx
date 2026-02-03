@@ -153,6 +153,51 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Parallax Image Section */}
+      {project.parallaxImage && (
+        <section className="py-16 overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              {project.parallaxImage.title && (
+                <h2 className={`text-3xl font-bold mb-8 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+                  {project.parallaxImage.title}
+                </h2>
+              )}
+              <div 
+                className="relative h-[500px] flex items-center justify-center"
+                style={{
+                  perspective: '1000px',
+                }}
+              >
+                <div
+                  className="parallax-box transition-transform duration-100 ease-out"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    const rotateX = (y / rect.height) * -20;
+                    const rotateY = (x / rect.width) * 20;
+                    e.currentTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                  }}
+                >
+                  <img
+                    src={withBaseUrl(project.parallaxImage.src)}
+                    alt={project.parallaxImage.alt}
+                    className="max-h-[450px] w-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Main Hero Image */}
       {project.images.length > 0 && (
         <section className="pb-12">

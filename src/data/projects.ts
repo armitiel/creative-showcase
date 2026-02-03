@@ -64,6 +64,12 @@ export interface GifPairItem {
 
 export type ProjectTheme = 'light' | 'dark';
 
+export interface ParallaxImage {
+  src: string;
+  alt: string;
+  title?: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -84,6 +90,7 @@ export interface Project {
   heroAnimation?: string;
   retailerImages?: RetailerImage[];
   gifPair?: GifPairItem[];
+  parallaxImage?: ParallaxImage;
   challenge?: string;
   solution?: string;
   results?: string;
@@ -115,8 +122,13 @@ export const projects: Project[] = [
     challenge: 'Stworzenie brandingu dla produktu z tradycyjnymi korzeniami amazońskimi, który komunikuje autentyczność i połączenie z naturą, jednocześnie będąc nowoczesny i atrakcyjny dla współczesnego odbiorcy.',
     solution: 'Zaprojektowałem identyfikację wizualną opartą na motywach dżungli i natury. Stworzyłem serię kolorowych etykiet produktowych, z których każda reprezentuje inny rodzaj Rapé. Zintegrowałem sklep Shopify z responsywnym designem prezentującym produkty na tle amazońskiej przyrody.',
     results: 'Marka Selva zyskała rozpoznawalny wygląd, który wyróżnia ją na rynku. Sklep e-commerce z intuicyjną nawigacją i profesjonalnym brandingiem zwiększył konwersję sprzedaży.',
+    parallaxImage: {
+      src: '/projects/selva-rape/box.png',
+      alt: 'Selva Yawanawa - Pudełko produktu',
+      title: 'Opakowanie produktu',
+    },
     images: [
-      { src: '/projects/selva-rape/devices-mockup.png', alt: 'Selva - Prezentacja sklepu', caption: 'Responsywny sklep Selva na urządzeniach mobilnych i desktopowych' },
+      { src: '/projects/selva-rape/display.png', alt: 'Selva - Prezentacja sklepu', caption: 'Responsywny sklep Selva na urządzeniach mobilnych i desktopowych' },
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
       { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury' },
       { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli' },
