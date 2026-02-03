@@ -187,7 +187,7 @@ const ProjectDetail = () => {
                       const windowHeight = window.innerHeight;
                       const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
                       const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-                      const yOffset = (clampedProgress - 0.5) * 40; // -20px to +20px movement
+                      const yOffset = (clampedProgress - 0.5) * 100; // -50px to +50px movement
                       el.style.transform = `translateY(calc(-50% + ${yOffset}px))`;
                     };
                     window.addEventListener('scroll', handleScroll);
