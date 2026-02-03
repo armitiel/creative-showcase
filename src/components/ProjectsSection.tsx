@@ -81,7 +81,7 @@ export const ProjectsSection = () => {
                 />
                 {/* Delikatny biały overlay dla ciemnych miniatur */}
                 {(project.slug === 'portal-smart-checkout' || project.slug === 'nfc-card') && (
-                  <div className="absolute inset-0 bg-white/15 pointer-events-none" />
+                  <div className="absolute inset-0 bg-white/25 pointer-events-none" />
                 )}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
