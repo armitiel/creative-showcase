@@ -134,16 +134,17 @@ const ProjectDetail = () => {
                   {project.thumbnailGrid.description}
                 </p>
               )}
-              <div className="grid grid-cols-5 gap-2 md:gap-3">
+              <div className="grid grid-cols-5 gap-3 md:gap-4">
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className={`aspect-square overflow-hidden rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
+                    className="aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards]"
+                    style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <img
                       src={withBaseUrl(image.src)}
                       alt={image.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain drop-shadow-lg"
                     />
                   </div>
                 ))}
