@@ -61,6 +61,7 @@ export interface GifPairItem {
   src: string;
   alt: string;
   caption?: string;
+  noMagnifier?: boolean;
 }
 
 export type ProjectTheme = 'light' | 'dark';
@@ -402,11 +403,11 @@ export const projects: Project[] = [
     solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
     results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
     gifPair: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo Animation', caption: 'Animacja logo z efektem transferu danych' },
-      { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC' },
+      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo Animation', caption: 'Animacja logo z efektem transferu danych', noMagnifier: true },
+      { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC', noMagnifier: true },
     ],
     images: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki' },
+      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki', noMagnifier: true },
     ],
     colors: {
       description: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
