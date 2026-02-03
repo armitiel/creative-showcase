@@ -29,14 +29,14 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-32">
-      {/* SVG Filters for glitch effect - grayscale */}
+      {/* SVG Filters for glitch effect */}
       <svg className="absolute w-0 h-0">
         <defs>
-          <filter id="glitchLight">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0.1  0.33 0.33 0.33 0 0.1  0.33 0.33 0.33 0 0.1  0 0 0 1 0" />
+          <filter id="redChannel">
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" />
           </filter>
-          <filter id="glitchDark">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 -0.1  0.33 0.33 0.33 0 -0.1  0.33 0.33 0.33 0 -0.1  0 0 0 1 0" />
+          <filter id="blueChannel">
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" />
           </filter>
         </defs>
       </svg>
@@ -91,26 +91,26 @@ export const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0"
                 />
-                {/* Light glitch layer - animated */}
+                {/* Red channel offset - animated glitch */}
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay pointer-events-none grayscale"
+                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none"
                   style={{ 
-                    filter: 'url(#glitchLight)',
+                    filter: 'url(#redChannel)',
                     animation: `glitch-1 ${4 + (index % 3)}s ease-in-out infinite`,
                     animationDelay: `${index * 0.7}s`,
                   }}
                 />
-                {/* Dark glitch layer - animated */}
+                {/* Blue channel offset - animated glitch */}
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-overlay pointer-events-none grayscale"
+                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none"
                   style={{ 
-                    filter: 'url(#glitchDark)',
+                    filter: 'url(#blueChannel)',
                     animation: `glitch-2 ${5 + (index % 2)}s ease-in-out infinite`,
                     animationDelay: `${index * 0.5 + 1}s`,
                   }}
