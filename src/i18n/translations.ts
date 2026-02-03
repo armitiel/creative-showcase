@@ -122,12 +122,8 @@ export const translations: Record<Language, TranslationsType> = {
       subtitle: 'Oferuję szeroki zakres usług graficznych dopasowanych do Twoich potrzeb.',
       items: [
         {
-          title: 'Projektowanie Logo',
-          description: 'Tworzę unikalne, zapamiętywalne logo, które oddaje charakter Twojej marki i wyróżnia ją na rynku.',
-        },
-        {
           title: 'Identyfikacja Wizualna',
-          description: 'Kompleksowa identyfikacja wizualna: kolory, typografia, wzory i wszystkie elementy budujące spójny wizerunek.',
+          description: 'Kompleksowa identyfikacja wizualna: logo, kolory, typografia i wszystkie elementy budujące spójny wizerunek marki.',
         },
         {
           title: 'Modelowanie 3D',
@@ -138,12 +134,8 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Projektowanie stron internetowych i aplikacji mobilnych z naciskiem na UX/UI i nowoczesną estetykę.',
         },
         {
-          title: 'Grafika Social Media',
-          description: 'Angażujące grafiki na social media, które budują rozpoznawalność i zwiększają zasięgi.',
-        },
-        {
-          title: 'Projektowanie Przestrzenne',
-          description: 'Projektowanie stoisk, ekspozycji i przestrzeni komercyjnych z dbałością o detale.',
+          title: 'Ilustracje i Art',
+          description: 'Unikalne ilustracje, grafiki koncepcyjne i asety artystyczne do gier, aplikacji i materiałów marketingowych.',
         },
       ],
     },
@@ -228,12 +220,8 @@ export const translations: Record<Language, TranslationsType> = {
       subtitle: 'I offer a wide range of graphic services tailored to your needs.',
       items: [
         {
-          title: 'Logo Design',
-          description: 'I create unique, memorable logos that capture your brand\'s character and make it stand out.',
-        },
-        {
           title: 'Visual Identity',
-          description: 'Comprehensive visual identity: colors, typography, patterns and all elements building a cohesive image.',
+          description: 'Comprehensive visual identity: logo, colors, typography and all elements building a cohesive brand image.',
         },
         {
           title: '3D Modeling',
@@ -244,12 +232,8 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Designing websites and mobile apps with emphasis on UX/UI and modern aesthetics.',
         },
         {
-          title: 'Social Media Graphics',
-          description: 'Engaging social media graphics that build brand recognition and increase reach.',
-        },
-        {
-          title: 'Spatial Design',
-          description: 'Designing stands, exhibitions and commercial spaces with attention to detail.',
+          title: 'Illustrations & Art',
+          description: 'Unique illustrations, concept art and artistic assets for games, apps and marketing materials.',
         },
       ],
     },
