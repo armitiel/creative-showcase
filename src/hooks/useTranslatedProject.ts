@@ -46,7 +46,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
   realPhotos?: {
     layout: '2x2';
     title?: string;
-    images: NonNullable<Project['realPhotos']>['images'];
+    images: { src: string; alt: string; noMagnifier?: boolean }[];
   };
   gifPair?: {
     src: string;

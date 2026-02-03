@@ -30,7 +30,7 @@ export interface ProjectColor {
 export interface RealPhotosGrid {
   layout: '2x2';
   title?: string;
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; noMagnifier?: boolean }[];
 }
 
 export interface MobileScreensSection {
@@ -370,19 +370,19 @@ export const projects: Project[] = [
     solution: 'Zaprojektowałem organiczną formę z płynnym łukiem osłaniającym stanowisko pracy w programie ZBrush, następnie zoptymalizowałem model pod kątem produkcji CNC w Blenderze. Zintegrowane oświetlenie LED podkreśla futurystyczny charakter, a minimalistyczna kolorystyka w odcieniach bieli i szarości tworzy spokojną atmosferę. Nadzorowałem cały proces wykonania fizycznego modelu.',
     results: 'Projekt został wdrożony jako centralny element recepcji Aloha Centrum, stając się wizytówką przestrzeni i przyciągając uwagę odwiedzających.',
     images: [
-      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - widok główny', caption: 'Widok perspektywiczny biurka z organicznym łukiem osłonowym' },
-      { src: '/projects/aloha-centrum/desk-detail.jpg', alt: 'Biurko recepcji - detal LED', caption: 'Zintegrowane oświetlenie LED w strukturze mebla' },
-      { src: '/projects/aloha-centrum/desk-close.jpg', alt: 'Biurko recepcji - blat roboczy', caption: 'Blat roboczy z detalami wykończenia' },
-      { src: '/projects/aloha-centrum/desk-top.jpg', alt: 'Biurko recepcji - widok z góry', caption: 'Widok z góry ukazujący organiczną formę' },
+      { src: '/projects/aloha-centrum/desk-front.jpg', alt: 'Biurko recepcji - widok główny', caption: 'Widok perspektywiczny biurka z organicznym łukiem osłonowym', noMagnifier: true },
+      { src: '/projects/aloha-centrum/desk-detail.jpg', alt: 'Biurko recepcji - detal LED', caption: 'Zintegrowane oświetlenie LED w strukturze mebla', noMagnifier: true },
+      { src: '/projects/aloha-centrum/desk-close.jpg', alt: 'Biurko recepcji - blat roboczy', caption: 'Blat roboczy z detalami wykończenia', noMagnifier: true },
+      { src: '/projects/aloha-centrum/desk-top.jpg', alt: 'Biurko recepcji - widok z góry', caption: 'Widok z góry ukazujący organiczną formę', noMagnifier: true },
     ],
     realPhotos: {
       layout: '2x2' as const,
       title: 'Realizacja projektu',
       images: [
-        { src: '/projects/aloha-centrum/real-front.jpg', alt: 'Gotowe biurko - widok główny' },
-        { src: '/projects/aloha-centrum/real-detail.jpg', alt: 'Gotowe biurko - detal' },
-        { src: '/projects/aloha-centrum/real-montage.jpg', alt: 'Montaż biurka' },
-        { src: '/projects/aloha-centrum/real-interior.jpg', alt: 'Biurko we wnętrzu' },
+        { src: '/projects/aloha-centrum/real-front.jpg', alt: 'Gotowe biurko - widok główny', noMagnifier: true },
+        { src: '/projects/aloha-centrum/real-detail.jpg', alt: 'Gotowe biurko - detal', noMagnifier: true },
+        { src: '/projects/aloha-centrum/real-montage.jpg', alt: 'Montaż biurka', noMagnifier: true },
+        { src: '/projects/aloha-centrum/real-interior.jpg', alt: 'Biurko we wnętrzu', noMagnifier: true },
       ],
     },
   },
