@@ -98,6 +98,21 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-25%)" },
         },
+        "drift": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1.2)" },
+          "25%": { transform: "translate(-1%, 1%) scale(1.22)" },
+          "50%": { transform: "translate(1%, -0.5%) scale(1.18)" },
+          "75%": { transform: "translate(-0.5%, -1%) scale(1.21)" },
+        },
+        "drift-reverse": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1.3) rotate(180deg)" },
+          "33%": { transform: "translate(1.5%, 1%) scale(1.28) rotate(180deg)" },
+          "66%": { transform: "translate(-1%, -1.5%) scale(1.32) rotate(180deg)" },
+        },
+        "shimmer": {
+          "0%, 100%": { opacity: "0", transform: "translateX(-100%) rotate(-15deg)" },
+          "50%": { opacity: "0.1", transform: "translateX(100%) rotate(-15deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
