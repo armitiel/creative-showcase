@@ -101,6 +101,64 @@ export const categories = ['Wszystkie', 'Branding', 'AI/NFT'];
 
 export const projects: Project[] = [
   {
+    id: 10,
+    slug: 'selva-rape',
+    title: 'Selva Rapé - Sklep z Rapé',
+    category: 'Branding',
+    thumbnail: '/projects/selva-rape/devices-mockup.png',
+    description: 'Kompleksowy branding i sklep e-commerce dla marki tradycyjnego brazylijskiego Rapé',
+    fullDescription: 'Selva to marka sprzedająca tradycyjne brazylijskie Rapé - mieszankę tabaki na bazie ziół, kwiatów, kory drzew i tytoniu (Nicotiana rustica). Projekt obejmował stworzenie kompletnej identyfikacji wizualnej połączonej z naturą i dżunglą, serię etykiet produktowych, integrację sklepu Shopify oraz materiały marketingowe.',
+    client: 'Selva',
+    year: '2023',
+    tools: ['Illustrator', 'Photoshop'],
+    theme: 'light',
+    challenge: 'Stworzenie brandingu dla produktu z tradycyjnymi korzeniami amazońskimi, który komunikuje autentyczność i połączenie z naturą, jednocześnie będąc nowoczesny i atrakcyjny dla współczesnego odbiorcy.',
+    solution: 'Zaprojektowałem identyfikację wizualną opartą na motywach dżungli i natury. Stworzyłem serię kolorowych etykiet produktowych, z których każda reprezentuje inny rodzaj Rapé. Zintegrowałem sklep Shopify z responsywnym designem prezentującym produkty na tle amazońskiej przyrody.',
+    results: 'Marka Selva zyskała rozpoznawalny wygląd, który wyróżnia ją na rynku. Sklep e-commerce z intuicyjną nawigacją i profesjonalnym brandingiem zwiększył konwersję sprzedaży.',
+    images: [
+      { src: '/projects/selva-rape/devices-mockup.png', alt: 'Selva - Prezentacja sklepu', caption: 'Responsywny sklep Selva na urządzeniach mobilnych i desktopowych' },
+      { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
+      { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury' },
+      { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli' },
+    ],
+    thumbnailGrid: {
+      title: 'System etykiet produktowych',
+      description: 'Seria kolorowych etykiet dla różnych rodzajów Rapé - każda z unikalną kolorystyką reprezentującą charakter produktu.',
+      images: [
+        { src: '/projects/selva-rape/label-yawanawa.png', alt: 'Etykieta Yawanawa' },
+        { src: '/projects/selva-rape/label-bobinsana.png', alt: 'Etykieta Bobinsana' },
+        { src: '/projects/selva-rape/label-mulatero.png', alt: 'Etykieta Mulatero' },
+        { src: '/projects/selva-rape/label-cumaru.png', alt: 'Etykieta Cumaru' },
+        { src: '/projects/selva-rape/label-parika.png', alt: 'Etykieta Parika' },
+      ],
+    },
+    typography: {
+      description: 'Typografia Selva łączy czytelność z organicznym charakterem marki, podkreślając jej naturalne korzenie i autentyczność.',
+      fonts: [
+        {
+          name: 'Montserrat',
+          usage: 'Headlines & Body',
+          weights: [
+            { name: 'Bold', sample: 'SELVA' },
+            { name: 'SemiBold', sample: 'Świeże RAPÉ prosto z Brazylii' },
+            { name: 'Regular', sample: 'Tradycyjne mieszanki ziołowe' },
+          ],
+        },
+      ],
+    },
+    colors: {
+      description: 'Paleta kolorów Selva czerpie inspirację z amazońskiej dżungli - soczyste zielenie, ciepłe pomarańcze i głębokie fiolety reprezentują różnorodność produktów.',
+      palette: [
+        { name: 'Selva Green', hex: '#2D8C3C', rgb: '45 140 60', cmyk: '68 0 57 45' },
+        { name: 'Yawanawa Green', hex: '#4A9F4A', rgb: '74 159 74', cmyk: '53 0 53 38' },
+        { name: 'Mulatero Orange', hex: '#E85C2C', rgb: '232 92 44', cmyk: '0 60 81 9' },
+        { name: 'Bobinsana Pink', hex: '#9B4B7A', rgb: '155 75 122', cmyk: '0 52 21 39' },
+        { name: 'Cumaru Gold', hex: '#E6A61A', rgb: '230 166 26', cmyk: '0 28 89 10' },
+        { name: 'Parika Blue', hex: '#3B7BA8', rgb: '59 123 168', cmyk: '65 27 0 34' },
+      ],
+    },
+  },
+  {
     id: 9,
     slug: 'hubble-rx',
     title: 'HubbleRx - Branding i UI',
