@@ -36,9 +36,9 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#f0f0f0]'}`}>
+    <div className={`min-h-screen ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
       {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#0a0a0a]/80 border-white/10' : 'bg-[#f0f0f0]/80 border-border'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#141414]/80 border-white/10' : 'bg-[#f0f0f0]/80 border-border'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link 
@@ -172,7 +172,7 @@ const ProjectDetail = () => {
       {/* Project Info */}
       <section 
         ref={infoRef}
-        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e0e0e0]'}`}
+        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -244,7 +244,7 @@ const ProjectDetail = () => {
 
       {/* Typography Section */}
       {project.typography && (
-        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.typography}</h2>
@@ -332,7 +332,7 @@ const ProjectDetail = () => {
 
       {/* Mobile Screens Section - Phone Mockups */}
       {project.mobileScreens && (
-        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#141414] to-[#1a1a1a]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {project.mobileScreens.title && (
@@ -523,12 +523,12 @@ const ProjectDetail = () => {
       )}
 
       {/* Back to Portfolio */}
-      <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e0e0e0]'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/#projects">
-                <Button variant="outline" size="lg" className={isDark ? 'border-white/20 text-white hover:bg-white/10' : ''}>
+                <Button variant="outline" size="lg" className={isDark ? 'border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white' : ''}>
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   {t.projectDetail.backToPortfolio}
                 </Button>
