@@ -148,7 +148,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Jestem projektantem działającym interdyscyplinarnie. Projektuję branding i identyfikacje wizualne, tworzę rozwiązania programistyczne, modeluję grafikę 3D oraz projektuję przestrzenie i narracje storytellingowe. Łączę te kompetencje w spójne, kompleksowe rozwiązania projektowe. Pracuję jako <highlight>wielopoziomowy projektant</highlight>, integrując perspektywy i narzędzia z różnych dziedzin kreatywnych.',
+      description: 'Jestem projektantem działającym interdyscyplinarnie. Tworzę branding i identyfikacje wizualne, rozwiązania programistyczne, grafikę 3D oraz ilustracje i art w ujęciu zastosowań projektowych. Łączę te obszary w spójne, kompleksowe rozwiązania, integrując różne narzędzia i perspektywy w jednym <highlight>procesie twórczym</highlight>.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',
@@ -251,7 +251,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'I am an interdisciplinary designer. I design branding and visual identities, create programming solutions, model 3D graphics, and design spaces and storytelling narratives. I combine these competencies into cohesive, comprehensive design solutions. I work as a <highlight>multi-level designer</highlight>, integrating perspectives and tools from various creative fields.',
+      description: 'I am an interdisciplinary designer. I create branding and visual identities, programming solutions, 3D graphics, and illustrations and art for design applications. I combine these areas into cohesive, comprehensive solutions, integrating various tools and perspectives into one <highlight>creative process</highlight>.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
