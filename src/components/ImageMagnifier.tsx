@@ -5,6 +5,7 @@ interface ImageMagnifierProps {
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
   magnifierSize?: number;
   zoomLevel?: number;
 }
@@ -13,6 +14,7 @@ export const ImageMagnifier = ({
   src,
   alt,
   className = '',
+  imageClassName = 'w-full h-auto object-cover',
   magnifierSize = 150,
   zoomLevel = 2.5,
 }: ImageMagnifierProps) => {
@@ -50,7 +52,7 @@ export const ImageMagnifier = ({
         ref={imgRef}
         src={src}
         alt={alt}
-        className="w-full h-auto object-cover"
+        className={imageClassName}
       />
 
       {/* Custom cursor with magnifying glass icon */}

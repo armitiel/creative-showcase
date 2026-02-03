@@ -131,7 +131,7 @@ export const projects: Project[] = [
     images: [
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
       { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury' },
-      { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli' },
+      { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli - rzeka płynie w kształcie litery "S" jak SELVA' },
     ],
     thumbnailGrid: {
       title: 'System etykiet produktowych',
