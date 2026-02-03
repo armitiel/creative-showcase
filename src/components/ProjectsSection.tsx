@@ -28,8 +28,8 @@ export const ProjectsSection = () => {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24 bg-card/50">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-32">
+      <div className="container mx-auto px-6">
         <div
           ref={headerRef}
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
@@ -68,7 +68,7 @@ export const ProjectsSection = () => {
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
-              className={`group block bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 opacity-0 ${
+              className={`group block bg-card rounded-3xl overflow-hidden border border-transparent hover:border-primary/30 transition-all duration-300 opacity-0 shadow-xl ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
@@ -86,7 +86,7 @@ export const ProjectsSection = () => {
                   </span>
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-6">
                 <Badge variant="outline" className="mb-2 text-xs">
                   {project.category}
                 </Badge>

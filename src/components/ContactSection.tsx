@@ -26,8 +26,8 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card/50">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-32">
+      <div className="container mx-auto px-6">
         <div
           ref={headerRef}
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
@@ -50,8 +50,8 @@ export const ContactSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
+                  <Mail className="w-5 h-5 text-card-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
@@ -60,8 +60,8 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
+                  <Phone className="w-5 h-5 text-card-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.phoneLabel}</p>
@@ -70,8 +70,8 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
+                  <MapPin className="w-5 h-5 text-card-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.locationLabel}</p>
@@ -90,7 +90,7 @@ export const ContactSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-secondary border-border focus:border-primary"
+                className="bg-card text-card-foreground border-transparent focus:border-primary rounded-xl"
               />
             </div>
             <div>
@@ -100,7 +100,7 @@ export const ContactSection = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-secondary border-border focus:border-primary"
+                className="bg-card text-card-foreground border-transparent focus:border-primary rounded-xl"
               />
             </div>
             <div>
@@ -110,7 +110,7 @@ export const ContactSection = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="bg-secondary border-border focus:border-primary resize-none"
+                className="bg-card text-card-foreground border-transparent focus:border-primary resize-none rounded-xl"
               />
             </div>
             <Button type="submit" className="w-full gap-2">

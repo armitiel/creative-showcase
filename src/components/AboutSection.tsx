@@ -32,8 +32,8 @@ export const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-32 relative">
+      <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Avatar & Info */}
           <div
@@ -41,10 +41,9 @@ export const AboutSection = () => {
             className={`space-y-8 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
-              <Avatar className="w-48 h-48 border-4 border-primary glow-cyan relative">
+              <Avatar className="w-48 h-48 border-4 border-primary/30 relative rounded-3xl">
                 <AvatarImage src={withBaseUrl('/avatar.png')} alt="Avatar" className="scale-115 object-cover" />
-                <AvatarFallback className="text-4xl bg-secondary text-primary">MK</AvatarFallback>
+                <AvatarFallback className="text-4xl bg-card text-primary">MK</AvatarFallback>
               </Avatar>
             </div>
 
@@ -101,7 +100,7 @@ export const AboutSection = () => {
                 {tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center text-sm font-bold text-primary hover:glow-cyan transition-all duration-300 cursor-default"
+                    className="w-14 h-14 bg-card rounded-2xl flex items-center justify-center text-sm font-bold text-card-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default shadow-md"
                     title={tool.name}
                   >
                     {tool.icon}

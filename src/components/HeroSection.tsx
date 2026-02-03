@@ -11,17 +11,17 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-card"
     >
       {/* Background image with parallax */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform opacity-60"
         style={{ 
           backgroundImage: `url(${heroBg})`,
           transform: `translateY(${parallaxOffset}px) scale(1.1)`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-card/50" />
 
       {/* Particle effect around title */}
       <Suspense fallback={null}>

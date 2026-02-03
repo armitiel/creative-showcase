@@ -11,8 +11,8 @@ export const ServicesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-32">
+      <div className="container mx-auto px-6">
         <div
           ref={headerRef}
           className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
@@ -31,13 +31,13 @@ export const ServicesSection = () => {
             return (
               <Card
                 key={service.title}
-                className={`bg-card border-border hover:border-primary group transition-all duration-300 opacity-0 ${
+                className={`bg-card border-transparent hover:border-primary/30 group transition-all duration-300 opacity-0 shadow-xl ${
                   cardsVisible ? 'animate-fade-in' : ''
                 }`}
                 style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
               >
                 <CardHeader>
-                  <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:glow-cyan transition-all duration-300">
+                  <div className="w-14 h-14 bg-card-foreground/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all duration-300">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl group-hover:text-primary transition-colors">
