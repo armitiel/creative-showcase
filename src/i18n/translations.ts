@@ -69,6 +69,22 @@ interface TranslationsType {
     madeWith: string;
     inPoland: string;
   };
+  projectDetail: {
+    backToPortfolio: string;
+    notFound: string;
+    client: string;
+    personalProject: string;
+    year: string;
+    tools: string;
+    challenge: string;
+    solution: string;
+    typography: string;
+    brandColors: string;
+    mobileApp: string;
+    verificationDevice: string;
+    generatedGraphics: string;
+    realization: string;
+  };
 }
 
 export const translations: Record<Language, TranslationsType> = {
@@ -161,6 +177,22 @@ export const translations: Record<Language, TranslationsType> = {
       madeWith: 'Zaprojektowane z',
       inPoland: 'w Polsce',
     },
+    projectDetail: {
+      backToPortfolio: 'Powrót do portfolio',
+      notFound: 'Projekt nie znaleziony',
+      client: 'Klient',
+      personalProject: 'Projekt osobisty',
+      year: 'Rok',
+      tools: 'Narzędzia',
+      challenge: 'Wyzwanie',
+      solution: 'Rozwiązanie',
+      typography: 'Typografia',
+      brandColors: 'Kolory marki',
+      mobileApp: 'Aplikacja mobilna',
+      verificationDevice: 'Urządzenie weryfikacyjne',
+      generatedGraphics: 'Wygenerowane grafiki',
+      realization: 'Realizacja projektu',
+    },
   },
   en: {
     nav: {
@@ -250,6 +282,22 @@ export const translations: Record<Language, TranslationsType> = {
       rights: 'All rights reserved.',
       madeWith: 'Designed with',
       inPoland: 'in Poland',
+    },
+    projectDetail: {
+      backToPortfolio: 'Back to portfolio',
+      notFound: 'Project not found',
+      client: 'Client',
+      personalProject: 'Personal project',
+      year: 'Year',
+      tools: 'Tools',
+      challenge: 'Challenge',
+      solution: 'Solution',
+      typography: 'Typography',
+      brandColors: 'Brand Colors',
+      mobileApp: 'Mobile App',
+      verificationDevice: 'Verification Device',
+      generatedGraphics: 'Generated Graphics',
+      realization: 'Project Realization',
     },
   },
 };
