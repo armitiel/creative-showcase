@@ -222,22 +222,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Main Hero Image */}
-      {project.images.length > 0 && (
-        <section className="pb-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className={`aspect-video rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
-                  src={withBaseUrl(project.thumbnail)}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Project Info */}
       <section 
@@ -528,7 +512,8 @@ const ProjectDetail = () => {
                         <ImageMagnifier
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
-                          className="object-contain"
+                          className="w-full h-full"
+                          imageClassName="object-contain max-w-full max-h-full"
                           magnifierSize={220}
                           zoomLevel={4}
                         />
@@ -536,6 +521,8 @@ const ProjectDetail = () => {
                         <ImageMagnifier
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
+                          className="w-full h-full"
+                          imageClassName="w-full h-full object-cover"
                           magnifierSize={220}
                           zoomLevel={4}
                         />
