@@ -29,17 +29,6 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-32">
-      {/* SVG Filters for glitch effect */}
-      <svg className="absolute w-0 h-0">
-        <defs>
-          <filter id="accentBlue">
-            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0.4 0 0 0  0 0 1 0 0  0 0 0 1 0" />
-          </filter>
-          <filter id="blueChannel">
-            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" />
-          </filter>
-        </defs>
-      </svg>
       <div className="container mx-auto px-4 md:px-8">
         <div
           ref={headerRef}
@@ -85,45 +74,10 @@ export const ProjectsSection = () => {
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
             >
               <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
-                {/* Main image */}
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0"
-                />
-                {/* Red channel offset - animated glitch */}
-                <img
-                  src={withBaseUrl(project.thumbnail)}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none"
-                  style={{ 
-                    filter: 'url(#accentBlue)',
-                    animation: `glitch-1 ${4 + (index % 3)}s ease-in-out infinite`,
-                    animationDelay: `${index * 0.7}s`,
-                  }}
-                />
-                {/* Blue channel offset - animated glitch */}
-                <img
-                  src={withBaseUrl(project.thumbnail)}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none"
-                  style={{ 
-                    filter: 'url(#blueChannel)',
-                    animation: `glitch-2 ${5 + (index % 2)}s ease-in-out infinite`,
-                    animationDelay: `${index * 0.5 + 1}s`,
-                  }}
-                />
-                {/* Animated scanlines */}
-                <div 
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.3) 1px, rgba(0,0,0,0.3) 2px)',
-                    backgroundSize: '100% 2px',
-                    animation: `scanline-glitch ${6 + (index % 4)}s ease-in-out infinite`,
-                    animationDelay: `${index * 0.3}s`,
-                  }}
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
