@@ -14,10 +14,10 @@ export const ScrollToTop = () => {
         }
       }, 100);
     } else {
-      // Otherwise scroll to top
+      // Always scroll to top for all other navigations (including project pages)
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [pathname, state]);
+  }, [pathname]);
 
   return null;
 };
