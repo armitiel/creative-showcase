@@ -16,7 +16,7 @@ export const HeroSection = () => {
       {/* Hero card with rounded corners */}
       <div className="relative w-full h-[calc(100vh-6rem)] rounded-3xl overflow-hidden bg-[#0a0a0a]">
         {/* Animated textured background layers */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <div className="absolute inset-0 overflow-hidden rounded-3xl opacity-0 animate-[hero-reveal_2.5s_ease-out_0.8s_forwards]">
           {/* Base texture layer */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform animate-[drift_30s_ease-in-out_infinite]"
