@@ -87,7 +87,7 @@ export const ProjectsSection = () => {
                   <div className="absolute inset-0 bg-white/10 pointer-events-none" />
                 )}
                 {project.slug === 'nft-system' && (
-                  <div className="absolute inset-0 bg-white/20 pointer-events-none" />
+                  <div className="absolute inset-0 bg-white/40 pointer-events-none" />
                 )}
                 {project.slug === 'aloha-centrum' && (
                   <div className="absolute inset-0 bg-white/20 pointer-events-none" />
