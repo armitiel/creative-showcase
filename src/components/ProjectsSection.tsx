@@ -68,7 +68,7 @@ export const ProjectsSection = () => {
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
-              className={`group block bg-muted rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 opacity-0 shadow-sm hover:shadow-md ${
+              className={`group block bg-secondary rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 opacity-0 shadow-sm hover:shadow-md ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
