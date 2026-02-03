@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -6,7 +6,18 @@ import { useLanguage } from '@/i18n/LanguageContext';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show shadow after scrolling past hero section
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: '#hero', label: t.nav.home },
@@ -17,7 +28,11 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-shadow duration-500 ease-out ${
+        isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.25)]' : 'shadow-none'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#hero" className="text-lg font-semibold text-foreground tracking-wide">
