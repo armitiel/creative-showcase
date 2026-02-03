@@ -34,20 +34,23 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-32 relative">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Left - Avatar & Info */}
           <div
             ref={leftRef}
-            className={`space-y-8 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
+            className={`flex flex-col opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
-            <div className="relative inline-block">
-              <Avatar className="w-48 h-48 border-4 border-primary/30 relative rounded-3xl">
-                <AvatarImage src={withBaseUrl('/avatar.png')} alt="Avatar" className="scale-115 object-cover" />
-                <AvatarFallback className="text-4xl bg-card text-primary">MK</AvatarFallback>
-              </Avatar>
+            <div className="relative flex-1">
+              <div className="w-full h-full min-h-[320px] rounded-3xl overflow-hidden bg-muted/30">
+                <img 
+                  src={withBaseUrl('/avatar.png')} 
+                  alt="Avatar" 
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 mt-8">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
                 <span>{t.about.location}</span>
