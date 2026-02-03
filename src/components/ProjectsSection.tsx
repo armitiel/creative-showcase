@@ -29,14 +29,14 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-32">
-      {/* SVG Filters for glitch effect - grayscale */}
+      {/* SVG Filters for glitch effect - subtle with blue tint */}
       <svg className="absolute w-0 h-0">
         <defs>
           <filter id="glitchLight">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0.1  0.33 0.33 0.33 0 0.1  0.33 0.33 0.33 0 0.1  0 0 0 1 0" />
+            <feColorMatrix type="matrix" values="0.28 0.28 0.28 0 0.02  0.30 0.30 0.30 0 0.04  0.35 0.35 0.35 0 0.08  0 0 0 1 0" />
           </filter>
           <filter id="glitchDark">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 -0.1  0.33 0.33 0.33 0 -0.1  0.33 0.33 0.33 0 -0.1  0 0 0 1 0" />
+            <feColorMatrix type="matrix" values="0.28 0.28 0.28 0 -0.02  0.30 0.30 0.30 0 -0.02  0.35 0.35 0.35 0 0.02  0 0 0 1 0" />
           </filter>
         </defs>
       </svg>
