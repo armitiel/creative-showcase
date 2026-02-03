@@ -87,13 +87,13 @@ export const ProjectsSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <Badge variant="outline" className="mb-2 text-xs">
+                <Badge variant="outline" className="mb-2 text-xs border-card-foreground/30 text-card-foreground/70">
                   {project.category}
                 </Badge>
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-lg text-card-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                <p className="text-sm text-card-foreground/60 mt-1 line-clamp-2">
                   {project.description}
                 </p>
               </div>
