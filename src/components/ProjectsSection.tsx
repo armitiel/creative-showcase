@@ -83,6 +83,9 @@ export const ProjectsSection = () => {
                 {(project.slug === 'portal-smart-checkout' || project.slug === 'nfc-card') && (
                   <div className="absolute inset-0 bg-white/25 pointer-events-none" />
                 )}
+                {(project.slug === 'selva-rape' || project.slug === 'nft-system' || project.slug === 'aloha-centrum') && (
+                  <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+                )}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="px-4 py-2 bg-background/90 rounded-full text-sm font-medium">
