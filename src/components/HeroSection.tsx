@@ -58,7 +58,7 @@ export const HeroSection = () => {
             >
               {/* Main Title with particle field behind */}
               <div className="relative">
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-white relative z-10">
+                <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal font-['Righteous'] tracking-tight text-white relative z-10 text-center">
                   {t.hero.title}
                 </h1>
               </div>
