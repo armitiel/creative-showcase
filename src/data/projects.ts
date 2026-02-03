@@ -147,14 +147,11 @@ export const projects: Project[] = [
       ],
     },
     colors: {
-      description: 'Paleta kolorów Selva czerpie inspirację z amazońskiej dżungli - soczyste zielenie, ciepłe pomarańcze i głębokie fiolety reprezentują różnorodność produktów.',
+      description: 'Paleta kolorów Selva opiera się na naturalnych tonach - głęboka zieleń dżungli, ciepły beż i czysta biel tworzą organiczny, autentyczny wygląd marki.',
       palette: [
         { name: 'Selva Green', hex: '#2D8C3C', rgb: '45 140 60', cmyk: '68 0 57 45' },
-        { name: 'Yawanawa Green', hex: '#4A9F4A', rgb: '74 159 74', cmyk: '53 0 53 38' },
-        { name: 'Mulatero Orange', hex: '#E85C2C', rgb: '232 92 44', cmyk: '0 60 81 9' },
-        { name: 'Bobinsana Pink', hex: '#9B4B7A', rgb: '155 75 122', cmyk: '0 52 21 39' },
-        { name: 'Cumaru Gold', hex: '#E6A61A', rgb: '230 166 26', cmyk: '0 28 89 10' },
-        { name: 'Parika Blue', hex: '#3B7BA8', rgb: '59 123 168', cmyk: '65 27 0 34' },
+        { name: 'Sand Beige', hex: '#D4C5A9', rgb: '212 197 169', cmyk: '0 7 20 17' },
+        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
   },
