@@ -38,6 +38,7 @@ interface TranslationsType {
     titleHighlight: string;
     subtitle: string;
     items: ServiceItem[];
+    footer: string;
   };
   about: {
     title: string;
@@ -142,6 +143,7 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Tworzenie rozwiązań z wykorzystaniem narzędzi AI w sprawdzonym workflow – automatyzacja, prototypowanie i integracje.',
         },
       ],
+      footer: 'Powyższa lista jest jedynie orientacyjna. Z doświadczenia wiem, że szybko przyswajam nowe narzędzia i technologie – liczy się rezultat, nie ograniczenia.',
     },
     about: {
       title: 'O',
@@ -152,7 +154,7 @@ export const translations: Record<Language, TranslationsType> = {
       education: 'Southampton Solent University, Middlesex London University',
       skillsTitle: 'Umiejętności',
       toolsTitle: 'Narzędzia',
-      skills: ['Branding', 'Grafika 3D', 'Programowanie', 'Ilustracje', 'UI/UX Design', 'Storytelling', 'AI & Automatyzacja', 'Kreatywna strategia'],
+      skills: ['Branding', 'Grafika 3D', 'Programowanie', 'Ilustracje', 'UI/UX Design', 'Storytelling', 'AI & Automatyzacja', 'Szybkie uczenie się'],
     },
     contact: {
       title: 'Kontakt',
@@ -244,6 +246,7 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Building solutions using AI tools in proven workflows – automation, prototyping and integrations.',
         },
       ],
+      footer: 'This list is only indicative. From experience, I quickly pick up new tools and technologies – what matters is the result, not the limitations.',
     },
     about: {
       title: 'About',
@@ -254,7 +257,7 @@ export const translations: Record<Language, TranslationsType> = {
       education: 'Southampton Solent University, Middlesex London University',
       skillsTitle: 'Skills',
       toolsTitle: 'Tools',
-      skills: ['Branding', '3D Graphics', 'Programming', 'Illustrations', 'UI/UX Design', 'Storytelling', 'AI & Automation', 'Creative Strategy'],
+      skills: ['Branding', '3D Graphics', 'Programming', 'Illustrations', 'UI/UX Design', 'Storytelling', 'AI & Automation', 'Fast Learning'],
     },
     contact: {
       title: 'Contact',
