@@ -68,7 +68,7 @@ export const ProjectsSection = () => {
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
-              className={`group block bg-card rounded-3xl overflow-hidden border border-transparent hover:border-primary/30 transition-all duration-300 opacity-0 shadow-xl ${
+              className={`group block bg-muted/50 rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 opacity-0 shadow-sm hover:shadow-md ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
@@ -87,13 +87,13 @@ export const ProjectsSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <Badge variant="outline" className="mb-2 text-xs border-card-foreground/30 text-card-foreground/70">
+                <Badge variant="outline" className="mb-2 text-xs border-border text-muted-foreground">
                   {project.category}
                 </Badge>
-                <h3 className="font-semibold text-lg text-card-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-card-foreground/60 mt-1 line-clamp-2">
+                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                   {project.description}
                 </p>
               </div>
