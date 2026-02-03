@@ -59,9 +59,13 @@ export const AboutSection = () => {
                 <Briefcase className="w-5 h-5 text-primary" />
                 <span>{t.about.experience}</span>
               </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <GraduationCap className="w-5 h-5 text-primary" />
-                <span>{t.about.education}</span>
+              <div className="flex items-start gap-3 text-muted-foreground">
+                <GraduationCap className="w-5 h-5 text-primary mt-0.5" />
+                <div className="flex flex-col">
+                  {t.about.education.split(', ').map((school, index) => (
+                    <span key={index}>{school}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
