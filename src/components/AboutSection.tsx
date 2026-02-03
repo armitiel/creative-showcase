@@ -100,7 +100,7 @@ export const AboutSection = () => {
                 {tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="w-14 h-14 bg-card rounded-2xl flex items-center justify-center text-sm font-bold text-card-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default shadow-md"
+                    className="w-14 h-14 bg-muted/60 rounded-2xl flex items-center justify-center text-sm font-bold text-foreground/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default border border-border/50"
                     title={tool.name}
                   >
                     {tool.icon}

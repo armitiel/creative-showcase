@@ -50,8 +50,8 @@ export const ContactSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
-                  <Mail className="w-5 h-5 text-card-foreground" />
+                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
+                  <Mail className="w-5 h-5 text-foreground/70" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
@@ -60,8 +60,8 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
-                  <Phone className="w-5 h-5 text-card-foreground" />
+                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
+                  <Phone className="w-5 h-5 text-foreground/70" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.phoneLabel}</p>
@@ -70,8 +70,8 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-card rounded-2xl flex items-center justify-center shadow-md">
-                  <MapPin className="w-5 h-5 text-card-foreground" />
+                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
+                  <MapPin className="w-5 h-5 text-foreground/70" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t.contact.locationLabel}</p>
