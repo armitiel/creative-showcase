@@ -1,16 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Wrench } from 'lucide-react';
-import { getProjectBySlug } from '@/data/projects';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { useTranslatedProject } from '@/hooks/useTranslatedProject';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const project = slug ? getProjectBySlug(slug) : undefined;
+  const project = useTranslatedProject(slug);
   const { t } = useLanguage();
   
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
