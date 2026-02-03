@@ -36,9 +36,9 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-background'}`}>
+    <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#f0f0f0]'}`}>
       {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#0a0a0a]/80 border-white/10' : 'bg-background/80 border-border'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#0a0a0a]/80 border-white/10' : 'bg-[#f0f0f0]/80 border-border'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className={`flex items-center gap-2 transition-colors ${isDark ? 'text-white/60 hover:text-primary' : 'text-muted-foreground hover:text-primary'}`}>
@@ -168,38 +168,38 @@ const ProjectDetail = () => {
       {/* Project Info */}
       <section 
         ref={infoRef}
-        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1a1a1a]' : 'bg-image-card'}`}
+        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e0e0e0]'}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="flex items-start gap-3">
-                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
-                  <User className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
+                  <User className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-foreground'}`} />
                 </div>
                 <div>
-                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.client}</p>
-                  <p className="font-medium text-white">{project.client || t.projectDetail.personalProject}</p>
+                  <p className={`text-sm mb-1 ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>{t.projectDetail.client}</p>
+                  <p className={`font-medium ${isDark ? 'text-white' : 'text-foreground'}`}>{project.client || t.projectDetail.personalProject}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
-                  <Calendar className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
+                  <Calendar className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-foreground'}`} />
                 </div>
                 <div>
-                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.year}</p>
-                  <p className="font-medium text-white">{project.year}</p>
+                  <p className={`text-sm mb-1 ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>{t.projectDetail.year}</p>
+                  <p className={`font-medium ${isDark ? 'text-white' : 'text-foreground'}`}>{project.year}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-white/20'}`}>
-                  <Wrench className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-white'}`} />
+                <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
+                  <Wrench className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-foreground'}`} />
                 </div>
                 <div>
-                  <p className="text-sm text-white/70 mb-1">{t.projectDetail.tools}</p>
+                  <p className={`text-sm mb-1 ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>{t.projectDetail.tools}</p>
                   <div className="flex flex-wrap gap-1">
                     {project.tools.map((tool) => (
-                      <Badge key={tool} variant="outline" className="text-xs text-white border-white/50">
+                      <Badge key={tool} variant="outline" className={`text-xs ${isDark ? 'text-white border-white/50' : 'text-foreground border-foreground/50'}`}>
                         {tool}
                       </Badge>
                     ))}
@@ -240,7 +240,7 @@ const ProjectDetail = () => {
 
       {/* Typography Section */}
       {project.typography && (
-        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.typography}</h2>
@@ -262,7 +262,7 @@ const ProjectDetail = () => {
                       {font.weights.map((weight, weightIndex) => (
                         <div 
                           key={weightIndex}
-                          className={`flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-muted/50 border-border/50'}`}
+                          className={`flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f5f5f5] border-border/50'}`}
                         >
                           <div className="md:w-32 flex-shrink-0">
                             <span className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>{weight.name}</span>
@@ -304,7 +304,7 @@ const ProjectDetail = () => {
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
-                    className={`group rounded-xl overflow-hidden border hover:border-primary/50 transition-all duration-300 ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border bg-white'}`}
+                    className={`group rounded-xl overflow-hidden border hover:border-primary/50 transition-all duration-300 ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border bg-[#f5f5f5]'}`}
                   >
                     <div 
                       className="aspect-square w-full"
@@ -328,7 +328,7 @@ const ProjectDetail = () => {
 
       {/* Mobile Screens Section - Phone Mockups */}
       {project.mobileScreens && (
-        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]' : 'bg-gradient-to-b from-background to-card/30'}`}>
+        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {project.mobileScreens.title && (
@@ -411,7 +411,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Project Gallery */}
-      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {project.images.map((image, index) => {
@@ -458,7 +458,7 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-muted/30'}`}>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#d5d5d5]'}`}>
                         <p className={`text-sm ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{image.caption}</p>
                       </div>
                     )}
@@ -486,7 +486,7 @@ const ProjectDetail = () => {
 
       {/* Real Photos 2x2 Grid - at bottom */}
       {project.realPhotos && (
-        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-card/30'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.realPhotos.title && (
@@ -514,7 +514,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Back to Portfolio */}
-      <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-card/50'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e0e0e0]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
