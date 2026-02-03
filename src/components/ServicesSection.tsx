@@ -1,9 +1,9 @@
-import { Palette, Layers, Box, Share2, Building2, Monitor } from 'lucide-react';
+import { Palette, Layers, Box, Share2, Monitor, Lightbulb } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const serviceIcons = [Palette, Layers, Box, Monitor, Share2, Building2];
+const serviceIcons = [Palette, Layers, Box, Monitor, Share2, Lightbulb];
 
 export const ServicesSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -53,11 +53,6 @@ export const ServicesSection = () => {
             );
           })}
         </div>
-
-        <p className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto text-sm italic">
-          <span className="block md:hidden mt-4">{t.services.footer}</span>
-          <span className="hidden md:inline">{t.services.footer}</span>
-        </p>
       </div>
     </section>
   );
