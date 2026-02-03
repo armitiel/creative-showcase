@@ -35,6 +35,14 @@ export const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://www.amitiel.cv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
+            >
+              CV
+            </a>
             <LanguageSwitcher />
           </div>
 
@@ -64,6 +72,15 @@ export const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://www.amitiel.cv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              CV
+            </a>
           </div>
         )}
       </div>
