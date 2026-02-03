@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { href: '#hero', label: 'Home' },
-  { href: '#about', label: 'O mnie' },
-  { href: '#projects', label: 'Projekty' },
-  { href: '#services', label: 'Usługi' },
-  { href: '#contact', label: 'Kontakt' },
-];
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { href: '#hero', label: t.nav.home },
+    { href: '#about', label: t.nav.about },
+    { href: '#projects', label: t.nav.projects },
+    { href: '#services', label: t.nav.services },
+    { href: '#contact', label: t.nav.contact },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-border/30">
@@ -32,17 +35,20 @@ export const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageSwitcher />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
