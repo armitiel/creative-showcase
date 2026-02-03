@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { projects } from '@/data/projects';
 import { useState } from 'react';
 import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useTranslatedProjects } from '@/hooks/useTranslatedProject';
 
 export const ProjectsSection = () => {
   const { t } = useLanguage();
+  const projects = useTranslatedProjects();
   // Use 'all' as internal state to avoid language-dependent state issues
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
