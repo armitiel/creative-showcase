@@ -257,7 +257,7 @@ export const projects: Project[] = [
     slug: 'portal-smart-checkout',
     title: 'Portal - Inteligentna Kasa',
     category: 'Branding',
-    thumbnail: '/projects/portal/device-mockup.png',
+    thumbnail: '/projects/portal/opener.png',
     description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
     fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
     client: 'Portal',
@@ -274,7 +274,7 @@ export const projects: Project[] = [
     ],
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
-      { src: '/projects/portal/device-mockup.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
+      { src: '/projects/portal/device-face-scan.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
     ],
     mobileScreens: {
       title: 'Aplikacja mobilna',
@@ -289,7 +289,7 @@ export const projects: Project[] = [
     deviceMockup: {
       title: 'Urządzenie weryfikacyjne',
       description: 'Portal Smart Checkout to dedykowane urządzenie POS z wbudowaną kamerą do skanowania twarzy, umożliwiające natychmiastową weryfikację wieku klienta.',
-      image: '/projects/portal/device-mockup.png',
+      image: '/projects/portal/device-face-scan.png',
       alt: 'Portal Smart Checkout Device',
     },
     typography: {
