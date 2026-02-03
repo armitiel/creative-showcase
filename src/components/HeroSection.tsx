@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroTexture from '@/assets/hero-texture.png';
 import { ParticleField } from './ParticleField';
 import { useParallax } from '@/hooks/useParallax';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -11,17 +11,32 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-card"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-[#0a0a0a]"
     >
-      {/* Background image with parallax */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform opacity-60"
-        style={{ 
-          backgroundImage: `url(${heroBg})`,
-          transform: `translateY(${parallaxOffset}px) scale(1.1)`,
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/80 to-card/50" />
+      {/* Animated textured background layers */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Base texture layer */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform animate-[drift_30s_ease-in-out_infinite]"
+          style={{ 
+            backgroundImage: `url(${heroTexture})`,
+            transform: `translateY(${parallaxOffset}px) scale(1.2)`,
+          }}
+        />
+        {/* Second layer - offset and inverted for depth */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform opacity-40 mix-blend-overlay animate-[drift-reverse_25s_ease-in-out_infinite]"
+          style={{ 
+            backgroundImage: `url(${heroTexture})`,
+            transform: `translateY(${parallaxOffset * 0.5}px) scale(1.3) rotate(180deg)`,
+          }}
+        />
+        {/* Painting reveal effect overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent animate-[shimmer_8s_ease-in-out_infinite]" />
+      </div>
+      
+      {/* Bottom gradient fade */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50" />
 
       {/* Particle effect around title */}
       <Suspense fallback={null}>
