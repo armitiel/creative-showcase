@@ -28,9 +28,9 @@ interface TranslationsType {
     categories: {
       all: string;
       branding: string;
-      web: string;
+      uiux: string;
       threeD: string;
-      spatial: string;
+      art: string;
     };
   };
   services: {
@@ -111,9 +111,9 @@ export const translations: Record<Language, TranslationsType> = {
       categories: {
         all: 'Wszystkie',
         branding: 'Branding',
-        web: 'Web & App',
+        uiux: 'UI/UX',
         threeD: '3D',
-        spatial: 'Przestrzenne',
+        art: 'Art',
       },
     },
     services: {
@@ -217,9 +217,9 @@ export const translations: Record<Language, TranslationsType> = {
       categories: {
         all: 'All',
         branding: 'Branding',
-        web: 'Web & App',
+        uiux: 'UI/UX',
         threeD: '3D',
-        spatial: 'Spatial',
+        art: 'Art',
       },
     },
     services: {
