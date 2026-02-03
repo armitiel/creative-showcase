@@ -114,6 +114,12 @@ export default {
           "0%, 100%": { opacity: "0", transform: "translateX(-100%) rotate(-15deg)" },
           "50%": { opacity: "0.1", transform: "translateX(100%) rotate(-15deg)" },
         },
+        "fall-in": {
+          "0%": { opacity: "0", transform: "translateY(-60px)" },
+          "60%": { opacity: "1", transform: "translateY(8px)" },
+          "80%": { transform: "translateY(-4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
