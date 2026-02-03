@@ -248,13 +248,13 @@ export const projects: Project[] = [
     solution: 'Stworzyłem minimalistyczną identyfikację opartą na geometrycznych, trójwymiarowych formach. Logo "V17" wykorzystuje ostre kąty symbolizujące precyzję, a hasło "Designing your space" podkreśla personalizowane podejście do każdego projektu. Biała paleta kolorów z subtelnymi akcentami tworzy wrażenie czystości i nowoczesności.',
     results: 'Branding skutecznie pozycjonuje V17 Vision jako lidera w segmencie premium futurystycznego designu wnętrz. Marka zyskała rozpoznawalność w branży architektonicznej i przyciąga klientów poszukujących innowacyjnych rozwiązań.',
     images: [
-      { src: '/projects/v17-vision/designing-your-space.jpg', alt: 'V17 Vision Key Visual', caption: '"Designing your space" - główny motyw reklamowy z double exposure' },
+      { src: '/projects/v17-vision/designing-your-space.jpg', alt: 'V17 Vision Key Visual', caption: '"Designing your space" - główny motyw reklamowy z double exposure', noMagnifier: true },
       { src: '/projects/v17-vision/logo.png', alt: 'V17 Vision Logo', caption: 'Minimalistyczne logo tekstowe marki', displayMode: 'centered', backgroundColor: '#365065', imageScale: 0.6 },
       { src: '/projects/v17-vision/logo-sign.png', alt: 'V17 Vision Znak graficzny', caption: 'Geometryczny symbol marki', displayMode: 'centered', backgroundColor: '#365065', imageScale: 0.6 },
-      { src: '/projects/v17-vision/brand-presentation.jpg', alt: 'V17 Vision Prezentacja brandingu', caption: 'Prezentacja brandingu z ikonami usług' },
-      { src: '/projects/v17-vision/interior.png', alt: 'V17 Vision Futurystyczne wnętrze', caption: 'Wizualizacja salonu z organicznymi, płynnymi formami' },
-      { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem' },
-      { src: '/projects/v17-vision/texture.jpg', alt: 'V17 Vision Tekstura 3D', caption: 'Geometryczne tło wykorzystywane w materiałach' },
+      { src: '/projects/v17-vision/brand-presentation.jpg', alt: 'V17 Vision Prezentacja brandingu', caption: 'Prezentacja brandingu z ikonami usług', noMagnifier: true },
+      { src: '/projects/v17-vision/interior.png', alt: 'V17 Vision Futurystyczne wnętrze', caption: 'Wizualizacja salonu z organicznymi, płynnymi formami', noMagnifier: true },
+      { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem', noMagnifier: true },
+      { src: '/projects/v17-vision/texture.jpg', alt: 'V17 Vision Tekstura 3D', caption: 'Geometryczne tło wykorzystywane w materiałach', noMagnifier: true },
     ],
     typography: {
       description: 'Khand został wybrany dla nagłówków, dodając futurystyczny charakter i technologiczną precyzję. Font podkreśla nowoczesność marki i jej innowacyjne podejście do projektowania przestrzeni.',
