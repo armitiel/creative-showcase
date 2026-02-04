@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Jeśli plik lub katalog istnieje, podaj go normalnie
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA fallback: /portfolio/project/... -> /portfolio/index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
