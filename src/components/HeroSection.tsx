@@ -11,7 +11,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-24 md:pt-16 pb-8 px-4 md:px-8 bg-background"
+      className="min-h-screen flex items-center justify-center pt-16 pb-8 px-4 md:px-8 bg-background"
     >
       {/* Hero card with rounded corners */}
       <div className="relative w-full h-[calc(100vh-6rem)] rounded-3xl overflow-hidden bg-[#0a0a0a]">
