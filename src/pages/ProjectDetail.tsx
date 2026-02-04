@@ -122,7 +122,7 @@ const ProjectDetail = () => {
 
       {/* Thumbnail Grid - for NFT projects */}
       {project.thumbnailGrid && (
-        <section className="pb-12">
+        <section className="pb-6 md:pb-12">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.thumbnailGrid.title && (
@@ -131,15 +131,15 @@ const ProjectDetail = () => {
                 </h2>
               )}
               {project.thumbnailGrid.description && (
-                <p className={`mb-8 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
+                <p className={`mb-6 md:mb-8 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                   {project.thumbnailGrid.description}
                 </p>
               )}
-              <div className="grid grid-cols-5 gap-3 md:gap-4">
+              <div className="flex flex-wrap justify-center gap-2 md:grid md:grid-cols-5 md:gap-4">
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards]"
+                    className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards]"
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <img
