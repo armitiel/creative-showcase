@@ -8,7 +8,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslatedProject } from '@/hooks/useTranslatedProject';
 import { ImageMagnifier } from '@/components/ImageMagnifier';
-
+import { ImageLightbox, useLightbox } from '@/components/ImageLightbox';
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = useTranslatedProject(slug);
@@ -17,6 +17,7 @@ const ProjectDetail = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+  const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
 
   const isDark = project?.theme === 'dark';
 
@@ -510,7 +511,10 @@ const ProjectDetail = () => {
                       }}
                     >
                       {image.displayMode === 'centered' ? (
-                        <div className="flex items-center justify-center w-full h-full">
+                        <div 
+                          className="flex items-center justify-center w-full h-full cursor-zoom-in"
+                          onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                        >
                           <img
                             src={withBaseUrl(image.src)}
                             alt={image.alt}
@@ -525,17 +529,23 @@ const ProjectDetail = () => {
                         <img
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover cursor-zoom-in"
+                          onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
                         />
                       ) : (
-                        <ImageMagnifier
-                          src={withBaseUrl(image.src)}
-                          alt={image.alt}
-                          className="w-full h-full"
-                          imageClassName="w-full h-full object-cover"
-                          magnifierSize={220}
-                          zoomLevel={4}
-                        />
+                        <div 
+                          className="w-full h-full cursor-zoom-in"
+                          onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                        >
+                          <ImageMagnifier
+                            src={withBaseUrl(image.src)}
+                            alt={image.alt}
+                            className="w-full h-full"
+                            imageClassName="w-full h-full object-cover"
+                            magnifierSize={220}
+                            zoomLevel={4}
+                          />
+                        </div>
                       )}
                     </div>
                     {image.caption && (
@@ -579,7 +589,8 @@ const ProjectDetail = () => {
                 {project.realPhotos.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="aspect-[4/3] overflow-hidden rounded-2xl"
+                    className="aspect-[4/3] overflow-hidden rounded-2xl cursor-zoom-in"
+                    onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -623,6 +634,14 @@ const ProjectDetail = () => {
           </p>
         </div>
       </footer>
+
+      {/* Lightbox */}
+      <ImageLightbox
+        src={lightboxImage?.src || ''}
+        alt={lightboxImage?.alt || ''}
+        isOpen={!!lightboxImage}
+        onClose={closeLightbox}
+      />
     </div>
   );
 };
