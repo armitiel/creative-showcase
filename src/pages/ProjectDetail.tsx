@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                     <img
                       src={withBaseUrl(project.parallaxImage.src)}
                       alt={project.parallaxImage.alt}
-                      className="w-full h-auto object-contain drop-shadow-2xl"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 </div>
