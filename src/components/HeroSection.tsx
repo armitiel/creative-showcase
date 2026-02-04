@@ -53,7 +53,7 @@ export const HeroSection = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4 relative z-10">
             <div 
-              className="text-center space-y-8 animate-fade-in will-change-transform"
+              className="text-center space-y-8 animate-fade-in will-change-transform mt-16 md:mt-0"
               style={{ transform: `translateY(${parallaxOffset * 0.6}px)` }}
             >
               {/* Main Title with particle field behind */}
