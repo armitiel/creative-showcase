@@ -390,7 +390,7 @@ export const projects: Project[] = [
   {
     id: 11,
     slug: 'nfc-card',
-    title: 'NFC Card - Wizytówki NFC',
+    title: 'Digital Card - Wizytówki NFC',
     category: 'Branding',
     thumbnail: '/projects/nfc-card/logo-animation-1.gif',
     description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
