@@ -101,7 +101,7 @@ export const translations: Record<Language, TranslationsType> = {
       name: 'Amitiel Angelisme',
       role: 'Creative Designer',
       scroll: 'Scroll',
-      specializations: ['Logo', 'Branding', 'Modelowanie 3D', 'Web & App', 'Ilustracje'],
+      specializations: ['Motion Design', 'Branding', 'Modelowanie 3D', 'Web & App', 'Ilustracje'],
     },
     projects: {
       title: 'Moje',
@@ -207,7 +207,7 @@ export const translations: Record<Language, TranslationsType> = {
       name: 'Amitiel Angelisme',
       role: 'Creative Designer',
       scroll: 'Scroll',
-      specializations: ['Logo', 'Branding', '3D Modeling', 'Web & App', 'Illustrations'],
+      specializations: ['Motion Design', 'Branding', '3D Modeling', 'Web & App', 'Illustrations'],
     },
     projects: {
       title: 'My',
