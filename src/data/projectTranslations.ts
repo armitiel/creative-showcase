@@ -29,7 +29,7 @@ type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
 export const projectTranslations: ProjectTranslations = {
   'nfc-card': {
     pl: {
-      title: 'NFC Card - Wizytówki NFC',
+      title: 'Digital Card - Wizytówki NFC',
       description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
       fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
       challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
@@ -42,7 +42,7 @@ export const projectTranslations: ProjectTranslations = {
       },
     },
     en: {
-      title: 'NFC Card - NFC Business Cards',
+      title: 'Digital Card - NFC Business Cards',
       description: 'Logo design and animations for innovative NFC business cards',
       fullDescription: 'NFC business card project combining traditional design with modern technology. The cards allow instant sharing of contact information by tapping a phone. I was responsible for designing the logo, animations, and the entire product branding.',
       challenge: 'Creating branding for an innovative tech product that communicates modernity and ease of use of NFC business cards.',
