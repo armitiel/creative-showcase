@@ -251,11 +251,11 @@ const ProjectDetail = () => {
                   <p className={`font-medium ${isDark ? 'text-white' : 'text-foreground'}`}>{project.year}</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 col-span-2 md:col-span-1">
                 <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
                   <Wrench className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-foreground'}`} />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className={`text-sm mb-1 ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>{t.projectDetail.tools}</p>
                   <div className="flex flex-wrap gap-1">
                     {project.tools.map((tool) => (
