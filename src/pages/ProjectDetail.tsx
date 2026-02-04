@@ -40,7 +40,7 @@ const ProjectDetail = () => {
   return (
     <div className={`min-h-screen ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
       {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${isDark ? 'bg-[#141414]/80 border-white/10' : 'bg-[#f0f0f0]/80 border-border'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b shadow-md ${isDark ? 'bg-[#141414]/80 border-white/10 shadow-black/20' : 'bg-[#f0f0f0]/80 border-border shadow-black/5'}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link 
