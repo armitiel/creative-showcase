@@ -231,7 +231,7 @@ const ProjectDetail = () => {
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
               <div className="flex items-start gap-3">
                 <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
                   <User className={`h-5 w-5 ${isDark ? 'text-primary' : 'text-foreground'}`} />
