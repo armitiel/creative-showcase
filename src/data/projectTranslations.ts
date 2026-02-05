@@ -27,6 +27,34 @@ interface ProjectTranslation {
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
 
 export const projectTranslations: ProjectTranslations = {
+  'nfc-card': {
+    pl: {
+      title: 'Digital Card - Wizytówki NFC',
+      description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
+      fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
+      challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
+      solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
+      results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
+      colorsDescription: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
+      gifPairCaptions: {
+        0: 'Animacja logo z efektem transferu danych',
+        1: 'Animacja wizualizująca działanie technologii NFC',
+      },
+    },
+    en: {
+      title: 'Digital Card - NFC Business Cards',
+      description: 'Logo design and animations for innovative NFC business cards',
+      fullDescription: 'NFC business card project combining traditional design with modern technology. The cards allow instant sharing of contact information by tapping a phone. I was responsible for designing the logo, animations, and the entire product branding.',
+      challenge: 'Creating branding for an innovative tech product that communicates modernity and ease of use of NFC business cards.',
+      solution: 'I designed a minimalist logo with animations emphasizing the technological character of the product. The animations visualize NFC technology - data transfer when devices are brought together.',
+      results: 'The branding effectively positions the product as a modern solution for professionals who value innovation in networking.',
+      colorsDescription: 'A modern color palette based on contrasts - deep black with accents emphasizing the technological character of the product.',
+      gifPairCaptions: {
+        0: 'Logo animation with data transfer effect',
+        1: 'Animation visualizing NFC technology in action',
+      },
+    },
+  },
   'selva-rape': {
     pl: {
       title: 'Selva Rapé - Sklep z Rapé',
