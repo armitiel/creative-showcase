@@ -31,6 +31,7 @@ interface TranslationsType {
       uiux: string;
       threeD: string;
       art: string;
+      motion: string;
     };
   };
   services: {
@@ -114,6 +115,7 @@ export const translations: Record<Language, TranslationsType> = {
         uiux: 'UI/UX',
         threeD: '3D',
         art: 'Art',
+        motion: 'Motion',
       },
     },
     services: {
@@ -220,6 +222,7 @@ export const translations: Record<Language, TranslationsType> = {
         uiux: 'UI/UX',
         threeD: '3D',
         art: 'Art',
+        motion: 'Motion',
       },
     },
     services: {
