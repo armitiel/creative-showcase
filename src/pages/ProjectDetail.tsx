@@ -503,11 +503,12 @@ const ProjectDetail = () => {
                 <ImageWrapper key={index}>
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
-                      className="aspect-video flex items-center justify-center"
+                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : 'aspect-video'}`}
                       style={{ 
                         backgroundColor: isDark 
                           ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : undefined)
-                          : lightImageBg
+                          : lightImageBg,
+                        background: image.backgroundGradient || undefined
                       }}
                     >
                       {image.displayMode === 'centered' ? (
@@ -518,8 +519,8 @@ const ProjectDetail = () => {
                           <img
                             src={withBaseUrl(image.src)}
                             alt={image.alt}
-                            className="object-contain"
-                            style={{ 
+                            className={image.backgroundGradient ? "w-full h-auto" : "object-contain"}
+                            style={image.backgroundGradient ? undefined : { 
                               maxWidth: `${(image.imageScale || 1) * 100}%`,
                               maxHeight: `${(image.imageScale || 1) * 100}%`
                             }}
