@@ -475,6 +475,7 @@ export const projects: Project[] = [
       alt: 'TSQ Portal Desktop View',
     },
     images: [
+      { src: '/projects/tsq-portal/mobile-mockup.jpg', alt: 'TSQ Mobile App Mockup', caption: 'Prezentacja ekranów aplikacji mobilnej - tutorial i kalkulator', noMagnifier: true },
       { src: '/projects/tsq-portal/insta-stories.png', alt: 'TSQ Stories Module', caption: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku', noMagnifier: true },
       { src: '/projects/tsq-portal/ai-chat.png', alt: 'TSQ AI Assistant', caption: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji', displayMode: 'centered', backgroundColor: '#1a1625', imageScale: 0.9 },
     ],
