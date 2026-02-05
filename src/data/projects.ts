@@ -390,37 +390,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 11,
-    slug: 'nfc-card',
-    title: 'Digital Card - Wizytówki NFC',
-    category: 'Motion',
-    thumbnail: '/projects/nfc-card/logo-animation-1.gif',
-    description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
-    fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
-    client: 'Digital Card',
-    year: '2024',
-    tools: ['Illustrator', 'After Effects', 'Photoshop'],
-    theme: 'dark',
-    challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
-    solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
-    results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
-    gifPair: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo Animation', caption: 'Animacja logo z efektem transferu danych', noMagnifier: true },
-      { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC', noMagnifier: true },
-    ],
-    images: [
-      { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki', noMagnifier: true },
-    ],
-    colors: {
-      description: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
-      palette: [
-        { name: 'Deep Black', hex: '#0a0a0a', rgb: '10 10 10', cmyk: '0 0 0 96' },
-        { name: 'Tech Blue', hex: '#00A3FF', rgb: '0 163 255', cmyk: '100 36 0 0' },
-        { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
-      ],
-    },
-  },
-  {
     id: 8,
     slug: 'nft-generative-system',
     title: 'System Generatywny NFT',
