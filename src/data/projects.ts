@@ -458,7 +458,7 @@ export const projects: Project[] = [
     slug: 'tsq-portal',
     title: 'TSQ Portal – Kalkulator inwestycji',
     category: 'UI/UX',
-    thumbnail: '/projects/tsq-portal/screen-desktop.png',
+    thumbnail: '/projects/tsq-portal/thumbnail.png',
     description: 'Landing page i aplikacja webowa dla TSQ Investment Group: kalkulator inwestycji, symulacje zysków i zarządzanie zespołem',
     fullDescription: 'Projekt łączy stronę promocyjną z panelem użytkownika – od ekranów intro i tutoriali po dashboard z wykresami, chatbotem AI i materiałami szkoleniowymi. Po stronie wizualnej: spójny layout, responsywność, wykresy (Recharts), animacje (Rive) i dopracowany UX (Tailwind CSS). Chatbot AI połączony jest z bazą wiedzy tworzoną na bieżąco ze szkoleń o projekcie.',
     client: 'TSQ Investment Group',
