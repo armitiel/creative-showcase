@@ -292,8 +292,9 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensTitle: 'Aplikacja mobilna',
       mobileScreensDescription: 'Responsywny design na urządzeniach mobilnych - od landing page, przez generator wizytówek, po kalkulator inwestycji.',
       imageCaptions: {
-        0: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku',
-        1: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji',
+        0: 'Prezentacja ekranów aplikacji mobilnej - tutorial i kalkulator',
+        1: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku',
+        2: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji',
       },
       mobileScreenCaptions: {
         0: 'Hero section - mobilna wersja landing page',
@@ -315,8 +316,9 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensTitle: 'Mobile Application',
       mobileScreensDescription: 'Responsive design on mobile devices - from landing page, through business card generator, to investment calculator.',
       imageCaptions: {
-        0: 'Instagram-inspired Stories module - guides users through the investment process step by step',
-        1: 'AI Assistant connected to knowledge base - answers questions about the project and investments',
+        0: 'Mobile app screens presentation - tutorial and calculator',
+        1: 'Instagram-inspired Stories module - guides users through the investment process step by step',
+        2: 'AI Assistant connected to knowledge base - answers questions about the project and investments',
       },
       mobileScreenCaptions: {
         0: 'Hero section - mobile landing page version',
