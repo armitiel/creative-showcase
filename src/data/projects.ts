@@ -190,7 +190,7 @@ export const projects: Project[] = [
       { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
       { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
       { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
-      { src: '/projects/hubble/mobile-membership.gif', alt: 'HubbleRx Mobile Membership', caption: 'Interaktywny interfejs wyboru subskrypcji na urządzeniu mobilnym' },
+      { src: '/projects/hubble/mobile-membership.gif', alt: 'HubbleRx Mobile Membership', caption: 'Interaktywny interfejs wyboru subskrypcji na urządzeniu mobilnym', displayMode: 'centered', backgroundColor: '#c5f0ea', imageScale: 0.85 },
     ],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
