@@ -107,7 +107,7 @@ export interface Project {
   };
 }
 
-export const categories = ['Wszystkie', 'Branding', 'UI/UX', '3D', 'Art'];
+ export const categories = ['Wszystkie', 'Branding', 'UI/UX', '3D', 'Art', 'Motion'];
 
 export const projects: Project[] = [
   {
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     id: 11,
     slug: 'nfc-card',
     title: 'Digital Card - Wizytówki NFC',
-    category: 'Branding',
+    category: 'Motion',
     thumbnail: '/projects/nfc-card/logo-animation-1.gif',
     description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
     fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
