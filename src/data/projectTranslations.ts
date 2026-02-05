@@ -277,6 +277,54 @@ export const projectTranslations: ProjectTranslations = {
       },
     },
   },
+  'tsq-portal': {
+    pl: {
+      title: 'TSQ Portal – Kalkulator inwestycji',
+      description: 'Landing page i aplikacja webowa dla TSQ Investment Group: kalkulator inwestycji, symulacje zysków i zarządzanie zespołem',
+      fullDescription: 'Projekt łączy stronę promocyjną z panelem użytkownika – od ekranów intro i tutoriali po dashboard z wykresami, chatbotem AI i materiałami szkoleniowymi. Po stronie wizualnej: spójny layout, responsywność, wykresy (Recharts), animacje (Rive) i dopracowany UX (Tailwind CSS). Chatbot AI połączony jest z bazą wiedzy tworzoną na bieżąco ze szkoleń o projekcie.',
+      challenge: 'Stworzenie kompleksowej platformy inwestycyjnej z kalkulatorem zysków, systemem zarządzania zespołem, chatbotem AI i modułem szkoleniowym w stylu Instagram Stories.',
+      solution: 'Zaprojektowałem spójny interfejs łączący landing page z panelem użytkownika. Stworzyłem interaktywny kalkulator inwestycji z wizualizacjami wykresów. Chatbot AI odpowiada na pytania dzięki integracji z bazą wiedzy. Moduł Stories prowadzi użytkowników przez proces inwestycji.',
+      results: 'Platforma skutecznie prezentuje możliwości inwestycyjne i automatyzuje onboarding nowych użytkowników dzięki intuicyjnemu interfejsowi.',
+      typographyDescription: 'Nowoczesny system typograficzny z czytelnym fontem bezszeryfowym, zapewniający doskonałą czytelność na wszystkich urządzeniach.',
+      colorsDescription: 'Energetyczna paleta kolorów z dominującym niebieskim, budząca zaufanie i komunikująca profesjonalizm w branży finansowej.',
+      deviceMockupTitle: 'Landing page',
+      deviceMockupDescription: 'Główny ekran strony promocyjnej TSQ Investment Group z dynamicznym hero section i wezwaniem do działania.',
+      mobileScreensTitle: 'Aplikacja mobilna',
+      mobileScreensDescription: 'Responsywny design na urządzeniach mobilnych - od landing page, przez generator wizytówek, po kalkulator inwestycji.',
+      imageCaptions: {
+        0: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku',
+        1: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji',
+      },
+      mobileScreenCaptions: {
+        0: 'Hero section - mobilna wersja landing page',
+        1: 'Generator wizytówek dla agentów',
+        2: 'Kalkulator sygnałów i symulacja zysków',
+      },
+    },
+    en: {
+      title: 'TSQ Portal – Investment Calculator',
+      description: 'Landing page and web application for TSQ Investment Group: investment calculator, profit simulations, and team management',
+      fullDescription: 'The project combines a promotional landing page with a user panel – from intro screens and tutorials to a dashboard with charts, AI chatbot, and training materials. On the visual side: consistent layout, responsiveness, charts (Recharts), animations (Rive), and refined UX (Tailwind CSS). The AI chatbot is connected to a knowledge base created on-the-fly from project training materials.',
+      challenge: 'Creating a comprehensive investment platform with a profit calculator, team management system, AI chatbot, and Instagram Stories-style training module.',
+      solution: 'I designed a cohesive interface combining the landing page with the user panel. I created an interactive investment calculator with chart visualizations. The AI chatbot answers questions through knowledge base integration. The Stories module guides users through the investment process.',
+      results: 'The platform effectively presents investment opportunities and automates onboarding of new users thanks to its intuitive interface.',
+      typographyDescription: 'A modern typographic system with a readable sans-serif font, ensuring excellent readability on all devices.',
+      colorsDescription: 'An energetic color palette with dominant blue, building trust and communicating professionalism in the financial industry.',
+      deviceMockupTitle: 'Landing page',
+      deviceMockupDescription: 'Main screen of TSQ Investment Group promotional page with dynamic hero section and call to action.',
+      mobileScreensTitle: 'Mobile Application',
+      mobileScreensDescription: 'Responsive design on mobile devices - from landing page, through business card generator, to investment calculator.',
+      imageCaptions: {
+        0: 'Instagram-inspired Stories module - guides users through the investment process step by step',
+        1: 'AI Assistant connected to knowledge base - answers questions about the project and investments',
+      },
+      mobileScreenCaptions: {
+        0: 'Hero section - mobile landing page version',
+        1: 'Business card generator for agents',
+        2: 'Signal calculator and profit simulation',
+      },
+    },
+  },
 };
 
 export const getProjectTranslation = (slug: string, language: Language): ProjectTranslation | undefined => {

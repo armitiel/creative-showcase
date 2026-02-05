@@ -453,6 +453,64 @@ export const projects: Project[] = [
     },
     images: [],
   },
+  {
+    id: 11,
+    slug: 'tsq-portal',
+    title: 'TSQ Portal – Kalkulator inwestycji',
+    category: 'UI/UX',
+    thumbnail: '/projects/tsq-portal/screen-desktop.png',
+    description: 'Landing page i aplikacja webowa dla TSQ Investment Group: kalkulator inwestycji, symulacje zysków i zarządzanie zespołem',
+    fullDescription: 'Projekt łączy stronę promocyjną z panelem użytkownika – od ekranów intro i tutoriali po dashboard z wykresami, chatbotem AI i materiałami szkoleniowymi. Po stronie wizualnej: spójny layout, responsywność, wykresy (Recharts), animacje (Rive) i dopracowany UX (Tailwind CSS). Chatbot AI połączony jest z bazą wiedzy tworzoną na bieżąco ze szkoleń o projekcie.',
+    client: 'TSQ Investment Group',
+    year: '2024',
+    tools: ['React', 'Node.js', 'Express', 'Prisma', 'Supabase', 'JWT', 'Recharts', 'Tailwind CSS', 'Rive'],
+    theme: 'light',
+    challenge: 'Stworzenie kompleksowej platformy inwestycyjnej z kalkulatorem zysków, systemem zarządzania zespołem, chatbotem AI i modułem szkoleniowym w stylu Instagram Stories.',
+    solution: 'Zaprojektowałem spójny interfejs łączący landing page z panelem użytkownika. Stworzyłem interaktywny kalkulator inwestycji z wizualizacjami wykresów. Chatbot AI odpowiada na pytania dzięki integracji z bazą wiedzy. Moduł Stories prowadzi użytkowników przez proces inwestycji.',
+    results: 'Platforma skutecznie prezentuje możliwości inwestycyjne i automatyzuje onboarding nowych użytkowników dzięki intuicyjnemu interfejsowi.',
+    deviceMockup: {
+      title: 'Landing page',
+      description: 'Główny ekran strony promocyjnej TSQ Investment Group z dynamicznym hero section i wezwaniem do działania.',
+      image: '/projects/tsq-portal/screen-desktop.png',
+      alt: 'TSQ Portal Desktop View',
+    },
+    images: [
+      { src: '/projects/tsq-portal/insta-stories.png', alt: 'TSQ Stories Module', caption: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku', noMagnifier: true },
+      { src: '/projects/tsq-portal/ai-chat.png', alt: 'TSQ AI Assistant', caption: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji', displayMode: 'centered', backgroundColor: '#1a1625', imageScale: 0.9 },
+    ],
+    mobileScreens: {
+      title: 'Aplikacja mobilna',
+      description: 'Responsywny design na urządzeniach mobilnych - od landing page, przez generator wizytówek, po kalkulator inwestycji.',
+      screens: [
+        { src: '/projects/tsq-portal/mobile-1.jpg', alt: 'TSQ Mobile Landing', caption: 'Hero section - mobilna wersja landing page' },
+        { src: '/projects/tsq-portal/mobile-2.jpg', alt: 'TSQ Mobile Card Generator', caption: 'Generator wizytówek dla agentów' },
+        { src: '/projects/tsq-portal/mobile-3.jpg', alt: 'TSQ Mobile Calculator', caption: 'Kalkulator sygnałów i symulacja zysków' },
+      ],
+    },
+    typography: {
+      description: 'Nowoczesny system typograficzny z czytelnym fontem bezszeryfowym, zapewniający doskonałą czytelność na wszystkich urządzeniach.',
+      fonts: [
+        {
+          name: 'Inter',
+          usage: 'Headlines & Body',
+          weights: [
+            { name: 'Bold', sample: 'Dobrei Meu Capital de Investimento' },
+            { name: 'SemiBold', sample: 'Registre-se Gratuitamente' },
+            { name: 'Regular', sample: 'O programa funciona com base em transações reais' },
+          ],
+        },
+      ],
+    },
+    colors: {
+      description: 'Energetyczna paleta kolorów z dominującym niebieskim, budząca zaufanie i komunikująca profesjonalizm w branży finansowej.',
+      palette: [
+        { name: 'TSQ Blue', hex: '#2563EB', rgb: '37 99 235', cmyk: '84 58 0 8' },
+        { name: 'Purple Accent', hex: '#8B5CF6', rgb: '139 92 246', cmyk: '44 63 0 4' },
+        { name: 'White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
+        { name: 'Dark Navy', hex: '#1E3A5F', rgb: '30 58 95', cmyk: '68 39 0 63' },
+      ],
+    },
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
