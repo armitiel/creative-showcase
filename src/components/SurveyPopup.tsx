@@ -4,6 +4,7 @@ import { X, Star, Send, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { supabase } from '@/lib/supabase';
 
 const translations = {
   pl: {
@@ -47,6 +48,12 @@ export const SurveyPopup = () => {
   const t = translations[language];
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('showSurvey') === '1') {
+      setIsOpen(true);
+      return;
+    }
+
     const surveyDismissed = localStorage.getItem('surveyDismissed');
     if (surveyDismissed) return;
 
@@ -57,21 +64,28 @@ export const SurveyPopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    const projectsAmountLabel = t.projectsOptions[projectsAmount ?? 0];
     const surveyData = {
       rating,
-      projectsAmount: t.projectsOptions[projectsAmount ?? 0],
+      projects_amount: projectsAmountLabel,
       improvements,
-      timestamp: new Date().toISOString(),
       language,
     };
-    
-    // Save to localStorage
+
+    if (supabase) {
+      const { error } = await supabase.from('survey_responses').insert(surveyData);
+      if (error) console.error('Supabase survey error:', error);
+    }
+
+    const forStorage = {
+      ...surveyData,
+      timestamp: new Date().toISOString(),
+    };
     const existingResponses = JSON.parse(localStorage.getItem('surveyResponses') || '[]');
-    existingResponses.push(surveyData);
+    existingResponses.push(forStorage);
     localStorage.setItem('surveyResponses', JSON.stringify(existingResponses));
-    
-    console.log('Survey submitted:', surveyData);
+
     setSubmitted(true);
     setTimeout(() => {
       setIsOpen(false);
