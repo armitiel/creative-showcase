@@ -124,6 +124,10 @@ export default {
           "0%": { opacity: "0", transform: "scale(1.1)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        "levitate": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-18px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
