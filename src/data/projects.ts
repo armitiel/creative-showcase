@@ -8,6 +8,7 @@ export interface ProjectImage {
   imageScale?: number;
   gridLayout?: '2x2';
   noMagnifier?: boolean;
+  fullHeight?: boolean;
 }
 
 export interface GridImageGroup {
@@ -138,7 +139,7 @@ export const projects: Project[] = [
     },
     images: [
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
-      { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury', noMagnifier: true },
+      { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury', noMagnifier: true, fullHeight: true },
       { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli - rzeka płynie w kształcie litery "S" jak SELVA', noMagnifier: true },
     ],
     thumbnailGrid: {
