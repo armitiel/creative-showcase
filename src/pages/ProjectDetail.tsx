@@ -658,29 +658,25 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* HubbleRx Bottom Illustration */}
+      {/* HubbleRx Bottom Illustration + Back to Portfolio merged */}
       {project.slug === 'hubble-rx' && (
-        <section className={`py-16 ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="relative w-full">
-                {/* b1 - city/platform base */}
-                <div className="w-full">
-                  <img
-                    src={withBaseUrl('/projects/hubble/illustration-b1.svg')}
-                    alt="HubbleRx City Illustration"
-                    className="w-full h-auto"
-                  />
-                </div>
-                {/* b2 - flying creature with levitation animation, overlapping b1 */}
-                <div className="absolute left-[5%] top-[8%] w-[16%] z-10 animate-[levitate_4s_ease-in-out_infinite]">
-                  <img
-                    src={withBaseUrl('/projects/hubble/illustration-b2.svg')}
-                    alt="HubbleRx Flying Creature"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
+        <section className={`pt-16 pb-0 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}>
+          <div className="relative w-full overflow-hidden">
+            {/* b1 - city/platform base, flush right and bottom */}
+            <div className="flex justify-end">
+              <img
+                src={withBaseUrl('/projects/hubble/illustration-b1.svg')}
+                alt="HubbleRx City Illustration"
+                className="w-[75%] h-auto block"
+              />
+            </div>
+            {/* b2 - flying creature with levitation animation, on top of b1 */}
+            <div className="absolute left-[12%] top-[12%] w-[14%] z-10 animate-[levitate_4s_ease-in-out_infinite]">
+              <img
+                src={withBaseUrl('/projects/hubble/illustration-b2.svg')}
+                alt="HubbleRx Flying Creature"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </section>
