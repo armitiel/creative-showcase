@@ -142,6 +142,7 @@ export const projects: Project[] = [
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
       { src: '/projects/selva-rape/brand-elements.png', alt: 'Selva Elementy brandingu', caption: 'Materiały brandingowe z motywami natury', noMagnifier: true, fullHeight: true },
       { src: '/projects/selva-rape/jungle-banner.png', alt: 'Selva Banner dżungli', caption: 'Hero banner z widokiem amazońskiej dżungli - rzeka płynie w kształcie litery "S" jak SELVA', noMagnifier: true },
+      { src: '/projects/selva-rape/product-mockup.png', alt: 'Selva Yawanawa - Mockup produktu', caption: 'Mockup produktu Yawanawa 10g w ekologicznym opakowaniu', noMagnifier: true },
     ],
     thumbnailGrid: {
       title: 'System etykiet produktowych',
