@@ -405,7 +405,7 @@ export const projects: Project[] = [
     id: 11,
     slug: 'nfc-card',
     title: 'Digital Card - Wizytówki NFC',
-    category: 'Motion, Art',
+    category: 'Motion',
     thumbnail: '/projects/nfc-card/logo-animation-1.gif',
     description: 'Projektowanie logo i animacji dla innowacyjnych wizytówek NFC',
     fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
