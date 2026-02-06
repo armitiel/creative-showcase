@@ -47,40 +47,44 @@ export const SurveyPopup = () => {
   const t = translations[language];
 
   useEffect(() => {
-    // Check if already shown or dismissed
-    const surveyShown = sessionStorage.getItem('surveyShown');
-    const surveyDismissed = localStorage.getItem('surveyDismissed');
+    // Clear previous dismissal for testing - remove this line in production
+    localStorage.removeItem('surveyDismissed');
+    sessionStorage.removeItem('surveyShown');
+    sessionStorage.removeItem('bottomScrollCount');
+    sessionStorage.removeItem('wasAtBottom');
     
-    if (surveyDismissed) return;
-
-    let scrollCount = parseInt(sessionStorage.getItem('bottomScrollCount') || '0', 10);
+    let scrollCount = 0;
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
       
-      // Check if user is near the bottom (within 100px)
-      const isAtBottom = scrollTop + windowHeight >= docHeight - 100;
+      // Check if user is near the bottom (within 200px for better detection)
+      const isAtBottom = scrollTop + windowHeight >= docHeight - 200;
       
       if (isAtBottom) {
         const wasAtBottom = sessionStorage.getItem('wasAtBottom') === 'true';
         
         if (!wasAtBottom) {
-          scrollCount++;
+          scrollCount = parseInt(sessionStorage.getItem('bottomScrollCount') || '0', 10) + 1;
           sessionStorage.setItem('bottomScrollCount', scrollCount.toString());
           sessionStorage.setItem('wasAtBottom', 'true');
           
+          console.log('[Survey] Reached bottom, count:', scrollCount);
+          
           // Show popup on second scroll to bottom
-          if (scrollCount >= 2 && !surveyShown) {
+          if (scrollCount >= 2) {
+            console.log('[Survey] Opening popup!');
             setTimeout(() => {
               setIsOpen(true);
-              sessionStorage.setItem('surveyShown', 'true');
             }, 500);
           }
         }
       } else {
-        sessionStorage.setItem('wasAtBottom', 'false');
+        if (sessionStorage.getItem('wasAtBottom') === 'true') {
+          sessionStorage.setItem('wasAtBottom', 'false');
+        }
       }
     };
 
