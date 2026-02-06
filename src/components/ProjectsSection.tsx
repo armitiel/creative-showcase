@@ -14,8 +14,8 @@ export const ProjectsSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
 
-  // Get unique categories from actual projects data
-  const projectCategories = [...new Set(projects.map(p => p.category))];
+  // Get unique categories from actual projects data (support comma-separated)
+  const projectCategories = [...new Set(projects.flatMap(p => p.category.split(', ').map(c => c.trim())))];
   
   // Create display categories with 'all' as special key
   const categoryOptions = [
@@ -25,7 +25,7 @@ export const ProjectsSection = () => {
 
   const filteredProjects = activeCategory === 'all'
     ? projects
-    : projects.filter((p) => p.category === activeCategory);
+    : projects.filter((p) => p.category.split(', ').map(c => c.trim()).includes(activeCategory));
 
   return (
     <section id="projects" className="py-32">
