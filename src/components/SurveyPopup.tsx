@@ -129,16 +129,14 @@ export const SurveyPopup = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-md"
           >
-            <div className="relative bg-gradient-to-br from-card via-card to-card/95 border border-primary/20 rounded-2xl shadow-2xl shadow-primary/10 overflow-hidden">
+            <div className="relative bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
               {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
-              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
               
               {/* Close button */}
               <button
                 onClick={handleDismiss}
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted/50 transition-colors text-muted-foreground hover:text-foreground"
+                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -147,18 +145,18 @@ export const SurveyPopup = () => {
                 <div className="p-6 sm:p-8">
                   {/* Header */}
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                    <div className="p-2.5 rounded-xl bg-gray-900 text-white">
                       <MessageSquare className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">{t.title}</h3>
-                      <p className="text-sm text-muted-foreground">{t.subtitle}</p>
+                      <h3 className="text-lg font-semibold text-gray-900">{t.title}</h3>
+                      <p className="text-sm text-gray-500">{t.subtitle}</p>
                     </div>
                   </div>
 
                   {/* Rating */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-foreground mb-3">
+                    <label className="block text-sm font-medium text-gray-900 mb-3">
                       {t.qualityLabel}
                     </label>
                     <div className="flex gap-2">
@@ -174,7 +172,7 @@ export const SurveyPopup = () => {
                             className={`w-8 h-8 transition-colors ${
                               star <= (hoveredRating || rating)
                                 ? 'fill-yellow-400 text-yellow-400'
-                                : 'text-muted-foreground/30'
+                                : 'text-gray-300'
                             }`}
                           />
                         </button>
@@ -184,7 +182,7 @@ export const SurveyPopup = () => {
 
                   {/* Projects amount */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-foreground mb-3">
+                    <label className="block text-sm font-medium text-gray-900 mb-3">
                       {t.projectsLabel}
                     </label>
                     <div className="flex gap-2">
@@ -194,8 +192,8 @@ export const SurveyPopup = () => {
                           onClick={() => setProjectsAmount(index)}
                           className={`flex-1 py-2.5 px-3 text-sm rounded-lg border transition-all ${
                             projectsAmount === index
-                              ? 'bg-primary text-primary-foreground border-primary'
-                              : 'bg-muted/30 border-border hover:border-primary/50 text-foreground'
+                              ? 'bg-gray-900 text-white border-gray-900'
+                              : 'bg-gray-50 border-gray-200 hover:border-gray-400 text-gray-700'
                           }`}
                         >
                           {option}
@@ -206,14 +204,14 @@ export const SurveyPopup = () => {
 
                   {/* Improvements */}
                   <div className="mb-6">
-                    <label className="block text-sm font-medium text-foreground mb-3">
+                    <label className="block text-sm font-medium text-gray-900 mb-3">
                       {t.improvementsLabel}
                     </label>
                     <Textarea
                       value={improvements}
                       onChange={(e) => setImprovements(e.target.value)}
                       placeholder={t.improvementsPlaceholder}
-                      className="resize-none bg-muted/30 border-border focus:border-primary/50 min-h-[80px]"
+                      className="resize-none bg-gray-50 border-gray-200 focus:border-gray-400 min-h-[80px] text-gray-900 placeholder:text-gray-400"
                     />
                   </div>
 
@@ -222,14 +220,14 @@ export const SurveyPopup = () => {
                     <Button
                       variant="ghost"
                       onClick={handleSkip}
-                      className="flex-1 text-muted-foreground hover:text-foreground"
+                      className="flex-1 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
                     >
                       {t.skip}
                     </Button>
                     <Button
                       onClick={handleSubmit}
                       disabled={rating === 0}
-                      className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
+                      className="flex-1 bg-gray-900 hover:bg-gray-800 text-white gap-2"
                     >
                       <Send className="w-4 h-4" />
                       {t.submit}
@@ -246,13 +244,13 @@ export const SurveyPopup = () => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.1, type: 'spring', damping: 15 }}
-                    className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/10 flex items-center justify-center"
+                    className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center"
                   >
                     <motion.svg
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="w-8 h-8 text-green-500"
+                      className="w-8 h-8 text-green-600"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -265,8 +263,8 @@ export const SurveyPopup = () => {
                       />
                     </motion.svg>
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{t.thanks}</h3>
-                  <p className="text-muted-foreground">{t.thanksSubtitle}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.thanks}</h3>
+                  <p className="text-gray-500">{t.thanksSubtitle}</p>
                 </motion.div>
               )}
             </div>
