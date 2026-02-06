@@ -660,10 +660,10 @@ const ProjectDetail = () => {
 
       {/* HubbleRx Bottom Illustration + Back to Portfolio merged */}
       {project.slug === 'hubble-rx' && (
-        <section className={`pt-16 pb-0 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}>
+        <section className={`pt-16 pb-0 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#f0f0f0]'}`}>
           <div className="relative w-full overflow-hidden">
-            {/* b1 - city/platform base, flush right and bottom */}
-            <div className="flex justify-end">
+            {/* b1 - city/platform base, flush right and bottom, partially off-screen */}
+            <div className="flex justify-end" style={{ marginRight: '-8%' }}>
               <img
                 src={withBaseUrl('/projects/hubble/illustration-b1.svg')}
                 alt="HubbleRx City Illustration"
