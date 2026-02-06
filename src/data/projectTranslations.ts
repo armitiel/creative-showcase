@@ -61,10 +61,10 @@ export const projectTranslations: ProjectTranslations = {
   'selva-rape': {
     pl: {
       title: 'Selva Rapé - Sklep z Rapé',
-      description: 'Kompleksowy branding i sklep e-commerce dla marki tradycyjnego brazylijskiego Rapé',
-      fullDescription: 'Selva to marka sprzedająca tradycyjne brazylijskie Rapé - mieszankę tabaki na bazie ziół, kwiatów, kory drzew i tytoniu (Nicotiana rustica). Projekt obejmował stworzenie kompletnej identyfikacji wizualnej połączonej z naturą i dżunglą, serię etykiet produktowych, integrację sklepu Shopify oraz materiały marketingowe.',
+      description: 'Kompleksowy branding i sklep e-commerce oparty o Shopify dla marki tradycyjnego brazylijskiego Rapé',
+      fullDescription: 'Selva to marka sprzedająca tradycyjne brazylijskie Rapé - mieszankę tabaki na bazie ziół, kwiatów, kory drzew i tytoniu (Nicotiana rustica). Projekt obejmował stworzenie kompletnej identyfikacji wizualnej połączonej z naturą i dżunglą, serię etykiet produktowych oraz budowę i integrację sklepu internetowego opartego o platformę Shopify. Cały frontend sklepu został zaprojektowany z myślą o responsywności i prezentacji produktów na tle amazońskiej przyrody.',
       challenge: 'Stworzenie brandingu dla produktu z tradycyjnymi korzeniami amazońskimi, który komunikuje autentyczność i połączenie z naturą, jednocześnie będąc nowoczesny i atrakcyjny dla współczesnego odbiorcy.',
-      solution: 'Zaprojektowałem identyfikację wizualną opartą na motywach dżungli i natury. Stworzyłem serię kolorowych etykiet produktowych, z których każda reprezentuje inny rodzaj Rapé. Zintegrowałem sklep Shopify z responsywnym designem prezentującym produkty na tle amazońskiej przyrody.',
+      solution: 'Zaprojektowałem identyfikację wizualną opartą na motywach dżungli i natury. Stworzyłem serię kolorowych etykiet produktowych, z których każda reprezentuje inny rodzaj Rapé. Sklep internetowy został zbudowany na platformie Shopify - skonfigurowałem katalog produktów, warianty, płatności i responsywny frontend prezentujący ofertę na tle amazońskiej przyrody.',
       results: 'Marka Selva zyskała rozpoznawalny wygląd, który wyróżnia ją na rynku. Sklep e-commerce z intuicyjną nawigacją i profesjonalnym brandingiem zwiększył konwersję sprzedaży.',
       typographyDescription: 'Typografia Selva łączy czytelność z organicznym charakterem marki, podkreślając jej naturalne korzenie i autentyczność.',
       colorsDescription: 'Paleta kolorów Selva opiera się na naturalnych tonach - głęboka zieleń dżungli, ciepły beż i czysta biel tworzą organiczny, autentyczny wygląd marki.',
@@ -79,10 +79,10 @@ export const projectTranslations: ProjectTranslations = {
     },
     en: {
       title: 'Selva Rapé - Rapé Shop',
-      description: 'Comprehensive branding and e-commerce store for a traditional Brazilian Rapé brand',
-      fullDescription: 'Selva is a brand selling traditional Brazilian Rapé - a tobacco blend based on herbs, flowers, tree bark, and tobacco (Nicotiana rustica). The project included creating a complete visual identity connected with nature and the jungle, a series of product labels, Shopify store integration, and marketing materials.',
+      description: 'Comprehensive branding and Shopify-based e-commerce store for a traditional Brazilian Rapé brand',
+      fullDescription: 'Selva is a brand selling traditional Brazilian Rapé - a tobacco blend based on herbs, flowers, tree bark, and tobacco (Nicotiana rustica). The project included creating a complete visual identity connected with nature and the jungle, a series of product labels, and building a fully integrated e-commerce store powered by the Shopify platform. The entire store frontend was designed with responsiveness in mind, showcasing products against the backdrop of Amazonian nature.',
       challenge: 'Creating branding for a product with traditional Amazonian roots that communicates authenticity and connection with nature while being modern and attractive to contemporary audiences.',
-      solution: 'I designed a visual identity based on jungle and nature motifs. I created a series of colorful product labels, each representing a different type of Rapé. I integrated the Shopify store with a responsive design showcasing products against the backdrop of Amazonian nature.',
+      solution: 'I designed a visual identity based on jungle and nature motifs. I created a series of colorful product labels, each representing a different type of Rapé. The online store was built on the Shopify platform - I configured the product catalog, variants, payments, and a responsive frontend presenting the offer against the backdrop of Amazonian nature.',
       results: 'The Selva brand gained a recognizable look that sets it apart in the market. The e-commerce store with intuitive navigation and professional branding increased sales conversion.',
       typographyDescription: 'Selva\'s typography combines readability with the organic character of the brand, emphasizing its natural roots and authenticity.',
       colorsDescription: 'Selva\'s color palette is based on natural tones - deep jungle green, warm beige, and pure white create an organic, authentic brand look.',
