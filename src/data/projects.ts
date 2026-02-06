@@ -256,6 +256,8 @@ export const projects: Project[] = [
       { src: '/projects/v17-vision/logo-sign.png', alt: 'V17 Vision Znak graficzny', caption: 'Geometryczny symbol marki', displayMode: 'centered', backgroundColor: '#365065', imageScale: 0.6 },
       { src: '/projects/v17-vision/brand-presentation.jpg', alt: 'V17 Vision Prezentacja brandingu', caption: 'Prezentacja brandingu z ikonami usług', noMagnifier: true },
       { src: '/projects/v17-vision/interior.png', alt: 'V17 Vision Futurystyczne wnętrze', caption: 'Wizualizacja salonu z organicznymi, płynnymi formami', noMagnifier: true },
+      { src: '/projects/v17-vision/interior-render-1.png', alt: 'V17 Vision Render wnętrza 1', caption: 'Render salonu z futurystyczną ścianą dekoracyjną – mój projekt wizualizacji 3D', noMagnifier: true },
+      { src: '/projects/v17-vision/interior-render-2.png', alt: 'V17 Vision Render wnętrza 2', caption: 'Render przestrzeni dziennej z dynamicznymi formami architektonicznymi – mój projekt wizualizacji 3D', noMagnifier: true },
       { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem', noMagnifier: true },
       { src: '/projects/v17-vision/texture.jpg', alt: 'V17 Vision Tekstura 3D', caption: 'Geometryczne tło wykorzystywane w materiałach', noMagnifier: true },
     ],
