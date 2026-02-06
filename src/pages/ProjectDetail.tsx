@@ -504,12 +504,14 @@ const ProjectDetail = () => {
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
                       className={`flex items-center justify-center ${image.backgroundGradient ? '' : 'aspect-video'}`}
-                      style={{ 
-                        backgroundColor: isDark 
-                          ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : undefined)
-                          : lightImageBg,
-                        background: image.backgroundGradient || undefined
-                      }}
+                      style={image.backgroundGradient 
+                        ? { background: image.backgroundGradient }
+                        : { 
+                            backgroundColor: isDark 
+                              ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : undefined)
+                              : lightImageBg
+                          }
+                      }
                     >
                       {image.displayMode === 'centered' ? (
                         <div 
