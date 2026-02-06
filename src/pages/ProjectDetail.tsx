@@ -112,6 +112,11 @@ const ProjectDetail = () => {
                       alt={img.alt}
                       className="w-full h-auto object-cover"
                     />
+                    {img.caption && (
+                      <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
+                        {img.caption}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
