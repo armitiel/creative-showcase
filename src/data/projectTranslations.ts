@@ -70,6 +70,12 @@ export const projectTranslations: ProjectTranslations = {
       colorsDescription: 'Paleta kolorów Selva opiera się na naturalnych tonach - głęboka zieleń dżungli, ciepły beż i czysta biel tworzą organiczny, autentyczny wygląd marki.',
       thumbnailGridTitle: 'System etykiet produktowych',
       thumbnailGridDescription: 'Seria kolorowych etykiet dla różnych rodzajów Rapé - każda z unikalną kolorystyką reprezentującą charakter produktu.',
+      imageCaptions: {
+        0: 'Logo marki Selva z charakterystycznym liściem',
+        1: 'Materiały brandingowe z motywami natury',
+        2: 'Hero banner z widokiem amazońskiej dżungli - rzeka płynie w kształcie litery "S" jak SELVA',
+        3: 'Mockup produktu Yawanawa 10g w ekologicznym opakowaniu',
+      },
     },
     en: {
       title: 'Selva Rapé - Rapé Shop',
@@ -82,6 +88,12 @@ export const projectTranslations: ProjectTranslations = {
       colorsDescription: 'Selva\'s color palette is based on natural tones - deep jungle green, warm beige, and pure white create an organic, authentic brand look.',
       thumbnailGridTitle: 'Product Label System',
       thumbnailGridDescription: 'A series of colorful labels for different types of Rapé - each with unique colors representing the product\'s character.',
+      imageCaptions: {
+        0: 'Selva brand logo with a distinctive leaf motif',
+        1: 'Branding materials with nature-inspired motifs',
+        2: 'Hero banner with Amazonian jungle view - the river flows in an "S" shape like SELVA',
+        3: 'Yawanawa 10g product mockup in eco-friendly packaging',
+      },
     },
   },
   'v17-vision-branding': {
