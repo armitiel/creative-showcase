@@ -57,6 +57,7 @@ export interface ThumbnailGrid {
 export interface RetailerImage {
   src: string;
   alt: string;
+  caption?: string;
 }
 
 export interface GifPairItem {
@@ -314,15 +315,15 @@ export const projects: Project[] = [
     fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
     client: 'Portal',
     year: '2024',
-    tools: ['Figma', 'Photoshop', 'After Effects', 'Blender'],
+    tools: ['Figma', 'Photoshop', 'Blender'],
     theme: 'dark',
     challenge: 'Zaprojektowanie intuicyjnego interfejsu dla aplikacji obsługującej weryfikację biometryczną, która musi być jednocześnie bezpieczna, szybka i przyjazna dla użytkownika końcowego oraz sprzedawców.',
     solution: 'Stworzyłem ciemny, nowoczesny interfejs z akcentami w kolorze niebieskim, który komunikuje profesjonalizm i bezpieczeństwo. Aplikacja została zaprojektowana z myślą o szybkiej nawigacji i minimalnej liczbie kroków do weryfikacji wieku.',
     results: 'System osiągnął 98% skuteczności wykrywania fałszywych dokumentów tożsamości, znacznie przewyższając średnią branżową wynoszącą 40%.',
     heroAnimation: '/projects/portal/hero-animation.gif',
     retailerImages: [
-      { src: '/projects/portal/retailer-1.png', alt: 'Portal Smart Checkout for Retailers' },
-      { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store' },
+      { src: '/projects/portal/retailer-1.png', alt: 'Portal Smart Checkout for Retailers', caption: 'Selling Sheet - Smart Checkout for Retailers' },
+      { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store', caption: 'Selling Sheet - Integrates with Any Store\'s Existing Ecosystem' },
     ],
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
