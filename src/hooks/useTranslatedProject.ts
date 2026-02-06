@@ -13,7 +13,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     src: string;
     alt: string;
     caption?: string;
-    displayMode?: 'cover' | 'centered';
+    displayMode?: 'cover' | 'centered' | 'laptop';
     backgroundColor?: string;
     backgroundGradient?: string;
     imageScale?: number;

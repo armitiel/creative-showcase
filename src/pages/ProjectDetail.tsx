@@ -503,17 +503,36 @@ const ProjectDetail = () => {
                 <ImageWrapper key={index}>
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
-                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : 'aspect-video'}`}
+                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : image.displayMode === 'laptop' ? 'py-12 px-8' : 'aspect-video'}`}
                       style={image.backgroundGradient 
                         ? { background: image.backgroundGradient }
                         : { 
                             backgroundColor: isDark 
-                              ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : undefined)
-                              : lightImageBg
+                              ? (image.displayMode === 'centered' && image.backgroundColor ? image.backgroundColor : image.displayMode === 'laptop' ? '#2a2a2a' : undefined)
+                              : image.displayMode === 'laptop' ? '#d5d5d5' : lightImageBg
                           }
                       }
                     >
-                      {image.displayMode === 'centered' ? (
+                      {image.displayMode === 'laptop' ? (
+                        <div className="w-full max-w-4xl mx-auto">
+                          {/* Laptop frame */}
+                          <div className={`relative rounded-t-xl overflow-hidden border-[6px] ${isDark ? 'border-neutral-700 bg-neutral-800' : 'border-neutral-400 bg-neutral-300'}`}>
+                            {/* Camera dot */}
+                            <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full z-10 mt-[-3px] ${isDark ? 'bg-neutral-600' : 'bg-neutral-500'}`} />
+                            {/* Screen */}
+                            <img
+                              src={withBaseUrl(image.src)}
+                              alt={image.alt}
+                              className="w-full h-auto object-cover cursor-zoom-in"
+                              onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                            />
+                          </div>
+                          {/* Laptop base */}
+                          <div className={`h-4 rounded-b-lg mx-auto ${isDark ? 'bg-neutral-700' : 'bg-neutral-400'}`} style={{ width: '104%', marginLeft: '-2%' }}>
+                            <div className={`h-full w-16 mx-auto rounded-b-md ${isDark ? 'bg-neutral-600' : 'bg-neutral-500'}`} />
+                          </div>
+                        </div>
+                      ) : image.displayMode === 'centered' ? (
                         <div 
                           className="flex items-center justify-center w-full h-full cursor-zoom-in"
                           onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
