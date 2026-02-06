@@ -495,7 +495,7 @@ export const projects: Project[] = [
       title: 'Aplikacja mobilna',
       description: 'Responsywny design na urządzeniach mobilnych - od landing page, przez generator wizytówek, po kalkulator inwestycji.',
       screens: [
-        { src: '/projects/tsq-portal/mobile-1.jpg', alt: 'TSQ Mobile Landing', caption: 'Hero section - mobilna wersja landing page' },
+        { src: '/projects/tsq-portal/mobile-1.jpg', alt: 'TSQ Mobile Footer', caption: 'Stopka - mobilna wersja landing page' },
         { src: '/projects/tsq-portal/mobile-2.jpg', alt: 'TSQ Mobile Card Generator', caption: 'Generator wizytówek dla agentów' },
         { src: '/projects/tsq-portal/mobile-3.jpg', alt: 'TSQ Mobile Calculator', caption: 'Kalkulator sygnałów i symulacja zysków' },
       ],
