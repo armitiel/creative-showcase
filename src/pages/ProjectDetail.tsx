@@ -564,6 +564,37 @@ const ProjectDetail = () => {
         </div>
       </section>
 
+      {/* YouTube Video Section */}
+      {project.youtubeVideo && (
+        <section className={`py-16 ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              {project.youtubeVideo.title && (
+                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                  {project.youtubeVideo.title}
+                </h2>
+              )}
+              {project.youtubeVideo.description && (
+                <p className={`mb-8 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
+                  {project.youtubeVideo.description}
+                </p>
+              )}
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10' : 'border-[#c5ddd9]'}`}>
+                <div className="aspect-video">
+                  <iframe
+                    src={project.youtubeVideo.url}
+                    title={project.youtubeVideo.title || 'Video'}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Results */}
       {project.results && (
         <section className="py-16">

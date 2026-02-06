@@ -22,6 +22,9 @@ interface ProjectTranslation {
   mobileScreenCaptions?: Record<number, string>;
   // GIF pair captions by index
   gifPairCaptions?: Record<number, string>;
+  // YouTube video
+  youtubeVideoTitle?: string;
+  youtubeVideoDescription?: string;
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
@@ -102,6 +105,8 @@ export const projectTranslations: ProjectTranslations = {
         7: 'Podkładka pod mysz z brandingiem',
         8: 'Geometryczne tło wykorzystywane w materiałach',
       },
+      youtubeVideoTitle: 'Prezentacja modelu 3D w Unity',
+      youtubeVideoDescription: 'Interaktywna wizualizacja modelu architektonicznego stworzona w silniku Unity – spacer po futurystycznym wnętrzu w czasie rzeczywistym.',
     },
     en: {
       title: 'V17 Vision - Visual Identity',
@@ -123,6 +128,8 @@ export const projectTranslations: ProjectTranslations = {
         7: 'Mousepad with branding',
         8: 'Geometric background used in materials',
       },
+      youtubeVideoTitle: '3D Model Presentation in Unity',
+      youtubeVideoDescription: 'Interactive visualization of an architectural model created in the Unity engine – a real-time walkthrough of a futuristic interior.',
     },
   },
   'aloha-centrum-desk': {

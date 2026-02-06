@@ -106,6 +106,11 @@ export interface Project {
     description: string;
     palette: ProjectColor[];
   };
+  youtubeVideo?: {
+    url: string;
+    title?: string;
+    description?: string;
+  };
 }
 
  export const categories = ['Wszystkie', 'Branding', 'UI/UX', '3D', 'Art', 'Motion'];
@@ -261,6 +266,11 @@ export const projects: Project[] = [
       { src: '/projects/v17-vision/mousepad.png', alt: 'V17 Vision Materiały firmowe', caption: 'Podkładka pod mysz z brandingiem', noMagnifier: true },
       { src: '/projects/v17-vision/texture.jpg', alt: 'V17 Vision Tekstura 3D', caption: 'Geometryczne tło wykorzystywane w materiałach', noMagnifier: true },
     ],
+    youtubeVideo: {
+      url: 'https://www.youtube.com/embed/mQ0VXxZZyKI',
+      title: 'Prezentacja modelu 3D w Unity',
+      description: 'Interaktywna wizualizacja modelu architektonicznego stworzona w silniku Unity – spacer po futurystycznym wnętrzu w czasie rzeczywistym.',
+    },
     typography: {
       description: 'Khand został wybrany dla nagłówków, dodając futurystyczny charakter i technologiczną precyzję. Font podkreśla nowoczesność marki i jej innowacyjne podejście do projektowania przestrzeni.',
       fonts: [
