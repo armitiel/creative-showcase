@@ -47,49 +47,14 @@ export const SurveyPopup = () => {
   const t = translations[language];
 
   useEffect(() => {
-    // Clear previous dismissal for testing - remove this line in production
-    localStorage.removeItem('surveyDismissed');
-    sessionStorage.removeItem('surveyShown');
-    sessionStorage.removeItem('bottomScrollCount');
-    sessionStorage.removeItem('wasAtBottom');
-    
-    let scrollCount = 0;
+    const surveyDismissed = localStorage.getItem('surveyDismissed');
+    if (surveyDismissed) return;
 
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight;
-      
-      // Check if user is near the bottom (within 200px for better detection)
-      const isAtBottom = scrollTop + windowHeight >= docHeight - 200;
-      
-      if (isAtBottom) {
-        const wasAtBottom = sessionStorage.getItem('wasAtBottom') === 'true';
-        
-        if (!wasAtBottom) {
-          scrollCount = parseInt(sessionStorage.getItem('bottomScrollCount') || '0', 10) + 1;
-          sessionStorage.setItem('bottomScrollCount', scrollCount.toString());
-          sessionStorage.setItem('wasAtBottom', 'true');
-          
-          console.log('[Survey] Reached bottom, count:', scrollCount);
-          
-          // Show popup on second scroll to bottom
-          if (scrollCount >= 2) {
-            console.log('[Survey] Opening popup!');
-            setTimeout(() => {
-              setIsOpen(true);
-            }, 500);
-          }
-        }
-      } else {
-        if (sessionStorage.getItem('wasAtBottom') === 'true') {
-          sessionStorage.setItem('wasAtBottom', 'false');
-        }
-      }
-    };
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 8000);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleSubmit = () => {
