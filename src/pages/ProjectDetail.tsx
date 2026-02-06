@@ -671,7 +671,7 @@ const ProjectDetail = () => {
               />
             </div>
             {/* b2 - flying creature with levitation animation, on top of b1 */}
-            <div className="absolute left-[12%] top-[12%] w-[14%] z-10 animate-[levitate_4s_ease-in-out_infinite]">
+            <div className="absolute left-[28%] top-[5%] w-[14%] z-10 animate-[levitate_4s_ease-in-out_infinite]">
               <img
                 src={withBaseUrl('/projects/hubble/illustration-b2.svg')}
                 alt="HubbleRx Flying Creature"
