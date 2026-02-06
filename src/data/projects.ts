@@ -422,7 +422,7 @@ export const projects: Project[] = [
       { src: '/projects/nfc-card/logo-animation-2.gif', alt: 'NFC Card Animation', caption: 'Animacja wizualizująca działanie technologii NFC', noMagnifier: true },
     ],
     images: [
-      { src: '/projects/nfc-card/logo.png', alt: 'Digital Card Logo', caption: 'Projekt logo Digital Card', displayMode: 'centered' as const, backgroundColor: '#2a2a2a', imageScale: 0.5, noMagnifier: true },
+      { src: '/projects/nfc-card/logo.png', alt: 'Digital Card Logo', caption: 'Projekt logo Digital Card', noMagnifier: true },
       { src: '/projects/nfc-card/logo-animation-1.gif', alt: 'NFC Card Logo', caption: 'Główna animacja logo marki', noMagnifier: true },
     ],
     colors: {
