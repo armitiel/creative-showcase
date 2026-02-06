@@ -244,7 +244,7 @@ export const projects: Project[] = [
     id: 1,
     slug: 'v17-vision-branding',
     title: 'V17 Vision - Identyfikacja Wizualna',
-    category: 'Branding',
+    category: 'Branding, 3D',
     thumbnail: '/projects/v17-vision/designing-your-space.jpg',
     description: 'Kompletna identyfikacja wizualna dla studia projektowego specjalizującego się w futurystycznych wnętrzach',
     fullDescription: 'V17 Vision to innowacyjne studio projektowe specjalizujące się w tworzeniu futurystycznych rozwiązań architektonicznych i wnętrzarskich. Marka łączy zaawansowane technologie z organicznymi, płynnymi formami, tworząc przestrzenie wyprzedzające swoją epokę. Projekt brandingowy obejmował logo, identyfikację wizualną, materiały firmowe oraz key visual.',
