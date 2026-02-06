@@ -89,8 +89,20 @@ export const SurveyPopup = () => {
   }, []);
 
   const handleSubmit = () => {
-    // Here you could send data to analytics or backend
-    console.log('Survey submitted:', { rating, projectsAmount, improvements });
+    const surveyData = {
+      rating,
+      projectsAmount: t.projectsOptions[projectsAmount ?? 0],
+      improvements,
+      timestamp: new Date().toISOString(),
+      language,
+    };
+    
+    // Save to localStorage
+    const existingResponses = JSON.parse(localStorage.getItem('surveyResponses') || '[]');
+    existingResponses.push(surveyData);
+    localStorage.setItem('surveyResponses', JSON.stringify(existingResponses));
+    
+    console.log('Survey submitted:', surveyData);
     setSubmitted(true);
     setTimeout(() => {
       setIsOpen(false);
@@ -123,13 +135,13 @@ export const SurveyPopup = () => {
           
           {/* Popup */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="relative bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="relative bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden w-full max-w-md pointer-events-auto">
               {/* Decorative elements */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
               
