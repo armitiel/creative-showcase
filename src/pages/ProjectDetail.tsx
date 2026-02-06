@@ -503,7 +503,7 @@ const ProjectDetail = () => {
                 <ImageWrapper key={index}>
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
-                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : image.displayMode === 'laptop' ? 'py-12 px-8' : 'aspect-video'}`}
+                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : image.displayMode === 'laptop' ? 'py-12 px-8' : image.fullHeight ? '' : 'aspect-video'}`}
                       style={image.backgroundGradient 
                         ? { background: image.backgroundGradient }
                         : { 
