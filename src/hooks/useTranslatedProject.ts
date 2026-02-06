@@ -54,6 +54,11 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     alt: string;
     caption?: string;
   }[];
+  youtubeVideo?: {
+    url: string;
+    title?: string;
+    description?: string;
+  };
 }
 
 export const useTranslatedProject = (slug: string | undefined): TranslatedProject | undefined => {
@@ -128,6 +133,11 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       images: project.realPhotos.images,
     } : undefined,
     gifPair: translatedGifPair,
+    youtubeVideo: project.youtubeVideo ? {
+      url: project.youtubeVideo.url,
+      title: translation.youtubeVideoTitle ?? project.youtubeVideo.title,
+      description: translation.youtubeVideoDescription ?? project.youtubeVideo.description,
+    } : undefined,
   };
 };
 
