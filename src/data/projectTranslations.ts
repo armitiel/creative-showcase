@@ -308,7 +308,7 @@ export const projectTranslations: ProjectTranslations = {
         2: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji',
       },
       mobileScreenCaptions: {
-        0: 'Hero section - mobilna wersja landing page',
+        0: 'Stopka - mobilna wersja landing page',
         1: 'Generator wizytówek dla agentów',
         2: 'Kalkulator sygnałów i symulacja zysków',
       },
@@ -332,7 +332,7 @@ export const projectTranslations: ProjectTranslations = {
         2: 'AI Assistant connected to knowledge base - answers questions about the project and investments',
       },
       mobileScreenCaptions: {
-        0: 'Hero section - mobile landing page version',
+        0: 'Footer - mobile landing page version',
         1: 'Business card generator for agents',
         2: 'Signal calculator and profit simulation',
       },
