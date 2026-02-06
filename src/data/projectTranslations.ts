@@ -303,7 +303,7 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensTitle: 'Aplikacja mobilna',
       mobileScreensDescription: 'Responsywny design na urządzeniach mobilnych - od landing page, przez generator wizytówek, po kalkulator inwestycji.',
       imageCaptions: {
-        0: 'Prezentacja ekranów aplikacji mobilnej - tutorial i kalkulator',
+        0: 'Landing page – widok hero section z dynamicznym wezwaniem do działania',
         1: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku',
         2: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji',
       },
@@ -327,7 +327,7 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensTitle: 'Mobile Application',
       mobileScreensDescription: 'Responsive design on mobile devices - from landing page, through business card generator, to investment calculator.',
       imageCaptions: {
-        0: 'Mobile app screens presentation - tutorial and calculator',
+        0: 'Landing page – hero section view with dynamic call to action',
         1: 'Instagram-inspired Stories module - guides users through the investment process step by step',
         2: 'AI Assistant connected to knowledge base - answers questions about the project and investments',
       },

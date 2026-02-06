@@ -2,7 +2,7 @@ export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
-  displayMode?: 'cover' | 'centered';
+  displayMode?: 'cover' | 'centered' | 'laptop';
   backgroundColor?: string;
   backgroundGradient?: string;
   imageScale?: number;
@@ -487,9 +487,9 @@ export const projects: Project[] = [
       alt: 'TSQ Portal Desktop View',
     },
     images: [
-      { src: '/projects/tsq-portal/mobile-mockup.png', alt: 'TSQ Mobile App Mockup', caption: 'Prezentacja ekranów aplikacji mobilnej - tutorial i kalkulator', noMagnifier: true },
-      { src: '/projects/tsq-portal/insta-stories.png', alt: 'TSQ Stories Module', caption: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku', noMagnifier: true },
-      { src: '/projects/tsq-portal/ai-chat.png', alt: 'TSQ AI Assistant', caption: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji', displayMode: 'centered', backgroundColor: '#1a1625', imageScale: 0.9 },
+      { src: '/projects/tsq-portal/hero-desktop.png', alt: 'TSQ Portal Hero Desktop', caption: 'Landing page – widok hero section z dynamicznym wezwaniem do działania', noMagnifier: true, displayMode: 'laptop' as const },
+      { src: '/projects/tsq-portal/insta-stories.png', alt: 'TSQ Stories Module', caption: 'Moduł Stories inspirowany Instagramem - prowadzi użytkowników przez proces inwestycji krok po kroku', noMagnifier: true, displayMode: 'centered' as const, backgroundColor: '#d5d5d5', imageScale: 0.85 },
+      { src: '/projects/tsq-portal/ai-chat.png', alt: 'TSQ AI Assistant', caption: 'Asystent AI połączony z bazą wiedzy - odpowiada na pytania dotyczące projektu i inwestycji', displayMode: 'centered' as const, backgroundColor: '#1a1625', imageScale: 0.9 },
     ],
     mobileScreens: {
       title: 'Aplikacja mobilna',
