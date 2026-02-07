@@ -94,6 +94,7 @@ export interface Project {
   deviceMockup?: DeviceMockupSection;
   thumbnailGrid?: ThumbnailGrid;
   heroAnimation?: string;
+  heroFollowImage?: { src: string; alt: string; caption?: string };
   retailerImages?: RetailerImage[];
   gifPair?: GifPairItem[];
   parallaxImage?: ParallaxImage;
@@ -355,9 +356,9 @@ export const projects: Project[] = [
       { src: '/projects/portal/retailer-1.png', alt: 'Portal Smart Checkout for Retailers', caption: 'Selling Sheet - Smart Checkout for Retailers' },
       { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store', caption: 'Selling Sheet - Integrates with Any Store\'s Existing Ecosystem' },
     ],
+    heroFollowImage: { src: '/projects/portal/age-verification.png', alt: 'Portal Age Verification', caption: 'Weryfikacja wieku w punkcie sprzedaży' },
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
-      { src: '/projects/portal/age-verification.png', alt: 'Portal Age Verification', caption: 'Weryfikacja wieku w punkcie sprzedaży' },
       { src: '/projects/portal/device-face-scan.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
       { src: '/projects/portal/kiosk-screen.png', alt: 'Portal Kiosk Default Screen', caption: 'Ekran kiosku Portal - ekran zakupowy z kodem QR', noMagnifier: true },
     ],
