@@ -22,8 +22,8 @@ interface ProjectTranslation {
   mobileScreenCaptions?: Record<number, string>;
   // GIF pair captions by index
   gifPairCaptions?: Record<number, string>;
-  // Hero follow image caption
-  heroFollowImageCaption?: string;
+  // Hero follow image captions by index
+  heroFollowImageCaptions?: Record<number, string>;
   // YouTube video
   youtubeVideoTitle?: string;
   youtubeVideoDescription?: string;
@@ -192,10 +192,12 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensDescription: 'Projektowałem i prototypowałem interfejs aplikacji mobilnej Portal, umożliwiającej użytkownikom zarządzanie kontem, portfelem i personalizowanymi ofertami.',
       deviceMockupTitle: 'Urządzenie weryfikacyjne',
       deviceMockupDescription: 'Portal Smart Checkout to dedykowane urządzenie POS z wbudowaną kamerą do skanowania twarzy, umożliwiające natychmiastową weryfikację wieku klienta.',
-      heroFollowImageCaption: 'Weryfikacja wieku w punkcie sprzedaży',
+      heroFollowImageCaptions: {
+        0: 'Weryfikacja wieku w punkcie sprzedaży',
+        1: 'Urządzenie Portal z technologią skanowania twarzy',
+      },
       imageCaptions: {
-        0: 'Urządzenie Portal z technologią skanowania twarzy',
-        1: 'Dashboard webowy i aplikacja mobilna Portal',
+        0: 'Dashboard webowy i aplikacja mobilna Portal',
       },
       mobileScreenCaptions: {
         0: 'Ekran rejestracji',
@@ -217,10 +219,12 @@ export const projectTranslations: ProjectTranslations = {
       mobileScreensDescription: 'I designed and prototyped the Portal mobile application interface, enabling users to manage their account, wallet, and personalized offers.',
       deviceMockupTitle: 'Verification Device',
       deviceMockupDescription: 'Portal Smart Checkout is a dedicated POS device with a built-in face scanning camera, enabling instant customer age verification.',
-      heroFollowImageCaption: 'Age verification at point of sale',
+      heroFollowImageCaptions: {
+        0: 'Age verification at point of sale',
+        1: 'Portal device with face scanning technology',
+      },
       imageCaptions: {
-        0: 'Portal device with face scanning technology',
-        1: 'Web dashboard and Portal mobile application',
+        0: 'Web dashboard and Portal mobile application',
       },
       mobileScreenCaptions: {
         0: 'Registration screen',

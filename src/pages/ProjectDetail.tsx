@@ -96,23 +96,30 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Hero Follow Image - directly after hero animation */}
-      {project.heroFollowImage && (
+      {/* Hero Follow Images - directly after hero animation */}
+      {project.heroFollowImages && project.heroFollowImages.length > 0 && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
-                  src={withBaseUrl(project.heroFollowImage.src)}
-                  alt={project.heroFollowImage.alt}
-                  className="w-full h-auto object-cover"
-                />
-                {project.heroFollowImage.caption && (
-                  <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
-                    {project.heroFollowImage.caption}
-                  </p>
-                )}
-              </div>
+            <div className="max-w-5xl mx-auto space-y-4">
+              {project.heroFollowImages.map((img, index) => (
+                <div 
+                  key={index}
+                  className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
+                  style={img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined}
+                >
+                  <img
+                    src={withBaseUrl(img.src)}
+                    alt={img.alt}
+                    className={`w-full h-auto ${img.displayMode === 'centered' ? 'object-contain mx-auto' : 'object-cover'}`}
+                    style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
+                  />
+                  {img.caption && (
+                    <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
+                      {img.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
