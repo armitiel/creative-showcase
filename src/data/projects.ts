@@ -361,8 +361,8 @@ export const projects: Project[] = [
       { src: '/projects/portal/device-face-scan.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
     ],
     images: [
-      { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
       { src: '/projects/portal/dashboard.png', alt: 'Portal Dashboard Design', caption: 'Projekt dashboardu - zarządzanie kontem i kampaniami reklamowymi', noMagnifier: true },
+      { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
       { src: '/projects/portal/kiosk-screen.png', alt: 'Portal Kiosk Default Screen', caption: 'Ekran kiosku Portal - ekran zakupowy z kodem QR', noMagnifier: true },
     ],
     mobileScreens: {

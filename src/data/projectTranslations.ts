@@ -197,8 +197,8 @@ export const projectTranslations: ProjectTranslations = {
         1: 'Urządzenie Portal z technologią skanowania twarzy',
       },
       imageCaptions: {
-        0: 'Dashboard webowy i aplikacja mobilna Portal',
-        1: 'Projekt dashboardu - zarządzanie kontem i kampaniami reklamowymi',
+        0: 'Projekt dashboardu - zarządzanie kontem i kampaniami reklamowymi',
+        1: 'Dashboard webowy i aplikacja mobilna Portal',
         2: 'Ekran kiosku Portal - ekran zakupowy z kodem QR',
       },
       mobileScreenCaptions: {
@@ -226,8 +226,8 @@ export const projectTranslations: ProjectTranslations = {
         1: 'Portal device with face scanning technology',
       },
       imageCaptions: {
-        0: 'Web dashboard and Portal mobile application',
-        1: 'Dashboard design - account management and ad campaigns',
+        0: 'Dashboard design - account management and ad campaigns',
+        1: 'Web dashboard and Portal mobile application',
         2: 'Portal kiosk screen - shopping screen with QR code',
       },
       mobileScreenCaptions: {
