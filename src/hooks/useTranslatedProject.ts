@@ -2,7 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Project, getProjectBySlug, projects } from '@/data/projects';
 import { getProjectTranslation } from '@/data/projectTranslations';
 
-export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results' | 'images' | 'mobileScreens' | 'gifPair' | 'heroFollowImage'> {
+export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results' | 'images' | 'mobileScreens' | 'gifPair' | 'heroFollowImages'> {
   title: string;
   description: string;
   fullDescription: string;
@@ -56,11 +56,14 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     alt: string;
     caption?: string;
   }[];
-  heroFollowImage?: {
+  heroFollowImages?: {
     src: string;
     alt: string;
     caption?: string;
-  };
+    displayMode?: 'cover' | 'centered';
+    backgroundColor?: string;
+    imageScale?: number;
+  }[];
   youtubeVideo?: {
     url: string;
     title?: string;
@@ -105,11 +108,11 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     caption: translation.gifPairCaptions?.[index] ?? gif.caption,
   }));
   
-  // Translate hero follow image caption
-  const translatedHeroFollowImage = project.heroFollowImage ? {
-    ...project.heroFollowImage,
-    caption: translation.heroFollowImageCaption ?? project.heroFollowImage.caption,
-  } : undefined;
+  // Translate hero follow image captions
+  const translatedHeroFollowImages = project.heroFollowImages?.map((img, index) => ({
+    ...img,
+    caption: translation.heroFollowImageCaptions?.[index] ?? img.caption,
+  }));
 
   return {
     ...project,
@@ -120,7 +123,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     solution: translation.solution ?? project.solution,
     results: translation.results ?? project.results,
     images: translatedImages,
-    heroFollowImage: translatedHeroFollowImage,
+    heroFollowImages: translatedHeroFollowImages,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,
