@@ -491,6 +491,29 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Logo Concept Section */}
+      {project.logoConcept && (
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                {project.logoConcept.title || 'Logo Concept'}
+              </h2>
+              <p className={`mb-10 max-w-2xl mx-auto text-center leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
+                {project.logoConcept.description}
+              </p>
+              <div className="rounded-2xl overflow-hidden">
+                <img 
+                  src={withBaseUrl(project.logoConcept.image)} 
+                  alt={project.logoConcept.alt}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Project Gallery */}
       <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e8e8e8]'}`}>
         <div className="container mx-auto px-4">

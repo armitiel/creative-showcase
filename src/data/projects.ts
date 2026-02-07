@@ -100,6 +100,12 @@ export interface Project {
   challenge?: string;
   solution?: string;
   results?: string;
+  logoConcept?: {
+    title?: string;
+    description: string;
+    image: string;
+    alt: string;
+  };
   typography?: {
     description: string;
     fonts: ProjectFont[];
@@ -138,6 +144,12 @@ export const projects: Project[] = [
       src: '/projects/selva-rape/box.png',
       alt: 'Selva Yawanawa - Pudełko produktu',
       backgroundImage: '/projects/selva-rape/display.png',
+    },
+    logoConcept: {
+      title: 'Pomysł na logo',
+      description: 'Dolna część znaku przyjmuje formę ziemi – fundamentu i stabilnej bazy. Z niej wyrasta listek, symbolizujący życie, wzrost i rozwój.',
+      image: '/projects/selva-rape/logo-concept.png',
+      alt: 'Selva - Koncepcja logo',
     },
     images: [
       { src: '/projects/selva-rape/logo.png', alt: 'Selva Logo', caption: 'Logo marki Selva z charakterystycznym liściem', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.4 },
