@@ -36,7 +36,7 @@ export const LoadingScreen = ({ progress, isLoaded, onFinished }: LoadingScreenP
         <img
           src={logo}
           alt="Logo"
-          className="w-14 h-14 md:w-20 md:h-20 invert"
+          className="w-14 md:w-20 object-contain invert"
         />
       </div>
 
