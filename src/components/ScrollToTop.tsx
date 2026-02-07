@@ -1,34 +1,32 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+const scrollToElement = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "instant" });
+  } else {
+    // Fallback: if element not yet in DOM, use rAF to catch next paint
+    requestAnimationFrame(() => {
+      const elRetry = document.getElementById(id);
+      if (elRetry) {
+        elRetry.scrollIntoView({ behavior: "instant" });
+      }
+    });
+  }
+};
 
 export const ScrollToTop = () => {
   const { pathname, state, hash } = useLocation();
 
-  useEffect(() => {
-    // If navigating to home with scrollToProjects state, scroll to projects section
+  useLayoutEffect(() => {
     if (pathname === "/" && (state as any)?.scrollToProjects) {
-      setTimeout(() => {
-        const projectsSection = document.getElementById("projects");
-        if (projectsSection) {
-          projectsSection.scrollIntoView({ behavior: "instant" });
-        }
-      }, 100);
+      scrollToElement("projects");
     } else if (pathname === "/" && ((state as any)?.scrollToContact || hash === "#contact")) {
-      setTimeout(() => {
-        const contactSection = document.getElementById("contact");
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: "instant" });
-        }
-      }, 100);
+      scrollToElement("contact");
     } else if (pathname === "/" && hash === "#projects") {
-      setTimeout(() => {
-        const projectsSection = document.getElementById("projects");
-        if (projectsSection) {
-          projectsSection.scrollIntoView({ behavior: "instant" });
-        }
-      }, 100);
+      scrollToElement("projects");
     } else {
-      // Always scroll to top for all other navigations (including project pages)
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [pathname, state, hash]);
