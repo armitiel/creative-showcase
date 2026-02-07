@@ -24,6 +24,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
   typography?: {
     description: string;
     fonts: Project['typography'] extends { fonts: infer F } ? F : never;
+    image?: string;
   };
   colors?: {
     description: string;
@@ -111,6 +112,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,
+      image: project.typography.image,
     } : undefined,
     colors: project.colors ? {
       description: translation.colorsDescription ?? project.colors.description,
