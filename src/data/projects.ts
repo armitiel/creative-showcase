@@ -357,9 +357,9 @@ export const projects: Project[] = [
     ],
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
+      { src: '/projects/portal/age-verification.png', alt: 'Portal Age Verification', caption: 'Weryfikacja wieku w punkcie sprzedaży' },
       { src: '/projects/portal/device-face-scan.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal z technologią skanowania twarzy', displayMode: 'centered', backgroundColor: '#0d1117', imageScale: 0.85 },
       { src: '/projects/portal/kiosk-screen.png', alt: 'Portal Kiosk Default Screen', caption: 'Ekran kiosku Portal - ekran zakupowy z kodem QR', noMagnifier: true },
-      { src: '/projects/portal/age-verification.png', alt: 'Portal Age Verification', caption: 'Weryfikacja wieku w punkcie sprzedaży' },
     ],
     mobileScreens: {
       title: 'Aplikacja mobilna',
