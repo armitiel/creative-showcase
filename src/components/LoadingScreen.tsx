@@ -32,15 +32,12 @@ export const LoadingScreen = ({ progress, isLoaded, onFinished }: LoadingScreenP
       }`}
     >
       {/* Logo / Brand */}
-      <div className="mb-12 text-center flex flex-col items-center">
+      <div className="mb-12 flex items-center justify-center">
         <img
           src={logo}
           alt="Logo"
-          className="w-12 h-12 md:w-16 md:h-16 mb-6 invert"
+          className="w-14 h-14 md:w-20 md:h-20 invert"
         />
-        <h1 className="text-3xl md:text-5xl font-['Righteous'] text-white tracking-tight">
-          PORTFOLIO
-        </h1>
       </div>
 
       {/* Progress bar container */}
