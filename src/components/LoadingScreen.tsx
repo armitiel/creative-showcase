@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import logo from '@/assets/logo.png';
 
 interface LoadingScreenProps {
   progress: number;
@@ -31,13 +32,15 @@ export const LoadingScreen = ({ progress, isLoaded, onFinished }: LoadingScreenP
       }`}
     >
       {/* Logo / Brand */}
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center flex flex-col items-center">
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-12 h-12 md:w-16 md:h-16 mb-6 invert"
+        />
         <h1 className="text-3xl md:text-5xl font-['Righteous'] text-white tracking-tight">
           PORTFOLIO
         </h1>
-        <p className="text-xs text-white/40 tracking-[0.3em] uppercase mt-3">
-          Ładowanie zasobów…
-        </p>
       </div>
 
       {/* Progress bar container */}
