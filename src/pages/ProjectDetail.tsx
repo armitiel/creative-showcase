@@ -313,6 +313,16 @@ const ProjectDetail = () => {
                 {project.typography.description}
               </p>
               
+              {project.typography.image && (
+                <div className="mb-12 rounded-xl overflow-hidden">
+                  <img 
+                    src={withBaseUrl(project.typography.image)} 
+                    alt="Typography overview" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              )}
+
               <div className="space-y-12">
                 {project.typography.fonts.map((font, fontIndex) => (
                   <div key={fontIndex} className="space-y-6">

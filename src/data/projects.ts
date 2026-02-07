@@ -103,6 +103,7 @@ export interface Project {
   typography?: {
     description: string;
     fonts: ProjectFont[];
+    image?: string;
   };
   colors?: {
     description: string;
@@ -157,6 +158,7 @@ export const projects: Project[] = [
     },
     typography: {
       description: 'Typografia Selva łączy czytelność z organicznym charakterem marki, podkreślając jej naturalne korzenie i autentyczność.',
+      image: '/projects/selva-rape/fonts-overview.png',
       fonts: [
         {
           name: 'BowlbyOne Regular',
@@ -187,6 +189,7 @@ export const projects: Project[] = [
       description: 'Paleta kolorów Selva opiera się na naturalnych tonach - głęboka zieleń dżungli, ciepły beż i czysta biel tworzą organiczny, autentyczny wygląd marki.',
       palette: [
         { name: 'Selva Green', hex: '#2D8C3C', rgb: '45 140 60', cmyk: '68 0 57 45' },
+        { name: 'Selva Yellow', hex: '#FFEB3B', rgb: '255 235 59', cmyk: '0 8 77 0' },
         { name: 'Sand Beige', hex: '#D4C5A9', rgb: '212 197 169', cmyk: '0 7 20 17' },
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
