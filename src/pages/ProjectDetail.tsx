@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Wrench } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -125,34 +126,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Retailer Images - Side by Side */}
-      {project.retailerImages && project.retailerImages.length >= 2 && (
-        <section className="pb-8">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.retailerImages.map((img, index) => (
-                  <div 
-                    key={index}
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
-                  >
-                    <img
-                      src={withBaseUrl(img.src)}
-                      alt={img.alt}
-                      className="w-full h-auto object-cover"
-                    />
-                    {img.caption && (
-                      <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
-                        {img.caption}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Thumbnail Grid - for NFT projects */}
       {project.thumbnailGrid && (
@@ -567,6 +540,29 @@ const ProjectDetail = () => {
                 : '#d0e8e4';
 
               return (
+                <React.Fragment key={index}>
+                  {/* Retailer Images - inserted before the last gallery image */}
+                  {project.retailerImages && project.retailerImages.length >= 2 && index === project.images.length - 1 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {project.retailerImages.map((img, rIndex) => (
+                        <div 
+                          key={`retailer-${rIndex}`}
+                          className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'border-[#c5ddd9]'}`}
+                        >
+                          <img
+                            src={withBaseUrl(img.src)}
+                            alt={img.alt}
+                            className="w-full h-auto object-cover"
+                          />
+                          {img.caption && (
+                            <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                              <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 <ImageWrapper key={index}>
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
@@ -644,6 +640,7 @@ const ProjectDetail = () => {
                     )}
                   </div>
                 </ImageWrapper>
+                </React.Fragment>
               );
             })}
           </div>
