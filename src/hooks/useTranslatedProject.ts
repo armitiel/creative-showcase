@@ -2,7 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Project, getProjectBySlug, projects } from '@/data/projects';
 import { getProjectTranslation } from '@/data/projectTranslations';
 
-export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results' | 'images' | 'mobileScreens' | 'gifPair'> {
+export interface TranslatedProject extends Omit<Project, 'title' | 'description' | 'fullDescription' | 'challenge' | 'solution' | 'results' | 'images' | 'mobileScreens' | 'gifPair' | 'heroFollowImage'> {
   title: string;
   description: string;
   fullDescription: string;
@@ -56,6 +56,11 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     alt: string;
     caption?: string;
   }[];
+  heroFollowImage?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
   youtubeVideo?: {
     url: string;
     title?: string;
@@ -100,6 +105,12 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     caption: translation.gifPairCaptions?.[index] ?? gif.caption,
   }));
   
+  // Translate hero follow image caption
+  const translatedHeroFollowImage = project.heroFollowImage ? {
+    ...project.heroFollowImage,
+    caption: translation.heroFollowImageCaption ?? project.heroFollowImage.caption,
+  } : undefined;
+
   return {
     ...project,
     title: translation.title,
@@ -109,6 +120,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     solution: translation.solution ?? project.solution,
     results: translation.results ?? project.results,
     images: translatedImages,
+    heroFollowImage: translatedHeroFollowImage,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,
