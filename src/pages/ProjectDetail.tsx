@@ -376,6 +376,37 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* First Hero Follow Image - before Mobile Application section */}
+      {project.heroFollowImages && project.heroFollowImages.length > 0 && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              {(() => {
+                const img = project.heroFollowImages![0];
+                return (
+                  <div 
+                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
+                    style={img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined}
+                  >
+                    <img
+                      src={withBaseUrl(img.src)}
+                      alt={img.alt}
+                      className={`w-full h-auto ${img.displayMode === 'centered' ? 'object-contain mx-auto' : 'object-cover'}`}
+                      style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
+                    />
+                    {img.caption && (
+                      <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
+                        {img.caption}
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Mobile Screens Section - Phone Mockups */}
       {project.mobileScreens && (
         <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#141414] to-[#1a1a1a]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
@@ -437,12 +468,13 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Hero Follow Images - after Mobile Application section */}
-      {project.heroFollowImages && project.heroFollowImages.length > 0 && (
+
+      {/* Remaining Hero Follow Images - after Mobile Application section */}
+      {project.heroFollowImages && project.heroFollowImages.length > 1 && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-4">
-              {project.heroFollowImages.map((img, index) => (
+              {project.heroFollowImages.slice(1).map((img, index) => (
                 <div 
                   key={index}
                   className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
