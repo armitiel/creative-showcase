@@ -335,7 +335,7 @@ const ProjectDetail = () => {
                           <p 
                             className={`text-2xl md:text-3xl flex-1 ${isDark ? 'text-white' : 'text-foreground'}`}
                             style={{ 
-                              fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : font.name === 'Cabin' ? 'Cabin, sans-serif' : 'Inter, sans-serif',
+                              fontFamily: font.name === 'Khand' ? 'Khand, sans-serif' : font.name === 'Cabin' ? 'Cabin, sans-serif' : font.name === 'BowlbyOne Regular' ? '"Bowlby One", sans-serif' : font.name === 'RumRaisin Regular' ? '"Rum Raisin", sans-serif' : font.name === 'Montserrat' ? 'Montserrat, sans-serif' : 'Inter, sans-serif',
                               fontWeight: weight.name === 'Bold' ? 700 : weight.name === 'SemiBold' ? 600 : weight.name === 'Medium' ? 500 : weight.name === 'Light' ? 300 : 400
                             }}
                           >
