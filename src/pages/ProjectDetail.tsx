@@ -96,6 +96,28 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Hero Follow Image - directly after hero animation */}
+      {project.heroFollowImage && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
+                <img
+                  src={withBaseUrl(project.heroFollowImage.src)}
+                  alt={project.heroFollowImage.alt}
+                  className="w-full h-auto object-cover"
+                />
+                {project.heroFollowImage.caption && (
+                  <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
+                    {project.heroFollowImage.caption}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Retailer Images - Side by Side */}
       {project.retailerImages && project.retailerImages.length >= 2 && (
         <section className="pb-8">
