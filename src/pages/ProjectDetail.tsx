@@ -663,20 +663,11 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* HubbleRx Bottom Illustration + Back to Portfolio merged */}
+      {/* HubbleRx Bottom Illustration - Levitating creature centered */}
       {project.slug === 'hubble-rx' && (
-        <section className={`pt-16 pb-0 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#f0f0f0]'}`}>
-          <div className="relative w-full overflow-hidden">
-            {/* b1 - city/platform base, flush right and bottom, partially off-screen */}
-            <div className="flex justify-end" style={{ marginRight: '-8%' }}>
-              <img
-                src={withBaseUrl('/projects/hubble/illustration-b1.svg')}
-                alt="HubbleRx City Illustration"
-                className="w-[75%] h-auto block"
-              />
-            </div>
-            {/* b2 - flying creature with levitation animation, on top of b1 */}
-            <div className="absolute left-[28%] top-[5%] w-[14%] z-10 animate-[levitate_4s_ease-in-out_infinite]">
+        <section className={`pt-16 pb-8 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#f0f0f0]'}`}>
+          <div className="flex justify-center">
+            <div className="w-[14%] animate-[levitate_4s_ease-in-out_infinite]">
               <img
                 src={withBaseUrl('/projects/hubble/illustration-b2.svg')}
                 alt="HubbleRx Flying Creature"
