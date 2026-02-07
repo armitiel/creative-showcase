@@ -159,6 +159,20 @@ export const projects: Project[] = [
       description: 'Typografia Selva łączy czytelność z organicznym charakterem marki, podkreślając jej naturalne korzenie i autentyczność.',
       fonts: [
         {
+          name: 'BowlbyOne Regular',
+          usage: 'Logo',
+          weights: [
+            { name: 'Regular', sample: 'SELVA' },
+          ],
+        },
+        {
+          name: 'RumRaisin Regular',
+          usage: 'Opakowania',
+          weights: [
+            { name: 'Regular', sample: 'Yawanawa · Bobinsana · Mulatero' },
+          ],
+        },
+        {
           name: 'Montserrat',
           usage: 'Headlines & Body',
           weights: [
