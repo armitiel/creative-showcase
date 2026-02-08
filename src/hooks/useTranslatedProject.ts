@@ -101,7 +101,10 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       ...screen,
       caption: translation.mobileScreenCaptions?.[index] ?? screen.caption,
     })),
-    sectionImages: project.mobileScreens.sectionImages,
+    sectionImages: project.mobileScreens.sectionImages?.map((img, index) => ({
+      ...img,
+      caption: translation.sectionImageCaptions?.[index] ?? img.caption,
+    })),
   } : undefined;
 
   // Translate GIF pair captions

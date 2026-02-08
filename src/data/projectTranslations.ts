@@ -24,6 +24,8 @@ interface ProjectTranslation {
   gifPairCaptions?: Record<number, string>;
   // Hero follow image captions by index
   heroFollowImageCaptions?: Record<number, string>;
+  // Section image captions by index (in mobileScreens)
+  sectionImageCaptions?: Record<number, string>;
   // YouTube video
   youtubeVideoTitle?: string;
   youtubeVideoDescription?: string;
@@ -276,11 +278,20 @@ export const projectTranslations: ProjectTranslations = {
       },
       imageCaptions: {
         0: 'Responsywny design strony na urządzeniach mobilnych',
+        1: 'Interaktywny interfejs wyboru subskrypcji na urządzeniu mobilnym',
       },
       mobileScreenCaptions: {
         0: 'Ilustracja hero z krajobrazem',
         1: 'Ilustracja z miastem przyszłości',
       },
+      mobileScreensTitle: 'Minimalistyczne ilustracje',
+      mobileScreensDescription: 'Wspólne elementy wszystkich materiałów marketingowych, nadające przyjemny odbiór z nutką nowoczesności.',
+      sectionImageCaptions: {
+        0: 'Przykład ilustracji używanej w sekcjach hero',
+        1: 'Ulotka reklamowa HubbleRx — subskrypcje farmaceutyczne',
+      },
+      deviceMockupTitle: 'Animowany mockup interfejsu',
+      deviceMockupDescription: 'Prezentacja interakcji użytkownika z interfejsem aplikacji mobilnej HubbleRx.',
       gifPairCaptions: {
         0: 'Animacja do płatnej reklamy',
         1: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze',
@@ -296,6 +307,7 @@ export const projectTranslations: ProjectTranslations = {
       typographyDescription: 'HubbleRx\'s typographic system uses readable, rounded fonts that emphasize the friendly character of the medical platform.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
       mobileScreensDescription: 'Common elements across all marketing materials, creating a pleasant feel with a touch of modernity.',
+      mobileScreensTitle: 'Minimalist Illustrations',
       heroFollowImageCaptions: {
         0: 'Full version of the HubbleRx brand logo',
         1: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
@@ -306,11 +318,18 @@ export const projectTranslations: ProjectTranslations = {
       },
       imageCaptions: {
         0: 'Responsive website design on mobile devices',
+        1: 'Interactive subscription selection interface on mobile device',
       },
       mobileScreenCaptions: {
         0: 'Hero illustration with landscape',
         1: 'Illustration with futuristic city',
       },
+      sectionImageCaptions: {
+        0: 'Example illustration used in hero sections',
+        1: 'HubbleRx advertising flyer — Pharmaceutical Subscriptions',
+      },
+      deviceMockupTitle: 'Animated Interface Mockup',
+      deviceMockupDescription: 'Presentation of user interaction with the HubbleRx mobile application interface.',
       gifPairCaptions: {
         0: 'Paid advertisement animation',
         1: 'Paid advertisement animation — partially made in Blender',
