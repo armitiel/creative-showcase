@@ -385,14 +385,13 @@ const ProjectDetail = () => {
                 const img = project.heroFollowImages![0];
                 return (
                   <div 
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
-                    style={img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined}
+                    className="rounded-2xl overflow-hidden border-none"
+                    style={{ backgroundColor: isDark ? '#141414' : '#f0f0f0' }}
                   >
                     <img
                       src={withBaseUrl(img.src)}
                       alt={img.alt}
-                      className={`w-full h-auto ${img.displayMode === 'centered' ? 'object-contain mx-auto' : 'object-cover'}`}
-                      style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center bottom' } : undefined}
+                      className="w-full h-auto object-cover"
                     />
                     {img.caption && (
                       <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
