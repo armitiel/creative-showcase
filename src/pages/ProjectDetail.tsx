@@ -119,8 +119,9 @@ const ProjectDetail = () => {
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards]"
+                    className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards] cursor-zoom-in"
                     style={{ animationDelay: `${index * 150}ms` }}
+                    onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
                   >
                     <img
                       src={withBaseUrl(image.src)}
