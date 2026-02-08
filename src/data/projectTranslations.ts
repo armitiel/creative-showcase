@@ -194,12 +194,10 @@ export const projectTranslations: ProjectTranslations = {
       deviceMockupDescription: 'Portal Smart Checkout to dedykowane urządzenie POS z wbudowaną kamerą do skanowania twarzy, umożliwiające natychmiastową weryfikację wieku klienta.',
       heroFollowImageCaptions: {
         0: 'Weryfikacja wieku w punkcie sprzedaży',
-        1: 'Urządzenie Portal z technologią skanowania twarzy',
       },
       imageCaptions: {
-        0: 'Projekt dashboardu - zarządzanie kontem i kampaniami reklamowymi',
-        1: 'Dashboard webowy i aplikacja mobilna Portal',
-        2: 'Ekran kiosku Portal - ekran zakupowy z kodem QR',
+        0: 'Dashboard webowy i aplikacja mobilna Portal',
+        1: 'Ekran kiosku Portal - ekran zakupowy z kodem QR',
       },
       mobileScreenCaptions: {
         0: 'Ekran rejestracji',
@@ -223,12 +221,10 @@ export const projectTranslations: ProjectTranslations = {
       deviceMockupDescription: 'Portal Smart Checkout is a dedicated POS device with a built-in face scanning camera, enabling instant customer age verification.',
       heroFollowImageCaptions: {
         0: 'Age verification at point of sale',
-        1: 'Portal device with face scanning technology',
       },
       imageCaptions: {
-        0: 'Dashboard design - account management and ad campaigns',
-        1: 'Web dashboard and Portal mobile application',
-        2: 'Portal kiosk screen - shopping screen with QR code',
+        0: 'Web dashboard and Portal mobile application',
+        1: 'Portal kiosk screen - shopping screen with QR code',
       },
       mobileScreenCaptions: {
         0: 'Registration screen',
