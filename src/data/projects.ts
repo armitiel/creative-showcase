@@ -483,7 +483,7 @@ export const projects: Project[] = [
     slug: 'nft-generative-system',
     title: 'System Generatywny NFT',
     category: 'Art',
-    thumbnail: '/projects/nft-system/thumbnail.png',
+    thumbnail: '/projects/nft-system/cover-card.png',
     description: 'Mój pierwszy proces trenowania modelu AI — dobór stylu obrysów, akcentów i detali na zamówienie klienta',
     fullDescription: 'Był to mój pierwszy proces trenowania własnego modelu AI w Stable Diffusion. Projekt polegał na odpowiednim doborze stylu obrysów, akcentów kolorystycznych i detali graficznych, dostosowanych do wymagań klienta. Dzięki automatyzacji post-produkcji w Photoshopie udało się wygenerować tysiące spójnych stylowo grafik NFT.',
     client: 'Projekt NFT',
