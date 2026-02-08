@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
+import Illustrations from "./pages/Illustrations";
 import NotFound from "./pages/NotFound";
 import { SurveyPopup } from "@/components/SurveyPopup";
 import { LoadingScreen } from "@/components/LoadingScreen";
@@ -43,6 +44,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/project/:slug" element={<ProjectDetail />} />
+                <Route path="/illustrations" element={<Illustrations />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
