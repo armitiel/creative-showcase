@@ -269,11 +269,10 @@ export const projectTranslations: ProjectTranslations = {
       heroFollowImageCaptions: {
         0: 'Pełna wersja logo marki HubbleRx',
         1: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
-        2: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions',
-        3: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami',
-        4: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu',
-        5: 'Kompleksowa prezentacja layoutu strony i elementów UI',
-        6: 'Ilustracje procesu onboardingu i badge członkowski',
+        2: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami',
+        3: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu',
+        4: 'Kompleksowa prezentacja layoutu strony i elementów UI',
+        5: 'Ilustracje procesu onboardingu i badge członkowski',
       },
       imageCaptions: {
         0: 'Responsywny design strony na urządzeniach mobilnych',
@@ -299,11 +298,10 @@ export const projectTranslations: ProjectTranslations = {
       heroFollowImageCaptions: {
         0: 'Full version of the HubbleRx brand logo',
         1: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
-        2: 'HubbleRx advertising flyer — Pharmaceutical Subscriptions',
-        3: 'HubbleRx subscription box mockup with capsules',
-        4: 'Close-up of the subscription box with branding details',
-        5: 'Comprehensive website layout and UI elements presentation',
-        6: 'Onboarding process illustrations and membership badge',
+        2: 'HubbleRx subscription box mockup with capsules',
+        3: 'Close-up of the subscription box with branding details',
+        4: 'Comprehensive website layout and UI elements presentation',
+        5: 'Onboarding process illustrations and membership badge',
       },
       imageCaptions: {
         0: 'Responsive website design on mobile devices',
