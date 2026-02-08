@@ -532,7 +532,7 @@ const ProjectDetail = () => {
                       className="w-full h-auto object-cover"
                     />
                     {gif.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
                       </div>
                     )}
@@ -606,7 +606,7 @@ const ProjectDetail = () => {
                             className="w-full h-auto object-cover"
                           />
                           {img.caption && (
-                            <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                            <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                               <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                             </div>
                           )}
@@ -685,7 +685,7 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[#c5c5c5]'}`}>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{image.caption}</p>
                       </div>
                     )}
