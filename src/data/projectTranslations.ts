@@ -274,8 +274,9 @@ export const projectTranslations: ProjectTranslations = {
         2: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
         3: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami',
         4: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu',
-        5: 'Kompleksowa prezentacja layoutu strony i elementów UI',
-        6: 'Ilustracje procesu onboardingu i badge członkowski',
+        5: 'Trójwymiarowa ikona logo HubbleRx',
+        6: 'Kompleksowa prezentacja layoutu strony i elementów UI',
+        7: 'Ilustracje procesu onboardingu i badge członkowski',
       },
       imageCaptions: {
         0: 'Responsywny design strony na urządzeniach mobilnych',
@@ -315,8 +316,9 @@ export const projectTranslations: ProjectTranslations = {
         2: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
         3: 'HubbleRx subscription box mockup with capsules',
         4: 'Close-up of the subscription box with branding details',
-        5: 'Comprehensive website layout and UI elements presentation',
-        6: 'Onboarding process illustrations and membership badge',
+        5: '3D HubbleRx logo icon',
+        6: 'Comprehensive website layout and UI elements presentation',
+        7: 'Onboarding process illustrations and membership badge',
       },
       imageCaptions: {
         0: 'Responsive website design on mobile devices',
