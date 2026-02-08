@@ -181,8 +181,8 @@ export const projectTranslations: ProjectTranslations = {
   'portal-smart-checkout': {
     pl: {
       title: 'Portal - Inteligentna Kasa',
-      description: 'Kompleksowy system weryfikacji wieku klientów z technologią skanowania twarzy - projektowanie UI/UX aplikacji mobilnej i prototypów',
-      fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. System wykorzystuje zaawansowaną technologię skanowania twarzy AI do automatycznej weryfikacji tożsamości. Byłem odpowiedzialny za projektowanie interfejsu użytkownika aplikacji mobilnej, prototypowanie na urządzeniach mobilnych oraz wizualizacje produktu.',
+      description: 'Projektowanie UI/UX wieloplatformowego systemu weryfikacji wieku - urządzenie POS, aplikacja mobilna i panel zarządzania na desktop',
+      fullDescription: 'Portal to innowacyjna firma technologiczna specjalizująca się w biometrycznej weryfikacji wieku klientów zakupujących alkohol. Platforma składa się z trzech głównych elementów: dedykowanego urządzenia POS ze skanowaniem twarzy, aplikacji mobilnej dla klientów oraz desktopowego systemu zarządzania dla sprzedawców. Byłem odpowiedzialny za projektowanie interfejsów wszystkich trzech platform, prototypowanie oraz wizualizacje produktu.',
       challenge: 'Zaprojektowanie intuicyjnego interfejsu dla aplikacji obsługującej weryfikację biometryczną, która musi być jednocześnie bezpieczna, szybka i przyjazna dla użytkownika końcowego oraz sprzedawców.',
       solution: 'Stworzyłem ciemny, nowoczesny interfejs z akcentami w kolorze niebieskim, który komunikuje profesjonalizm i bezpieczeństwo. Aplikacja została zaprojektowana z myślą o szybkiej nawigacji i minimalnej liczbie kroków do weryfikacji wieku.',
       results: 'System osiągnął 98% skuteczności wykrywania fałszywych dokumentów tożsamości, znacznie przewyższając średnią branżową wynoszącą 40%.',
@@ -208,8 +208,8 @@ export const projectTranslations: ProjectTranslations = {
     },
     en: {
       title: 'Portal - Smart Checkout',
-      description: 'Comprehensive customer age verification system with face scanning technology - mobile app UI/UX design and prototyping',
-      fullDescription: 'Portal is an innovative technology company specializing in biometric age verification for customers purchasing alcohol. The system uses advanced AI face scanning technology for automatic identity verification. I was responsible for designing the mobile application user interface, prototyping on mobile devices, and product visualizations.',
+      description: 'UI/UX design for a multi-platform age verification system - POS device, mobile app and desktop management panel',
+      fullDescription: 'Portal is an innovative technology company specializing in biometric age verification for customers purchasing alcohol. The platform consists of three main components: a dedicated POS device with face scanning, a mobile app for customers, and a desktop management system for retailers. I was responsible for designing the interfaces across all three platforms, prototyping, and product visualizations.',
       challenge: 'Designing an intuitive interface for an application handling biometric verification that must be simultaneously secure, fast, and user-friendly for both end users and retailers.',
       solution: 'I created a dark, modern interface with blue accents that communicates professionalism and security. The application was designed with quick navigation and minimal steps for age verification in mind.',
       results: 'The system achieved 98% effectiveness in detecting fake identity documents, significantly exceeding the industry average of 40%.',
