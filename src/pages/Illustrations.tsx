@@ -8,7 +8,6 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ImageLightbox, useLightbox } from '@/components/ImageLightbox';
 import { illustrationCategories } from '@/data/illustrations';
 import { withBaseUrl } from '@/lib/utils';
-import logo from '@/assets/logo.png';
 
 const Illustrations = () => {
   const { t, language } = useLanguage();
@@ -16,51 +15,52 @@ const Illustrations = () => {
   const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
 
   return (
-    <div className="min-h-screen bg-background bg-noise">
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
+    <div className="min-h-screen bg-[#f0f0f0]">
+      {/* Navigation Bar — identical to ProjectDetail light theme */}
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b shadow-md bg-[#f0f0f0]/80 border-border shadow-black/5">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link
               to="/"
+              state={{ scrollToProjects: true }}
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <img src={logo} alt="Amitiel Angelisme" className="h-8 w-auto" />
+              <ArrowLeft className="h-4 w-4" />
+              <span className="font-medium">{t.projectDetail.backToPortfolio}</span>
             </Link>
             <div className="flex items-center gap-4">
-              <h1 className="text-sm font-medium text-foreground hidden sm:block">
-                {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-              </h1>
               <LanguageSwitcher />
+              <span className="text-xl font-bold text-primary font-['Poppins']">Portfolio</span>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-32 pb-16">
-        <div
-          ref={heroRef}
-          className={`container mx-auto px-4 md:px-8 text-center opacity-0 ${heroVisible ? 'animate-fade-in' : ''}`}
-        >
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <Paintbrush className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-medium">
+      {/* Hero Section — matching ProjectDetail style */}
+      <section 
+        ref={heroRef}
+        className={`pt-24 pb-12 opacity-0 ${heroVisible ? 'animate-fade-in' : ''}`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">
               {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-            </span>
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins'] text-foreground">
+              {language === 'pl' ? 'Ilustracje & Art' : 'Illustrations & Art'}
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {language === 'pl'
+                ? 'Grafika wektorowa, stylizowane ilustracje i umiejętność pracy w różnych stylach — od cartoon po realistyczne.'
+                : 'Vector graphics, stylized illustrations and the ability to work in various styles — from cartoon to realistic.'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Paintbrush className="h-4 w-4" />
+                <span>Adobe Illustrator, Adobe Photoshop</span>
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 font-['Righteous']">
-            {language === 'pl' ? 'Ilustracje ' : 'Illustration '}
-            <span className="text-gradient">
-              {language === 'pl' ? '& Art' : '& Art'}
-            </span>
-          </h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            {language === 'pl'
-              ? 'Grafika wektorowa, stylizowane ilustracje i umiejętność pracy w różnych stylach — od cartoon po realistyczne.'
-              : 'Vector graphics, stylized illustrations and the ability to work in various styles — from cartoon to realistic.'}
-          </p>
         </div>
       </section>
 
