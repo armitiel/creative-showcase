@@ -354,7 +354,6 @@ export const projects: Project[] = [
     heroAnimation: '/projects/portal/hero-animation.gif',
     retailerImages: [
       { src: '/projects/portal/retailer-1.png', alt: 'Portal Smart Checkout for Retailers', caption: 'Selling Sheet - Smart Checkout for Retailers' },
-      { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store', caption: 'Selling Sheet - Integrates with Any Store\'s Existing Ecosystem' },
     ],
     heroFollowImages: [
       { src: '/projects/portal/device-front.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal Smart Checkout z kamerą do skanowania twarzy', displayMode: 'centered' },
@@ -362,7 +361,6 @@ export const projects: Project[] = [
     ],
     images: [
       { src: '/projects/portal/devices-presentation.png', alt: 'Portal - Prezentacja systemów', caption: 'Dashboard webowy i aplikacja mobilna Portal' },
-      { src: '/projects/portal/kiosk-screen.png', alt: 'Portal Kiosk Default Screen', caption: 'Ekran kiosku Portal - ekran zakupowy z kodem QR', noMagnifier: true },
     ],
     mobileScreens: {
       title: 'Aplikacja mobilna',
