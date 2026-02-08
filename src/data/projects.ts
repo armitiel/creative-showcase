@@ -226,6 +226,7 @@ export const projects: Project[] = [
     heroFollowImages: [
       { src: '/projects/hubble/logo-full.png', alt: 'HubbleRx Logo', caption: 'Pełna wersja logo marki HubbleRx', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.85 },
       { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
+      { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup.jpg', alt: 'HubbleRx Box Mockup', caption: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup-zoom.jpg', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
