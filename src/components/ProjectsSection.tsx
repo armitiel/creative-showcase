@@ -125,7 +125,7 @@ export const ProjectsSection = () => {
             >
               <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
                 <img
-                  src={withBaseUrl('/illustrations/cartoon/atomic-cherry.jpg')}
+                  src={withBaseUrl('/illustrations/cartoon/gentleman-portrait.jpg')}
                   alt={language === 'pl' ? 'Ilustracje' : 'Illustrations'}
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0"
                 />
