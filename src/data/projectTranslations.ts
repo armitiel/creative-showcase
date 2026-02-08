@@ -198,7 +198,6 @@ export const projectTranslations: ProjectTranslations = {
       },
       imageCaptions: {
         0: 'Dashboard webowy i aplikacja mobilna Portal',
-        1: 'Ekran kiosku Portal - ekran zakupowy z kodem QR',
       },
       mobileScreenCaptions: {
         0: 'Ekran rejestracji',
@@ -226,7 +225,6 @@ export const projectTranslations: ProjectTranslations = {
       },
       imageCaptions: {
         0: 'Web dashboard and Portal mobile application',
-        1: 'Portal kiosk screen - shopping screen with QR code',
       },
       mobileScreenCaptions: {
         0: 'Registration screen',
