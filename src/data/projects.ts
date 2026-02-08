@@ -213,7 +213,7 @@ export const projects: Project[] = [
     id: 9,
     slug: 'hubble-rx',
     title: 'HubbleRx - Branding i UI',
-    category: 'Branding, Art',
+    category: 'Branding, Art, UI/UX',
     thumbnail: '/projects/hubble/website-presentation.jpg',
     description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
     fullDescription: 'HubbleRx to platforma subskrypcji medykamentów oferująca nielimitowany dostęp do leków w ramach przystępnego abonamentu. Projekt zakładał stworzenie przyjaznego, dostępnego brandingu, który budzi zaufanie użytkowników. Byłem odpowiedzialny za projektowanie serii ilustracji UI, layoutu strony internetowej, animacji do płatnych reklam oraz kompletny branding z logo.',
