@@ -396,7 +396,7 @@ const ProjectDetail = () => {
                 >
                   <div 
                     className={img.displayMode === 'centered' && img.imageScale ? 'flex items-center justify-center' : ''}
-                    style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(3, (1 - img.imageScale) * 8)}rem 0` } : undefined}
+                    style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(4, (1 - img.imageScale) * 12 + 3)}rem 0` } : undefined}
                   >
                     <img
                       src={withBaseUrl(img.src)}
