@@ -357,6 +357,7 @@ export const projects: Project[] = [
       { src: '/projects/portal/retailer-2.png', alt: 'Portal Integrates with Any Store', caption: 'Selling Sheet - Integrates with Any Store\'s Existing Ecosystem' },
     ],
     heroFollowImages: [
+      { src: '/projects/portal/device-front.png', alt: 'Portal Smart Checkout Device', caption: 'Urządzenie Portal Smart Checkout z kamerą do skanowania twarzy', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.7 },
       { src: '/projects/portal/age-verification.png', alt: 'Portal Age Verification', caption: 'Weryfikacja wieku w punkcie sprzedaży' },
     ],
     images: [
