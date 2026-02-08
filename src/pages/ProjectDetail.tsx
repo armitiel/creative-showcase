@@ -380,27 +380,33 @@ const ProjectDetail = () => {
       {project.heroFollowImages && project.heroFollowImages.length > 0 && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              {(() => {
-                const img = project.heroFollowImages![0];
-                return (
-                  <div 
-                    className="rounded-2xl overflow-hidden border-none"
-                    style={{ backgroundColor: isDark ? '#141414' : '#f0f0f0' }}
-                  >
-                    <img
-                      src={withBaseUrl(img.src)}
-                      alt={img.alt}
-                      className="w-full h-auto object-cover"
-                    />
-                    {img.caption && (
-                      <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
-                        {img.caption}
-                      </p>
-                    )}
-                  </div>
-                );
-              })()}
+            <div className="max-w-5xl mx-auto space-y-4">
+              {project.heroFollowImages.map((img, index) => (
+                <div 
+                  key={index}
+                  className={index === 0 && project.slug === 'portal-smart-checkout'
+                    ? 'rounded-2xl overflow-hidden border-none'
+                    : `rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`
+                  }
+                  style={
+                    index === 0 && project.slug === 'portal-smart-checkout'
+                      ? { backgroundColor: isDark ? '#141414' : '#f0f0f0' }
+                      : img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined
+                  }
+                >
+                  <img
+                    src={withBaseUrl(img.src)}
+                    alt={img.alt}
+                    className={`w-full h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'object-cover'}`}
+                    style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
+                  />
+                  {img.caption && (
+                    <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
+                      {img.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -508,34 +514,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Remaining Hero Follow Images - after Mobile Application section */}
-      {project.heroFollowImages && project.heroFollowImages.length > 1 && (
-        <section className="pb-8">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto space-y-4">
-              {project.heroFollowImages.slice(1).map((img, index) => (
-                <div 
-                  key={index}
-                  className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}
-                  style={img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined}
-                >
-                  <img
-                    src={withBaseUrl(img.src)}
-                    alt={img.alt}
-                    className={`w-full h-auto ${img.displayMode === 'centered' ? 'object-contain mx-auto' : 'object-cover'}`}
-                    style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
-                  />
-                  {img.caption && (
-                    <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
-                      {img.caption}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* GIF Pair - Side by Side */}
       {project.gifPair && project.gifPair.length >= 2 && (
