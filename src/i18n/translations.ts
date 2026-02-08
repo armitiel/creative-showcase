@@ -12,6 +12,7 @@ interface TranslationsType {
     services: string;
     about: string;
     contact: string;
+    illustrations: string;
   };
   hero: {
     title: string;
@@ -96,6 +97,7 @@ export const translations: Record<Language, TranslationsType> = {
       services: 'Usługi',
       about: 'O mnie',
       contact: 'Kontakt',
+      illustrations: 'Ilustracje',
     },
     hero: {
       title: 'PORTFOLIO',
@@ -203,6 +205,7 @@ export const translations: Record<Language, TranslationsType> = {
       services: 'Services',
       about: 'About',
       contact: 'Contact',
+      illustrations: 'Illustrations',
     },
     hero: {
       title: 'PORTFOLIO',

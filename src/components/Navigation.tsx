@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -50,15 +51,21 @@ export const Navigation = () => {
               >
                 {link.label}
               </a>
-            ))}
-            <a
-              href="https://www.amitiel.cv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              CV
-            </a>
+              ))}
+              <Link
+                to="/illustrations"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
+              >
+                {t.nav.illustrations}
+              </Link>
+              <a
+                href="https://www.amitiel.cv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
+              >
+                CV
+              </a>
             <LanguageSwitcher />
           </div>
 
@@ -87,16 +94,23 @@ export const Navigation = () => {
               >
                 {link.label}
               </a>
-            ))}
-            <a
-              href="https://www.amitiel.cv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              CV
-            </a>
+              ))}
+              <Link
+                to="/illustrations"
+                className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.nav.illustrations}
+              </Link>
+              <a
+                href="https://www.amitiel.cv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                CV
+              </a>
           </div>
         )}
       </div>
