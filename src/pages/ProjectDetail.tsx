@@ -468,6 +468,22 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Mobile Device Mockup - after Mobile Screens */}
+      {project.slug === 'portal-smart-checkout' && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
+                <img
+                  src={withBaseUrl('/projects/portal/mobile-mockup.png')}
+                  alt="Portal Mobile App Mockup"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Remaining Hero Follow Images - after Mobile Application section */}
       {project.heroFollowImages && project.heroFollowImages.length > 1 && (
