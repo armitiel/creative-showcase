@@ -469,23 +469,27 @@ const ProjectDetail = () => {
                 ))}
               </div>
 
-              {/* Section image below phone mockups */}
-              {project.mobileScreens.sectionImage && (
-                <div className="mt-12 max-w-5xl mx-auto">
-                  <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'border-border'}`}
-                    style={project.mobileScreens.sectionImage.backgroundColor ? { backgroundColor: project.mobileScreens.sectionImage.backgroundColor } : undefined}
-                  >
-                    <img
-                      src={withBaseUrl(project.mobileScreens.sectionImage.src)}
-                      alt={project.mobileScreens.sectionImage.alt}
-                      className="w-full h-auto object-cover"
-                    />
-                    {project.mobileScreens.sectionImage.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
-                        <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{project.mobileScreens.sectionImage.caption}</p>
-                      </div>
-                    )}
-                  </div>
+              {/* Section images below phone mockups */}
+              {project.mobileScreens.sectionImages && project.mobileScreens.sectionImages.length > 0 && (
+                <div className="mt-12 max-w-5xl mx-auto space-y-8">
+                  {project.mobileScreens.sectionImages.map((sImg, sIndex) => (
+                    <div 
+                      key={sIndex}
+                      className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'border-border'}`}
+                      style={sImg.backgroundColor ? { backgroundColor: sImg.backgroundColor } : undefined}
+                    >
+                      <img
+                        src={withBaseUrl(sImg.src)}
+                        alt={sImg.alt}
+                        className="w-full h-auto object-cover"
+                      />
+                      {sImg.caption && (
+                        <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                          <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{sImg.caption}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>

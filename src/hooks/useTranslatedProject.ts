@@ -34,7 +34,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     title?: string;
     description?: string;
     screens: { src: string; alt: string; caption?: string }[];
-    sectionImage?: { src: string; alt: string; caption?: string; backgroundColor?: string };
+    sectionImages?: { src: string; alt: string; caption?: string; backgroundColor?: string }[];
   };
   deviceMockup?: {
     title?: string;
@@ -101,7 +101,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       ...screen,
       caption: translation.mobileScreenCaptions?.[index] ?? screen.caption,
     })),
-    sectionImage: project.mobileScreens.sectionImage,
+    sectionImages: project.mobileScreens.sectionImages,
   } : undefined;
 
   // Translate GIF pair captions
