@@ -269,8 +269,9 @@ export const projectTranslations: ProjectTranslations = {
       heroFollowImageCaptions: {
         0: 'Pełna wersja logo marki HubbleRx',
         1: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
-        2: 'Kompleksowa prezentacja layoutu strony i elementów UI',
-        3: 'Ilustracje procesu onboardingu i badge członkowski',
+        2: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami',
+        3: 'Kompleksowa prezentacja layoutu strony i elementów UI',
+        4: 'Ilustracje procesu onboardingu i badge członkowski',
       },
       imageCaptions: {
         0: 'Responsywny design strony na urządzeniach mobilnych',
@@ -296,8 +297,9 @@ export const projectTranslations: ProjectTranslations = {
       heroFollowImageCaptions: {
         0: 'Full version of the HubbleRx brand logo',
         1: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
-        2: 'Comprehensive website layout and UI elements presentation',
-        3: 'Onboarding process illustrations and membership badge',
+        2: 'HubbleRx subscription box mockup with capsules',
+        3: 'Comprehensive website layout and UI elements presentation',
+        4: 'Onboarding process illustrations and membership badge',
       },
       imageCaptions: {
         0: 'Responsive website design on mobile devices',
