@@ -392,7 +392,7 @@ const ProjectDetail = () => {
                       src={withBaseUrl(img.src)}
                       alt={img.alt}
                       className={`w-full h-auto ${img.displayMode === 'centered' ? 'object-contain mx-auto' : 'object-cover'}`}
-                      style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
+                      style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center bottom' } : undefined}
                     />
                     {img.caption && (
                       <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
