@@ -394,12 +394,17 @@ const ProjectDetail = () => {
                       : img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined
                   }
                 >
-                  <img
-                    src={withBaseUrl(img.src)}
-                    alt={img.alt}
-                    className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
-                    style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : img.displayMode === 'centered' ? undefined : undefined}
-                  />
+                  <div 
+                    className={img.displayMode === 'centered' && img.imageScale ? 'flex items-center justify-center' : ''}
+                    style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(3, (1 - img.imageScale) * 8)}rem 0` } : undefined}
+                  >
+                    <img
+                      src={withBaseUrl(img.src)}
+                      alt={img.alt}
+                      className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
+                      style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : undefined}
+                    />
+                  </div>
                   {img.caption && (
                     <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
