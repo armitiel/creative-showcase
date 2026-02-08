@@ -9,7 +9,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslatedProject } from '@/hooks/useTranslatedProject';
 import { ImageMagnifier } from '@/components/ImageMagnifier';
-import { ImageLightbox, useLightbox } from '@/components/ImageLightbox';
+import { ImageLightbox, useLightbox, useGalleryLightbox } from '@/components/ImageLightbox';
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = useTranslatedProject(slug);
@@ -19,6 +19,13 @@ const ProjectDetail = () => {
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
   const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
+
+  // Gallery lightbox for NFT thumbnail grid
+  const nftImages = project?.thumbnailGrid?.images.map(img => ({
+    src: withBaseUrl(img.src),
+    alt: img.alt,
+  })) || [];
+  const gallery = useGalleryLightbox(nftImages);
 
   const isDark = project?.theme === 'dark';
 
@@ -121,7 +128,7 @@ const ProjectDetail = () => {
                     key={index}
                     className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards] cursor-zoom-in"
                     style={{ animationDelay: `${index * 150}ms` }}
-                    onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                    onClick={() => gallery.openAt(index)}
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -850,12 +857,24 @@ const ProjectDetail = () => {
         </div>
       </footer>
 
-      {/* Lightbox */}
+      {/* Lightbox — basic (non-gallery images) */}
       <ImageLightbox
         src={lightboxImage?.src || ''}
         alt={lightboxImage?.alt || ''}
         isOpen={!!lightboxImage}
         onClose={closeLightbox}
+      />
+
+      {/* Lightbox — NFT gallery with navigation */}
+      <ImageLightbox
+        src={gallery.currentImage?.src || ''}
+        alt={gallery.currentImage?.alt || ''}
+        isOpen={gallery.isOpen}
+        onClose={gallery.close}
+        onPrev={gallery.prev}
+        onNext={gallery.next}
+        hasPrev={gallery.hasPrev}
+        hasNext={gallery.hasNext}
       />
     </div>
   );
