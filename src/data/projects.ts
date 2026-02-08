@@ -226,10 +226,10 @@ export const projects: Project[] = [
     heroFollowImages: [
       { src: '/projects/hubble/logo-full.png', alt: 'HubbleRx Logo', caption: 'Pełna wersja logo marki HubbleRx', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.85 },
       { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
-    ],
-    images: [
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
       { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
+    ],
+    images: [
       { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
       { src: '/projects/hubble/mobile-membership.gif', alt: 'HubbleRx Mobile Membership', caption: 'Interaktywny interfejs wyboru subskrypcji na urządzeniu mobilnym', displayMode: 'centered', backgroundGradient: 'linear-gradient(to bottom, #c5f0ea 0%, #5ec5b5 50%, #2a9d8f 100%)' },
     ],
