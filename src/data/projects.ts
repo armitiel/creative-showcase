@@ -39,7 +39,7 @@ export interface MobileScreensSection {
   title?: string;
   description?: string;
   screens: { src: string; alt: string; caption?: string }[];
-  sectionImage?: { src: string; alt: string; caption?: string; backgroundColor?: string };
+  sectionImages?: { src: string; alt: string; caption?: string; backgroundColor?: string }[];
 }
 
 export interface DeviceMockupSection {
@@ -243,12 +243,15 @@ export const projects: Project[] = [
     ],
     mobileScreens: {
       title: 'Minimalistyczne ilustracje',
-      description: 'Seria ilustracji tła z wyspami i miastem przyszłości, tworzących spójną narrację wizualną aplikacji.',
+      description: 'Wspólne elementy wszystkich materiałów marketingowych, nadające przyjemny odbiór z nutką nowoczesności.',
       screens: [
         { src: '/projects/hubble/illustration-1.png', alt: 'HubbleRx Ilustracja 1', caption: 'Ilustracja hero z krajobrazem' },
         { src: '/projects/hubble/illustration-2.png', alt: 'HubbleRx Ilustracja 2', caption: 'Ilustracja z miastem przyszłości' },
       ],
-      sectionImage: { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
+      sectionImages: [
+        { src: '/projects/hubble/hero-illustration.jpg', alt: 'HubbleRx Hero Illustration', caption: 'Przykład ilustracji używanej w sekcjach hero', backgroundColor: '#ffffff' },
+        { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
+      ],
     },
     deviceMockup: {
       title: 'Animowany mockup interfejsu',

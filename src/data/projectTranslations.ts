@@ -295,6 +295,7 @@ export const projectTranslations: ProjectTranslations = {
       results: 'The branding effectively positions HubbleRx as a friendly and trustworthy medical platform. Advertising materials with animations significantly improved campaign conversion.',
       typographyDescription: 'HubbleRx\'s typographic system uses readable, rounded fonts that emphasize the friendly character of the medical platform.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
+      mobileScreensDescription: 'Common elements across all marketing materials, creating a pleasant feel with a touch of modernity.',
       heroFollowImageCaptions: {
         0: 'Full version of the HubbleRx brand logo',
         1: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
