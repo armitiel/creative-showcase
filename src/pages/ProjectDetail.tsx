@@ -485,6 +485,30 @@ const ProjectDetail = () => {
         </section>
       )}
 
+      {/* Desktop Dashboard Views - after Mobile Mockup */}
+      {project.slug === 'portal-smart-checkout' && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto space-y-4">
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
+                <img
+                  src={withBaseUrl('/projects/portal/desktop-dashboard-1.png')}
+                  alt="Portal Dashboard - Ad Manager"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
+                <img
+                  src={withBaseUrl('/projects/portal/desktop-dashboard-2.png')}
+                  alt="Portal Dashboard - Analytics Overview"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Remaining Hero Follow Images - after Mobile Application section */}
       {project.heroFollowImages && project.heroFollowImages.length > 1 && (
         <section className="pb-8">
