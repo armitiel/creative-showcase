@@ -266,12 +266,14 @@ export const projectTranslations: ProjectTranslations = {
       results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
       typographyDescription: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
+      heroFollowImageCaptions: {
+        0: 'Pełna wersja logo marki HubbleRx',
+        1: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
+      },
       imageCaptions: {
         0: 'Kompleksowa prezentacja layoutu strony i elementów UI',
-        1: 'Pełna wersja logo marki HubbleRx',
-        2: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych',
-        3: 'Ilustracje procesu onboardingu i badge członkowski',
-        4: 'Responsywny design strony na urządzeniach mobilnych',
+        1: 'Ilustracje procesu onboardingu i badge członkowski',
+        2: 'Responsywny design strony na urządzeniach mobilnych',
       },
       mobileScreenCaptions: {
         0: 'Ilustracja hero z krajobrazem',
@@ -291,12 +293,14 @@ export const projectTranslations: ProjectTranslations = {
       results: 'The branding effectively positions HubbleRx as a friendly and trustworthy medical platform. Advertising materials with animations significantly improved campaign conversion.',
       typographyDescription: 'HubbleRx\'s typographic system uses readable, rounded fonts that emphasize the friendly character of the medical platform.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
+      heroFollowImageCaptions: {
+        0: 'Full version of the HubbleRx brand logo',
+        1: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
+      },
       imageCaptions: {
         0: 'Comprehensive website layout and UI elements presentation',
-        1: 'Full version of the HubbleRx brand logo',
-        2: 'Brand graphic mark referencing the telescope — symbolizes discovering and finding the best medical solutions',
-        3: 'Onboarding process illustrations and membership badge',
-        4: 'Responsive website design on mobile devices',
+        1: 'Onboarding process illustrations and membership badge',
+        2: 'Responsive website design on mobile devices',
       },
       mobileScreenCaptions: {
         0: 'Hero illustration with landscape',
