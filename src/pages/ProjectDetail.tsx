@@ -401,9 +401,9 @@ const ProjectDetail = () => {
                     style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : img.displayMode === 'centered' ? undefined : undefined}
                   />
                   {img.caption && (
-                    <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
-                      {img.caption}
-                    </p>
+                    <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                      <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
+                    </div>
                   )}
                 </div>
               ))}
