@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Paintbrush } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -5,14 +6,21 @@ import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ImageLightbox, useLightbox } from '@/components/ImageLightbox';
+import { ImageLightbox, useGalleryLightbox } from '@/components/ImageLightbox';
 import { illustrationCategories } from '@/data/illustrations';
 import { withBaseUrl } from '@/lib/utils';
 
 const Illustrations = () => {
   const { t, language } = useLanguage();
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
+
+  // Build flat list of all images across all categories for gallery navigation
+  const allImages = useMemo(() =>
+    illustrationCategories.flatMap(cat =>
+      cat.items.map(item => ({ src: withBaseUrl(item.src), alt: item.alt }))
+    ), []);
+
+  const { currentImage, isOpen, openAt, close, prev, next, hasPrev, hasNext } = useGalleryLightbox(allImages);
 
   return (
     <>
@@ -66,14 +74,21 @@ const Illustrations = () => {
         </section>
 
         {/* Category Sections */}
-        {illustrationCategories.map((category) => (
-          <IllustrationSection
-            key={category.id}
-            category={category}
-            language={language}
-            onImageClick={openLightbox}
-          />
-        ))}
+        {(() => {
+          let globalIndex = 0;
+          return illustrationCategories.map((category) => {
+            const startIndex = globalIndex;
+            globalIndex += category.items.length;
+            return (
+              <IllustrationSection
+                key={category.id}
+                category={category}
+                language={language}
+                onImageClick={(index) => openAt(startIndex + index)}
+              />
+            );
+          });
+        })()}
 
         {/* Footer */}
         <footer className="py-12 border-t border-border">
@@ -88,13 +103,17 @@ const Illustrations = () => {
         </footer>
       </div>
 
-      {/* Lightbox — rendered outside main container to ensure fixed positioning works */}
-      {lightboxImage && (
+      {/* Lightbox with navigation */}
+      {currentImage && (
         <ImageLightbox
-          src={lightboxImage.src}
-          alt={lightboxImage.alt}
-          isOpen={!!lightboxImage}
-          onClose={closeLightbox}
+          src={currentImage.src}
+          alt={currentImage.alt}
+          isOpen={isOpen}
+          onClose={close}
+          onPrev={prev}
+          onNext={next}
+          hasPrev={hasPrev}
+          hasNext={hasNext}
         />
       )}
     </>
@@ -104,7 +123,7 @@ const Illustrations = () => {
 interface IllustrationSectionProps {
   category: typeof illustrationCategories[0];
   language: string;
-  onImageClick: (src: string, alt: string) => void;
+  onImageClick: (indexInCategory: number) => void;
 }
 
 const IllustrationSection = ({ category, language, onImageClick }: IllustrationSectionProps) => {
@@ -145,7 +164,7 @@ const IllustrationSection = ({ category, language, onImageClick }: IllustrationS
                 isVisible ? 'animate-scale-in' : ''
               }`}
               style={{ animationDelay: isVisible ? `${index * 80}ms` : '0ms' }}
-              onClick={() => onImageClick(withBaseUrl(item.src), item.alt)}
+              onClick={() => onImageClick(index)}
             >
               <div className="overflow-hidden">
                 <img
