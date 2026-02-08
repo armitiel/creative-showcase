@@ -397,8 +397,8 @@ const ProjectDetail = () => {
                   <img
                     src={withBaseUrl(img.src)}
                     alt={img.alt}
-                    className={`w-full h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'object-cover'}`}
-                    style={img.imageScale ? { transform: `scale(${img.imageScale})`, transformOrigin: 'center' } : undefined}
+                    className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
+                    style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : img.displayMode === 'centered' ? undefined : undefined}
                   />
                   {img.caption && (
                     <p className={`text-center text-sm py-3 ${isDark ? 'text-gray-400' : 'text-muted-foreground'}`}>
