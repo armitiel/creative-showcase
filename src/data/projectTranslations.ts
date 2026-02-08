@@ -239,8 +239,8 @@ export const projectTranslations: ProjectTranslations = {
   'nft-generative-system': {
     pl: {
       title: 'System Generatywny NFT',
-      description: 'System generowania kolekcji NFT z wykorzystaniem Stable Diffusion i automatyzacji Photoshop',
-      fullDescription: 'Projekt polegał na stworzeniu kompleksowego systemu do generowania unikalnych grafik NFT. System opierał się na trenowaniu własnych modeli AI w Stable Diffusion oraz automatyzacji procesu post-produkcji za pomocą akcji Photoshop. Pozwoliło to na szybkie generowanie tysięcy spójnych stylowo grafik.',
+      description: 'Mój pierwszy proces trenowania modelu AI — dobór stylu obrysów, akcentów i detali na zamówienie klienta',
+      fullDescription: 'Był to mój pierwszy proces trenowania własnego modelu AI w Stable Diffusion. Projekt polegał na odpowiednim doborze stylu obrysów, akcentów kolorystycznych i detali graficznych, dostosowanych do wymagań klienta. Dzięki automatyzacji post-produkcji w Photoshopie udało się wygenerować tysiące spójnych stylowo grafik NFT.',
       challenge: 'Wygenerowanie dużej kolekcji unikalnych grafik NFT przy zachowaniu spójności stylistycznej. Każda grafika musiała być wyjątkowa, ale jednocześnie rozpoznawalna jako część tej samej kolekcji.',
       solution: 'Wytrenowałem własne modele AI w Stable Diffusion na specjalnie przygotowanym zbiorze danych. Następnie stworzyłem serię zautomatyzowanych akcji Photoshop do post-produkcji - korekty kolorów, dodawania efektów i finalizacji grafik.',
       results: 'System pozwolił na wygenerowanie ponad 10,000 unikalnych grafik w spójnym stylu, znacznie przyspieszając proces tworzenia kolekcji NFT.',
@@ -249,8 +249,8 @@ export const projectTranslations: ProjectTranslations = {
     },
     en: {
       title: 'NFT Generative System',
-      description: 'NFT collection generation system using Stable Diffusion and Photoshop automation',
-      fullDescription: 'The project involved creating a comprehensive system for generating unique NFT graphics. The system was based on training custom AI models in Stable Diffusion and automating the post-production process using Photoshop actions. This allowed for rapid generation of thousands of stylistically consistent graphics.',
+      description: 'My first AI model training process — selecting outline styles, accents and details tailored to client requirements',
+      fullDescription: 'This was my first experience training a custom AI model in Stable Diffusion. The project focused on carefully selecting outline styles, color accents, and graphic details tailored to the client\'s specific requirements. With automated post-production in Photoshop, the system generated thousands of stylistically consistent NFT graphics.',
       challenge: 'Generating a large collection of unique NFT graphics while maintaining stylistic consistency. Each graphic had to be unique yet recognizable as part of the same collection.',
       solution: 'I trained custom AI models in Stable Diffusion on a specially prepared dataset. Then I created a series of automated Photoshop actions for post-production - color correction, adding effects, and finalizing graphics.',
       results: 'The system enabled the generation of over 10,000 unique graphics in a consistent style, significantly accelerating the NFT collection creation process.',
