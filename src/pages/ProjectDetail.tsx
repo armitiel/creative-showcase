@@ -428,12 +428,13 @@ const ProjectDetail = () => {
                 </h2>
               )}
               {project.mobileScreens.description && (
-                <p className={`mb-12 max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
+                <p className={`${project.mobileScreens.screens.length > 0 ? 'mb-12' : 'mb-6'} max-w-2xl mx-auto text-center ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                   {project.mobileScreens.description}
                 </p>
               )}
               
               {/* Phone frames grid */}
+              {project.mobileScreens.screens.length > 0 && (
               <div className="flex justify-center gap-4 md:gap-6 flex-wrap">
                 {project.mobileScreens.screens.map((screen, index) => (
                   <div key={index} className="flex flex-col items-center">
@@ -473,10 +474,11 @@ const ProjectDetail = () => {
                   </div>
                 ))}
               </div>
+              )}
 
               {/* Section images below phone mockups */}
               {project.mobileScreens.sectionImages && project.mobileScreens.sectionImages.length > 0 && (
-                <div className="mt-12 max-w-5xl mx-auto space-y-8">
+                <div className={`${project.mobileScreens.screens.length > 0 ? 'mt-12' : 'mt-0'} max-w-5xl mx-auto space-y-8`}>
                   {project.mobileScreens.sectionImages.map((sImg, sIndex) => (
                     <div 
                       key={sIndex}
