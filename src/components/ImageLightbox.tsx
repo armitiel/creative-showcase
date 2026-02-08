@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 interface ImageLightboxProps {
@@ -27,7 +28,7 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose }: ImageLightboxProps)
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div 
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in cursor-zoom-out"
       onClick={onClose}
@@ -44,7 +45,8 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose }: ImageLightboxProps)
         className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       />
-    </div>
+    </div>,
+    document.body
   );
 };
 
