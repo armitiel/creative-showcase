@@ -107,6 +107,26 @@ const ProjectDetail = () => {
 
 
 
+      {/* Featured Image above thumbnail grid */}
+      {project.thumbnailGrid && project.slug === 'nft-generative-system' && (
+        <section className="pb-6 md:pb-10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div 
+                className="rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl cursor-zoom-in"
+                onClick={() => openLightbox(withBaseUrl('/projects/nft-system/neon-rebel-cover.jpg'), 'Neon Rebel - Cover Art')}
+              >
+                <img
+                  src={withBaseUrl('/projects/nft-system/neon-rebel-cover.jpg')}
+                  alt="Neon Rebel - Cover Art"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Thumbnail Grid - for NFT projects */}
       {project.thumbnailGrid && (
         <section className="pb-6 md:pb-12">
