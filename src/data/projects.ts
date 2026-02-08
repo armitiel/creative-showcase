@@ -246,10 +246,7 @@ export const projects: Project[] = [
     mobileScreens: {
       title: 'Minimalistyczne ilustracje',
       description: 'Wspólne elementy wszystkich materiałów marketingowych, nadające przyjemny odbiór z nutką nowoczesności.',
-      screens: [
-        { src: '/projects/hubble/illustration-1.png', alt: 'HubbleRx Ilustracja 1', caption: 'Ilustracja hero z krajobrazem' },
-        { src: '/projects/hubble/illustration-2.png', alt: 'HubbleRx Ilustracja 2', caption: 'Ilustracja z miastem przyszłości' },
-      ],
+      screens: [],
       sectionImages: [
         { src: '/projects/hubble/hero-illustration.jpg', alt: 'HubbleRx Hero Illustration', caption: 'Przykład ilustracji używanej w sekcjach hero', backgroundColor: '#ffffff' },
         { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
