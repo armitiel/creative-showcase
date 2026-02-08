@@ -37,7 +37,11 @@ const translations = {
   },
 };
 
-export const SurveyPopup = () => {
+interface SurveyPopupProps {
+  ready?: boolean;
+}
+
+export const SurveyPopup = ({ ready = true }: SurveyPopupProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [rating, setRating] = useState(0);
@@ -57,12 +61,15 @@ export const SurveyPopup = () => {
     const surveyDismissed = localStorage.getItem('surveyDismissed');
     if (surveyDismissed) return;
 
+    // Wait until page is fully loaded before starting the delay
+    if (!ready) return;
+
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 8000);
+    }, 20000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [ready]);
 
   const handleSubmit = async () => {
     const projectsAmountLabel = t.projectsOptions[projectsAmount ?? 0];

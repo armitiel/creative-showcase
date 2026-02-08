@@ -36,10 +36,10 @@ const App = () => {
               onFinished={handleLoadingFinished}
             />
           )}
+          <SurveyPopup ready={showContent} />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
             <div className={!showContent ? 'invisible' : 'animate-fade-in'}>
               <ScrollToTop />
-              <SurveyPopup />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/project/:slug" element={<ProjectDetail />} />
