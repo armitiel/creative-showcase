@@ -263,12 +263,12 @@ export const projects: Project[] = [
       description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
       fonts: [
         {
-          name: 'Nunito',
+          name: 'Gotham',
           usage: 'Headlines & Body',
           weights: [
-            { name: 'Bold', sample: 'Unlimited Access to Your Medications' },
-            { name: 'SemiBold', sample: 'Individual Membership' },
-            { name: 'Regular', sample: 'FREE Medications Up to 21 Day Supply' },
+            { name: 'Black', sample: 'Unlimited Access to Your Medications' },
+            { name: 'Medium', sample: 'Individual Membership' },
+            { name: 'Light', sample: 'FREE Medications Up to 21 Day Supply' },
           ],
         },
       ],
