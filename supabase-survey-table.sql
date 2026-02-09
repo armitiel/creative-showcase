@@ -24,3 +24,4 @@ create policy "Allow read for service role"
   for select
   to service_role
   using (true);
+  
