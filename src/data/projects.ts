@@ -233,7 +233,7 @@ export const projects: Project[] = [
       { src: '/projects/hubble/box-mockup-zoom.jpg', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/logo-3d-icon.png', alt: 'HubbleRx 3D Logo Icon', caption: 'Trójwymiarowa ikona logo HubbleRx' },
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
-      { src: '/projects/hubble/website-devices.jpg', alt: 'HubbleRx - Prezentacja na urządzeniach', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
+      
       { src: '/projects/hubble/ui-elements.png', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
     ],
     images: [
