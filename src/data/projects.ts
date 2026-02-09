@@ -260,7 +260,7 @@ export const projects: Project[] = [
       alt: 'HubbleRx App Mockup',
     },
     typography: {
-      description: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
+      description: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       fonts: [
         {
           name: 'Gotham',

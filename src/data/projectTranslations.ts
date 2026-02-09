@@ -266,7 +266,7 @@ export const projectTranslations: ProjectTranslations = {
       challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
       solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
       results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
-      typographyDescription: 'System typograficzny HubbleRx wykorzystuje czytelne, zaokrąglone fonty, które podkreślają przyjazny charakter platformy medycznej.',
+      typographyDescription: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
       heroFollowImageCaptions: {
         0: 'Pełna wersja logo marki HubbleRx',
