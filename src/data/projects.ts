@@ -236,10 +236,7 @@ export const projects: Project[] = [
       { src: '/projects/hubble/website-devices.jpg', alt: 'HubbleRx - Prezentacja na urządzeniach', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
       
     ],
-    images: [
-      { src: '/projects/hubble/mobile-screens.png', alt: 'HubbleRx Mobile', caption: 'Responsywny design strony na urządzeniach mobilnych' },
-      { src: '/projects/hubble/mobile-membership.gif', alt: 'HubbleRx Mobile Membership', caption: 'Interaktywny interfejs wyboru subskrypcji na urządzeniu mobilnym', displayMode: 'centered', backgroundGradient: 'linear-gradient(to bottom, #c5f0ea 0%, #5ec5b5 50%, #2a9d8f 100%)' },
-    ],
+    images: [],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
       { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
