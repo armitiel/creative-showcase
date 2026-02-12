@@ -122,6 +122,7 @@ export interface Project {
     title?: string;
     description?: string;
   };
+  hidden?: boolean;
 }
 
  export const categories = ['Wszystkie', 'Branding', 'UI/UX', '3D', 'Art', 'Motion'];
@@ -514,6 +515,7 @@ export const projects: Project[] = [
   {
     id: 12,
     slug: 'tsq-portal',
+    hidden: true,
     title: 'TSQ Portal – Kalkulator inwestycji',
     category: 'UI/UX',
     thumbnail: '/projects/tsq-portal/thumbnail.png',
