@@ -27,7 +27,7 @@ export const BrandingBanner = () => {
         src={brandingMouse}
         alt="Branded mouse with logo"
         className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-100 ease-out object-[70%_center] md:object-center"
-        style={{ transform: `translateY(${offset}px) scale(1.1)` }}
+        style={{ transform: `translateY(${offset}px) scale(1.25)` }}
         loading="lazy"
       />
     </div>
