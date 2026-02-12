@@ -16,11 +16,20 @@ export const Footer = () => {
         </div>
       </div>
       
-      {/* Aurora borealis neon glow at bottom edge */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[hsl(210,100%,50%)] to-transparent opacity-80 animate-[aurora-pulse_3s_ease-in-out_infinite]" />
-      <div className="absolute bottom-0 left-0 w-full h-[20px] bg-gradient-to-t from-[hsl(210,100%,50%)]/20 to-transparent blur-[8px] animate-[aurora-pulse_3s_ease-in-out_infinite]" />
-      <div className="absolute bottom-0 left-[10%] w-[30%] h-[30px] bg-gradient-to-t from-[hsl(200,100%,60%)]/15 to-transparent blur-[12px] animate-[aurora-shift_5s_ease-in-out_infinite]" />
-      <div className="absolute bottom-0 right-[15%] w-[25%] h-[25px] bg-gradient-to-t from-[hsl(220,100%,55%)]/15 to-transparent blur-[10px] animate-[aurora-shift_4s_ease-in-out_infinite_reverse]" />
+      {/* Aurora glow emerging from dark space */}
+      <div className="absolute bottom-0 left-0 w-full h-[60px] pointer-events-none">
+        {/* Dark base fading into glow */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,4%)] via-[hsl(220,20%,4%)]/80 to-transparent" />
+        {/* Main blue neon line */}
+        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[hsl(210,100%,50%)] to-transparent opacity-90 animate-[aurora-pulse_3s_ease-in-out_infinite]" />
+        {/* Primary glow */}
+        <div className="absolute bottom-0 left-0 w-full h-[25px] bg-gradient-to-t from-[hsl(210,100%,50%)]/25 to-transparent blur-[10px] animate-[aurora-pulse_3s_ease-in-out_infinite]" />
+        {/* Shifting accent glows */}
+        <div className="absolute bottom-0 left-[5%] w-[35%] h-[35px] bg-gradient-to-t from-[hsl(200,100%,60%)]/20 to-transparent blur-[14px] animate-[aurora-shift_5s_ease-in-out_infinite]" />
+        <div className="absolute bottom-0 right-[10%] w-[30%] h-[30px] bg-gradient-to-t from-[hsl(220,100%,55%)]/18 to-transparent blur-[12px] animate-[aurora-shift_4s_ease-in-out_infinite_reverse]" />
+        {/* Subtle wide ambient */}
+        <div className="absolute bottom-0 left-[20%] w-[60%] h-[40px] bg-gradient-to-t from-[hsl(215,100%,50%)]/10 to-transparent blur-[20px] animate-[aurora-pulse_4s_ease-in-out_infinite]" />
+      </div>
     </footer>
   );
 };
