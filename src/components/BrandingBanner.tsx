@@ -1,4 +1,4 @@
-import brandingMouse from '@/assets/branding-mouse.jpg';
+import brandingMouse from '@/assets/branding-mouse.png';
 
 export const BrandingBanner = () => {
   return (
