@@ -168,7 +168,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
 export const useTranslatedProjects = (): TranslatedProject[] => {
   const { language } = useLanguage();
   
-  return projects.map((project: Project) => {
+  return projects.filter((p: Project) => !p.hidden).map((project: Project) => {
     const translation = getProjectTranslation(project.slug, language);
     
     if (!translation) {
