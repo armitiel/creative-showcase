@@ -6,7 +6,7 @@ export const BrandingBanner = () => {
       <img
         src={brandingMouse}
         alt="Branded mouse with logo"
-        className="w-full h-[400px] md:h-[500px] object-cover object-[center_30%]"
+        className="w-full h-[300px] md:h-[400px] object-cover"
         loading="lazy"
       />
     </div>
