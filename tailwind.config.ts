@@ -128,6 +128,14 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-18px)" },
         },
+        "aurora-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "1" },
+        },
+        "aurora-shift": {
+          "0%, 100%": { transform: "translateX(0)", opacity: "0.3" },
+          "50%": { transform: "translateX(20px)", opacity: "0.6" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
