@@ -1,39 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useIsMobile } from '@/hooks/use-mobile';
 import logo from '@/assets/logo.png';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isAtBottom = (window.innerHeight + currentScrollY) >= (document.documentElement.scrollHeight - 300);
-      
-      setIsScrolled(currentScrollY > 100);
-      
-      if (isAtBottom || currentScrollY < 100) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
+  const isMobileRef = useRef(window.innerWidth < 768);
 
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 767px)');
+    const onChange = () => {
+      isMobileRef.current = mql.matches;
+    };
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const isAtBottom = (winHeight + currentScrollY) >= (docHeight - 300);
+
+    setIsScrolled(currentScrollY > 100);
+
+    // Mobile: always visible
+    if (isMobileRef.current) {
+      setIsVisible(true);
+    } else if (isAtBottom || currentScrollY < 100) {
+      setIsVisible(true);
+    } else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+      setIsVisible(false);
+    } else if (currentScrollY < lastScrollY.current) {
+      setIsVisible(true);
+    }
+
+    lastScrollY.current = currentScrollY;
+  }, []);
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [handleScroll]);
 
   const navLinks = [
     { href: '#hero', label: t.nav.home },
@@ -47,7 +61,7 @@ export const Navigation = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-all duration-500 ease-out ${
         isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.25)]' : 'shadow-none'
-      } ${!isMobile && !isVisible ? '-translate-y-full' : 'translate-y-0'}`}
+      } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
