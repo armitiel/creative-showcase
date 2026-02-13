@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 import logo from '@/assets/logo.png';
 
 export const Navigation = () => {
@@ -11,7 +12,7 @@ export const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { t } = useLanguage();
-
+  const isMobile = useIsMobile();
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -46,7 +47,7 @@ export const Navigation = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-all duration-500 ease-out ${
         isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.25)]' : 'shadow-none'
-      } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      } ${!isMobile && !isVisible ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
