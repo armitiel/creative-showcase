@@ -15,7 +15,7 @@ export const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const isAtBottom = (window.innerHeight + currentScrollY) >= (document.documentElement.scrollHeight - 100);
+      const isAtBottom = (window.innerHeight + currentScrollY) >= (document.documentElement.scrollHeight - 300);
       
       setIsScrolled(currentScrollY > 100);
       
