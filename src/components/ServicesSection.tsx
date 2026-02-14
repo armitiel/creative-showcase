@@ -37,8 +37,8 @@ export const ServicesSection = () => {
                 style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
               >
                 <CardHeader>
-                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                    <Icon className={`w-7 h-7 text-primary opacity-0 ${cardsVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: cardsVisible ? `${300 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }} />
                   </div>
                   <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
                     {service.title}
