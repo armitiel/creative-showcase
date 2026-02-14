@@ -122,17 +122,33 @@ export const AboutSection = () => {
                           <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="currentColor" fillOpacity="0.8"/>
                           <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="currentColor" fillOpacity="0.65"/>
                         </svg>
+                      ) : tool.icon === 'Ai' ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1" y="1" width="22" height="22" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                          <text x="12" y="16.5" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Ai</text>
+                        </svg>
+                      ) : tool.icon === 'Ps' ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1" y="1" width="22" height="22" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                          <text x="12" y="16.5" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Ps</text>
+                        </svg>
+                      ) : tool.icon === 'Ae' ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="1" y="1" width="22" height="22" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                          <text x="12" y="16.5" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Ae</text>
+                        </svg>
+                      ) : tool.icon === '3D' ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                          <path d="M8 8L12 12L16 8M8 16L12 12L16 16M12 2V22M2 12H22" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
+                        </svg>
                       ) : tool.icon}
                     </div>
-                    <div className="flex gap-0.5">
+                    <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((dot) => (
                         <div
                           key={dot}
-                          className="w-1.5 h-1.5 rounded-full transition-colors"
-                          style={{
-                            backgroundColor: dot <= tool.level ? tool.color : 'hsl(var(--muted))',
-                            opacity: dot <= tool.level ? 1 : 0.3,
-                          }}
+                          className={`w-1.5 h-1.5 rounded-full ${dot <= tool.level ? 'bg-primary' : 'border border-primary/40'}`}
                         />
                       ))}
                     </div>
