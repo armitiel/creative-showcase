@@ -87,11 +87,12 @@ export const AboutSection = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.skillsTitle}</h3>
               <div className="flex flex-wrap gap-2">
-                {t.about.skills.map((skill) => (
+                {t.about.skills.map((skill, index) => (
                   <Badge
                     key={skill}
                     variant="outline"
-                    className="border-border hover:border-primary hover:text-primary transition-colors text-sm px-4 py-2"
+                    className={`border-border hover:border-primary hover:text-primary transition-colors text-sm px-4 py-2 opacity-0 ${rightVisible ? 'animate-fade-in' : ''}`}
+                    style={{ animationDelay: rightVisible ? `${index * 80}ms` : '0ms', animationFillMode: 'forwards' }}
                   >
                     {skill}
                   </Badge>
