@@ -10,6 +10,15 @@ export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
 
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -34,7 +43,7 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14 md:h-16">
-          <a href="#hero" className="flex items-center ml-4">
+          <a href="#hero" onClick={(e) => smoothScroll(e, '#hero')} className="flex items-center ml-4">
             <img src={logo} alt="Amitiel Angelisme" className="h-10 w-auto" />
           </a>
 
@@ -44,6 +53,7 @@ export const Navigation = () => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => smoothScroll(e, link.href)}
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
               >
                 {link.label}
@@ -81,7 +91,7 @@ export const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => { smoothScroll(e, link.href); setIsOpen(false); }}
               >
                 {link.label}
               </a>
