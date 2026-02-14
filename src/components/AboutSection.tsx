@@ -6,11 +6,11 @@ import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const tools = [
-  { name: 'Adobe Illustrator', icon: 'Ai' },
-  { name: 'Adobe Photoshop', icon: 'Ps' },
-  { name: 'After Effects', icon: 'Ae' },
-  { name: 'Figma', icon: 'Fg' },
-  { name: 'Blender', icon: '3D' },
+  { name: 'Adobe Illustrator', icon: 'Ai', color: '#FF9A00', bg: '#330000', level: 5 },
+  { name: 'Adobe Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
+  { name: 'After Effects', icon: 'Ae', color: '#9999FF', bg: '#00005B', level: 3 },
+  { name: 'Figma', icon: 'Fg', color: '#A259FF', bg: '#1E1E1E', level: 3 },
+  { name: 'Blender', icon: '3D', color: '#EA7600', bg: '#1A1A1A', level: 3 },
 ];
 
 export const AboutSection = () => {
@@ -103,14 +103,32 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="flex flex-nowrap gap-4 overflow-x-auto md:flex-wrap">
-                {tools.map((tool) => (
+              <div className="flex flex-nowrap gap-5 overflow-x-auto md:flex-wrap">
+                {tools.map((tool, index) => (
                   <div
                     key={tool.name}
-                    className="w-14 h-14 bg-muted/60 rounded-2xl flex items-center justify-center text-sm font-bold text-foreground/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default border border-border/50"
+                    className={`flex flex-col items-center gap-2 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    style={{ animationDelay: rightVisible ? `${500 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }}
                     title={tool.name}
                   >
-                    {tool.icon}
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center text-base font-black tracking-tight cursor-default border border-white/10 shadow-lg transition-transform duration-300 hover:scale-110"
+                      style={{ backgroundColor: tool.bg, color: tool.color }}
+                    >
+                      {tool.icon}
+                    </div>
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3, 4, 5].map((dot) => (
+                        <div
+                          key={dot}
+                          className="w-1.5 h-1.5 rounded-full transition-colors"
+                          style={{
+                            backgroundColor: dot <= tool.level ? tool.color : 'hsl(var(--muted))',
+                            opacity: dot <= tool.level ? 1 : 0.3,
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
