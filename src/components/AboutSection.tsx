@@ -54,10 +54,6 @@ export const AboutSection = () => {
                 <MapPin className="w-5 h-5 text-primary" />
                 <span>{t.about.location}</span>
               </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Briefcase className="w-5 h-5 text-primary" />
-                <span>{t.about.experience}</span>
-              </div>
               <div className="flex items-start gap-3 text-muted-foreground">
                 <GraduationCap className="w-5 h-5 text-primary mt-0.5" />
                 <div className="flex flex-col">
