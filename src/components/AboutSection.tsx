@@ -10,7 +10,8 @@ const tools = [
   { name: 'Adobe Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
   { name: 'After Effects', icon: 'Ae', color: '#9999FF', bg: '#00005B', level: 3 },
   { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 3 },
-  { name: 'Blender', icon: '3D', color: '#EA7600', bg: '#1A1A1A', level: 3 },
+  { name: 'Blender', icon: 'blender', color: '#EA7600', bg: '#1A1A1A', level: 3 },
+  { name: 'ZBrush', icon: 'zbrush', color: '#FF6600', bg: '#1A1A1A', level: 3 },
 ];
 
 export const AboutSection = () => {
@@ -137,10 +138,17 @@ export const AboutSection = () => {
                           <rect x="1" y="1" width="22" height="22" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                           <text x="12" y="16.5" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Ae</text>
                         </svg>
-                      ) : tool.icon === '3D' ? (
+                      ) : tool.icon === 'blender' ? (
+                        <svg width="24" height="24" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M32.38 44.29c-8.07 0-14.62-5.54-14.62-12.36s6.55-12.36 14.62-12.36c8.08 0 14.62 5.54 14.62 12.36S40.46 44.29 32.38 44.29zm0-20.1c-5.2 0-9.43 3.47-9.43 7.74s4.23 7.74 9.43 7.74 9.43-3.47 9.43-7.74-4.23-7.74-9.43-7.74z"/>
+                          <ellipse cx="33.5" cy="31.93" rx="4.8" ry="3.9"/>
+                          <path d="M22.15 18.38L13.5 25.3l8.28.02c.18 0 .37-.13.37-.32v-6.62zM7.5 31.93c0-.01 6.2-4.72 6.2-4.72l-11.2.02s-1 2.1-1 4.7c0 0 6-0.01 6 0z"/>
+                          <path d="M25.8 14.5l-10.4 1.3 5.6 3.8z"/>
+                        </svg>
+                      ) : tool.icon === 'zbrush' ? (
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                          <path d="M8 8L12 12L16 8M8 16L12 12L16 16M12 2V22M2 12H22" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
+                          <rect x="1" y="1" width="22" height="22" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                          <text x="12" y="16.5" textAnchor="middle" fill="currentColor" fontSize="9" fontWeight="bold" fontFamily="sans-serif">ZB</text>
                         </svg>
                       ) : tool.icon}
                     </div>
