@@ -154,7 +154,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Jestem projektantem działającym interdyscyplinarnie. Tworzę branding i identyfikacje wizualne, rozwiązania programistyczne, grafikę 3D oraz ilustracje i art w ujęciu zastosowań projektowych. Łączę te obszary w spójne, kompleksowe rozwiązania, integrując różne narzędzia i perspektywy w jednym <highlight>procesie twórczym</highlight>.',
+      description: 'Pasjonuję się tworzeniem przekonujących narracji wizualnych, które łączą się z odbiorcami. Dzięki doświadczeniu w projektowaniu UI, animacji i brandingu, z sukcesem współpracowałem z firmami, pomagając im ożywić ich wizje. Szukam możliwości dalszego rozwijania swoich umiejętności w dynamicznym i <highlight>kreatywnym środowisku</highlight>.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',
@@ -262,7 +262,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'I am an interdisciplinary designer. I create branding and visual identities, programming solutions, 3D graphics, and illustrations and art for design applications. I combine these areas into cohesive, comprehensive solutions, integrating various tools and perspectives into one <highlight>creative process</highlight>.',
+      description: 'I am passionate about creating compelling visual narratives that connect with audiences. With expertise in UI design, animation, and branding, I have successfully collaborated with businesses to bring their visions to life. I am looking for opportunities to further enhance my skills in a dynamic and <highlight>creative environment</highlight>.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
