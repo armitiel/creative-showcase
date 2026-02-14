@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
 import Illustrations from "./pages/Illustrations";
@@ -39,6 +40,8 @@ const App = () => {
           )}
           <SurveyPopup ready={showContent} />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
+            {/* Navigation outside animated wrapper to preserve fixed positioning */}
+            {showContent && <Navigation />}
             <div className={!showContent ? 'invisible' : 'animate-fade-in'}>
               <ScrollToTop />
               <Routes>

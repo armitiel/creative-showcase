@@ -1,4 +1,3 @@
-import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
@@ -9,18 +8,15 @@ import { Footer } from '@/components/Footer';
 
 const Index = () => {
   return (
-    <>
-      <Navigation />
-      <div className="min-h-screen bg-background bg-noise">
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <ServicesSection />
-        <ContactSection />
-        {/* <BrandingBanner /> */}
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen bg-background bg-noise">
+      <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
+      <ServicesSection />
+      <ContactSection />
+      {/* <BrandingBanner /> */}
+      <Footer />
+    </div>
   );
 };
 
