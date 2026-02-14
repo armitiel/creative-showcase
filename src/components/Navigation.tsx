@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -8,46 +8,15 @@ import logo from '@/assets/logo.png';
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const lastScrollY = useRef(0);
   const { t } = useLanguage();
-  const isMobileRef = useRef(window.innerWidth < 768);
 
   useEffect(() => {
-    const mql = window.matchMedia('(max-width: 767px)');
-    const onChange = () => {
-      isMobileRef.current = mql.matches;
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
     };
-    mql.addEventListener('change', onChange);
-    return () => mql.removeEventListener('change', onChange);
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
-    const isAtBottom = (winHeight + currentScrollY) >= (docHeight - 300);
-
-    setIsScrolled(currentScrollY > 100);
-
-    // Mobile: always visible
-    if (isMobileRef.current) {
-      setIsVisible(true);
-    } else if (isAtBottom || currentScrollY < 100) {
-      setIsVisible(true);
-    } else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-      setIsVisible(false);
-    } else if (currentScrollY < lastScrollY.current) {
-      setIsVisible(true);
-    }
-
-    lastScrollY.current = currentScrollY;
-  }, []);
-
-  useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+  }, []);
 
   const navLinks = [
     { href: '#hero', label: t.nav.home },
@@ -59,12 +28,12 @@ export const Navigation = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-all duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-shadow duration-300 ${
         isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.25)]' : 'shadow-none'
-      } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 md:h-16">
           <a href="#hero" className="flex items-center ml-4">
             <img src={logo} alt="Amitiel Angelisme" className="h-10 w-auto" />
           </a>
