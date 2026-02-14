@@ -29,7 +29,7 @@ export const Navigation = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-shadow duration-300 ${
-        isScrolled || isOpen ? 'shadow-[0_4px_20px_rgba(0,0,0,0.25)]' : 'shadow-none'
+        isScrolled || isOpen ? 'shadow-[0_8px_30px_rgba(0,0,0,0.45)]' : 'shadow-none'
       }`}
     >
       <div className="container mx-auto px-4">
