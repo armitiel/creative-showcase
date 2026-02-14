@@ -106,7 +106,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 px-4 border-t border-border animate-fade-in">
             {navLinks.map((link) => (
               <a
                 key={link.href}
