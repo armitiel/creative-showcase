@@ -154,7 +154,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Pasjonuję się tworzeniem przekonujących narracji wizualnych, które łączą się z odbiorcami. Dzięki doświadczeniu w projektowaniu UI, animacji i brandingu, z sukcesem współpracowałem z firmami, pomagając im ożywić ich wizje. Szukam możliwości dalszego rozwijania swoich umiejętności w dynamicznym i <highlight>kreatywnym środowisku</highlight>.',
+      description: 'Doświadczony projektant i artysta gier dostarczający kompleksowe rozwiązania wizualne w grach, produktach cyfrowych, UI, animacji i wielkoskalowych środowiskach wizualnych. Potrafi szybko adaptować się do nowych pipeline\'ów i branż, pracować samodzielnie lub w zespołach interdyscyplinarnych i konsekwentnie dostarczać wyniki gotowe do <highlight>produkcji</highlight> w warunkach ograniczeń technicznych, czasowych i operacyjnych.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',
@@ -262,7 +262,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'I am passionate about creating compelling visual narratives that connect with audiences. With expertise in UI design, animation, and branding, I have successfully collaborated with businesses to bring their visions to life. I am looking for opportunities to further enhance my skills in a dynamic and <highlight>creative environment</highlight>.',
+      description: 'Experienced designer and game artist delivering end-to-end visual solutions across games, digital products, UI, animation, and large-scale visual environments. Able to adapt quickly to new pipelines and industries, work independently or within cross-functional teams, and consistently deliver <highlight>production-ready results</highlight> under technical, time, and operational constraints.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
