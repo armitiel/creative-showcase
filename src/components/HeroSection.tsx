@@ -76,13 +76,18 @@ export const HeroSection = () => {
               {/* Specializations - minimal borders */}
               <div className="flex flex-wrap justify-center gap-3 pt-6">
                 {t.hero.specializations.map((spec, index) => (
-                  <span
+                  <a
                     key={spec}
-                    className="px-5 py-2 border border-white/20 rounded-full text-sm text-white/70 hover:border-primary/50 hover:text-white transition-all duration-500"
+                    href="#projects"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                    className="px-5 py-2 border border-white/20 rounded-full text-sm text-white/70 hover:border-primary/50 hover:text-white transition-all duration-500 cursor-pointer"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {spec}
-                  </span>
+                  </a>
                 ))}
               </div>
 
