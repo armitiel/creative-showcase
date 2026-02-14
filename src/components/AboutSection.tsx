@@ -9,7 +9,7 @@ const tools = [
   { name: 'Adobe Illustrator', icon: 'Ai', color: '#FF9A00', bg: '#330000', level: 5 },
   { name: 'Adobe Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
   { name: 'After Effects', icon: 'Ae', color: '#9999FF', bg: '#00005B', level: 3 },
-  { name: 'Figma', icon: 'Fg', color: '#A259FF', bg: '#1E1E1E', level: 3 },
+  { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 3 },
   { name: 'Blender', icon: '3D', color: '#EA7600', bg: '#1A1A1A', level: 3 },
 ];
 
@@ -114,7 +114,15 @@ export const AboutSection = () => {
                     <div
                       className="w-14 h-14 rounded-xl flex items-center justify-center text-base font-black tracking-tight cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70"
                     >
-                      {tool.icon}
+                      {tool.icon === 'figma' ? (
+                        <svg width="18" height="26" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="currentColor" fillOpacity="0.7"/>
+                          <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="currentColor" fillOpacity="0.5"/>
+                          <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="currentColor" fillOpacity="0.6"/>
+                          <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="currentColor" fillOpacity="0.8"/>
+                          <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="currentColor" fillOpacity="0.65"/>
+                        </svg>
+                      ) : tool.icon}
                     </div>
                     <div className="flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((dot) => (
