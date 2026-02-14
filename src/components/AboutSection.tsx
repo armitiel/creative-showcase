@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { MapPin, Briefcase, GraduationCap } from 'lucide-react';
+import { MapPin, GraduationCap, Mail } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -50,6 +50,10 @@ export const AboutSection = () => {
             </div>
 
             <div className="space-y-4 mt-8">
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <Mail className="w-5 h-5 text-primary" />
+                <a href="mailto:armitiel@gmail.com" className="hover:text-primary transition-colors">armitiel@gmail.com</a>
+              </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
                 <span>{t.about.location}</span>
