@@ -4,8 +4,8 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative px-4 md:px-8 py-8">
-      <div className="relative rounded-3xl bg-card text-card-foreground overflow-hidden py-8 px-4 md:px-8">
+    <footer className="relative px-4 md:px-8 pb-4">
+      <div className="relative rounded-3xl bg-card text-card-foreground overflow-hidden py-4 px-4 md:px-8">
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
             <p className="text-card-foreground/60 text-sm">
