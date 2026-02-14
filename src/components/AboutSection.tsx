@@ -112,8 +112,7 @@ export const AboutSection = () => {
                     title={tool.name}
                   >
                     <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-base font-black tracking-tight cursor-default border border-white/10 shadow-lg transition-transform duration-300 hover:scale-110"
-                      style={{ backgroundColor: tool.bg, color: tool.color }}
+                      className="w-14 h-14 rounded-xl flex items-center justify-center text-base font-black tracking-tight cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70"
                     >
                       {tool.icon}
                     </div>
