@@ -75,7 +75,12 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    // Fallback for HMR edge cases where context may temporarily be unavailable
+    return {
+      language: 'en',
+      setLanguage: () => {},
+      t: translations.en,
+    };
   }
   return context;
 };
