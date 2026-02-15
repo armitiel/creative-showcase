@@ -154,7 +154,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Doświadczony projektant i artysta gier dostarczający kompleksowe rozwiązania wizualne w grach, produktach cyfrowych, UI, animacji i wielkoskalowych środowiskach wizualnych. Potrafi szybko adaptować się do nowych pipeline\'ów i branż, pracować samodzielnie lub w zespołach interdyscyplinarnych i konsekwentnie dostarczać wyniki gotowe do <highlight>produkcji</highlight> w warunkach ograniczeń technicznych, czasowych i operacyjnych.',
+      description: 'Senior Visual Designer & Game Artist działający na styku wizualizacji, systemów i biznesu. Definiuje kierunek wizualny, jednocześnie budując struktury produkcyjne i <highlight>workflow oparte na AI</highlight>, które wspierają strategię produktową, efektywność zespołu i długoterminową skalowalność.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',
@@ -262,7 +262,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'Experienced designer and game artist delivering end-to-end visual solutions across games, digital products, UI, animation, and large-scale visual environments. Able to adapt quickly to new pipelines and industries, work independently or within cross-functional teams, and consistently deliver <highlight>production-ready results</highlight> under technical, time, and operational constraints.',
+      description: 'Senior Visual Designer & Game Artist operating at the intersection of visuals, systems, and business. Defines visual direction while building production structures and <highlight>AI-driven workflows</highlight> that support product strategy, team efficiency, and long-term scalability.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
