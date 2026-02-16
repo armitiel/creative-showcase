@@ -174,10 +174,10 @@ const IllustrationSection = ({ category, language, onImageClick }: IllustrationS
                   loading="lazy"
                 />
               </div>
-              {item.caption && (
+              {(language === 'pl' ? item.captionPl : item.captionEn) && (
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">
-                    {item.caption}
+                    {language === 'pl' ? item.captionPl : item.captionEn}
                   </p>
                 </div>
               )}
