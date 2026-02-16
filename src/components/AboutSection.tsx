@@ -9,9 +9,9 @@ const tools = [
   { name: 'Adobe Illustrator', icon: 'Ai', color: '#FF9A00', bg: '#330000', level: 5 },
   { name: 'Adobe Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
   { name: 'After Effects', icon: 'Ae', color: '#9999FF', bg: '#00005B', level: 3 },
-  { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 3 },
+  { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 4 },
   { name: 'Blender', icon: 'blender', color: '#EA7600', bg: '#1A1A1A', level: 3 },
-  { name: 'ZBrush', icon: 'zbrush', color: '#FF6600', bg: '#1A1A1A', level: 3 },
+  { name: 'ZBrush', icon: 'zbrush', color: '#FF6600', bg: '#1A1A1A', level: 5 },
 ];
 
 export const AboutSection = () => {
@@ -157,6 +157,7 @@ export const AboutSection = () => {
                         />
                       ))}
                     </div>
+                    <span className="text-[10px] text-muted-foreground/70 mt-0.5 whitespace-nowrap">{tool.name}</span>
                   </div>
                 ))}
               </div>
