@@ -1,6 +1,8 @@
 export interface IllustrationItem {
   src: string;
   alt: string;
+  captionPl?: string;
+  captionEn?: string;
   caption?: string;
   aspectRatio?: 'square' | 'portrait' | 'landscape';
 }
@@ -27,49 +29,57 @@ export const illustrationCategories: IllustrationCategory[] = [
       {
         src: '/illustrations/cartoon/atomic-cherry.jpg',
         alt: 'Atomic Cherry — slot machine illustration',
-        caption: 'Atomic Cherry — grafika do gry slotowej',
+        captionPl: 'Atomic Cherry — grafika do gry slotowej',
+        captionEn: 'Atomic Cherry — slot game illustration',
         aspectRatio: 'landscape',
       },
       {
         src: '/illustrations/cartoon/earth-ear.jpg',
         alt: 'Earth Ear — conceptual illustration',
-        caption: 'Earth Ear — ilustracja koncepcyjna',
+        captionPl: 'Earth Ear — ilustracja koncepcyjna',
+        captionEn: 'Earth Ear — conceptual illustration',
         aspectRatio: 'landscape',
       },
       {
         src: '/illustrations/cartoon/explorer-girl.jpg',
         alt: 'Explorer Girl — character illustration',
-        caption: 'Poszukiwaczka — ilustracja postaci',
+        captionPl: 'Poszukiwaczka — ilustracja postaci',
+        captionEn: 'Explorer Girl — character illustration',
         aspectRatio: 'portrait',
       },
       {
         src: '/illustrations/cartoon/elephant-pencil.jpg',
         alt: 'Elephant with pencil — children book illustration',
-        caption: 'Słoń z ołówkiem — ilustracja do książki dziecięcej',
+        captionPl: 'Słoń z ołówkiem — ilustracja do książki dziecięcej',
+        captionEn: 'Elephant with pencil — children\'s book illustration',
         aspectRatio: 'portrait',
       },
       {
         src: '/illustrations/cartoon/game-icons.png',
         alt: 'Game icons set',
-        caption: 'Zestaw ikon do gry — stylizowane ikony umiejętności',
+        captionPl: 'Zestaw ikon do gry — stylizowane ikony umiejętności',
+        captionEn: 'Game icon set — stylized skill icons',
         aspectRatio: 'landscape',
       },
       {
         src: '/illustrations/cartoon/snail-house.jpg',
         alt: 'Snail house — cartoon illustration',
-        caption: 'Ślimak z domkiem — ilustracja cartoon',
+        captionPl: 'Ślimak z domkiem — ilustracja cartoon',
+        captionEn: 'Snail house — cartoon illustration',
         aspectRatio: 'landscape',
       },
       {
         src: '/illustrations/cartoon/christmas-card.jpg',
         alt: 'Christmas card — astronaut illustration',
-        caption: 'Kartka świąteczna — astronauta z prezentami',
+        captionPl: 'Kartka świąteczna — astronauta z prezentami',
+        captionEn: 'Christmas card — astronaut with gifts',
         aspectRatio: 'square',
       },
       {
         src: '/illustrations/cartoon/gentleman-portrait.jpg',
         alt: 'Victorian gentleman — engraving style illustration',
-        caption: 'Portret dżentelmena — styl rycinowy',
+        captionPl: 'Portret dżentelmena — styl rycinowy',
+        captionEn: 'Gentleman portrait — engraving style',
         aspectRatio: 'square',
       },
     ],
