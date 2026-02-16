@@ -157,7 +157,7 @@ export const AboutSection = () => {
                         />
                       ))}
                     </div>
-                    <span className="text-[10px] text-muted-foreground/70 mt-0.5 whitespace-nowrap">{tool.name}</span>
+                    <span className="text-xs text-muted-foreground/70 mt-0.5 whitespace-nowrap">{tool.name}</span>
                   </div>
                 ))}
               </div>
