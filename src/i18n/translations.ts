@@ -246,7 +246,7 @@ export const translations: Record<Language, TranslationsType> = {
           description: 'Designing websites and mobile apps with emphasis on UX/UI and modern aesthetics.',
         },
         {
-          title: 'Illustrations & Art',
+          title: 'Illustrations',
           description: 'Unique illustrations, concept art and artistic assets for games, apps and marketing materials.',
         },
         {

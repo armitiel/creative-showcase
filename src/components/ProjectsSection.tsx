@@ -142,7 +142,7 @@ export const ProjectsSection = () => {
                   {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
                 </Badge>
                 <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                  {language === 'pl' ? 'Ilustracje & Art' : 'Illustrations & Art'}
+                  {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                   {language === 'pl'

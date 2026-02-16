@@ -56,7 +56,7 @@ const Illustrations = () => {
                 {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins'] text-foreground">
-                {language === 'pl' ? 'Ilustracje & Art' : 'Illustrations & Art'}
+                {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 {language === 'pl'
