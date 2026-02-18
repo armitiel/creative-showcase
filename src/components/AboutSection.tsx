@@ -102,7 +102,7 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="flex flex-wrap gap-5 justify-center md:justify-start">
+              <div className="grid grid-cols-3 gap-5 justify-items-center md:flex md:flex-wrap md:justify-start">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
