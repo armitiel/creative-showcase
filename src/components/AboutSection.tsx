@@ -32,13 +32,13 @@ export const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-32 relative">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="about" className="py-32 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Left - Avatar & Info */}
           <div
             ref={leftRef}
-            className={`flex flex-col opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
+            className={`flex flex-col min-w-0 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
             <div className="flex justify-center lg:justify-start">
               <div className="w-48 sm:w-56 lg:w-64 mx-auto lg:mx-0">
@@ -73,7 +73,7 @@ export const AboutSection = () => {
           {/* Right - Description & Skills */}
           <div
             ref={rightRef}
-            className={`space-y-8 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+            className={`space-y-8 min-w-0 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
           >
             <div>
               <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
