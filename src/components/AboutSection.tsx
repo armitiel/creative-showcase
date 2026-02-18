@@ -45,7 +45,7 @@ export const AboutSection = () => {
                 <img 
                   src={withBaseUrl('/avatar.png')} 
                   alt="Avatar" 
-                  className="w-full h-auto md:h-64 md:object-cover md:object-top"
+                  className="w-full object-contain md:h-64 md:object-cover md:object-top"
                 />
               </div>
             </div>
