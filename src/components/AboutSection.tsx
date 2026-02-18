@@ -85,7 +85,7 @@ export const AboutSection = () => {
             {/* Skills */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.skillsTitle}</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-2">
+              <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2">
                 {t.about.skills.map((skill, index) => (
                   <Badge
                     key={skill}
@@ -102,7 +102,7 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="grid grid-cols-3 gap-5 justify-items-center md:flex md:flex-wrap md:justify-start">
+              <div className="grid grid-cols-3 gap-5 justify-items-center lg:flex lg:flex-wrap lg:justify-start">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
@@ -111,7 +111,7 @@ export const AboutSection = () => {
                     title={tool.name}
                   >
                     <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-base font-black tracking-tight cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70"
+                      className="w-16 h-16 rounded-xl flex items-center justify-center text-lg font-black tracking-tight cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70"
                     >
                       {tool.icon === 'figma' ? (
                         <svg width="18" height="26" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
