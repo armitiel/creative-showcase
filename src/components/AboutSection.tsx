@@ -41,7 +41,7 @@ export const AboutSection = () => {
             className={`flex flex-col opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
             <div className="flex justify-center md:justify-start">
-              <div className="w-full max-w-xs md:w-64 mx-auto md:mx-0">
+              <div className="w-48 sm:w-56 md:w-64 mx-auto md:mx-0">
                 <img 
                   src={withBaseUrl('/avatar.png')} 
                   alt="Avatar" 
