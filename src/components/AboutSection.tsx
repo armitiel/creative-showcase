@@ -40,14 +40,12 @@ export const AboutSection = () => {
             ref={leftRef}
             className={`flex flex-col min-w-0 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
-            <div className="flex justify-center lg:justify-start">
-              <div className="w-48 sm:w-56 lg:w-64 mx-auto lg:mx-0">
-                <img 
-                  src={withBaseUrl('/avatar.png')} 
-                  alt="Avatar" 
-                  className="w-full rounded-3xl"
-                />
-              </div>
+            <div>
+              <img 
+                src={withBaseUrl('/avatar.png')} 
+                alt="Avatar" 
+                className="w-full rounded-3xl"
+              />
             </div>
 
             <div className="space-y-4 mt-8">
