@@ -44,7 +44,7 @@ export const AboutSection = () => {
               <img 
                 src={withBaseUrl('/avatar.png')} 
                 alt="Avatar" 
-                className="w-full rounded-3xl"
+                className="w-full lg:max-w-sm rounded-3xl"
               />
             </div>
 
