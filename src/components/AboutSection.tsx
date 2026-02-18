@@ -34,7 +34,7 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           {/* Left - Avatar & Info */}
           <div
             ref={leftRef}
