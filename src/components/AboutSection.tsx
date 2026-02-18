@@ -85,15 +85,16 @@ export const AboutSection = () => {
             {/* Skills */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.skillsTitle}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 justify-items-center">
+              <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2">
                 {t.about.skills.map((skill, index) => (
-                  <div
+                  <Badge
                     key={skill}
-                    className={`w-full h-16 rounded-xl flex items-center justify-center text-sm font-medium cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    variant="outline"
+                    className={`border-border hover:border-primary hover:text-primary transition-colors text-sm px-4 py-2 justify-center shadow-sm opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
                     style={{ animationDelay: rightVisible ? `${300 + index * 80}ms` : '0ms', animationFillMode: 'forwards' }}
                   >
                     {skill}
-                  </div>
+                  </Badge>
                 ))}
               </div>
             </div>
