@@ -38,8 +38,8 @@ const App = () => {
               onFinished={handleLoadingFinished}
             />
           )}
-          <SurveyPopup ready={showContent} />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <SurveyPopup ready={showContent} />
             {/* Navigation outside animated wrapper to preserve fixed positioning */}
             {showContent && <Navigation />}
             <div className={!showContent ? 'invisible' : 'animate-fade-in'}>
