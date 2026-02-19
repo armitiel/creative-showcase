@@ -90,7 +90,7 @@ export const AboutSection = () => {
                   <Badge
                     key={skill}
                     variant="outline"
-                    className={`border-border hover:border-primary hover:text-primary transition-colors text-sm px-4 py-2 justify-center shadow-sm opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    className={`border-white/30 bg-white/40 backdrop-blur-md hover:border-primary/50 hover:bg-white/60 hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] transition-all duration-300 text-sm px-4 py-2 justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.06)] opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
                     style={{ animationDelay: rightVisible ? `${300 + index * 80}ms` : '0ms', animationFillMode: 'forwards' }}
                   >
                     {skill}
@@ -111,7 +111,7 @@ export const AboutSection = () => {
                     title={tool.name}
                   >
                     <div
-                      className="w-16 h-16 rounded-xl flex items-center justify-center text-lg font-black tracking-tight cursor-default border border-white/15 shadow-lg transition-transform duration-300 hover:scale-110 bg-white/5 backdrop-blur-sm text-foreground/70"
+                       className="w-16 h-16 rounded-2xl flex items-center justify-center text-lg font-black tracking-tight cursor-default border border-white/40 shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-110 hover:shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.12),0_2px_6px_rgba(0,0,0,0.08)] bg-white/50 backdrop-blur-md text-foreground/70"
                     >
                       {tool.icon === 'figma' ? (
                         <svg width="18" height="26" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
