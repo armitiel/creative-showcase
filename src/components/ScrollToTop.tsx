@@ -1,5 +1,6 @@
 import { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
+// Force cache invalidation
 
 const scrollToElement = (id: string) => {
   const el = document.getElementById(id);
