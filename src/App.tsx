@@ -26,21 +26,20 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          {!showContent && (
-            <LoadingScreen
-              progress={progress}
-              isLoaded={isLoaded}
-              onFinished={handleLoadingFinished}
-            />
-          )}
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <QueryClientProvider client={queryClient}>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            {!showContent && (
+              <LoadingScreen
+                progress={progress}
+                isLoaded={isLoaded}
+                onFinished={handleLoadingFinished}
+              />
+            )}
             <SurveyPopup ready={showContent} />
-            {/* Navigation outside animated wrapper to preserve fixed positioning */}
             {showContent && <Navigation />}
             <div className={!showContent ? 'invisible' : 'animate-fade-in'}>
               <ScrollToTop />
@@ -51,10 +50,10 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
-          </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
+          </TooltipProvider>
+        </LanguageProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
   );
 };
 
