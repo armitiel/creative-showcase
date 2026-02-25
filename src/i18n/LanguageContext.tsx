@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { Language, translations } from './translations';
 
 type Translations = typeof translations.pl;
@@ -44,14 +44,8 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguageState] = useState<Language>('pl');
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  useEffect(() => {
-    const detectedLang = detectDefaultLanguage();
-    setLanguageState(detectedLang);
-    setIsInitialized(true);
-  }, []);
+  // Detect language synchronously on first render to avoid returning null
+  const [language, setLanguageState] = useState<Language>(() => detectDefaultLanguage());
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -59,11 +53,6 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   };
 
   const t = translations[language];
-
-  // Prevent flash of wrong language
-  if (!isInitialized) {
-    return null;
-  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

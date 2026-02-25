@@ -27,6 +27,19 @@
   </head>
 
   <body>
+    <!-- Inline splash – eliminates white flash before React mounts -->
+    <style>
+      body{margin:0;background:#0a0a0a}
+      #splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#0a0a0a;transition:opacity .4s}
+      #splash.hide{opacity:0;pointer-events:none}
+    </style>
+    <div id="splash" aria-hidden="true">
+      <div style="width:16rem;text-align:center">
+        <div style="height:2px;width:100%;background:rgba(255,255,255,.1);border-radius:9999px;overflow:hidden">
+          <div id="splash-bar" style="height:100%;width:0%;background:hsl(214 100% 50%);border-radius:9999px;transition:width .3s"></div>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

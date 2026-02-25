@@ -3,51 +3,20 @@ import { projects } from '@/data/projects';
 import { withBaseUrl } from '@/lib/utils';
 
 /**
- * Collects all image URLs from projects data and critical assets,
- * preloads them in the background, and reports progress.
+ * Collects only the images visible on the landing page (hero texture is
+ * handled by Vite imports, so we only need project thumbnails + avatar).
+ * Project-detail images are loaded lazily when the user navigates.
  */
-function collectAllImageUrls(): string[] {
+function collectCriticalImageUrls(): string[] {
   const urls = new Set<string>();
 
-  // Critical assets
+  // Avatar shown in About section
   urls.add('/avatar.png');
-  urls.add('/favicon.png');
 
+  // Project thumbnails shown in the grid on the landing page
   for (const project of projects) {
-    // Thumbnail
+    if (project.hidden) continue;
     if (project.thumbnail) urls.add(project.thumbnail);
-
-    // Hero animation
-    if (project.heroAnimation) urls.add(project.heroAnimation);
-
-    // Main images
-    project.images?.forEach((img) => urls.add(img.src));
-
-    // Real photos
-    project.realPhotos?.images?.forEach((img) => urls.add(img.src));
-
-    // Mobile screens
-    project.mobileScreens?.screens?.forEach((img) => urls.add(img.src));
-
-    // Device mockup
-    if (project.deviceMockup?.image) urls.add(project.deviceMockup.image);
-
-    // Thumbnail grid
-    project.thumbnailGrid?.images?.forEach((img) => urls.add(img.src));
-
-    // Retailer images
-    project.retailerImages?.forEach((img) => urls.add(img.src));
-
-    // GIF pairs
-    project.gifPair?.forEach((img) => urls.add(img.src));
-
-    // Parallax image
-    if (project.parallaxImage) {
-      urls.add(project.parallaxImage.src);
-      if (project.parallaxImage.backgroundImage) {
-        urls.add(project.parallaxImage.backgroundImage);
-      }
-    }
   }
 
   return Array.from(urls);
@@ -58,7 +27,7 @@ export function useImagePreloader() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const preloadImages = useCallback(() => {
-    const urls = collectAllImageUrls();
+    const urls = collectCriticalImageUrls();
     const total = urls.length;
     let loaded = 0;
 

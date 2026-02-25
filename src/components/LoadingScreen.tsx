@@ -1,5 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import logo from '@/assets/logo.png';
+
+/** Hide the inline HTML splash screen (defined in index.html) */
+function dismissHtmlSplash() {
+  const splash = document.getElementById('splash');
+  if (splash) {
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 500);
+  }
+}
+
+/** Sync progress to the inline HTML splash bar while it's still visible */
+function syncSplashBar(pct: number) {
+  const bar = document.getElementById('splash-bar');
+  if (bar) bar.style.width = `${pct}%`;
+}
 
 interface LoadingScreenProps {
   progress: number;
@@ -9,6 +24,18 @@ interface LoadingScreenProps {
 
 export const LoadingScreen = ({ progress, isLoaded, onFinished }: LoadingScreenProps) => {
   const [fadeOut, setFadeOut] = useState(false);
+  const splashDismissed = useRef(false);
+
+  // Once React loading screen mounts, remove the HTML splash
+  useEffect(() => {
+    if (!splashDismissed.current) {
+      splashDismissed.current = true;
+      dismissHtmlSplash();
+    }
+  }, []);
+
+  // Keep HTML splash bar in sync while it's still visible
+  useEffect(() => { syncSplashBar(progress); }, [progress]);
 
   useEffect(() => {
     if (isLoaded) {
