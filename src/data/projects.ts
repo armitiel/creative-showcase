@@ -229,7 +229,7 @@ export const projects: Project[] = [
       { src: '/projects/hubble/logo-variants.jpg', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle' },
       { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
       
-      { src: '/projects/hubble/box-mockup.jpg', alt: 'HubbleRx Box Mockup', caption: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami', backgroundColor: '#f0f0f0' },
+      { src: '/projects/hubble/box-mockup.jpg', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup-zoom.jpg', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/logo-3d-icon.png', alt: 'HubbleRx 3D Logo Icon', caption: 'Trójwymiarowa ikona logo HubbleRx' },
       { src: '/projects/hubble/website-presentation.jpg', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
