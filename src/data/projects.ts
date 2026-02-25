@@ -226,7 +226,7 @@ export const projects: Project[] = [
     solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     heroFollowImages: [
-      { src: '/projects/hubble/logo-variants.jpg', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.45 },
+      { src: '/projects/hubble/logo-variants.jpg', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle' },
       { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.5 },
       
       { src: '/projects/hubble/box-mockup.jpg', alt: 'HubbleRx Box Mockup', caption: 'Mockup pudełka subskrypcyjnego HubbleRx z kapsułkami', backgroundColor: '#f0f0f0' },
