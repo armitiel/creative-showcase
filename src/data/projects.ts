@@ -227,7 +227,7 @@ export const projects: Project[] = [
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     heroFollowImages: [
       { src: '/projects/hubble/logo-variants.jpg', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle' },
-      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.3 },
+      { src: '/projects/hubble/logo-icon.png', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
       
       { src: '/projects/hubble/box-mockup.jpg', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup-zoom.jpg', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
