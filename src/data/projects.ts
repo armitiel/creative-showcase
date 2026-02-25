@@ -250,7 +250,7 @@ export const projects: Project[] = [
       screens: [],
       sectionImages: [
         { src: '/projects/hubble/hero-illustration.jpg', alt: 'HubbleRx Hero Illustration', caption: 'Przykład ilustracji używanej w sekcjach hero', backgroundColor: '#ffffff' },
-        { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
+        // { src: '/projects/hubble/flyer-mockup.jpg', alt: 'HubbleRx Flyer Mockup', caption: 'Ulotka reklamowa HubbleRx — Pharmaceutical Subscriptions', backgroundColor: '#f0f0f0' },
       ],
     },
     deviceMockup: {
