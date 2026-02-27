@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -22,6 +22,27 @@ interface ImageLightboxProps {
 
 export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPrev, hasNext, prevSrc, nextSrc }: ImageLightboxProps) => {
   const [wasJustOpened, setWasJustOpened] = useState(false);
+  const [displaySrc, setDisplaySrc] = useState(src);
+  const [transitioning, setTransitioning] = useState(false);
+  const directionRef = useRef<'left' | 'right' | null>(null);
+
+  // Sync displaySrc with src, applying a crossfade
+  useEffect(() => {
+    if (!isOpen) {
+      setDisplaySrc(src);
+      return;
+    }
+    if (src === displaySrc) return;
+
+    setTransitioning(true);
+    const timer = window.setTimeout(() => {
+      setDisplaySrc(src);
+      setTransitioning(false);
+      directionRef.current = null;
+    }, 180);
+
+    return () => window.clearTimeout(timer);
+  }, [src, isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -45,8 +66,8 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft' && onPrev && hasPrev) onPrev();
-      if (e.key === 'ArrowRight' && onNext && hasNext) onNext();
+      if (e.key === 'ArrowLeft' && onPrev && hasPrev) { directionRef.current = 'right'; onPrev(); }
+      if (e.key === 'ArrowRight' && onNext && hasNext) { directionRef.current = 'left'; onNext(); }
     };
 
     document.addEventListener('keydown', onKeyDown);
@@ -66,6 +87,26 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
 
   if (!isOpen) return null;
 
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    directionRef.current = 'right';
+    onPrev?.();
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    directionRef.current = 'left';
+    onNext?.();
+  };
+
+  const imgTransform = transitioning
+    ? directionRef.current === 'left'
+      ? 'translate(-12px, 0) scale(0.97)'
+      : directionRef.current === 'right'
+        ? 'translate(12px, 0) scale(0.97)'
+        : 'scale(0.97)'
+    : 'translate(0, 0) scale(1)';
+
   return createPortal(
     <div 
       className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm cursor-zoom-out ${wasJustOpened ? 'animate-fade-in' : ''}`}
@@ -80,7 +121,7 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
 
       {onPrev && hasPrev && (
         <button
-          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          onClick={handlePrev}
           className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10 cursor-pointer"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -89,7 +130,7 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
 
       {onNext && hasNext && (
         <button
-          onClick={(e) => { e.stopPropagation(); onNext(); }}
+          onClick={handleNext}
           className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10 cursor-pointer"
         >
           <ChevronRight className="w-6 h-6" />
@@ -97,9 +138,14 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
       )}
 
       <img 
-        src={src} 
+        src={displaySrc} 
         alt={alt} 
         className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+        style={{
+          opacity: transitioning ? 0 : 1,
+          transform: imgTransform,
+          transition: 'opacity 180ms ease, transform 180ms ease',
+        }}
         onClick={(e) => e.stopPropagation()}
       />
     </div>,
