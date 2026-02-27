@@ -21,11 +21,18 @@ const ProjectDetail = () => {
   const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
 
   // Gallery lightbox for NFT thumbnail grid
-  const nftImages = project?.thumbnailGrid?.images.map(img => ({
+  const nftImages = project?.thumbnailGrid?.images.map((img) => ({
     src: withBaseUrl(img.src),
     alt: img.alt,
   })) || [];
   const gallery = useGalleryLightbox(nftImages);
+
+  // Gallery lightbox for realPhotos
+  const realPhotoImages = project?.realPhotos?.images.map((img) => ({
+    src: withBaseUrl(img.src),
+    alt: img.alt,
+  })) || [];
+  const realGallery = useGalleryLightbox(realPhotoImages);
 
   const isDark = project?.theme === 'dark';
 
@@ -836,7 +843,7 @@ const ProjectDetail = () => {
                   <div 
                     key={index}
                     className="aspect-[4/3] overflow-hidden rounded-2xl cursor-zoom-in"
-                    onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                    onClick={() => realGallery.openAt(index)}
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -914,6 +921,18 @@ const ProjectDetail = () => {
         onNext={gallery.next}
         hasPrev={gallery.hasPrev}
         hasNext={gallery.hasNext}
+      />
+
+      {/* Lightbox — realPhotos gallery with navigation */}
+      <ImageLightbox
+        src={realGallery.currentImage?.src || ''}
+        alt={realGallery.currentImage?.alt || ''}
+        isOpen={realGallery.isOpen}
+        onClose={realGallery.close}
+        onPrev={realGallery.prev}
+        onNext={realGallery.next}
+        hasPrev={realGallery.hasPrev}
+        hasNext={realGallery.hasNext}
       />
     </div>
   );
