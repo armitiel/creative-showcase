@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -23,29 +23,35 @@ interface ImageLightboxProps {
 export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPrev, hasNext, prevSrc, nextSrc }: ImageLightboxProps) => {
   const [wasJustOpened, setWasJustOpened] = useState(false);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') onClose();
-    if (e.key === 'ArrowLeft' && onPrev && hasPrev) onPrev();
-    if (e.key === 'ArrowRight' && onNext && hasNext) onNext();
-  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
-
   useEffect(() => {
-    if (isOpen) {
-      setWasJustOpened(true);
-      const timer = setTimeout(() => setWasJustOpened(false), 300);
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
-      return () => {
-        clearTimeout(timer);
-        document.removeEventListener('keydown', handleKeyDown);
-        document.body.style.overflow = 'unset';
-      };
+    if (!isOpen) {
+      setWasJustOpened(false);
+      document.body.style.overflow = 'unset';
+      return;
     }
+
+    setWasJustOpened(true);
+    const timer = window.setTimeout(() => setWasJustOpened(false), 250);
+    document.body.style.overflow = 'hidden';
+
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      window.clearTimeout(timer);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && onPrev && hasPrev) onPrev();
+      if (e.key === 'ArrowRight' && onNext && hasNext) onNext();
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose, onPrev, onNext, hasPrev, hasNext]);
 
   // Preload adjacent images
   useEffect(() => {

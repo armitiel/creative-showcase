@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Wrench } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -27,12 +27,31 @@ const ProjectDetail = () => {
   })) || [], [project?.thumbnailGrid?.images]);
   const gallery = useGalleryLightbox(nftImages);
 
-  // Gallery lightbox for realPhotos
-  const realPhotoImages = useMemo(() => project?.realPhotos?.images.map((img) => ({
-    src: withBaseUrl(img.src),
-    alt: img.alt,
-  })) || [], [project?.realPhotos?.images]);
-  const realGallery = useGalleryLightbox(realPhotoImages);
+  // Real photos gallery (spójny obiekt + stabilny stan)
+  const realGallery = useMemo(() => {
+    const items = project?.realPhotos?.images.map((img) => ({
+      src: withBaseUrl(img.src),
+      alt: img.alt,
+    })) || [];
+
+    return {
+      items,
+      count: items.length,
+    };
+  }, [project?.realPhotos?.images]);
+
+  const [realGalleryIndex, setRealGalleryIndex] = useState<number | null>(null);
+  const openRealGallery = useCallback((index: number) => setRealGalleryIndex(index), []);
+  const closeRealGallery = useCallback(() => setRealGalleryIndex(null), []);
+  const prevRealGallery = useCallback(() => setRealGalleryIndex((i) => (i !== null && i > 0 ? i - 1 : i)), []);
+  const nextRealGallery = useCallback(() => setRealGalleryIndex((i) => (i !== null && i < realGallery.count - 1 ? i + 1 : i)), [realGallery.count]);
+
+  const isRealGalleryOpen = realGalleryIndex !== null;
+  const realGalleryCurrentImage = realGalleryIndex !== null ? realGallery.items[realGalleryIndex] : null;
+  const hasRealGalleryPrev = realGalleryIndex !== null && realGalleryIndex > 0;
+  const hasRealGalleryNext = realGalleryIndex !== null && realGalleryIndex < realGallery.count - 1;
+  const realGalleryPrevSrc = hasRealGalleryPrev && realGalleryIndex !== null ? realGallery.items[realGalleryIndex - 1]?.src : undefined;
+  const realGalleryNextSrc = hasRealGalleryNext && realGalleryIndex !== null ? realGallery.items[realGalleryIndex + 1]?.src : undefined;
 
   const isDark = project?.theme === 'dark';
 
@@ -843,7 +862,7 @@ const ProjectDetail = () => {
                   <div 
                     key={index}
                     className="aspect-[4/3] overflow-hidden rounded-2xl cursor-zoom-in"
-                    onClick={() => realGallery.openAt(index)}
+                    onClick={() => openRealGallery(index)}
                   >
                     <img
                       src={withBaseUrl(image.src)}
@@ -927,16 +946,16 @@ const ProjectDetail = () => {
 
       {/* Lightbox — realPhotos gallery with navigation */}
       <ImageLightbox
-        src={realGallery.currentImage?.src || ''}
-        alt={realGallery.currentImage?.alt || ''}
-        isOpen={realGallery.isOpen}
-        onClose={realGallery.close}
-        onPrev={realGallery.prev}
-        onNext={realGallery.next}
-        hasPrev={realGallery.hasPrev}
-        hasNext={realGallery.hasNext}
-        prevSrc={realGallery.prevImage?.src}
-        nextSrc={realGallery.nextImage?.src}
+        src={realGalleryCurrentImage?.src || ''}
+        alt={realGalleryCurrentImage?.alt || ''}
+        isOpen={isRealGalleryOpen}
+        onClose={closeRealGallery}
+        onPrev={prevRealGallery}
+        onNext={nextRealGallery}
+        hasPrev={hasRealGalleryPrev}
+        hasNext={hasRealGalleryNext}
+        prevSrc={realGalleryPrevSrc}
+        nextSrc={realGalleryNextSrc}
       />
     </div>
   );
