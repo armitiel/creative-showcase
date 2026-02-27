@@ -22,27 +22,19 @@ interface ImageLightboxProps {
 
 export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPrev, hasNext, prevSrc, nextSrc }: ImageLightboxProps) => {
   const [wasJustOpened, setWasJustOpened] = useState(false);
-  const [displaySrc, setDisplaySrc] = useState(src);
-  const [transitioning, setTransitioning] = useState(false);
+  const [visible, setVisible] = useState(true);
   const directionRef = useRef<'left' | 'right' | null>(null);
 
-  // Sync displaySrc with src, applying a crossfade
+  // Reset visibility when src changes (new image ready)
   useEffect(() => {
-    if (!isOpen) {
-      setDisplaySrc(src);
-      return;
-    }
-    if (src === displaySrc) return;
-
-    setTransitioning(true);
-    const timer = window.setTimeout(() => {
-      setDisplaySrc(src);
-      setTransitioning(false);
-      directionRef.current = null;
-    }, 180);
-
-    return () => window.clearTimeout(timer);
-  }, [src, isOpen]);
+    if (!isOpen) return;
+    // Brief fade-in for the new image
+    setVisible(false);
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setVisible(true));
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [src]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -52,6 +44,7 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
     }
 
     setWasJustOpened(true);
+    setVisible(true);
     const timer = window.setTimeout(() => setWasJustOpened(false), 250);
     document.body.style.overflow = 'hidden';
 
@@ -99,13 +92,13 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
     onNext?.();
   };
 
-  const imgTransform = transitioning
+  const slideOffset = !visible
     ? directionRef.current === 'left'
-      ? 'translate(-12px, 0) scale(0.97)'
+      ? 'translateX(-16px)'
       : directionRef.current === 'right'
-        ? 'translate(12px, 0) scale(0.97)'
+        ? 'translateX(16px)'
         : 'scale(0.97)'
-    : 'translate(0, 0) scale(1)';
+    : 'translateX(0)';
 
   return createPortal(
     <div 
@@ -138,13 +131,14 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
       )}
 
       <img 
-        src={displaySrc} 
+        key={src}
+        src={src} 
         alt={alt} 
         className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
         style={{
-          opacity: transitioning ? 0 : 1,
-          transform: imgTransform,
-          transition: 'opacity 180ms ease, transform 180ms ease',
+          opacity: visible ? 1 : 0,
+          transform: slideOffset,
+          transition: 'opacity 150ms ease-out, transform 150ms ease-out',
         }}
         onClick={(e) => e.stopPropagation()}
       />
