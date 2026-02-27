@@ -16,9 +16,13 @@ interface ImageLightboxProps {
   onNext?: () => void;
   hasPrev?: boolean;
   hasNext?: boolean;
+  prevSrc?: string;
+  nextSrc?: string;
 }
 
-export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPrev, hasNext }: ImageLightboxProps) => {
+export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPrev, hasNext, prevSrc, nextSrc }: ImageLightboxProps) => {
+  const [wasJustOpened, setWasJustOpened] = useState(false);
+
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') onClose();
     if (e.key === 'ArrowLeft' && onPrev && hasPrev) onPrev();
@@ -27,24 +31,40 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
 
   useEffect(() => {
     if (isOpen) {
+      setWasJustOpened(true);
+      const timer = setTimeout(() => setWasJustOpened(false), 300);
       document.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
+      return () => {
+        clearTimeout(timer);
+        document.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'unset';
+      };
     }
-
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
   }, [isOpen, handleKeyDown]);
 
+  // Preload adjacent images
+  useEffect(() => {
+    if (!isOpen) return;
+    [prevSrc, nextSrc].forEach((s) => {
+      if (s) {
+        const img = new Image();
+        img.src = s;
+      }
+    });
+  }, [isOpen, prevSrc, nextSrc]);
+
   if (!isOpen) return null;
 
   return createPortal(
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in cursor-zoom-out"
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm cursor-zoom-out ${wasJustOpened ? 'animate-fade-in' : ''}`}
       onClick={onClose}
     >
-      {/* Close button */}
       <button 
         onClick={onClose}
         className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10"
@@ -52,7 +72,6 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
         <X className="w-6 h-6" />
       </button>
 
-      {/* Prev button */}
       {onPrev && hasPrev && (
         <button
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
@@ -62,7 +81,6 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
         </button>
       )}
 
-      {/* Next button */}
       {onNext && hasNext && (
         <button
           onClick={(e) => { e.stopPropagation(); onNext(); }}
@@ -75,7 +93,7 @@ export const ImageLightbox = ({ src, alt, isOpen, onClose, onPrev, onNext, hasPr
       <img 
         src={src} 
         alt={alt} 
-        className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl animate-scale-in"
+        className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       />
     </div>,
@@ -110,6 +128,8 @@ export const useGalleryLightbox = (images: LightboxImage[]) => {
   const currentImage = currentIndex !== null ? images[currentIndex] : null;
   const hasPrev = currentIndex !== null && currentIndex > 0;
   const hasNext = currentIndex !== null && currentIndex < images.length - 1;
+  const prevImage = currentIndex !== null && currentIndex > 0 ? images[currentIndex - 1] : null;
+  const nextImage = currentIndex !== null && currentIndex < images.length - 1 ? images[currentIndex + 1] : null;
 
-  return { currentImage, currentIndex, isOpen: currentIndex !== null, openAt, close, prev, next, hasPrev, hasNext };
+  return { currentImage, currentIndex, isOpen: currentIndex !== null, openAt, close, prev, next, hasPrev, hasNext, prevImage, nextImage };
 };
