@@ -921,6 +921,8 @@ const ProjectDetail = () => {
         onNext={gallery.next}
         hasPrev={gallery.hasPrev}
         hasNext={gallery.hasNext}
+        prevSrc={gallery.prevImage?.src}
+        nextSrc={gallery.nextImage?.src}
       />
 
       {/* Lightbox — realPhotos gallery with navigation */}
@@ -933,6 +935,8 @@ const ProjectDetail = () => {
         onNext={realGallery.next}
         hasPrev={realGallery.hasPrev}
         hasNext={realGallery.hasNext}
+        prevSrc={realGallery.prevImage?.src}
+        nextSrc={realGallery.nextImage?.src}
       />
     </div>
   );
