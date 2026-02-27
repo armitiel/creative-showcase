@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Wrench } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -21,17 +21,17 @@ const ProjectDetail = () => {
   const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
 
   // Gallery lightbox for NFT thumbnail grid
-  const nftImages = project?.thumbnailGrid?.images.map((img) => ({
+  const nftImages = useMemo(() => project?.thumbnailGrid?.images.map((img) => ({
     src: withBaseUrl(img.src),
     alt: img.alt,
-  })) || [];
+  })) || [], [project?.thumbnailGrid?.images]);
   const gallery = useGalleryLightbox(nftImages);
 
   // Gallery lightbox for realPhotos
-  const realPhotoImages = project?.realPhotos?.images.map((img) => ({
+  const realPhotoImages = useMemo(() => project?.realPhotos?.images.map((img) => ({
     src: withBaseUrl(img.src),
     alt: img.alt,
-  })) || [];
+  })) || [], [project?.realPhotos?.images]);
   const realGallery = useGalleryLightbox(realPhotoImages);
 
   const isDark = project?.theme === 'dark';
