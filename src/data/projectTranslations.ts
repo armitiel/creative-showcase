@@ -29,6 +29,8 @@ interface ProjectTranslation {
   // YouTube video
   youtubeVideoTitle?: string;
   youtubeVideoDescription?: string;
+  // Strategic sections
+  strategicSections?: { title: string; content: string }[];
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
@@ -261,11 +263,29 @@ export const projectTranslations: ProjectTranslations = {
   'hubble-rx': {
     pl: {
       title: 'HubbleRx - Branding i UI',
-      description: 'Kompleksowy branding i UI design dla platformy subskrypcji medykamentów',
-      fullDescription: 'HubbleRx to platforma subskrypcji medykamentów oferująca nielimitowany dostęp do leków w ramach przystępnego abonamentu. Projekt zakładał stworzenie przyjaznego, dostępnego brandingu, który budzi zaufanie użytkowników. Byłem odpowiedzialny za projektowanie serii ilustracji UI, layoutu strony internetowej, animacji do płatnych reklam oraz kompletny branding z logo.',
-      challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
-      solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
-      results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
+      description: 'Budowa kompletnego systemu marki od fundamentów dla platformy subskrypcji farmaceutycznych',
+      fullDescription: 'HubbleRx to platforma subskrypcji medykamentów wchodząca na konkurencyjny rynek USA. Firma nie miała wcześniej żadnego systemu wizualnego, architektury informacji ani fundamentu marki. Otrzymałem pełną odpowiedzialność za zbudowanie całego systemu od zera — od strategii marki, przez projektowanie logo i ilustracji, po layout strony, animacje reklamowe i materiały produktowe.',
+      challenge: 'Platformy medyczne operują w przestrzeni, gdzie każdy element komunikacji wpływa na decyzję użytkownika. Brak spójnego systemu wizualnego oznacza brak zaufania. Brak zaufania oznacza brak konwersji. HubbleRx potrzebował fundamentu, który pozwoli skalować komunikację w wielu kanałach — od strony internetowej, przez reklamy płatne, po materiały produktowe.',
+      solution: 'Punkt wyjścia: zbudować fundament zaufania przez spójność. Kolor turkusowy został wybrany strategicznie — kojarzy się z medycyną, czystością i dostępnością. System ilustracji upraszcza złożone procesy (onboarding, subskrypcja) do zrozumiałych kroków wizualnych. Logo nawiązuje do teleskopu Hubble — metafora odkrywania najlepszych rozwiązań medycznych.',
+      results: 'Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii. Spójny system wizualny umożliwił szybkie skalowanie komunikacji do nowych kanałów bez konieczności każdorazowego projektowania od zera.',
+      strategicSections: [
+        {
+          title: 'Moja rola i zakres odpowiedzialności',
+          content: 'Pełna odpowiedzialność za budowę systemu wizualnego od podstaw: strategia marki, projektowanie logo, system ilustracji, architektura informacji strony internetowej, layout UI, animacje reklamowe, materiały produktowe. Brak wcześniejszych szkiców, wytycznych ani briefu kreatywnego — wszystkie decyzje projektowe podejmowane samodzielnie.',
+        },
+        {
+          title: 'Proces decyzyjny',
+          content: 'Każdy element był projektowany pod kątem konwersji i skalowalności. Typografia (Gotham) — geometryczna, czytelna, budująca autorytet. Paleta kolorów — ograniczona do 3 kluczowych barw, zapewniająca rozpoznawalność w każdym kanale. Ilustracje — system modularny, możliwy do rozbudowy bez utraty spójności.',
+        },
+        {
+          title: 'Rozwiązanie systemowe',
+          content: 'Dostarczony system obejmuje: kompletny branding (logo, warianty, znak graficzny), system ilustracji UI, responsywny layout strony internetowej, animacje do kampanii płatnych (częściowo realizowane w Blenderze), materiały produktowe (mockupy opakowań) oraz architekturę informacji wspierającą ścieżkę konwersji użytkownika.',
+        },
+        {
+          title: 'Dlaczego to istotne dla biznesu?',
+          content: 'Projekt demonstruje zdolność do budowy kompletnego systemu marki od fundamentów — bez istniejących szkiców, wytycznych ani architektury informacji. Każda decyzja projektowa była podejmowana w kontekście wpływu na konwersję, zaufanie użytkownika i skalowalność komunikacji. To podejście systemowe, nie dekoracyjne.',
+        },
+      ],
       typographyDescription: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
       heroFollowImageCaptions: {
@@ -300,12 +320,30 @@ export const projectTranslations: ProjectTranslations = {
     },
     en: {
       title: 'HubbleRx - Branding & UI',
-      description: 'Comprehensive branding and UI design for a medication subscription platform',
-      fullDescription: 'HubbleRx is a medication subscription platform offering unlimited access to medications under an affordable subscription. The project aimed to create friendly, accessible branding that builds user trust. I was responsible for designing a series of UI illustrations, website layout, animations for paid ads, and complete branding with logo.',
-      challenge: 'Creating branding for a medical platform that simultaneously communicates professionalism and security while remaining friendly and accessible to a wide range of users.',
-      solution: 'I designed a series of illustrations in a friendly style with the brand\'s characteristic teal color. The illustrations present the onboarding process in a simple, understandable way. The logo references the Hubble telescope — symbolizing discovering and finding the best medical solutions for users.',
-      results: 'The branding effectively positions HubbleRx as a friendly and trustworthy medical platform. Advertising materials with animations significantly improved campaign conversion.',
-      typographyDescription: 'HubbleRx\'s typographic system uses readable, rounded fonts that emphasize the friendly character of the medical platform.',
+      description: 'Building a complete brand system from the ground up for a pharmaceutical subscription platform',
+      fullDescription: 'HubbleRx is a medication subscription platform entering the competitive US market. The company had no prior visual system, information architecture, or brand foundation. I was given full responsibility to build the entire system from scratch — from brand strategy and logo design to illustrations, website layout, ad animations, and product materials.',
+      challenge: 'Medical platforms operate in a space where every communication element influences user decisions. No cohesive visual system means no trust. No trust means no conversion. HubbleRx needed a foundation that would allow scaling communication across multiple channels — from website to paid ads to product materials.',
+      solution: 'Starting point: build a trust foundation through consistency. Teal was chosen strategically — associated with medicine, cleanliness, and accessibility. The illustration system simplifies complex processes (onboarding, subscription) into comprehensible visual steps. The logo references the Hubble telescope — a metaphor for discovering the best medical solutions.',
+      results: 'Ad materials with animations significantly improved campaign conversion. The cohesive visual system enabled rapid communication scaling to new channels without redesigning from scratch each time.',
+      strategicSections: [
+        {
+          title: 'My Role & Scope of Responsibility',
+          content: 'Full responsibility for building the visual system from the ground up: brand strategy, logo design, illustration system, website information architecture, UI layout, ad animations, product materials. No prior sketches, guidelines, or creative brief — all design decisions made independently.',
+        },
+        {
+          title: 'Decision-Making Process',
+          content: 'Every element was designed for conversion and scalability. Typography (Gotham) — geometric, readable, authority-building. Color palette — limited to 3 key colors, ensuring recognition across every channel. Illustrations — modular system, expandable without losing consistency.',
+        },
+        {
+          title: 'Systematic Solution',
+          content: 'The delivered system includes: complete branding (logo, variants, graphic mark), UI illustration system, responsive website layout, paid campaign animations (partially executed in Blender), product materials (packaging mockups), and information architecture supporting the user conversion path.',
+        },
+        {
+          title: 'Why Does This Matter for Business?',
+          content: 'This project demonstrates the ability to build a complete brand system from the ground up — without existing sketches, guidelines, or information architecture. Every design decision was made in the context of its impact on conversion, user trust, and communication scalability. This is a systematic approach, not decorative.',
+        },
+      ],
+      typographyDescription: 'HubbleRx\'s typographic system is built on Gotham — a geometric, modern typeface that combines professional authority with accessible medical communication.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
       mobileScreensDescription: 'Common elements across all marketing materials, creating a pleasant feel with a touch of modernity.',
       mobileScreensTitle: 'Minimalist Illustrations',

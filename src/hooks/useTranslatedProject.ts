@@ -57,6 +57,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     alt: string;
     caption?: string;
   }[];
+  strategicSections?: { title: string; content: string }[];
   heroFollowImages?: {
     src: string;
     alt: string;
@@ -129,6 +130,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     results: translation.results ?? project.results,
     images: translatedImages,
     heroFollowImages: translatedHeroFollowImages,
+    strategicSections: translation.strategicSections ?? project.strategicSections,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,

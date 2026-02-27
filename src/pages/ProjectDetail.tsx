@@ -306,7 +306,26 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Typography Section */}
+      {/* Strategic Sections */}
+      {project.strategicSections && project.strategicSections.length > 0 && (
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-12">
+              {project.strategicSections.map((section, index) => (
+                <div key={index}>
+                  <h3 className={`text-xl font-bold mb-3 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+                    {section.title}
+                  </h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
+                    {section.content}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {project.typography && (
         <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">

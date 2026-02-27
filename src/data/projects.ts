@@ -102,6 +102,7 @@ export interface Project {
   challenge?: string;
   solution?: string;
   results?: string;
+  strategicSections?: { title: string; content: string }[];
   logoConcept?: {
     title?: string;
     description: string;
