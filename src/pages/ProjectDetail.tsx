@@ -268,23 +268,32 @@ const ProjectDetail = () => {
       {/* Centered logo before project info */}
 {project.images?.[0] && project.images[0].displayMode === 'centered' && (
         <section className="py-16 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
-          {/* Particle field */}
-          <div className="absolute inset-0 overflow-hidden">
-            {Array.from({ length: 40 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full"
-                style={{
-                  width: `${Math.random() * 4 + 1}px`,
-                  height: `${Math.random() * 4 + 1}px`,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  background: `rgba(255, 255, 255, ${Math.random() * 0.4 + 0.1})`,
-                  animation: `floatParticle ${Math.random() * 6 + 4}s ease-in-out infinite`,
-                  animationDelay: `${Math.random() * 5}s`,
-                }}
-              />
-            ))}
+          {/* Particles radiating from center */}
+          <div className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 50 }).map((_, i) => {
+              const angle = (i / 50) * 360;
+              const size = Math.random() * 4 + 1;
+              const duration = Math.random() * 4 + 3;
+              const delay = Math.random() * 4;
+              return (
+                <div
+                  key={i}
+                  className="absolute rounded-full"
+                  style={{
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    left: '50%',
+                    top: '50%',
+                    background: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2})`,
+                    boxShadow: `0 0 ${size * 2}px rgba(218, 165, 32, 0.4)`,
+                    animation: `radiateParticle ${duration}s ease-out infinite`,
+                    animationDelay: `${delay}s`,
+                    '--angle': `${angle}deg`,
+                    '--distance': `${Math.random() * 250 + 150}px`,
+                  } as React.CSSProperties}
+                />
+              );
+            })}
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto flex justify-center">
@@ -306,11 +315,15 @@ const ProjectDetail = () => {
             </div>
           </div>
           <style>{`
-            @keyframes floatParticle {
-              0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
-              25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
-              50% { transform: translateY(-10px) translateX(-5px); opacity: 0.5; }
-              75% { transform: translateY(-30px) translateX(15px); opacity: 0.7; }
+            @keyframes radiateParticle {
+              0% {
+                transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0);
+                opacity: 0.8;
+              }
+              100% {
+                transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--distance));
+                opacity: 0;
+              }
             }
             @keyframes glowPulse {
               0%, 100% { opacity: 0.4; transform: scale(1.1); }
