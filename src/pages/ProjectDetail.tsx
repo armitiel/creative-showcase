@@ -53,6 +53,12 @@ const ProjectDetail = () => {
   const realGalleryPrevSrc = hasRealGalleryPrev && realGalleryIndex !== null ? realGallery.items[realGalleryIndex - 1]?.src : undefined;
   const realGalleryNextSrc = hasRealGalleryNext && realGalleryIndex !== null ? realGallery.items[realGalleryIndex + 1]?.src : undefined;
 
+  // Strategic section lightbox (maps)
+  const [strategicLightbox, setStrategicLightbox] = useState<{ images: { src: string; alt: string }[]; index: number } | null>(null);
+  const closeStrategicLightbox = useCallback(() => setStrategicLightbox(null), []);
+  const prevStrategicLightbox = useCallback(() => setStrategicLightbox((s) => s && s.index > 0 ? { ...s, index: s.index - 1 } : s), []);
+  const nextStrategicLightbox = useCallback(() => setStrategicLightbox((s) => s && s.index < s.images.length - 1 ? { ...s, index: s.index + 1 } : s), []);
+
   const isDark = project?.theme === 'dark';
 
   if (!project) {
