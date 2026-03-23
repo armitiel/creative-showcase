@@ -57,7 +57,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     alt: string;
     caption?: string;
   }[];
-  strategicSections?: { title: string; content: string }[];
+  strategicSections?: { title: string; content: string; images?: { src: string; alt: string; caption?: string }[] }[];
   heroFollowImages?: {
     src: string;
     alt: string;

@@ -98,12 +98,11 @@ export interface Project {
   heroFollowImages?: { src: string; alt: string; caption?: string; displayMode?: 'cover' | 'centered'; backgroundColor?: string; imageScale?: number }[];
   retailerImages?: RetailerImage[];
   gifPair?: GifPairItem[];
-  towerImages?: GifPairItem[];
   parallaxImage?: ParallaxImage;
   challenge?: string;
   solution?: string;
   results?: string;
-  strategicSections?: { title: string; content: string }[];
+  strategicSections?: { title: string; content: string; images?: GifPairItem[] }[];
   logoConcept?: {
     title?: string;
     description: string;
@@ -592,11 +591,6 @@ export const projects: Project[] = [
       { src: '/projects/olympus-defence/titan.gif', alt: 'Titan boss animation', caption: 'Titan (główny boss)', noMagnifier: true },
       { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
     ],
-    towerImages: [
-      { src: '/projects/olympus-defence/tower-zeus.gif', alt: 'Zeus tower level 1', caption: 'Zeus (lv1)', noMagnifier: true },
-      { src: '/projects/olympus-defence/tower-burning-oil.gif', alt: 'Burning Oil tower level 2', caption: 'Burning Oil (lv2)', noMagnifier: true },
-      { src: '/projects/olympus-defence/tower-archers.png', alt: 'Archers tower level 2', caption: 'Archers (lv2)', noMagnifier: true },
-    ],
     youtubeVideo: {
       url: 'https://www.youtube.com/embed/FCE_9G9Rf5s',
       title: 'Gameplay Trailer',
@@ -614,6 +608,11 @@ export const projects: Project[] = [
       {
         title: 'Wieżyczki',
         content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.',
+        images: [
+          { src: '/projects/olympus-defence/tower-zeus.gif', alt: 'Zeus tower level 1', caption: 'Zeus (lv1)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-burning-oil.gif', alt: 'Burning Oil tower level 2', caption: 'Burning Oil (lv2)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-archers.png', alt: 'Archers tower level 2', caption: 'Archers (lv2)', noMagnifier: true },
+        ],
       },
       {
         title: 'Mapy',

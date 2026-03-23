@@ -345,6 +345,29 @@ const ProjectDetail = () => {
                   <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                     {section.content}
                   </p>
+                  {section.images && section.images.length > 0 && (
+                    <div className={`grid grid-cols-1 ${section.images.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mt-6`}>
+                      {section.images.map((img, imgIndex) => (
+                        <div 
+                          key={imgIndex}
+                          className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                        >
+                          <div className="aspect-square flex items-center justify-center p-4">
+                            <img
+                              src={withBaseUrl(img.src)}
+                              alt={img.alt}
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          </div>
+                          {img.caption && (
+                            <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                              <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -628,15 +651,17 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                    className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
                   >
-                    <img
-                      src={withBaseUrl(gif.src)}
-                      alt={gif.alt}
-                      className="w-full h-auto object-cover"
-                    />
+                    <div className="aspect-square flex items-center justify-center p-4">
+                      <img
+                        src={withBaseUrl(gif.src)}
+                        alt={gif.alt}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
                     {gif.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                      <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
                       </div>
                     )}
@@ -648,37 +673,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Tower Images */}
-      {project.towerImages && project.towerImages.length > 0 && (
-        <section className="py-8">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h3 className={`text-2xl font-bold mb-6 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
-                {language === 'pl' ? 'Wieżyczki' : 'Towers'}
-              </h3>
-              <div className={`grid grid-cols-1 ${project.towerImages.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4`}>
-                {project.towerImages.map((tower, index) => (
-                  <div 
-                    key={index}
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
-                  >
-                    <img
-                      src={withBaseUrl(tower.src)}
-                      alt={tower.alt}
-                      className="w-full h-auto object-cover"
-                    />
-                    {tower.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
-                        <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{tower.caption}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Logo Concept Section */}
       {project.logoConcept && (
