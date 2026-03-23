@@ -6,6 +6,7 @@ import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslatedProjects } from '@/hooks/useTranslatedProject';
 import { Paintbrush } from 'lucide-react';
+import { usePrefetchProject } from '@/hooks/useProjectPrefetch';
 
 export const ProjectsSection = () => {
   const { t, language } = useLanguage();
@@ -14,6 +15,7 @@ export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { prefetch, cancel } = usePrefetchProject();
 
   // Get unique categories from actual projects data (support comma-separated)
   const projectCategories = [...new Set(projects.flatMap(p => p.category.split(', ').map(c => c.trim())))];
@@ -69,6 +71,8 @@ export const ProjectsSection = () => {
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
+              onMouseEnter={() => prefetch(project.slug)}
+              onMouseLeave={cancel}
               className={`group block bg-secondary rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 opacity-0 shadow-sm hover:shadow-md ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
