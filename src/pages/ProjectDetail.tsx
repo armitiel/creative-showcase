@@ -115,15 +115,6 @@ const ProjectDetail = () => {
             <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
               {project.fullDescription}
             </p>
-            {project.images?.[0] && project.images[0].displayMode === 'centered' && (
-              <div className="mt-10 flex justify-center">
-                <img
-                  src={withBaseUrl(project.images[0].src)}
-                  alt={project.images[0].alt}
-                  className="max-h-40 object-contain"
-                />
-              </div>
-            )}
           </div>
         </div>
       </section>
