@@ -630,6 +630,13 @@ export const projects: Project[] = [
       {
         title: 'UI',
         content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.',
+        images: [
+          { src: '/projects/olympus-defence/ui-shop.png', alt: 'Shop screen', caption: 'Shop', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-leaderboard.png', alt: 'Leaderboard screen', caption: 'Leaderboard', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-card-1.png', alt: 'Spell card - hourglass', caption: 'Spell Card', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-card-2.png', alt: 'Spell card - swords', caption: 'Spell Card', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-card-3.png', alt: 'Spell card - owl', caption: 'Spell Card', noMagnifier: true },
+        ],
       },
       {
         title: 'Proces i rozwój',
