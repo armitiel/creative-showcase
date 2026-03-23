@@ -130,7 +130,12 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     results: translation.results ?? project.results,
     images: translatedImages,
     heroFollowImages: translatedHeroFollowImages,
-    strategicSections: translation.strategicSections ?? project.strategicSections,
+    strategicSections: translation.strategicSections
+      ? translation.strategicSections.map((section, i) => ({
+          ...section,
+          images: project.strategicSections?.[i]?.images ?? section.images,
+        }))
+      : project.strategicSections,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
       fonts: project.typography.fonts,
