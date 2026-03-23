@@ -666,7 +666,7 @@ export const projects: Project[] = [
     solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
     results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
     images: [
-      { src: '/projects/shadow-tagger/logo.png', alt: 'Shadow Tagger Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e', imageScale: 0.6 },
+      { src: '/projects/shadow-tagger/logo.png', alt: 'Shadow Tagger Logo', displayMode: 'centered' as const, backgroundColor: '#141414', imageScale: 0.6 },
       { src: '/projects/shadow-tagger/gameplay-1.jpg', alt: 'Shadow Tagger - Gameplay platformowy', caption: 'Rozgrywka platformowa — unikaj przeciwników i maluj murale', noMagnifier: true },
       { src: '/projects/shadow-tagger/gameplay-2.jpg', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków — maluj mural kolor po kolorze', noMagnifier: true },
       { src: '/projects/shadow-tagger/gameplay-3.jpg', alt: 'Shadow Tagger - Eksploracja', caption: 'Eksploracja poziomów z drabinami i muralami do odkrycia', noMagnifier: true },
