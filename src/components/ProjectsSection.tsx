@@ -6,6 +6,7 @@ import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useTranslatedProjects } from '@/hooks/useTranslatedProject';
 import { Paintbrush } from 'lucide-react';
+import { usePrefetchProject } from '@/hooks/useProjectPrefetch';
 
 export const ProjectsSection = () => {
   const { t, language } = useLanguage();
