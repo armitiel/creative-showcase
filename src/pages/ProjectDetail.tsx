@@ -311,7 +311,7 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Centered logo after project info */}
+      {/* Centered logo before project info */}
       {project.images?.[0] && project.images[0].displayMode === 'centered' && (
         <section className="py-16" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
           <div className="container mx-auto px-4">
