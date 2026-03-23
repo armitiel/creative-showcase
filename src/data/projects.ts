@@ -331,12 +331,12 @@ export const projects: Project[] = [
         title: 'Mapy',
         content: '3 środowiska map po 15 poziomów = 45 map z unikatowymi modelami dedykowanymi dla danego środowiska.',
         images: [
-          { src: '/projects/olympus-defence/map-1-1.png', alt: 'Środowisko 1 - rzeka i mosty', caption: 'Środowisko 1', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-1-2.png', alt: 'Środowisko 1 - wzgórza', caption: 'Środowisko 1', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-2-1.png', alt: 'Środowisko 2 - wioska', caption: 'Środowisko 2', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-2-2.png', alt: 'Środowisko 2 - zagroda', caption: 'Środowisko 2', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-3-1.png', alt: 'Środowisko 3 - jaskinia', caption: 'Środowisko 3', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-3-3.png', alt: 'Środowisko 3 - ruiny', caption: 'Środowisko 3', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-1-1.jpg', alt: 'Środowisko 1 - rzeka i mosty', caption: 'Środowisko 1', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-1-2.jpg', alt: 'Środowisko 1 - wzgórza', caption: 'Środowisko 1', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-2-1.jpg', alt: 'Środowisko 2 - wioska', caption: 'Środowisko 2', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-2-2.jpg', alt: 'Środowisko 2 - zagroda', caption: 'Środowisko 2', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-3-1.jpg', alt: 'Środowisko 3 - jaskinia', caption: 'Środowisko 3', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-3-3.jpg', alt: 'Środowisko 3 - ruiny', caption: 'Środowisko 3', noMagnifier: true },
         ],
       },
       {
