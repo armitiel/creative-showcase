@@ -273,7 +273,7 @@ const ProjectDetail = () => {
               <img
                 src={withBaseUrl(project.images[0].src)}
                 alt={project.images[0].alt}
-                className="max-h-52 object-contain"
+                className="max-h-80 object-contain"
               />
             </div>
           </div>
