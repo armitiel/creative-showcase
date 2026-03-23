@@ -968,7 +968,7 @@ const ProjectDetail = () => {
       {project.youtubeVideo && (
         <section className={`py-16 ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               {project.youtubeVideo.title && (
                 <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.youtubeVideo.title}
