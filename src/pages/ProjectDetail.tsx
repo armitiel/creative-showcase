@@ -823,7 +823,7 @@ const ProjectDetail = () => {
       <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e8e8e8]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
-            {project.images.map((image, index) => {
+            {project.images.filter((img, idx) => !(idx === 0 && img.displayMode === 'centered')).map((image, index) => {
               const ImageWrapper = ({ children }: { children: React.ReactNode }) => {
                 const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
                 return (
