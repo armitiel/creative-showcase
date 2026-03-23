@@ -98,6 +98,7 @@ export interface Project {
   heroFollowImages?: { src: string; alt: string; caption?: string; displayMode?: 'cover' | 'centered'; backgroundColor?: string; imageScale?: number }[];
   retailerImages?: RetailerImage[];
   gifPair?: GifPairItem[];
+  towerImages?: GifPairItem[];
   parallaxImage?: ParallaxImage;
   challenge?: string;
   solution?: string;
