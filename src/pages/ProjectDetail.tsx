@@ -354,14 +354,46 @@ const ProjectDetail = () => {
                   {section.images && section.images.length > 0 && (() => {
                     const isLandscapeSection = section.images!.some(img => img.src.includes('map-'));
                     const isUISection = section.images!.some(img => img.src.includes('ui-'));
-                    const colsClass = section.images!.length === 3 ? 'md:grid-cols-3' 
-                      : isUISection && section.images!.length === 5 ? 'md:grid-cols-5'
-                      : 'md:grid-cols-2';
+                    
+                    if (isUISection) {
+                      const screens = section.images!.filter(img => !img.src.includes('ui-card'));
+                      const cards = section.images!.filter(img => img.src.includes('ui-card'));
+                      return (
+                        <div className="mt-6 space-y-6">
+                          {screens.length > 0 && (
+                            <div className="grid grid-cols-1 gap-4">
+                              {screens.map((img, imgIndex) => (
+                                <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
+                                  <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto" />
+                                  {img.caption && (
+                                    <div className={`p-3 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                                      <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {cards.length > 0 && (
+                            <div className={`grid grid-cols-${cards.length} gap-4 max-w-md`}>
+                              {cards.map((img, imgIndex) => (
+                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
+                                  <div className="p-2">
+                                    <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto object-contain" />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+
+                    const colsClass = section.images!.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2';
                     return (
                     <div className={`grid grid-cols-2 ${colsClass} gap-4 mt-6`}>
                       {section.images!.map((img, imgIndex) => {
                         const isLandscape = img.src.includes('map-');
-                        const isSmallCard = img.src.includes('ui-card');
                         return (
                           <div 
                             key={imgIndex}
@@ -372,7 +404,7 @@ const ProjectDetail = () => {
                               setStrategicLightbox({ images: mapImages.map(i => ({ src: withBaseUrl(i.src), alt: i.alt })), index: mapIndex });
                             } : undefined}
                           >
-                            <div className={`${isLandscape ? 'aspect-video' : isSmallCard ? 'aspect-square p-2' : 'aspect-video'} flex items-center justify-center ${!isLandscape && !isSmallCard ? 'p-4' : ''}`}>
+                            <div className={`${isLandscape ? 'aspect-video' : 'aspect-square p-4'} flex items-center justify-center`}>
                               <img
                                 src={withBaseUrl(img.src)}
                                 alt={img.alt}
