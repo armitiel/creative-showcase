@@ -375,7 +375,7 @@ const ProjectDetail = () => {
                             </div>
                           )}
                           {cards.length > 0 && (
-                            <div className={`grid grid-cols-${cards.length} gap-4 max-w-md`}>
+                            <div className="grid grid-cols-3 gap-4">
                               {cards.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
                                   <div className="p-2">
