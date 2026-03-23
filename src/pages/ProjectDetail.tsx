@@ -424,8 +424,9 @@ const ProjectDetail = () => {
                     const isUISection = section.images!.some(img => img.src.includes('ui-'));
                     
                     if (isUISection) {
-                      const screens = section.images!.filter(img => !img.src.includes('ui-card'));
+                      const screens = section.images!.filter(img => !img.src.includes('ui-card') && !img.src.includes('daily-quest'));
                       const cards = section.images!.filter(img => img.src.includes('ui-card'));
+                      const dailyQuests = section.images!.filter(img => img.src.includes('daily-quest'));
                       return (
                         <div className="mt-6 space-y-6">
                           {screens.length > 0 && (
@@ -445,6 +446,17 @@ const ProjectDetail = () => {
                           {cards.length > 0 && (
                             <div className="grid grid-cols-3 gap-4">
                               {cards.map((img, imgIndex) => (
+                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
+                                  <div className="p-2">
+                                    <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto object-contain" />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {dailyQuests.length > 0 && (
+                            <div className="grid grid-cols-3 gap-4">
+                              {dailyQuests.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
                                   <div className="p-2">
                                     <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto object-contain" />
