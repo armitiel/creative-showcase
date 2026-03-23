@@ -345,16 +345,28 @@ const ProjectDetail = () => {
                   <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                     {section.content}
                   </p>
-                  {section.images && section.images.length > 0 && (
-                    <div className={`grid grid-cols-1 ${section.images.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mt-6`}>
-                      {section.images.map((img, imgIndex) => {
+                  {section.images && section.images.length > 0 && (() => {
+                    const isLandscapeSection = section.images!.some(img => img.src.includes('map-'));
+                    const isUISection = section.images!.some(img => img.src.includes('ui-'));
+                    const colsClass = section.images!.length === 3 ? 'md:grid-cols-3' 
+                      : isUISection && section.images!.length === 5 ? 'md:grid-cols-5'
+                      : 'md:grid-cols-2';
+                    return (
+                    <div className={`grid grid-cols-2 ${colsClass} gap-4 mt-6`}>
+                      {section.images!.map((img, imgIndex) => {
                         const isLandscape = img.src.includes('map-');
+                        const isSmallCard = img.src.includes('ui-card');
                         return (
                           <div 
                             key={imgIndex}
-                            className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                            onClick={isLandscape ? () => {
+                              const mapImages = section.images!.filter(i => i.src.includes('map-'));
+                              const mapIndex = mapImages.findIndex(i => i.src === img.src);
+                              setStrategicLightbox({ images: mapImages.map(i => ({ src: withBaseUrl(i.src), alt: i.alt })), index: mapIndex });
+                            } : undefined}
                           >
-                            <div className={`${isLandscape ? 'aspect-video' : 'aspect-square'} flex items-center justify-center ${isLandscape ? '' : 'p-4'}`}>
+                            <div className={`${isLandscape ? 'aspect-video' : isSmallCard ? 'aspect-square p-2' : 'aspect-video'} flex items-center justify-center ${!isLandscape && !isSmallCard ? 'p-4' : ''}`}>
                               <img
                                 src={withBaseUrl(img.src)}
                                 alt={img.alt}
@@ -370,7 +382,8 @@ const ProjectDetail = () => {
                         );
                       })}
                     </div>
-                  )}
+                    );
+                  })()}
                 </div>
               ))}
             </div>
