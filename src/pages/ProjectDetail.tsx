@@ -265,28 +265,22 @@ const ProjectDetail = () => {
       )}
 
 
-      {/* Centered logo before project info */}
-      {project.images?.[0] && project.images[0].displayMode === 'centered' && (
-        <section className="py-16" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto flex justify-center">
-              <img
-                src={withBaseUrl(project.images[0].src)}
-                alt={project.images[0].alt}
-                className="max-h-52 object-contain"
-              />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Project Info */}
+      {/* Project Info with logo */}
       <section 
         ref={infoRef}
         className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {project.images?.[0] && project.images[0].displayMode === 'centered' && (
+              <div className="flex justify-center mb-10">
+                <img
+                  src={withBaseUrl(project.images[0].src)}
+                  alt={project.images[0].alt}
+                  className="max-h-32 object-contain"
+                />
+              </div>
+            )}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
               <div className="flex items-start gap-3">
                 <div className={`p-2 rounded-lg ${isDark ? 'bg-primary/20' : 'bg-foreground/10'}`}>
