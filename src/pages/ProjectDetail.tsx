@@ -432,7 +432,7 @@ const ProjectDetail = () => {
                           {screens.length > 0 && (
                             <div className="grid grid-cols-1 gap-4">
                               {screens.map((img, imgIndex) => (
-                                <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
+                                <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}>
                                   <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto" />
                                   {img.caption && (
                                     <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
