@@ -582,7 +582,7 @@ export const projects: Project[] = [
     fullDescription: 'Olympus Defence to gra typu Tower Defence osadzona w mitologii greckiej, utrzymana w stylizowanym stylu cartoon inspirowanym popularnymi tytułami mobilnymi. Projekt obejmował pełną odpowiedzialność za całość oprawy wizualnej gry: od postaci, przez wieżyczki, mapy, UI, aż po efekty specjalne i przygotowanie assetów do produkcji w Unity.',
     client: 'Olympus Defence',
     year: '2020-2023',
-    tools: ['Blender', 'Spine', 'Photoshop', 'Unity', 'After Effects'],
+    tools: ['Blender', 'Spine', 'Photoshop', 'Unity', 'Figma'],
     images: [
       { src: '/projects/olympus-defence/logo.png', alt: 'Olympus Defence Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e' },
     ],
