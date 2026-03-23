@@ -1005,6 +1005,20 @@ const ProjectDetail = () => {
         prevSrc={realGalleryPrevSrc}
         nextSrc={realGalleryNextSrc}
       />
+
+      {/* Lightbox — strategic sections (maps) */}
+      <ImageLightbox
+        src={strategicLightbox?.images[strategicLightbox.index]?.src || ''}
+        alt={strategicLightbox?.images[strategicLightbox.index]?.alt || ''}
+        isOpen={strategicLightbox !== null}
+        onClose={closeStrategicLightbox}
+        onPrev={prevStrategicLightbox}
+        onNext={nextStrategicLightbox}
+        hasPrev={strategicLightbox !== null && strategicLightbox.index > 0}
+        hasNext={strategicLightbox !== null && strategicLightbox.index < strategicLightbox.images.length - 1}
+        prevSrc={strategicLightbox && strategicLightbox.index > 0 ? strategicLightbox.images[strategicLightbox.index - 1]?.src : undefined}
+        nextSrc={strategicLightbox && strategicLightbox.index < strategicLightbox.images.length - 1 ? strategicLightbox.images[strategicLightbox.index + 1]?.src : undefined}
+      />
     </div>
   );
 };
