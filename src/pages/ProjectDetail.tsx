@@ -435,7 +435,7 @@ const ProjectDetail = () => {
                                 <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
                                   <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto" />
                                   {img.caption && (
-                                    <div className={`p-3 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                                    <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                                     </div>
                                   )}
