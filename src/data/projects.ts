@@ -285,6 +285,82 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 11,
+    slug: 'olympus-defence',
+    title: 'Olympus Defence',
+    category: 'Art, 3D',
+    thumbnail: '/projects/olympus-defence/logo.png',
+    description: 'Kompletna oprawa graficzna gry Tower Defence w stylu cartoon. 21 postaci, 36 modeli wieżyczek, 45 map. 3 lata produkcji.',
+    fullDescription: 'Olympus Defence to gra typu Tower Defence osadzona w mitologii greckiej, utrzymana w stylizowanym stylu cartoon inspirowanym popularnymi tytułami mobilnymi. Projekt obejmował pełną odpowiedzialność za całość oprawy wizualnej gry: od postaci, przez wieżyczki, mapy, UI, aż po efekty specjalne i przygotowanie assetów do produkcji w Unity.',
+    client: 'Olympus Defence',
+    year: '2020-2023',
+    tools: ['Blender', 'Spine', 'Photoshop', 'Unity', 'Figma'],
+    images: [
+      { src: '/projects/olympus-defence/logo.png', alt: 'Olympus Defence Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e' },
+    ],
+    gifPair: [],
+    youtubeVideo: {
+      url: 'https://www.youtube.com/embed/FCE_9G9Rf5s',
+      title: 'Gameplay Trailer',
+      description: 'Prezentacja rozgrywki Olympus Defence',
+    },
+    strategicSections: [
+      {
+        title: 'Zakres projektu',
+        content: 'Pełna odpowiedzialność za całość oprawy wizualnej gry: modelowanie 3D, animacje, compositing, efekty specjalne, UI oraz przygotowanie wszystkich assetów do produkcji w Unity. Projekt budowany od zera, bez wcześniejszych szkiców ani systemu wizualnego.',
+      },
+      {
+        title: 'Charaktery',
+        content: '21 unikalnych postaci wymodelowanych w 3D, zanimowanych i przygotowanych do produkcji. Każda postać przeszła pełny pipeline: koncept, modelowanie, rigging, animacja, rendering i compositing w Spine/Blender.',
+        images: [
+          { src: '/projects/olympus-defence/warrior.gif', alt: 'Warrior character animation', caption: 'Warrior', noMagnifier: true },
+          { src: '/projects/olympus-defence/titan.gif', alt: 'Titan boss animation', caption: 'Titan (główny boss)', noMagnifier: true },
+          { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
+        ],
+      },
+      {
+        title: 'Wieżyczki',
+        content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.',
+        images: [
+          { src: '/projects/olympus-defence/tower-zeus.gif', alt: 'Zeus tower level 1', caption: 'Zeus (lv1)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-burning-oil.gif', alt: 'Burning Oil tower level 2', caption: 'Burning Oil (lv2)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-archers.png', alt: 'Archers tower level 2', caption: 'Archers (lv2)', noMagnifier: true },
+        ],
+      },
+      {
+        title: 'Mapy',
+        content: '3 środowiska map po 15 poziomów = 45 map z unikatowymi modelami dedykowanymi dla danego środowiska.',
+        images: [
+          { src: '/projects/olympus-defence/map-1-1.png', alt: 'Środowisko 1 - rzeka i mosty', caption: 'Środowisko 1', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-1-2.png', alt: 'Środowisko 1 - wzgórza', caption: 'Środowisko 1', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-2-1.png', alt: 'Środowisko 2 - wioska', caption: 'Środowisko 2', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-2-2.png', alt: 'Środowisko 2 - zagroda', caption: 'Środowisko 2', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-3-1.png', alt: 'Środowisko 3 - jaskinia', caption: 'Środowisko 3', noMagnifier: true },
+          { src: '/projects/olympus-defence/map-3-3.png', alt: 'Środowisko 3 - ruiny', caption: 'Środowisko 3', noMagnifier: true },
+        ],
+      },
+      {
+        title: 'UI',
+        content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.',
+        images: [
+          { src: '/projects/olympus-defence/ui-shop.png', alt: 'Shop screen', caption: 'Shop', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-leaderboard.png', alt: 'Leaderboard screen', caption: 'Leaderboard', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-1.png', alt: 'Daily Quests - warrior', caption: 'Daily Quests', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-2.png', alt: 'Daily Quests - chest', caption: 'Daily Quests', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-3.png', alt: 'Daily Quests - arena', caption: 'Daily Quests', noMagnifier: true },
+        ],
+      },
+      {
+        title: 'Proces i rozwój',
+        content: 'Projekt realizowany na przestrzeni 3 lat. W tym czasie nabyłem i rozwinąłem umiejętności: animacje 3D, modelowanie pod produkcję, współpraca z developerem przy integracji w Unity, animacje w Spine jako compositing, compositing w Blenderze, tworzenie dokumentacji pod kątem późniejszych edycji. Codzienne spotkania i omawianie poprawek oraz kolejnych działań. Wiele innowacyjnych rozwiązań dla unikalnych efektów.',
+      },
+      {
+        title: 'Dlaczego to istotne',
+        content: 'Ten projekt podsumowuje mój dotychczasowy warsztat. Łączy modelowanie 3D, animację, compositing i produkcję w jednym spójnym pipeline. Pokazuje zdolność do samodzielnego prowadzenia kompleksowej produkcji graficznej na skalę pełnej gry, z regularnymi iteracjami i współpracą z zespołem developerskim.',
+      },
+    ],
+  },
+  {
     id: 1,
     slug: 'v17-vision-branding',
     title: 'V17 Vision - Identyfikacja Wizualna',
@@ -571,82 +647,6 @@ export const projects: Project[] = [
         { name: 'Dark Navy', hex: '#1E3A5F', rgb: '30 58 95', cmyk: '68 39 0 63' },
       ],
     },
-  },
-  {
-    id: 11,
-    slug: 'olympus-defence',
-    title: 'Olympus Defence',
-    category: 'Art, 3D',
-    thumbnail: '/projects/olympus-defence/logo.png',
-    description: 'Kompletna oprawa graficzna gry Tower Defence w stylu cartoon. 21 postaci, 36 modeli wieżyczek, 45 map. 3 lata produkcji.',
-    fullDescription: 'Olympus Defence to gra typu Tower Defence osadzona w mitologii greckiej, utrzymana w stylizowanym stylu cartoon inspirowanym popularnymi tytułami mobilnymi. Projekt obejmował pełną odpowiedzialność za całość oprawy wizualnej gry: od postaci, przez wieżyczki, mapy, UI, aż po efekty specjalne i przygotowanie assetów do produkcji w Unity.',
-    client: 'Olympus Defence',
-    year: '2020-2023',
-    tools: ['Blender', 'Spine', 'Photoshop', 'Unity', 'Figma'],
-    images: [
-      { src: '/projects/olympus-defence/logo.png', alt: 'Olympus Defence Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e' },
-    ],
-    gifPair: [],
-    youtubeVideo: {
-      url: 'https://www.youtube.com/embed/FCE_9G9Rf5s',
-      title: 'Gameplay Trailer',
-      description: 'Prezentacja rozgrywki Olympus Defence',
-    },
-    strategicSections: [
-      {
-        title: 'Zakres projektu',
-        content: 'Pełna odpowiedzialność za całość oprawy wizualnej gry: modelowanie 3D, animacje, compositing, efekty specjalne, UI oraz przygotowanie wszystkich assetów do produkcji w Unity. Projekt budowany od zera, bez wcześniejszych szkiców ani systemu wizualnego.',
-      },
-      {
-        title: 'Charaktery',
-        content: '21 unikalnych postaci wymodelowanych w 3D, zanimowanych i przygotowanych do produkcji. Każda postać przeszła pełny pipeline: koncept, modelowanie, rigging, animacja, rendering i compositing w Spine/Blender.',
-        images: [
-          { src: '/projects/olympus-defence/warrior.gif', alt: 'Warrior character animation', caption: 'Warrior', noMagnifier: true },
-          { src: '/projects/olympus-defence/titan.gif', alt: 'Titan boss animation', caption: 'Titan (główny boss)', noMagnifier: true },
-          { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
-        ],
-      },
-      {
-        title: 'Wieżyczki',
-        content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.',
-        images: [
-          { src: '/projects/olympus-defence/tower-zeus.gif', alt: 'Zeus tower level 1', caption: 'Zeus (lv1)', noMagnifier: true },
-          { src: '/projects/olympus-defence/tower-burning-oil.gif', alt: 'Burning Oil tower level 2', caption: 'Burning Oil (lv2)', noMagnifier: true },
-          { src: '/projects/olympus-defence/tower-archers.png', alt: 'Archers tower level 2', caption: 'Archers (lv2)', noMagnifier: true },
-        ],
-      },
-      {
-        title: 'Mapy',
-        content: '3 środowiska map po 15 poziomów = 45 map z unikatowymi modelami dedykowanymi dla danego środowiska.',
-        images: [
-          { src: '/projects/olympus-defence/map-1-1.png', alt: 'Środowisko 1 - rzeka i mosty', caption: 'Środowisko 1', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-1-2.png', alt: 'Środowisko 1 - wzgórza', caption: 'Środowisko 1', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-2-1.png', alt: 'Środowisko 2 - wioska', caption: 'Środowisko 2', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-2-2.png', alt: 'Środowisko 2 - zagroda', caption: 'Środowisko 2', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-3-1.png', alt: 'Środowisko 3 - jaskinia', caption: 'Środowisko 3', noMagnifier: true },
-          { src: '/projects/olympus-defence/map-3-3.png', alt: 'Środowisko 3 - ruiny', caption: 'Środowisko 3', noMagnifier: true },
-        ],
-      },
-      {
-        title: 'UI',
-        content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.',
-        images: [
-          { src: '/projects/olympus-defence/ui-shop.png', alt: 'Shop screen', caption: 'Shop', noMagnifier: true },
-          { src: '/projects/olympus-defence/ui-leaderboard.png', alt: 'Leaderboard screen', caption: 'Leaderboard', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-1.png', alt: 'Daily Quests - warrior', caption: 'Daily Quests', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-2.png', alt: 'Daily Quests - chest', caption: 'Daily Quests', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-3.png', alt: 'Daily Quests - arena', caption: 'Daily Quests', noMagnifier: true },
-        ],
-      },
-      {
-        title: 'Proces i rozwój',
-        content: 'Projekt realizowany na przestrzeni 3 lat. W tym czasie nabyłem i rozwinąłem umiejętności: animacje 3D, modelowanie pod produkcję, współpraca z developerem przy integracji w Unity, animacje w Spine jako compositing, compositing w Blenderze, tworzenie dokumentacji pod kątem późniejszych edycji. Codzienne spotkania i omawianie poprawek oraz kolejnych działań. Wiele innowacyjnych rozwiązań dla unikalnych efektów.',
-      },
-      {
-        title: 'Dlaczego to istotne',
-        content: 'Ten projekt podsumowuje mój dotychczasowy warsztat. Łączy modelowanie 3D, animację, compositing i produkcję w jednym spójnym pipeline. Pokazuje zdolność do samodzielnego prowadzenia kompleksowej produkcji graficznej na skalę pełnej gry, z regularnymi iteracjami i współpracą z zespołem developerskim.',
-      },
-    ],
   },
 ];
 
