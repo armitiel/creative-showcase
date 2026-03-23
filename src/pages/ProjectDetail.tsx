@@ -267,7 +267,7 @@ const ProjectDetail = () => {
 
       {/* Centered logo before project info */}
 {project.images?.[0] && project.images[0].displayMode === 'centered' && (
-        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
+        <section className="py-28 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
           {/* Particles radiating from center */}
           <div className="absolute inset-0 pointer-events-none">
             {Array.from({ length: 50 }).map((_, i) => {
