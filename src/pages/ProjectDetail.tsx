@@ -13,7 +13,7 @@ import { ImageLightbox, useLightbox, useGalleryLightbox } from '@/components/Ima
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = useTranslatedProject(slug);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
