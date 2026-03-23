@@ -15,6 +15,7 @@ export const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ threshold: 0.05 });
+  const { prefetch, cancel } = usePrefetchProject();
 
   // Get unique categories from actual projects data (support comma-separated)
   const projectCategories = [...new Set(projects.flatMap(p => p.category.split(', ').map(c => c.trim())))];
