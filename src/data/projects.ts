@@ -103,7 +103,7 @@ export interface Project {
   challenge?: string;
   solution?: string;
   results?: string;
-  strategicSections?: { title: string; content: string }[];
+  strategicSections?: { title: string; content: string; images?: GifPairItem[] }[];
   logoConcept?: {
     title?: string;
     description: string;
