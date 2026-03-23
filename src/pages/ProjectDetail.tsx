@@ -479,7 +479,7 @@ const ProjectDetail = () => {
                         return (
                           <div 
                             key={imgIndex}
-                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}
                             onClick={isLandscape ? () => {
                               const mapImages = section.images!.filter(i => i.src.includes('map-'));
                               const mapIndex = mapImages.findIndex(i => i.src === img.src);
