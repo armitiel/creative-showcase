@@ -424,8 +424,9 @@ const ProjectDetail = () => {
                     const isUISection = section.images!.some(img => img.src.includes('ui-'));
                     
                     if (isUISection) {
-                      const screens = section.images!.filter(img => !img.src.includes('ui-card'));
+                      const screens = section.images!.filter(img => !img.src.includes('ui-card') && !img.src.includes('daily-quest'));
                       const cards = section.images!.filter(img => img.src.includes('ui-card'));
+                      const dailyQuests = section.images!.filter(img => img.src.includes('daily-quest'));
                       return (
                         <div className="mt-6 space-y-6">
                           {screens.length > 0 && (
