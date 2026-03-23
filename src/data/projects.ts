@@ -343,11 +343,11 @@ export const projects: Project[] = [
         title: 'UI',
         content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.',
         images: [
-          { src: '/projects/olympus-defence/ui-shop.png', alt: 'Shop screen', caption: 'Shop', noMagnifier: true },
-          { src: '/projects/olympus-defence/ui-leaderboard.png', alt: 'Leaderboard screen', caption: 'Leaderboard', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-1.png', alt: 'Daily Quests - warrior', caption: 'Daily Quests', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-2.png', alt: 'Daily Quests - chest', caption: 'Daily Quests', noMagnifier: true },
-          { src: '/projects/olympus-defence/daily-quest-3.png', alt: 'Daily Quests - arena', caption: 'Daily Quests', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-shop.jpg', alt: 'Shop screen', caption: 'Shop', noMagnifier: true },
+          { src: '/projects/olympus-defence/ui-leaderboard.jpg', alt: 'Leaderboard screen', caption: 'Leaderboard', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-1.jpg', alt: 'Daily Quests - warrior', caption: 'Daily Quests', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-2.jpg', alt: 'Daily Quests - chest', caption: 'Daily Quests', noMagnifier: true },
+          { src: '/projects/olympus-defence/daily-quest-3.jpg', alt: 'Daily Quests - arena', caption: 'Daily Quests', noMagnifier: true },
         ],
       },
       {
