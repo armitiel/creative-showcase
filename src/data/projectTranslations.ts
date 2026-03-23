@@ -424,6 +424,50 @@ export const projectTranslations: ProjectTranslations = {
       },
     },
   },
+  'olympus-defence': {
+    pl: {
+      title: 'Olympus Defence',
+      description: 'Kompletna oprawa graficzna gry Tower Defence w stylu cartoon. 21 postaci, 36 modeli wieżyczek, 45 map. 3 lata produkcji.',
+      fullDescription: 'Olympus Defence to gra typu Tower Defence osadzona w mitologii greckiej, utrzymana w stylizowanym stylu cartoon inspirowanym popularnymi tytułami mobilnymi. Projekt obejmował pełną odpowiedzialność za całość oprawy wizualnej gry: od postaci, przez wieżyczki, mapy, UI, aż po efekty specjalne i przygotowanie assetów do produkcji w Unity.',
+      youtubeVideoTitle: 'Gameplay Trailer',
+      youtubeVideoDescription: 'Prezentacja rozgrywki Olympus Defence',
+      gifPairCaptions: {
+        0: 'Warrior',
+        1: 'Titan (główny boss)',
+        2: 'Rider',
+      },
+      strategicSections: [
+        { title: 'Zakres projektu', content: 'Pełna odpowiedzialność za całość oprawy wizualnej gry: modelowanie 3D, animacje, compositing, efekty specjalne, UI oraz przygotowanie wszystkich assetów do produkcji w Unity. Projekt budowany od zera, bez wcześniejszych szkiców ani systemu wizualnego.' },
+        { title: 'Charaktery', content: '21 unikalnych postaci wymodelowanych w 3D, zanimowanych i przygotowanych do produkcji. Każda postać przeszła pełny pipeline: koncept, modelowanie, rigging, animacja, rendering i compositing w Spine/Blender.' },
+        { title: 'Wieżyczki', content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.' },
+        { title: 'Mapy', content: '3 środowiska map po 15 poziomów = 45 map z unikatowymi modelami dedykowanymi dla danego środowiska.' },
+        { title: 'UI', content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.' },
+        { title: 'Proces i rozwój', content: 'Projekt realizowany na przestrzeni 3 lat. W tym czasie nabyłem i rozwinąłem umiejętności: animacje 3D, modelowanie pod produkcję, współpraca z developerem przy integracji w Unity, animacje w Spine jako compositing, compositing w Blenderze, tworzenie dokumentacji pod kątem późniejszych edycji. Codzienne spotkania i omawianie poprawek oraz kolejnych działań. Wiele innowacyjnych rozwiązań dla unikalnych efektów.' },
+        { title: 'Dlaczego to istotne', content: 'Ten projekt podsumowuje mój dotychczasowy warsztat. Łączy modelowanie 3D, animację, compositing i produkcję w jednym spójnym pipeline. Pokazuje zdolność do samodzielnego prowadzenia kompleksowej produkcji graficznej na skalę pełnej gry, z regularnymi iteracjami i współpracą z zespołem developerskim.' },
+      ],
+    },
+    en: {
+      title: 'Olympus Defence',
+      description: 'Complete visual production for a cartoon-style Tower Defence game. 21 characters, 36 tower models, 45 maps. 3 years of production.',
+      fullDescription: 'Olympus Defence is a Tower Defence game set in Greek mythology, maintained in a stylized cartoon aesthetic inspired by popular mobile titles. The project encompassed full responsibility for the entire visual production: from characters, through towers, maps, UI, to special effects and asset preparation for Unity production.',
+      youtubeVideoTitle: 'Gameplay Trailer',
+      youtubeVideoDescription: 'Olympus Defence gameplay presentation',
+      gifPairCaptions: {
+        0: 'Warrior',
+        1: 'Titan (main boss)',
+        2: 'Rider',
+      },
+      strategicSections: [
+        { title: 'Project Scope', content: 'Full responsibility for the entire visual production: 3D modeling, animation, compositing, special effects, UI and preparation of all assets for Unity production. Built from scratch with no prior sketches or visual system.' },
+        { title: 'Characters', content: '21 unique characters modeled in 3D, animated and prepared for production. Each character went through the full pipeline: concept, modeling, rigging, animation, rendering and compositing in Spine/Blender.' },
+        { title: 'Towers', content: '12 tower types x 3 upgrade levels = 36 models. Each model animated with complex compositing effects prepared for production in the game engine.' },
+        { title: 'Maps', content: '3 map environments with 15 levels each = 45 maps with unique models dedicated to each environment.' },
+        { title: 'UI', content: 'Complete game user interface: menu screens, gameplay HUD, upgrade screens, shop, result screens. Cohesive visual system maintained in cartoon stylization.' },
+        { title: 'Process & Growth', content: '3-year production during which I acquired and developed skills: 3D animation, production-ready modeling, collaboration with a developer for Unity integration, Spine animations as compositing, Blender compositing, creating documentation for future edits. Daily meetings to discuss corrections and next steps. Many innovative solutions for unique effects.' },
+        { title: 'Why It Matters', content: 'This project summarizes my craft at that point. It combines 3D modeling, animation, compositing and production in one cohesive pipeline. It demonstrates the ability to independently lead complex visual production at a full game scale, with regular iterations and collaboration with the development team.' },
+      ],
+    },
+  },
 };
 
 export const getProjectTranslation = (slug: string, language: Language): ProjectTranslation | undefined => {
