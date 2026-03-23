@@ -651,15 +651,17 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                    className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
                   >
-                    <img
-                      src={withBaseUrl(gif.src)}
-                      alt={gif.alt}
-                      className="w-full h-auto object-cover"
-                    />
+                    <div className="aspect-square flex items-center justify-center p-4">
+                      <img
+                        src={withBaseUrl(gif.src)}
+                        alt={gif.alt}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
                     {gif.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                      <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
                       </div>
                     )}
