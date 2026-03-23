@@ -71,6 +71,8 @@ export const ProjectsSection = () => {
             <Link
               key={project.id}
               to={`/project/${project.slug}`}
+              onMouseEnter={() => prefetch(project.slug)}
+              onMouseLeave={cancel}
               className={`group block bg-secondary rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 opacity-0 shadow-sm hover:shadow-md ${
                 gridVisible ? 'animate-scale-in' : ''
               }`}
