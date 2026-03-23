@@ -572,6 +572,61 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    id: 11,
+    slug: 'olympus-defence',
+    title: 'Olympus Defence',
+    category: 'Art, 3D',
+    thumbnail: '/projects/olympus-defence/logo.png',
+    description: 'Kompletna oprawa graficzna gry Tower Defence w stylu cartoon. 21 postaci, 36 modeli wieżyczek, 45 map. 3 lata produkcji.',
+    fullDescription: 'Olympus Defence to gra typu Tower Defence osadzona w mitologii greckiej, utrzymana w stylizowanym stylu cartoon inspirowanym popularnymi tytułami mobilnymi. Projekt obejmował pełną odpowiedzialność za całość oprawy wizualnej gry: od postaci, przez wieżyczki, mapy, UI, aż po efekty specjalne i przygotowanie assetów do produkcji w Unity.',
+    client: 'Olympus Defence',
+    year: '2020-2023',
+    tools: ['Blender', 'Spine', 'Photoshop', 'Unity', 'After Effects'],
+    images: [
+      { src: '/projects/olympus-defence/logo.png', alt: 'Olympus Defence Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e' },
+    ],
+    gifPair: [
+      { src: '/projects/olympus-defence/warrior.gif', alt: 'Warrior character animation', caption: 'Warrior', noMagnifier: true },
+      { src: '/projects/olympus-defence/titan.gif', alt: 'Titan boss animation', caption: 'Titan (główny boss)', noMagnifier: true },
+      { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
+    ],
+    youtubeVideo: {
+      url: 'https://www.youtube.com/embed/FCE_9G9Rf5s',
+      title: 'Gameplay Trailer',
+      description: 'Prezentacja rozgrywki Olympus Defence',
+    },
+    strategicSections: [
+      {
+        title: 'Zakres projektu',
+        content: 'Pełna odpowiedzialność za całość oprawy wizualnej gry: modelowanie 3D, animacje, compositing, efekty specjalne, UI oraz przygotowanie wszystkich assetów do produkcji w Unity. Projekt budowany od zera, bez wcześniejszych szkiców ani systemu wizualnego.',
+      },
+      {
+        title: 'Charaktery',
+        content: '21 unikalnych postaci wymodelowanych w 3D, zanimowanych i przygotowanych do produkcji. Każda postać przeszła pełny pipeline: koncept, modelowanie, rigging, animacja, rendering i compositing w Spine/Blender.',
+      },
+      {
+        title: 'Wieżyczki',
+        content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.',
+      },
+      {
+        title: 'Mapy',
+        content: '3 środowiska map po 15 poziomów = 45 map z unikatowymi modelami dedykowanymi dla danego środowiska.',
+      },
+      {
+        title: 'UI',
+        content: 'Kompletny interfejs użytkownika gry: ekrany menu, HUD rozgrywki, ekrany ulepszeń, sklep, ekrany wyników. Spójny system wizualny utrzymany w cartoon stylizacji.',
+      },
+      {
+        title: 'Proces i rozwój',
+        content: 'Projekt realizowany na przestrzeni 3 lat. W tym czasie nabyłem i rozwinąłem umiejętności: animacje 3D, modelowanie pod produkcję, współpraca z developerem przy integracji w Unity, animacje w Spine jako compositing, compositing w Blenderze, tworzenie dokumentacji pod kątem późniejszych edycji. Codzienne spotkania i omawianie poprawek oraz kolejnych działań. Wiele innowacyjnych rozwiązań dla unikalnych efektów.',
+      },
+      {
+        title: 'Dlaczego to istotne',
+        content: 'Ten projekt podsumowuje mój dotychczasowy warsztat. Łączy modelowanie 3D, animację, compositing i produkcję w jednym spójnym pipeline. Pokazuje zdolność do samodzielnego prowadzenia kompleksowej produkcji graficznej na skalę pełnej gry, z regularnymi iteracjami i współpracą z zespołem developerskim.',
+      },
+    ],
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
