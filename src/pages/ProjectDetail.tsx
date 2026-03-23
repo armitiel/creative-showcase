@@ -13,7 +13,7 @@ import { ImageLightbox, useLightbox, useGalleryLightbox } from '@/components/Ima
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = useTranslatedProject(slug);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
@@ -638,6 +638,38 @@ const ProjectDetail = () => {
                     {gif.caption && (
                       <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Tower Images */}
+      {project.towerImages && project.towerImages.length > 0 && (
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h3 className={`text-2xl font-bold mb-6 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                {language === 'pl' ? 'Wieżyczki' : 'Towers'}
+              </h3>
+              <div className={`grid grid-cols-1 ${project.towerImages.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4`}>
+                {project.towerImages.map((tower, index) => (
+                  <div 
+                    key={index}
+                    className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                  >
+                    <img
+                      src={withBaseUrl(tower.src)}
+                      alt={tower.alt}
+                      className="w-full h-auto object-cover"
+                    />
+                    {tower.caption && (
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                        <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{tower.caption}</p>
                       </div>
                     )}
                   </div>
