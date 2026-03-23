@@ -78,11 +78,15 @@ export const ProjectsSection = () => {
               }`}
               style={{ animationDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
             >
-              <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
+              <div className={`aspect-[4/3] relative overflow-hidden ${project.slug === 'shadow-tagger' ? 'bg-[#141414] flex items-center justify-center' : 'bg-secondary'}`}>
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0"
+                  className={`transition-all duration-500 grayscale group-hover:grayscale-0 ${
+                    project.slug === 'shadow-tagger'
+                      ? 'w-[70%] h-auto object-contain group-hover:scale-110'
+                      : 'w-full h-full object-cover group-hover:scale-110'
+                  }`}
                 />
                 {/* Delikatny biały overlay dla ciemnych miniatur */}
                 {(project.slug === 'portal-smart-checkout' || project.slug === 'nfc-card') && (
