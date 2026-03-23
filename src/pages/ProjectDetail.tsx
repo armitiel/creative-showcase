@@ -275,6 +275,7 @@ const ProjectDetail = () => {
               const size = Math.random() * 4 + 1;
               const duration = Math.random() * 4 + 3;
               const delay = Math.random() * 4;
+              const isPurple = project.slug === 'shadow-tagger';
               return (
                 <div
                   key={i}
@@ -285,7 +286,7 @@ const ProjectDetail = () => {
                     left: '50%',
                     top: '50%',
                     background: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2})`,
-                    boxShadow: `0 0 ${size * 2}px rgba(218, 165, 32, 0.4)`,
+                    boxShadow: `0 0 ${size * 2}px ${isPurple ? 'rgba(140, 80, 220, 0.4)' : 'rgba(218, 165, 32, 0.4)'}`,
                     animation: `radiateParticle ${duration}s ease-out infinite`,
                     animationDelay: `${delay}s`,
                     '--angle': `${angle}deg`,
@@ -302,14 +303,20 @@ const ProjectDetail = () => {
                 <div
                   className="absolute inset-0 blur-3xl opacity-50 rounded-full scale-110"
                   style={{
-                    background: 'radial-gradient(circle, rgba(218, 165, 32, 0.4) 0%, rgba(100, 180, 60, 0.2) 50%, transparent 70%)',
+                    background: project.slug === 'shadow-tagger'
+                      ? 'radial-gradient(circle, rgba(140, 80, 220, 0.5) 0%, rgba(80, 40, 180, 0.25) 50%, transparent 70%)'
+                      : 'radial-gradient(circle, rgba(218, 165, 32, 0.4) 0%, rgba(100, 180, 60, 0.2) 50%, transparent 70%)',
                     animation: 'glowPulse 3s ease-in-out infinite',
                   }}
                 />
                 <img
                   src={withBaseUrl(project.images[0].src)}
                   alt={project.images[0].alt}
-                  className="max-h-[28rem] object-contain relative z-10 drop-shadow-[0_0_30px_rgba(218,165,32,0.3)]"
+                  className={`max-h-[28rem] object-contain relative z-10 ${
+                    project.slug === 'shadow-tagger'
+                      ? 'drop-shadow-[0_0_30px_rgba(140,80,220,0.4)]'
+                      : 'drop-shadow-[0_0_30px_rgba(218,165,32,0.3)]'
+                  }`}
                 />
               </div>
             </div>
