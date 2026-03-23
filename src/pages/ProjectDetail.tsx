@@ -375,6 +375,25 @@ const ProjectDetail = () => {
                 </div>
               </div>
             </div>
+
+            {/* External Link / Play Button */}
+            {project.externalLink && (
+              <div className="mt-8 text-center">
+                <a
+                  href={project.externalLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 ${
+                    isDark
+                      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                      : 'bg-foreground text-background hover:bg-foreground/90'
+                  }`}
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  {project.externalLink.label || 'Visit'}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -661,6 +661,7 @@ export const projects: Project[] = [
     year: '2026',
     tools: ['Phaser', 'Blender', 'AI Coding', 'Photoshop'],
     theme: 'dark',
+    externalLink: { url: 'https://www.shadow-tagger.online', label: 'Zagraj / Play' },
     challenge: 'Stworzenie kompletnej gry platformowej jako solo developer — od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
     solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
     results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
