@@ -345,8 +345,31 @@ const ProjectDetail = () => {
                   <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                     {section.content}
                   </p>
+                  {section.images && section.images.length > 0 && (
+                    <div className={`grid grid-cols-1 ${section.images.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mt-6`}>
+                      {section.images.map((img, imgIndex) => (
+                        <div 
+                          key={imgIndex}
+                          className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                        >
+                          <div className="aspect-square flex items-center justify-center p-4">
+                            <img
+                              src={withBaseUrl(img.src)}
+                              alt={img.alt}
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          </div>
+                          {img.caption && (
+                            <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                              <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
+              ))
             </div>
           </div>
         </section>
