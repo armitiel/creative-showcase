@@ -432,7 +432,7 @@ const ProjectDetail = () => {
                           {screens.length > 0 && (
                             <div className="grid grid-cols-1 gap-4">
                               {screens.map((img, imgIndex) => (
-                                <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}>
+                                <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}>
                                   <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto" />
                                   {img.caption && (
                                     <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
@@ -446,7 +446,7 @@ const ProjectDetail = () => {
                           {cards.length > 0 && (
                             <div className="grid grid-cols-3 gap-4">
                               {cards.map((img, imgIndex) => (
-                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}
                                   onClick={() => openLightbox(withBaseUrl(img.src), img.alt)}>
                                   <div className="p-2">
                                     <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto object-contain" />
@@ -458,7 +458,7 @@ const ProjectDetail = () => {
                           {dailyQuests.length > 0 && (
                             <div className="grid grid-cols-3 gap-4">
                               {dailyQuests.map((img, imgIndex) => (
-                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                                <div key={imgIndex} className={`rounded-xl overflow-hidden border flex flex-col cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}
                                   onClick={() => openLightbox(withBaseUrl(img.src), img.alt)}>
                                   <div className="p-2">
                                     <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto object-contain" />
@@ -479,7 +479,7 @@ const ProjectDetail = () => {
                         return (
                           <div 
                             key={imgIndex}
-                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}
                             onClick={isLandscape ? () => {
                               const mapImages = section.images!.filter(i => i.src.includes('map-'));
                               const mapIndex = mapImages.findIndex(i => i.src === img.src);
