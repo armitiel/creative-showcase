@@ -592,7 +592,6 @@ export const projects: Project[] = [
       { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
     ],
     youtubeVideo: {
-    youtubeVideo: {
       url: 'https://www.youtube.com/embed/FCE_9G9Rf5s',
       title: 'Gameplay Trailer',
       description: 'Prezentacja rozgrywki Olympus Defence',
