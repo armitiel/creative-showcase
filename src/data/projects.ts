@@ -524,7 +524,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 11,
+    id: 6,
     slug: 'nfc-card',
     title: 'Digital Card - Wizytówki NFC',
     category: 'Motion',
