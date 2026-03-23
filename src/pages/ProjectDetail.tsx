@@ -268,6 +268,14 @@ const ProjectDetail = () => {
       {/* Centered logo before project info */}
 {project.images?.[0] && project.images[0].displayMode === 'centered' && (
         <section className="py-28 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
+          {/* Background image for Olympus Defence */}
+          {project.slug === 'olympus-defence' && (
+            <img
+              src={withBaseUrl('/projects/olympus-defence/bckg2.png')}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+            />
+          )}
           {/* Particles radiating from center */}
           <div className="absolute inset-0 pointer-events-none">
             {Array.from({ length: 50 }).map((_, i) => {
