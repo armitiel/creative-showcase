@@ -123,6 +123,7 @@ export interface Project {
     title?: string;
     description?: string;
   };
+  externalLink?: { url: string; label?: string };
   hidden?: boolean;
 }
 
