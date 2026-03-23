@@ -600,6 +600,11 @@ export const projects: Project[] = [
       {
         title: 'Charaktery',
         content: '21 unikalnych postaci wymodelowanych w 3D, zanimowanych i przygotowanych do produkcji. Każda postać przeszła pełny pipeline: koncept, modelowanie, rigging, animacja, rendering i compositing w Spine/Blender.',
+        images: [
+          { src: '/projects/olympus-defence/warrior.gif', alt: 'Warrior character animation', caption: 'Warrior', noMagnifier: true },
+          { src: '/projects/olympus-defence/titan.gif', alt: 'Titan boss animation', caption: 'Titan (główny boss)', noMagnifier: true },
+          { src: '/projects/olympus-defence/rider.gif', alt: 'Rider character animation', caption: 'Rider', noMagnifier: true },
+        ],
       },
       {
         title: 'Wieżyczki',
