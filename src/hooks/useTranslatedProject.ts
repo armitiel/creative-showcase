@@ -133,7 +133,7 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     strategicSections: translation.strategicSections
       ? translation.strategicSections.map((section, i) => ({
           ...section,
-          images: project.strategicSections?.[i]?.images ?? section.images,
+          images: (project.strategicSections?.[i] as any)?.images,
         }))
       : project.strategicSections,
     typography: project.typography ? {
