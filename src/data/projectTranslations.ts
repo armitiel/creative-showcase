@@ -468,6 +468,44 @@ export const projectTranslations: ProjectTranslations = {
       ],
     },
   },
+  'shadow-tagger': {
+    pl: {
+      title: 'Shadow Tagger',
+      description: 'Gra platformowa stworzona samodzielnie w Phaser z AI-assisted coding. Kolorowanie murali, ucieczka przed przeciwnikami i gra na czas.',
+      fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie — od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
+      challenge: 'Stworzenie kompletnej gry platformowej jako solo developer — od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
+      solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
+      results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
+      strategicSections: [
+        { title: 'Tryby gry', content: 'Gra oferuje kilka trybów rozgrywki: kolorowanie murali przez numerki, ucieczka przed przeciwnikami, układanie drabin do trudno dostępnych miejsc oraz gra na czas. Każdy tryb wymaga innego podejścia taktycznego.' },
+        { title: 'Postacie 3D', content: 'Wszystkie postacie w grze są modelowane w 3D w Blenderze i animowane, co nadaje grze unikalny cartoon look. Pipeline obejmuje modelowanie, rigging, animację i rendering sprite\'ów do silnika Phaser.' },
+        { title: 'AI-Assisted Development', content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry — od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.' },
+      ],
+      imageCaptions: {
+        1: 'Rozgrywka platformowa — unikaj przeciwników i maluj murale',
+        2: 'System kolorowania numerków — maluj mural kolor po kolorze',
+        3: 'Eksploracja poziomów z drabinami i muralami do odkrycia',
+      },
+    },
+    en: {
+      title: 'Shadow Tagger',
+      description: 'A platformer game built solo with Phaser and AI-assisted coding. Paint murals, escape enemies and race against time.',
+      fullDescription: 'Shadow Tagger is a platformer game I built entirely on my own — from concept, through 3D graphics and character animation, to coding with AI assistance. The game runs on the Phaser engine and revolves around painting numbers on walls, creating murals, and avoiding enemies. Characters are modeled in 3D and animated, giving the game a unique cartoon look. AI-assisted coding gives me full control over the entire production process.',
+      challenge: 'Creating a complete platformer game as a solo developer — from 3D graphics and character animation to gameplay programming and game mechanics.',
+      solution: 'I used Phaser as the game engine, Blender for 3D character modeling and animation, and AI-assisted coding gave me full control over game logic. Combining these tools enabled studio-level solo production.',
+      results: 'The game is available online with several gameplay modes, a fully playable product created by one person.',
+      strategicSections: [
+        { title: 'Game Modes', content: 'The game offers several gameplay modes: painting murals by numbers, escaping enemies, placing ladders to hard-to-reach spots, and time-based challenges. Each mode requires a different tactical approach.' },
+        { title: '3D Characters', content: 'All characters in the game are modeled in 3D in Blender and animated, giving the game a unique cartoon look. The pipeline includes modeling, rigging, animation, and sprite rendering for the Phaser engine.' },
+        { title: 'AI-Assisted Development', content: 'I use AI to assist the coding process, which allows me as an artist to have full control over the entire game production — from visual concept to working code. This showcases how AI democratizes game development.' },
+      ],
+      imageCaptions: {
+        1: 'Platforming gameplay — avoid enemies and paint murals',
+        2: 'Number coloring system — paint the mural color by color',
+        3: 'Level exploration with ladders and murals to discover',
+      },
+    },
+  },
 };
 
 export const getProjectTranslation = (slug: string, language: Language): ProjectTranslation | undefined => {
