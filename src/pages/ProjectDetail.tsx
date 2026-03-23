@@ -266,17 +266,57 @@ const ProjectDetail = () => {
 
 
       {/* Centered logo before project info */}
-      {project.images?.[0] && project.images[0].displayMode === 'centered' && (
-        <section className="py-16" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto flex justify-center">
-              <img
-                src={withBaseUrl(project.images[0].src)}
-                alt={project.images[0].alt}
-                className="max-h-[28rem] object-contain"
+{project.images?.[0] && project.images[0].displayMode === 'centered' && (
+        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
+          {/* Particle field */}
+          <div className="absolute inset-0 overflow-hidden">
+            {Array.from({ length: 40 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute rounded-full"
+                style={{
+                  width: `${Math.random() * 4 + 1}px`,
+                  height: `${Math.random() * 4 + 1}px`,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  background: `rgba(255, 255, 255, ${Math.random() * 0.4 + 0.1})`,
+                  animation: `floatParticle ${Math.random() * 6 + 4}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 5}s`,
+                }}
               />
+            ))}
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto flex justify-center">
+              <div className="relative">
+                {/* Glow effect */}
+                <div
+                  className="absolute inset-0 blur-3xl opacity-50 rounded-full scale-110"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(218, 165, 32, 0.4) 0%, rgba(100, 180, 60, 0.2) 50%, transparent 70%)',
+                    animation: 'glowPulse 3s ease-in-out infinite',
+                  }}
+                />
+                <img
+                  src={withBaseUrl(project.images[0].src)}
+                  alt={project.images[0].alt}
+                  className="max-h-[28rem] object-contain relative z-10 drop-shadow-[0_0_30px_rgba(218,165,32,0.3)]"
+                />
+              </div>
             </div>
           </div>
+          <style>{`
+            @keyframes floatParticle {
+              0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+              25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+              50% { transform: translateY(-10px) translateX(-5px); opacity: 0.5; }
+              75% { transform: translateY(-30px) translateX(15px); opacity: 0.7; }
+            }
+            @keyframes glowPulse {
+              0%, 100% { opacity: 0.4; transform: scale(1.1); }
+              50% { opacity: 0.7; transform: scale(1.2); }
+            }
+          `}</style>
         </section>
       )}
 
