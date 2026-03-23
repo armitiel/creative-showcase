@@ -123,6 +123,7 @@ export interface Project {
     title?: string;
     description?: string;
   };
+  externalLink?: { url: string; label?: string };
   hidden?: boolean;
 }
 
@@ -647,6 +648,43 @@ export const projects: Project[] = [
         { name: 'Dark Navy', hex: '#1E3A5F', rgb: '30 58 95', cmyk: '68 39 0 63' },
       ],
     },
+  },
+  {
+    id: 12,
+    slug: 'shadow-tagger',
+    title: 'Shadow Tagger',
+    category: 'Game, Art, 3D',
+    thumbnail: '/projects/shadow-tagger/gameplay-1.jpg',
+    description: 'Gra platformowa stworzona samodzielnie w Phaser z AI-assisted coding. Kolorowanie murali, ucieczka przed przeciwnikami i gra na czas.',
+    fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie — od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
+    client: 'Projekt własny',
+    year: '2026',
+    tools: ['Phaser', 'Blender', 'AI Coding', 'Photoshop'],
+    theme: 'dark',
+    externalLink: { url: 'https://www.shadow-tagger.online', label: 'Zagraj / Play' },
+    challenge: 'Stworzenie kompletnej gry platformowej jako solo developer — od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
+    solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
+    results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
+    images: [
+      { src: '/projects/shadow-tagger/logo.png', alt: 'Shadow Tagger Logo', displayMode: 'centered' as const, backgroundColor: '#1a1a2e', imageScale: 0.6 },
+      { src: '/projects/shadow-tagger/gameplay-1.jpg', alt: 'Shadow Tagger - Gameplay platformowy', caption: 'Rozgrywka platformowa — unikaj przeciwników i maluj murale', noMagnifier: true },
+      { src: '/projects/shadow-tagger/gameplay-2.jpg', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków — maluj mural kolor po kolorze', noMagnifier: true },
+      { src: '/projects/shadow-tagger/gameplay-3.jpg', alt: 'Shadow Tagger - Eksploracja', caption: 'Eksploracja poziomów z drabinami i muralami do odkrycia', noMagnifier: true },
+    ],
+    strategicSections: [
+      {
+        title: 'Tryby gry',
+        content: 'Gra oferuje kilka trybów rozgrywki: kolorowanie murali przez numerki, ucieczka przed przeciwnikami, układanie drabin do trudno dostępnych miejsc oraz gra na czas. Każdy tryb wymaga innego podejścia taktycznego.',
+      },
+      {
+        title: 'Postacie 3D',
+        content: 'Wszystkie postacie w grze są modelowane w 3D w Blenderze i animowane, co nadaje grze unikalny cartoon look. Pipeline obejmuje modelowanie, rigging, animację i rendering sprite\'ów do silnika Phaser.',
+      },
+      {
+        title: 'AI-Assisted Development',
+        content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry — od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.',
+      },
+    ],
   },
 ];
 
