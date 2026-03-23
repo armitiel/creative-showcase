@@ -614,6 +614,11 @@ export const projects: Project[] = [
       {
         title: 'Wieżyczki',
         content: '12 typów wieżyczek x 3 poziomy ulepszenia = 36 modeli. Każdy model zanimowany ze złożonymi efektami compositingu przygotowanymi pod produkcję w silniku gry.',
+        images: [
+          { src: '/projects/olympus-defence/tower-zeus.gif', alt: 'Zeus tower level 1', caption: 'Zeus (lv1)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-burning-oil.gif', alt: 'Burning Oil tower level 2', caption: 'Burning Oil (lv2)', noMagnifier: true },
+          { src: '/projects/olympus-defence/tower-archers.png', alt: 'Archers tower level 2', caption: 'Archers (lv2)', noMagnifier: true },
+        ],
       },
       {
         title: 'Mapy',
