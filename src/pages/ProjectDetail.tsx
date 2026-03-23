@@ -311,6 +311,20 @@ const ProjectDetail = () => {
         </div>
       </section>
 
+      {/* Centered logo before project info */}
+      {project.images?.[0] && project.images[0].displayMode === 'centered' && (
+        <section className="py-16" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto flex justify-center">
+              <img
+                src={withBaseUrl(project.images[0].src)}
+                alt={project.images[0].alt}
+                className="max-h-52 object-contain"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Challenge & Solution */}
       {(project.challenge || project.solution) && (
