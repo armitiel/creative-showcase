@@ -385,19 +385,17 @@ const ProjectDetail = () => {
 
             {/* External Link / Play Button */}
             {project.externalLink && (
-              <div className="mt-8 text-center">
+              <div className="mt-10 text-center">
                 <a
                   href={project.externalLink.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 ${
-                    isDark
-                      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                      : 'bg-foreground text-background hover:bg-foreground/90'
-                  }`}
+                  className="relative inline-flex items-center gap-3 px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:scale-110 bg-primary text-primary-foreground group"
                 >
-                  <ExternalLink className="w-5 h-5" />
-                  {project.externalLink.label || 'Visit'}
+                  {/* Glow behind button */}
+                  <span className="absolute inset-0 rounded-full bg-primary/40 blur-xl opacity-60 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500 animate-pulse" />
+                  <ExternalLink className="w-6 h-6 relative z-10" />
+                  <span className="relative z-10">{language === 'pl' ? 'Zagraj' : 'Play'}</span>
                 </a>
               </div>
             )}
