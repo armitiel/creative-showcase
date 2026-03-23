@@ -624,7 +624,7 @@ const ProjectDetail = () => {
         <section className="py-8">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className={`grid grid-cols-1 ${project.gifPair.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4`}>
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
