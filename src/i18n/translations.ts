@@ -154,7 +154,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Senior Visual Designer & Game Artist działający na styku wizualizacji, systemów i biznesu. Definiuje kierunek wizualny, jednocześnie budując struktury produkcyjne i <highlight>workflow oparte na AI</highlight>, które wspierają strategię produktową, efektywność zespołu i długoterminową skalowalność.',
+      description: 'Multidyscyplinarny kreator z praktycznym podejściem. Tworzę interaktywne projekty ze zrozumieniem całego procesu produkcji — od pomysłu po finalną implementację. Łączę sztukę z funkcjonalnym myśleniem, wykorzystując <highlight>nowe technologie</highlight> do szybszej i efektywniejszej pracy.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',
@@ -262,7 +262,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'Senior Visual Designer & Game Artist operating at the intersection of visuals, systems, and business. Defines visual direction while building production structures and <highlight>AI-driven workflows</highlight> that support product strategy, team efficiency, and long-term scalability.',
+      description: 'Multidisciplinary creative with a fresh, hands-on approach. Creating interactive projects with a strong understanding of production, from idea to final implementation. Combining art with functional thinking, while using <highlight>new technologies</highlight> to work faster and more efficiently.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
