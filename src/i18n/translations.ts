@@ -262,7 +262,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'About',
       titleHighlight: 'me',
-      description: 'Senior Visual Designer & Game Artist operating at the intersection of visuals, systems, and business. Defines visual direction while building production structures and <highlight>AI-driven workflows</highlight> that support product strategy, team efficiency, and long-term scalability.',
+      description: 'Multidisciplinary creative with a fresh, hands-on approach. Creating interactive projects with a strong understanding of production, from idea to final implementation. Combining art with functional thinking, while using <highlight>new technologies</highlight> to work faster and more efficiently.',
       location: 'Warsaw, Poland',
       experience: '15+ years of experience',
       education: 'Southampton Solent University, Middlesex London University',
