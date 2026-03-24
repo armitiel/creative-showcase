@@ -131,10 +131,17 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     images: translatedImages,
     heroFollowImages: translatedHeroFollowImages,
     strategicSections: translation.strategicSections
-      ? translation.strategicSections.map((section, i) => ({
-          ...section,
-          images: (project.strategicSections?.[i] as any)?.images,
-        }))
+      ? translation.strategicSections.map((section, i) => {
+          const baseImages = (project.strategicSections?.[i] as any)?.images;
+          const translatedSectionImages = baseImages?.map((img: any, j: number) => ({
+            ...img,
+            caption: section.images?.[j]?.caption ?? img.caption,
+          }));
+          return {
+            ...section,
+            images: translatedSectionImages,
+          };
+        })
       : project.strategicSections,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
