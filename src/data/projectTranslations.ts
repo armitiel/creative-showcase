@@ -30,7 +30,7 @@ interface ProjectTranslation {
   youtubeVideoTitle?: string;
   youtubeVideoDescription?: string;
   // Strategic sections
-  strategicSections?: { title: string; content: string }[];
+  strategicSections?: { title: string; content: string; images?: { src: string; alt: string; caption?: string }[] }[];
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
