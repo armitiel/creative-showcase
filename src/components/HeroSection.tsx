@@ -69,7 +69,10 @@ export const HeroSection = () => {
                   {t.hero.name}
                 </h2>
                 <p className="text-base text-white/60 tracking-widest uppercase">
-                  {t.hero.role}
+                  <span className="hidden md:inline">{t.hero.role}</span>
+                  <span className="md:hidden">
+                    Senior Graphic Designer<br />Art & UI Specialist
+                  </span>
                 </p>
               </div>
 
