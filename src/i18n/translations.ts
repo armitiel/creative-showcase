@@ -102,7 +102,7 @@ export const translations: Record<Language, TranslationsType> = {
     hero: {
       title: 'PORTFOLIO',
       name: 'Amitiel Angelisme',
-      role: 'Senior Graphic Designer | Art & UI Specialist',
+      role: 'Senior Graphic Designer | Game Artist',
       scroll: 'Scroll',
       specializations: ['Branding', 'Modelowanie 3D', 'Web & App', 'Sztuka', 'Motion Design'],
     },
@@ -210,7 +210,7 @@ export const translations: Record<Language, TranslationsType> = {
     hero: {
       title: 'PORTFOLIO',
       name: 'Amitiel Angelisme',
-      role: 'Senior Graphic Designer | Art & UI Specialist',
+      role: 'Senior Graphic Designer | Game Artist',
       scroll: 'Scroll',
       specializations: ['Branding', '3D Modeling', 'Web & App', 'Art', 'Motion Design'],
     },
