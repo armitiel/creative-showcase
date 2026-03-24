@@ -90,7 +90,7 @@ export const AboutSection = () => {
                   <Badge
                     key={skill}
                     variant="outline"
-                    className={`border-white/30 bg-white/40 backdrop-blur-md hover:border-primary/50 hover:bg-white/60 hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] transition-all duration-300 text-sm px-4 py-2 justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.06)] opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    className={`border-white/30 bg-white/50 backdrop-blur-md hover:border-primary/50 hover:bg-white/60 hover:shadow-[0_4px_20px_hsl(var(--primary)/0.15)] transition-all duration-300 text-sm px-4 py-2 justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_3px_10px_rgba(0,0,0,0.12),0_1px_3px_rgba(0,0,0,0.08)] opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
                     style={{ animationDelay: rightVisible ? `${300 + index * 80}ms` : '0ms', animationFillMode: 'forwards' }}
                   >
                     {skill}
