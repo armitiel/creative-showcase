@@ -30,7 +30,7 @@ interface ProjectTranslation {
   youtubeVideoTitle?: string;
   youtubeVideoDescription?: string;
   // Strategic sections
-  strategicSections?: { title: string; content: string }[];
+  strategicSections?: { title: string; content: string; images?: { src: string; alt: string; caption?: string }[] }[];
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
@@ -459,10 +459,39 @@ export const projectTranslations: ProjectTranslations = {
       },
       strategicSections: [
         { title: 'Project Scope', content: 'Full responsibility for the entire visual production: 3D modeling, animation, compositing, special effects, UI and preparation of all assets for Unity production. Built from scratch with no prior sketches or visual system.' },
-        { title: 'Characters', content: '21 unique characters modeled in 3D, animated and prepared for production. Each character went through the full pipeline: concept, modeling, rigging, animation, rendering and compositing in Spine/Blender.' },
-        { title: 'Towers', content: '12 tower types x 3 upgrade levels = 36 models. Each model animated with complex compositing effects prepared for production in the game engine.' },
-        { title: 'Maps', content: '3 map environments with 15 levels each = 45 maps with unique models dedicated to each environment.' },
-        { title: 'UI', content: 'Complete game user interface: menu screens, gameplay HUD, upgrade screens, shop, result screens. Cohesive visual system maintained in cartoon stylization.' },
+        { title: 'Characters', content: '21 unique characters modeled in 3D, animated and prepared for production. Each character went through the full pipeline: concept, modeling, rigging, animation, rendering and compositing in Spine/Blender.',
+          images: [
+            { src: '', alt: '', caption: 'Warrior' },
+            { src: '', alt: '', caption: 'Titan (main boss)' },
+            { src: '', alt: '', caption: 'Rider' },
+          ],
+        },
+        { title: 'Towers', content: '12 tower types x 3 upgrade levels = 36 models. Each model animated with complex compositing effects prepared for production in the game engine.',
+          images: [
+            { src: '', alt: '', caption: 'Zeus (lv1)' },
+            { src: '', alt: '', caption: 'Burning Oil (lv2)' },
+            { src: '', alt: '', caption: 'Archers (lv2)' },
+          ],
+        },
+        { title: 'Maps', content: '3 map environments with 15 levels each = 45 maps with unique models dedicated to each environment.',
+          images: [
+            { src: '', alt: '', caption: 'Environment 1' },
+            { src: '', alt: '', caption: 'Environment 1' },
+            { src: '', alt: '', caption: 'Environment 2' },
+            { src: '', alt: '', caption: 'Environment 2' },
+            { src: '', alt: '', caption: 'Environment 3' },
+            { src: '', alt: '', caption: 'Environment 3' },
+          ],
+        },
+        { title: 'UI', content: 'Complete game user interface: menu screens, gameplay HUD, upgrade screens, shop, result screens. Cohesive visual system maintained in cartoon stylization.',
+          images: [
+            { src: '', alt: '', caption: 'Shop' },
+            { src: '', alt: '', caption: 'Leaderboard' },
+            { src: '', alt: '', caption: 'Daily Quests' },
+            { src: '', alt: '', caption: 'Daily Quests' },
+            { src: '', alt: '', caption: 'Daily Quests' },
+          ],
+        },
         { title: 'Process & Growth', content: '3-year production during which I acquired and developed skills: 3D animation, production-ready modeling, collaboration with a developer for Unity integration, Spine animations as compositing, Blender compositing, creating documentation for future edits. Daily meetings to discuss corrections and next steps. Many innovative solutions for unique effects.' },
         { title: 'Why It Matters', content: 'This project summarizes my craft at that point. It combines 3D modeling, animation, compositing and production in one cohesive pipeline. It demonstrates the ability to independently lead complex visual production at a full game scale, with regular iterations and collaboration with the development team.' },
       ],
