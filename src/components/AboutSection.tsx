@@ -38,7 +38,7 @@ export const AboutSection = () => {
           {/* Left - Avatar & Info */}
           <div
             ref={leftRef}
-            className={`flex flex-col min-w-0 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
+            className={`flex flex-col items-center md:items-start min-w-0 opacity-0 ${leftVisible ? 'animate-fade-in-left' : ''}`}
           >
             <div className="flex justify-center md:justify-start">
               <img 
