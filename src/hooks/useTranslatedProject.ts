@@ -130,6 +130,11 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
     results: translation.results ?? project.results,
     images: translatedImages,
     heroFollowImages: translatedHeroFollowImages,
+    logoConcept: project.logoConcept ? {
+      ...project.logoConcept,
+      title: translation.logoConceptTitle ?? project.logoConcept.title,
+      description: translation.logoConceptDescription ?? project.logoConcept.description,
+    } : undefined,
     strategicSections: translation.strategicSections
       ? translation.strategicSections.map((section, i) => {
           const baseImages = (project.strategicSections?.[i] as any)?.images;
@@ -145,7 +150,14 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       : project.strategicSections,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
-      fonts: project.typography.fonts,
+      fonts: project.typography.fonts.map((font, fontIndex) => ({
+        ...font,
+        usage: translation.typographyFontUsages?.[fontIndex] ?? font.usage,
+        weights: font.weights.map(w => ({
+          ...w,
+          sample: translation.typographyFontSamples?.[w.sample] ?? w.sample,
+        })),
+      })),
       image: project.typography.image,
     } : undefined,
     colors: project.colors ? {

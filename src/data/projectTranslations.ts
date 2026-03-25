@@ -31,6 +31,13 @@ interface ProjectTranslation {
   youtubeVideoDescription?: string;
   // Strategic sections
   strategicSections?: { title: string; content: string; images?: { src: string; alt: string; caption?: string }[] }[];
+  // Logo concept
+  logoConceptTitle?: string;
+  logoConceptDescription?: string;
+  // Typography font usage labels
+  typographyFontUsages?: Record<number, string>;
+  // Typography font weight samples
+  typographyFontSamples?: Record<string, string>;
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
@@ -76,6 +83,13 @@ export const projectTranslations: ProjectTranslations = {
       colorsDescription: 'Paleta kolorów Selva opiera się na naturalnych tonach - głęboka zieleń dżungli, ciepły beż i czysta biel tworzą organiczny, autentyczny wygląd marki.',
       thumbnailGridTitle: 'System etykiet produktowych',
       thumbnailGridDescription: 'Seria kolorowych etykiet dla różnych rodzajów Rapé - każda z unikalną kolorystyką reprezentującą charakter produktu.',
+      logoConceptTitle: 'Pomysł na logo',
+      logoConceptDescription: 'Dolna część znaku przyjmuje formę ziemi – fundamentu i stabilnej bazy. Z niej wyrasta listek, symbolizujący życie, wzrost i rozwój.',
+      typographyFontUsages: { 1: 'Opakowania' },
+      typographyFontSamples: {
+        'Świeże RAPÉ prosto z Brazylii': 'Świeże RAPÉ prosto z Brazylii',
+        'Tradycyjne mieszanki ziołowe': 'Tradycyjne mieszanki ziołowe',
+      },
       imageCaptions: {
         0: 'Logo marki Selva z charakterystycznym liściem',
         1: 'Materiały brandingowe z motywami natury',
@@ -94,6 +108,13 @@ export const projectTranslations: ProjectTranslations = {
       colorsDescription: 'Selva\'s color palette is based on natural tones - deep jungle green, warm beige, and pure white create an organic, authentic brand look.',
       thumbnailGridTitle: 'Product Label System',
       thumbnailGridDescription: 'A series of colorful labels for different types of Rapé - each with unique colors representing the product\'s character.',
+      logoConceptTitle: 'Logo Concept',
+      logoConceptDescription: 'The lower part of the mark takes the form of earth – a foundation and stable base. From it grows a leaf, symbolizing life, growth and development.',
+      typographyFontUsages: { 1: 'Packaging' },
+      typographyFontSamples: {
+        'Świeże RAPÉ prosto z Brazylii': 'Fresh RAPÉ straight from Brazil',
+        'Tradycyjne mieszanki ziołowe': 'Traditional herbal blends',
+      },
       imageCaptions: {
         0: 'Selva brand logo with a distinctive leaf motif',
         1: 'Branding materials with nature-inspired motifs',
