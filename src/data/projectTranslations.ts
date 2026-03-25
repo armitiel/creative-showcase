@@ -31,6 +31,13 @@ interface ProjectTranslation {
   youtubeVideoDescription?: string;
   // Strategic sections
   strategicSections?: { title: string; content: string; images?: { src: string; alt: string; caption?: string }[] }[];
+  // Logo concept
+  logoConceptTitle?: string;
+  logoConceptDescription?: string;
+  // Typography font usage labels
+  typographyFontUsages?: Record<number, string>;
+  // Typography font weight samples
+  typographyFontSamples?: Record<string, string>;
 }
 
 type ProjectTranslations = Record<string, Record<Language, ProjectTranslation>>;
