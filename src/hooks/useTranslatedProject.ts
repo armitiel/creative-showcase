@@ -145,7 +145,14 @@ export const useTranslatedProject = (slug: string | undefined): TranslatedProjec
       : project.strategicSections,
     typography: project.typography ? {
       description: translation.typographyDescription ?? project.typography.description,
-      fonts: project.typography.fonts,
+      fonts: project.typography.fonts.map((font, fontIndex) => ({
+        ...font,
+        usage: translation.typographyFontUsages?.[fontIndex] ?? font.usage,
+        weights: font.weights.map(w => ({
+          ...w,
+          sample: translation.typographyFontSamples?.[w.sample] ?? w.sample,
+        })),
+      })),
       image: project.typography.image,
     } : undefined,
     colors: project.colors ? {
