@@ -133,6 +133,10 @@ export const projectTranslations: ProjectTranslations = {
       results: 'Branding skutecznie pozycjonuje V17 Vision jako lidera w segmencie premium futurystycznego designu wnętrz. Marka zyskała rozpoznawalność w branży architektonicznej i przyciąga klientów poszukujących innowacyjnych rozwiązań.',
       typographyDescription: 'Khand został wybrany dla nagłówków, dodając futurystyczny charakter i technologiczną precyzję. Font podkreśla nowoczesność marki i jej innowacyjne podejście do projektowania przestrzeni.',
       colorsDescription: 'Minimalistyczna paleta kolorów oparta na czystej bieli i głębokich odcieniach szarości, podkreślająca futurystyczny i premium charakter marki.',
+      typographyFontSamples: {
+        'Innowacyjne rozwiązania architektoniczne': 'Innowacyjne rozwiązania architektoniczne',
+        'Przestrzenie wyprzedzające swoją epokę': 'Przestrzenie wyprzedzające swoją epokę',
+      },
       imageCaptions: {
         0: '"Designing your space" - główny motyw reklamowy z double exposure',
         1: 'Minimalistyczne logo tekstowe marki',
@@ -156,6 +160,10 @@ export const projectTranslations: ProjectTranslations = {
       results: 'The branding effectively positions V17 Vision as a leader in the premium futuristic interior design segment. The brand has gained recognition in the architectural industry and attracts clients seeking innovative solutions.',
       typographyDescription: 'Khand was chosen for headlines, adding futuristic character and technological precision. The font emphasizes the brand\'s modernity and innovative approach to space design.',
       colorsDescription: 'A minimalist color palette based on pure white and deep shades of gray, emphasizing the futuristic and premium character of the brand.',
+      typographyFontSamples: {
+        'Innowacyjne rozwiązania architektoniczne': 'Innovative architectural solutions',
+        'Przestrzenie wyprzedzające swoją epokę': 'Spaces ahead of their time',
+      },
       imageCaptions: {
         0: '"Designing your space" - main advertising motif with double exposure',
         1: 'Minimalist text logo of the brand',
