@@ -307,6 +307,7 @@ export const projectTranslations: ProjectTranslations = {
           content: 'Projekt demonstruje zdolność do budowy kompletnego systemu marki od fundamentów, bez istniejących szkiców, wytycznych ani architektury informacji. Każda decyzja projektowa była podejmowana w kontekście wpływu na konwersję, zaufanie użytkownika i skalowalność komunikacji. To podejście systemowe, nie dekoracyjne.',
         },
       ],
+      typographyDescription: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
       heroFollowImageCaptions: {
         0: 'Warianty logo: wersja jasna na turkusowym tle i ciemna na białym tle',
@@ -363,6 +364,7 @@ export const projectTranslations: ProjectTranslations = {
           content: 'This project demonstrates the ability to build a complete brand system from the ground up, without existing sketches, guidelines, or information architecture. Every design decision was made in the context of its impact on conversion, user trust, and communication scalability. This is a systematic approach, not decorative.',
         },
       ],
+      typographyDescription: 'HubbleRx\'s typographic system is built on Gotham — a geometric, modern typeface that combines professional authority with the accessibility of medical communication.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
       mobileScreensDescription: 'Common elements across all marketing materials, creating a pleasant feel with a touch of modernity.',
       mobileScreensTitle: 'Minimalist Illustrations',
