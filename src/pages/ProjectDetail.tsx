@@ -109,9 +109,15 @@ const ProjectDetail = () => {
             <Badge className={`mb-4 ${isDark ? 'bg-primary/30 text-primary border-primary/40' : 'bg-primary/20 text-primary border-primary/30'}`}>
               {project.category}
             </Badge>
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-2 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
               {project.title}
             </h1>
+            {project.subtitle && (
+              <p className={`text-xl md:text-2xl lg:text-3xl font-light mb-6 font-['Poppins'] ${isDark ? 'text-white/50' : 'text-muted-foreground'}`}>
+                {project.subtitle}
+              </p>
+            )}
+            {!project.subtitle && <div className="mb-6" />}
             <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
               {project.fullDescription}
             </p>
