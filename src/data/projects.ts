@@ -740,7 +740,7 @@ export const projects: Project[] = [
     category: 'Art',
     thumbnail: '/projects/graffiti/graffi-tea.jpg',
     description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
-    fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci — karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
+    fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci, karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
     year: '2015-2025',
     tools: ['Spray paint', 'Airbrush'],
     externalLink: { url: 'https://www.facebook.com/max.oc.crew/', label: 'Mr.Max on Facebook' },
