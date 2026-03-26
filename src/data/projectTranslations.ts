@@ -592,6 +592,8 @@ export const projectTranslations: ProjectTranslations = {
       ],
       youtubeVideoTitle: 'Gameplay',
       youtubeVideoDescription: 'Prezentacja rozgrywki Atomic Cherry',
+      logoConceptTitle: 'Logo',
+      logoConceptDescription: 'Logo gry Atomic Cherry łączy klasyczną stylistykę slotów z nowoczesnym, kolorowym designem.',
     },
     en: {
       title: 'Atomic Cherry - Slot Machine',
@@ -618,6 +620,8 @@ export const projectTranslations: ProjectTranslations = {
       ],
       youtubeVideoTitle: 'Gameplay',
       youtubeVideoDescription: 'Atomic Cherry gameplay presentation',
+      logoConceptTitle: 'Logo',
+      logoConceptDescription: 'The Atomic Cherry logo combines classic slot machine aesthetics with a modern, colorful design.',
     },
   },
 };
