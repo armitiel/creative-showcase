@@ -506,7 +506,7 @@ const ProjectDetail = () => {
                             </div>
                           )}
                           {dailyQuests.length > 0 && (
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                               {dailyQuests.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all`}
                                   onClick={() => openLightbox(withBaseUrl(img.src), img.alt)}>
