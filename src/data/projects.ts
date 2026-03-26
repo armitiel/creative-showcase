@@ -686,6 +686,42 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: 12,
+    slug: 'atomic-cherry',
+    title: 'Atomic Cherry - Slot Machine',
+    category: 'Game, Art',
+    thumbnail: '/projects/atomic-cherry/splash.png',
+    description: 'Kompletna oprawa graficzna gry slotowej: animowane symbole, splash screeny i interfejs maszyny.',
+    fullDescription: 'Atomic Cherry to gra slotowa typu slot machine z dynamiczną mechaniką i bogatą oprawą wizualną. Projekt obejmował tworzenie wszystkich elementów graficznych gry: animowanych symboli (cherry, siódemka, BAR), splash screenów promocyjnych, ekranów bonusowych oraz kompletnego interfejsu maszyny do gry.',
+    year: '2021',
+    tools: ['Photoshop', 'Spine', 'Illustrator'],
+    images: [
+      { src: '/projects/atomic-cherry/splash.png', alt: 'Atomic Cherry Splash Screen', displayMode: 'cover' as const },
+      { src: '/projects/atomic-cherry/slot-machine.jpg', alt: 'Atomic Cherry Slot Machine', caption: 'Maszyna slotowa - gameplay' },
+      { src: '/projects/atomic-cherry/free-spins.jpg', alt: 'Atomic Cherry Free Spins', caption: 'Ekran bonusowy Free Spins' },
+    ],
+    gifPair: [
+      { src: '/projects/atomic-cherry/cherry-symbol.gif', alt: 'Cherry symbol animation', caption: 'Cherry', noMagnifier: true },
+      { src: '/projects/atomic-cherry/seven-symbol.gif', alt: 'Seven symbol animation', caption: 'Siódemka', noMagnifier: true },
+      { src: '/projects/atomic-cherry/bar5-symbol.gif', alt: 'BAR 5 symbol animation', caption: 'BAR 5', noMagnifier: true },
+    ],
+    strategicSections: [
+      {
+        title: 'Animowane symbole',
+        content: 'Każdy symbol gry został zaprojektowany w Illustratorze i zanimowany w Spine. Animacje nadają grze dynamiczny, przyciągający wzrok charakter typowy dla nowoczesnych gier slotowych.',
+      },
+      {
+        title: 'Splash screeny i promocje',
+        content: 'Ekrany powitalne i promocyjne zaprojektowane tak, aby natychmiast przyciągnąć uwagę gracza. Splash screen prezentuje logo gry na tle charakterystycznego wzoru z motywem atomu.',
+      },
+    ],
+    youtubeVideo: {
+      url: 'https://www.youtube.com/watch?v=J9SEVBRJBeY',
+      title: 'Gameplay',
+      description: 'Prezentacja rozgrywki Atomic Cherry',
+    },
+  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
