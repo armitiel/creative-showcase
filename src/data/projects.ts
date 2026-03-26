@@ -670,7 +670,7 @@ export const projects: Project[] = [
     images: [
       { src: '/projects/shadow-tagger/logo.webp', alt: 'Shadow Tagger Logo', displayMode: 'centered' as const, backgroundColor: '#141414', imageScale: 0.6 },
       { src: '/projects/shadow-tagger/gameplay-1.webp', alt: 'Shadow Tagger - Gameplay platformowy', caption: 'Rozgrywka platformowa, unikaj przeciwników i maluj murale', noMagnifier: true },
-      { src: '/projects/shadow-tagger/gameplay-2.webp', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków — maluj mural kolor po kolorze', noMagnifier: true },
+      { src: '/projects/shadow-tagger/gameplay-2.webp', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków, maluj mural kolor po kolorze', noMagnifier: true },
       { src: '/projects/shadow-tagger/gameplay-3.webp', alt: 'Shadow Tagger - Eksploracja', caption: 'Eksploracja poziomów z drabinami i muralami do odkrycia', noMagnifier: true },
     ],
     strategicSections: [
