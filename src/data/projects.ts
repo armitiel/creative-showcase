@@ -706,9 +706,9 @@ export const projects: Project[] = [
       alt: 'Atomic Cherry Logo',
     },
     images: [
-      { src: '/projects/atomic-cherry/splash.png', alt: 'Atomic Cherry Splash Screen', displayMode: 'cover' as const },
-      { src: '/projects/atomic-cherry/slot-machine.jpg', alt: 'Atomic Cherry Slot Machine', caption: 'Maszyna slotowa - gameplay' },
-      { src: '/projects/atomic-cherry/free-spins.jpg', alt: 'Atomic Cherry Free Spins', caption: 'Ekran bonusowy Free Spins' },
+      { src: '/projects/atomic-cherry/splash.png', alt: 'Atomic Cherry Splash Screen', displayMode: 'cover' as const, noMagnifier: true },
+      { src: '/projects/atomic-cherry/slot-machine.jpg', alt: 'Atomic Cherry Slot Machine', caption: 'Maszyna slotowa - gameplay', noMagnifier: true },
+      { src: '/projects/atomic-cherry/free-spins.jpg', alt: 'Atomic Cherry Free Spins', caption: 'Ekran bonusowy Free Spins', noMagnifier: true },
     ],
     gifPair: [
       { src: '/projects/atomic-cherry/cherry-symbol.gif', alt: 'Cherry symbol animation', caption: 'Cherry', noMagnifier: true },
