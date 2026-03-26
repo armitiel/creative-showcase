@@ -82,6 +82,20 @@ export const illustrationCategories: IllustrationCategory[] = [
         captionEn: 'Gentleman portrait — engraving style',
         aspectRatio: 'square',
       },
+      {
+        src: '/illustrations/pencil-characters.jpg',
+        alt: 'Pencil characters — cartoon illustration',
+        captionPl: 'Postacie z ołówkami — ilustracja cartoon',
+        captionEn: 'Pencil characters — cartoon illustration',
+        aspectRatio: 'landscape',
+      },
+      {
+        src: '/illustrations/join-the-game.jpg',
+        alt: 'Join the Game — cartoon illustration',
+        captionPl: 'Join the Game — ilustracja cartoon',
+        captionEn: 'Join the Game — cartoon illustration',
+        aspectRatio: 'portrait',
+      },
     ],
   },
 ];
