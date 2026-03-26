@@ -154,8 +154,8 @@ export const ProjectsSection = () => {
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
                   {language === 'pl'
-                    ? 'Stylizowane ilustracje wektorowe, cartoon i grafiki do gier — praca w różnych stylach.'
-                    : 'Stylized vector illustrations, cartoon and game graphics — working in various styles.'}
+                    ? 'Stylizowane ilustracje wektorowe, cartoon i grafiki do gier, praca w różnych stylach.'
+                    : 'Stylized vector illustrations, cartoon and game graphics, working in various styles.'}
                 </p>
               </div>
             </Link>

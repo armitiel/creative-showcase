@@ -155,7 +155,7 @@ export const translations: Record<Language, TranslationsType> = {
     about: {
       title: 'O',
       titleHighlight: 'mnie',
-      description: 'Multidyscyplinarny kreator z praktycznym podejściem. Tworzę interaktywne projekty ze zrozumieniem całego procesu produkcji — od pomysłu po finalną implementację. Łączę sztukę z funkcjonalnym myśleniem, wykorzystując <highlight>nowe technologie</highlight> do szybszej i efektywniejszej pracy.',
+      description: 'Multidyscyplinarny kreator z praktycznym podejściem. Tworzę interaktywne projekty ze zrozumieniem całego procesu produkcji, od pomysłu po finalną implementację. Łączę sztukę z funkcjonalnym myśleniem, wykorzystując <highlight>nowe technologie</highlight> do szybszej i efektywniejszej pracy.',
       location: 'Warszawa, Polska',
       experience: '15+ lat doświadczenia',
       education: 'Southampton Solent University, Middlesex London University',

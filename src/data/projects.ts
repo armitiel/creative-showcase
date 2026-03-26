@@ -161,7 +161,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Różnorodne powierzchnie',
-        content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali — każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
+        content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali, każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
       },
     ],
   },
@@ -260,11 +260,11 @@ export const projects: Project[] = [
     tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
     theme: 'light',
     challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
-    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
+    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     heroFollowImages: [
-      { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle' },
-      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
+      { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo, wersja jasna na turkusowym tle i ciemna na białym tle' },
+      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
       
       { src: '/projects/hubble/box-mockup.webp', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup-zoom.webp', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     ],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
-      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
+      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy, częściowo wykonana w Blenderze' },
     ],
     mobileScreens: {
       title: 'Minimalistyczne ilustracje',
