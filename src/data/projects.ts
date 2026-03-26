@@ -697,6 +697,12 @@ export const projects: Project[] = [
     client: 'Huuge Games',
     year: '2021',
     tools: ['Photoshop', 'Spine', 'Illustrator'],
+    logoConcept: {
+      title: 'Logo',
+      description: 'Logo gry Atomic Cherry łączy klasyczną stylistykę slotów z nowoczesnym, kolorowym designem.',
+      image: '/projects/atomic-cherry/logo.png',
+      alt: 'Atomic Cherry Logo',
+    },
     images: [
       { src: '/projects/atomic-cherry/splash.png', alt: 'Atomic Cherry Splash Screen', displayMode: 'cover' as const },
       { src: '/projects/atomic-cherry/slot-machine.jpg', alt: 'Atomic Cherry Slot Machine', caption: 'Maszyna slotowa - gameplay' },
