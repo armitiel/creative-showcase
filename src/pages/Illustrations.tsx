@@ -60,8 +60,8 @@ const Illustrations = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 {language === 'pl'
-                  ? 'Grafika wektorowa, stylizowane ilustracje i umiejętność pracy w różnych stylach — od cartoon po realistyczne.'
-                  : 'Vector graphics, stylized illustrations and the ability to work in various styles — from cartoon to realistic.'}
+                  ? 'Grafika wektorowa, stylizowane ilustracje i umiejętność pracy w różnych stylach, od cartoon po realistyczne.'
+                  : 'Vector graphics, stylized illustrations and the ability to work in various styles, from cartoon to realistic.'}
               </p>
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
