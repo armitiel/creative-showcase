@@ -682,8 +682,11 @@ const ProjectDetail = () => {
                     <img
                       src={withBaseUrl(img.src)}
                       alt={img.alt}
-                      className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
-                      style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : undefined}
+                      className={`${project.slug === 'graffiti' ? 'w-full h-[600px] md:h-[750px] object-cover' : 'h-auto'} ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
+                      style={{
+                        ...(img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : {}),
+                        ...(img.objectPosition ? { objectPosition: img.objectPosition } : {}),
+                      }}
                     />
                   </div>
                   {img.caption && (
