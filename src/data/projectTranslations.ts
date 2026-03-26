@@ -596,7 +596,7 @@ export const projectTranslations: ProjectTranslations = {
     en: {
       title: 'Atomic Cherry - Slot Machine',
       description: 'Complete visual design for a slot game: animated symbols, splash screens and machine interface.',
-      fullDescription: 'Atomic Cherry is a slot machine game with dynamic mechanics and rich visual design. The project included creating all graphic elements: animated symbols (cherry, seven, BAR), promotional splash screens, bonus screens, and the complete slot machine interface.',
+      fullDescription: 'Atomic Cherry is a slot machine game with dynamic mechanics and rich visual design. The project included creating all graphic elements: animated symbols, promotional splash screens, bonus screens, and the complete slot machine interface.',
       imageCaptions: {
         1: 'Slot machine - gameplay',
         2: 'Free Spins bonus screen',
