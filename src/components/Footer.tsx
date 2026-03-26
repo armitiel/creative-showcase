@@ -1,7 +1,18 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useEffect, useState } from 'react';
 
 export const Footer = () => {
   const { t } = useLanguage();
+  const [visits, setVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/api/visits', { cache: 'no-store' })
+      .then(r => r.json())
+      .then(data => {
+        if (data.count != null) setVisits(data.count);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <footer className="relative px-4 md:px-8 pb-4">
@@ -14,9 +25,14 @@ export const Footer = () => {
             <p className="text-card-foreground/60 text-sm">
               {t.footer.madeWith} <span className="text-primary">♥</span> {t.footer.inPoland}
             </p>
+            {visits !== null && (
+              <p className="text-card-foreground/40 text-xs">
+                {t.footer.visits}: {visits.toLocaleString()}
+              </p>
+            )}
           </div>
         </div>
-        
+
         {/* Aurora glow emerging from dark space */}
         <div className="absolute bottom-0 left-0 w-full h-[60px] pointer-events-none rounded-b-3xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,4%)] via-[hsl(220,20%,4%)]/80 to-transparent" />

@@ -70,6 +70,7 @@ interface TranslationsType {
     rights: string;
     madeWith: string;
     inPoland: string;
+    visits: string;
   };
   projectDetail: {
     backToPortfolio: string;
@@ -180,6 +181,7 @@ export const translations: Record<Language, TranslationsType> = {
       rights: 'Wszelkie prawa zastrzeżone.',
       madeWith: 'Zaprojektowane z',
       inPoland: 'w Polsce',
+      visits: 'Odwiedziny',
     },
     projectDetail: {
       backToPortfolio: 'Powrót do portfolio',
@@ -288,6 +290,7 @@ export const translations: Record<Language, TranslationsType> = {
       rights: 'All rights reserved.',
       madeWith: 'Designed with',
       inPoland: 'in Poland',
+      visits: 'Visits',
     },
     projectDetail: {
       backToPortfolio: 'Back to portfolio',
