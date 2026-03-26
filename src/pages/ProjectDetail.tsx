@@ -854,7 +854,7 @@ const ProjectDetail = () => {
 
 
       {/* Logo Concept Section */}
-      {project.logoConcept && (
+      {project.logoConcept && project.slug !== 'atomic-cherry' && (
         <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
