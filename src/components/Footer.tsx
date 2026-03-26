@@ -6,7 +6,7 @@ export const Footer = () => {
   const [visits, setVisits] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch('/api/visits', { cache: 'no-store' })
+    fetch('/api/visits?site=portfolio', { cache: 'no-store' })
       .then(r => r.json())
       .then(data => {
         if (data.count != null) setVisits(data.count);
