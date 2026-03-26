@@ -142,7 +142,7 @@ export const projects: Project[] = [
     description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
     fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci, karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
     year: '2015-2025',
-    tools: ['Spray paint', 'Airbrush'],
+    tools: ['Spray paint'],
     externalLink: { url: 'https://www.facebook.com/max.oc.crew/', label: 'Mr.Max on Facebook' },
     images: [
       { src: '/projects/graffiti/manners.webp', alt: 'Manners - character mural', caption: 'Manners', noMagnifier: true },
@@ -153,6 +153,7 @@ export const projects: Project[] = [
       { src: '/projects/graffiti/architect.webp', alt: 'Architect character mural', caption: 'Architect', noMagnifier: true },
       { src: '/projects/graffiti/trash-king.webp', alt: 'Trash King mural', caption: 'Trash King', noMagnifier: true, objectPosition: 'center 30%' },
       { src: '/projects/graffiti/mural-1.webp', alt: 'Indoor character mural', caption: 'Indoor mural', noMagnifier: true },
+      { src: '/projects/graffiti/angel.webp', alt: 'Angel character mural', caption: 'Angel', noMagnifier: true },
     ],
     strategicSections: [
       {
