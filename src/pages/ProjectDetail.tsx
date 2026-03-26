@@ -20,6 +20,15 @@ const ProjectDetail = () => {
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
   const { lightboxImage, openLightbox, closeLightbox } = useLightbox();
 
+  // Gallery lightbox for main project images (e.g. graffiti)
+  const mainGalleryImages = useMemo(() => {
+    if (!project?.images) return [];
+    return project.images
+      .filter((img, idx) => !(idx === 0 && img.displayMode === 'centered'))
+      .map((img) => ({ src: withBaseUrl(img.src), alt: img.alt }));
+  }, [project?.images]);
+  const mainGallery = useGalleryLightbox(mainGalleryImages);
+
   // Gallery lightbox for NFT thumbnail grid
   const nftImages = useMemo(() => project?.thumbnailGrid?.images.map((img) => ({
     src: withBaseUrl(img.src),
@@ -981,7 +990,7 @@ const ProjectDetail = () => {
                           alt={image.alt}
                           className="w-full h-full object-cover cursor-zoom-in"
                           style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
-                          onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                          onClick={() => project.slug === 'graffiti' ? mainGallery.openAt(index) : openLightbox(withBaseUrl(image.src), image.alt)}
                         />
                       ) : (
                         <div 
@@ -1151,6 +1160,20 @@ const ProjectDetail = () => {
           </p>
         </div>
       </footer>
+
+      {/* Lightbox — main images gallery (graffiti etc.) */}
+      <ImageLightbox
+        src={mainGallery.currentImage?.src || ''}
+        alt={mainGallery.currentImage?.alt || ''}
+        isOpen={mainGallery.isOpen}
+        onClose={mainGallery.close}
+        onPrev={mainGallery.prev}
+        onNext={mainGallery.next}
+        hasPrev={mainGallery.hasPrev}
+        hasNext={mainGallery.hasNext}
+        prevSrc={mainGallery.prevImage?.src}
+        nextSrc={mainGallery.nextImage?.src}
+      />
 
       {/* Lightbox — basic (non-gallery images) */}
       <ImageLightbox
