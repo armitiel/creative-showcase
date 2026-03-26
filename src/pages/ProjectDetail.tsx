@@ -130,7 +130,7 @@ const ProjectDetail = () => {
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
-              <img 
+              <img loading="lazy" 
                 src={withBaseUrl(project.logoConcept.image)} 
                 alt={project.logoConcept.alt}
                 className="w-full max-w-md mx-auto h-auto"
@@ -146,7 +146,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
+                <img loading="lazy"
                   src={withBaseUrl(project.heroAnimation)}
                   alt={`${project.title} - Animation`}
                   className="w-full h-auto object-cover"
@@ -169,7 +169,7 @@ const ProjectDetail = () => {
                 className="rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl cursor-zoom-in"
                 onClick={() => openLightbox(withBaseUrl('/projects/nft-system/neon-rebel-cover.webp'), 'Neon Rebel - Cover Art')}
               >
-                <img
+                <img loading="lazy"
                   src={withBaseUrl('/projects/nft-system/neon-rebel-cover.webp')}
                   alt="Neon Rebel - Cover Art"
                   className="w-full h-auto object-cover"
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                     style={{ animationDelay: `${index * 150}ms` }}
                     onClick={() => gallery.openAt(index)}
                   >
-                    <img
+                    <img loading="lazy"
                       src={withBaseUrl(image.src)}
                       alt={image.alt}
                       className="w-full h-full object-contain drop-shadow-lg"
@@ -229,7 +229,7 @@ const ProjectDetail = () => {
               <div className="relative rounded-2xl overflow-hidden">
                 {/* Background image (display) */}
                 {project.parallaxImage.backgroundImage && (
-                  <img
+                  <img loading="lazy"
                     src={withBaseUrl(project.parallaxImage.backgroundImage)}
                     alt="Background"
                     className="w-full h-auto object-cover"
@@ -272,7 +272,7 @@ const ProjectDetail = () => {
                       e.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
                     }}
                   >
-                    <img
+                    <img loading="lazy"
                       src={withBaseUrl(project.parallaxImage.src)}
                       alt={project.parallaxImage.alt}
                       className="w-full h-auto object-contain"
@@ -291,7 +291,7 @@ const ProjectDetail = () => {
         <section className="py-28 relative overflow-hidden" style={{ backgroundColor: project.images[0].backgroundColor || '#1a1a2e' }}>
           {/* Background image for Olympus Defence */}
           {project.slug === 'olympus-defence' && (
-            <img
+            <img loading="lazy"
               src={withBaseUrl('/projects/olympus-defence/bckg2.webp')}
               alt=""
               className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
@@ -338,7 +338,7 @@ const ProjectDetail = () => {
                     animation: 'glowPulse 3s ease-in-out infinite',
                   }}
                 />
-                <img
+                <img loading="lazy"
                   src={withBaseUrl(project.images[0].src)}
                   alt={project.images[0].alt}
                   className={`max-h-[28rem] object-contain relative z-10 ${
@@ -485,7 +485,7 @@ const ProjectDetail = () => {
                             <div className="grid grid-cols-1 gap-4">
                               {screens.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10' : 'border-border/30'}`}>
-                                  <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
+                                  <img loading="lazy" src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
                                   {img.caption && (
                                     <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
                                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
@@ -500,7 +500,7 @@ const ProjectDetail = () => {
                               {cards.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all`}
                                   onClick={() => openLightbox(withBaseUrl(img.src), img.alt)}>
-                                  <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
+                                  <img loading="lazy" src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
                                 </div>
                               ))}
                             </div>
@@ -510,7 +510,7 @@ const ProjectDetail = () => {
                               {dailyQuests.map((img, imgIndex) => (
                                 <div key={imgIndex} className={`rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all`}
                                   onClick={() => openLightbox(withBaseUrl(img.src), img.alt)}>
-                                  <img src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
+                                  <img loading="lazy" src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
                                 </div>
                               ))}
                             </div>
@@ -535,7 +535,7 @@ const ProjectDetail = () => {
                             } : undefined}
                           >
                             <div className={`${isLandscape ? 'aspect-video' : 'aspect-square p-4'} flex items-center justify-center`}>
-                              <img
+                              <img loading="lazy"
                                 src={withBaseUrl(img.src)}
                                 alt={img.alt}
                                 className={`${isLandscape ? 'w-full h-full object-cover' : 'max-w-full max-h-full object-contain'}`}
@@ -570,7 +570,7 @@ const ProjectDetail = () => {
               
               {project.typography.image && (
                 <div className="mb-12 rounded-xl overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src={withBaseUrl(project.typography.image)} 
                     alt="Typography overview" 
                     className="w-full h-auto"
@@ -678,7 +678,7 @@ const ProjectDetail = () => {
                     className={img.displayMode === 'centered' && img.imageScale ? 'flex items-center justify-center' : ''}
                     style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(4, (1 - img.imageScale) * 12 + 3)}rem 0` } : undefined}
                   >
-                    <img
+                    <img loading="lazy"
                       src={withBaseUrl(img.src)}
                       alt={img.alt}
                       className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
@@ -765,7 +765,7 @@ const ProjectDetail = () => {
                       className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'border-border'}`}
                       style={sImg.backgroundColor ? { backgroundColor: sImg.backgroundColor } : undefined}
                     >
-                      <img
+                      <img loading="lazy"
                         src={withBaseUrl(sImg.src)}
                         alt={sImg.alt}
                         className="w-full h-auto object-cover"
@@ -790,7 +790,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
+                <img loading="lazy"
                   src={withBaseUrl('/projects/portal/mobile-mockup.webp')}
                   alt="Portal Mobile App Mockup"
                   className="w-full h-auto object-cover"
@@ -807,14 +807,14 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-4">
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
+                <img loading="lazy"
                   src={withBaseUrl('/projects/portal/desktop-dashboard-1.webp')}
                   alt="Portal Dashboard - Ad Manager"
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
-                <img
+                <img loading="lazy"
                   src={withBaseUrl('/projects/portal/desktop-dashboard-2.webp')}
                   alt="Portal Dashboard - Analytics Overview"
                   className="w-full h-auto object-cover"
@@ -838,7 +838,7 @@ const ProjectDetail = () => {
                     className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : project.slug === 'atomic-cherry' ? 'bg-white border-border/30' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
                   >
                     <div className="aspect-square flex items-center justify-center p-4">
-                      <img
+                      <img loading="lazy"
                         src={withBaseUrl(gif.src)}
                         alt={gif.alt}
                         className="max-w-full max-h-full object-contain"
@@ -870,7 +870,7 @@ const ProjectDetail = () => {
                 {project.logoConcept.description}
               </p>
               <div className="rounded-2xl overflow-hidden">
-                <img 
+                <img loading="lazy" 
                   src={withBaseUrl(project.logoConcept.image)} 
                   alt={project.logoConcept.alt}
                   className="w-full h-auto"
@@ -914,7 +914,7 @@ const ProjectDetail = () => {
                           key={`retailer-${rIndex}`}
                           className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'border-[#c5ddd9]'}`}
                         >
-                          <img
+                          <img loading="lazy"
                             src={withBaseUrl(img.src)}
                             alt={img.alt}
                             className="w-full h-auto object-cover"
@@ -948,7 +948,7 @@ const ProjectDetail = () => {
                             {/* Camera dot */}
                             <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full z-10 mt-[-3px] ${isDark ? 'bg-neutral-600' : 'bg-neutral-500'}`} />
                             {/* Screen */}
-                            <img
+                            <img loading="lazy"
                               src={withBaseUrl(image.src)}
                               alt={image.alt}
                               className="w-full h-auto object-cover cursor-zoom-in"
@@ -965,7 +965,7 @@ const ProjectDetail = () => {
                           className="flex items-center justify-center w-full h-full cursor-zoom-in"
                           onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
                         >
-                          <img
+                          <img loading="lazy"
                             src={withBaseUrl(image.src)}
                             alt={image.alt}
                             className={image.backgroundGradient ? "w-full h-auto" : "object-contain"}
@@ -976,7 +976,7 @@ const ProjectDetail = () => {
                           />
                         </div>
                       ) : image.noMagnifier ? (
-                        <img
+                        <img loading="lazy"
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="w-full h-full object-cover cursor-zoom-in"
@@ -1075,7 +1075,7 @@ const ProjectDetail = () => {
                     className="aspect-[4/3] overflow-hidden rounded-2xl cursor-zoom-in"
                     onClick={() => openRealGallery(index)}
                   >
-                    <img
+                    <img loading="lazy"
                       src={withBaseUrl(image.src)}
                       alt={image.alt}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -1093,7 +1093,7 @@ const ProjectDetail = () => {
         <section className={`pt-16 pb-8 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#f0f0f0]'}`}>
           <div className="flex justify-center">
             <div className="w-[14%] animate-[levitate_4s_ease-in-out_infinite]">
-              <img
+              <img loading="lazy"
                 src={withBaseUrl('/projects/hubble/illustration-b2.svg')}
                 alt="HubbleRx Flying Creature"
                 className="w-full h-auto"

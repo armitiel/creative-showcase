@@ -48,7 +48,7 @@ export const ImageMagnifier = ({
       onMouseMove={handleMouseMove}
       style={{ cursor: showMagnifier ? 'none' : 'default' }}
     >
-      <img
+      <img loading="lazy"
         ref={imgRef}
         src={src}
         alt={alt}
