@@ -566,6 +566,60 @@ export const projectTranslations: ProjectTranslations = {
       },
     },
   },
+  'atomic-cherry': {
+    pl: {
+      title: 'Atomic Cherry - Slot Machine',
+      description: 'Kompletna oprawa graficzna gry slotowej: animowane symbole, splash screeny i interfejs maszyny.',
+      fullDescription: 'Atomic Cherry to gra slotowa typu slot machine z dynamiczną mechaniką i bogatą oprawą wizualną. Projekt obejmował tworzenie wszystkich elementów graficznych gry: animowanych symboli (cherry, siódemka, BAR), splash screenów promocyjnych, ekranów bonusowych oraz kompletnego interfejsu maszyny do gry.',
+      imageCaptions: {
+        1: 'Maszyna slotowa - gameplay',
+        2: 'Ekran bonusowy Free Spins',
+      },
+      gifPairCaptions: {
+        0: 'Cherry',
+        1: 'Siódemka',
+        2: 'BAR 5',
+      },
+      strategicSections: [
+        {
+          title: 'Animowane symbole',
+          content: 'Każdy symbol gry został zaprojektowany w Illustratorze i zanimowany w Spine. Animacje nadają grze dynamiczny, przyciągający wzrok charakter typowy dla nowoczesnych gier slotowych.',
+        },
+        {
+          title: 'Splash screeny i promocje',
+          content: 'Ekrany powitalne i promocyjne zaprojektowane tak, aby natychmiast przyciągnąć uwagę gracza. Splash screen prezentuje logo gry na tle charakterystycznego wzoru z motywem atomu.',
+        },
+      ],
+      youtubeVideoTitle: 'Gameplay',
+      youtubeVideoDescription: 'Prezentacja rozgrywki Atomic Cherry',
+    },
+    en: {
+      title: 'Atomic Cherry - Slot Machine',
+      description: 'Complete visual design for a slot game: animated symbols, splash screens and machine interface.',
+      fullDescription: 'Atomic Cherry is a slot machine game with dynamic mechanics and rich visual design. The project included creating all graphic elements: animated symbols (cherry, seven, BAR), promotional splash screens, bonus screens, and the complete slot machine interface.',
+      imageCaptions: {
+        1: 'Slot machine - gameplay',
+        2: 'Free Spins bonus screen',
+      },
+      gifPairCaptions: {
+        0: 'Cherry',
+        1: 'Seven',
+        2: 'BAR 5',
+      },
+      strategicSections: [
+        {
+          title: 'Animated symbols',
+          content: 'Each game symbol was designed in Illustrator and animated in Spine. The animations give the game a dynamic, eye-catching feel typical of modern slot games.',
+        },
+        {
+          title: 'Splash screens & promotions',
+          content: 'Welcome and promotional screens designed to immediately grab the player\'s attention. The splash screen showcases the game logo against a distinctive atomic-themed pattern.',
+        },
+      ],
+      youtubeVideoTitle: 'Gameplay',
+      youtubeVideoDescription: 'Atomic Cherry gameplay presentation',
+    },
+  },
 };
 
 export const getProjectTranslation = (slug: string, language: Language): ProjectTranslation | undefined => {
