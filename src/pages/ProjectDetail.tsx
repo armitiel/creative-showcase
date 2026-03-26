@@ -990,7 +990,7 @@ const ProjectDetail = () => {
                           alt={image.alt}
                           className="w-full h-full object-cover cursor-zoom-in"
                           style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
-                          onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
+                          onClick={() => project.slug === 'graffiti' ? mainGallery.openAt(index) : openLightbox(withBaseUrl(image.src), image.alt)}
                         />
                       ) : (
                         <div 
