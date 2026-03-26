@@ -655,7 +655,7 @@ export const projects: Project[] = [
     id: 14,
     slug: 'shadow-tagger',
     title: 'Shadow Tagger',
-    category: 'Game, Art, 3D',
+    category: 'Game, Art',
     thumbnail: '/projects/shadow-tagger/logo.png',
     description: 'Gra platformowa stworzona samodzielnie w Phaser z AI-assisted coding. Kolorowanie murali, ucieczka przed przeciwnikami i gra na czas.',
     fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie — od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
