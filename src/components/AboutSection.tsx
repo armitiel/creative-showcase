@@ -12,6 +12,7 @@ const tools = [
   { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 4 },
   { name: 'Blender', icon: 'blender', color: '#EA7600', bg: '#1A1A1A', level: 3 },
   { name: 'ZBrush', icon: 'zbrush', color: '#FF6600', bg: '#1A1A1A', level: 5 },
+  { name: 'Spine', icon: 'spine', color: '#FF6600', bg: '#1A1A1A', level: 4 },
 ];
 
 export const AboutSection = () => {
