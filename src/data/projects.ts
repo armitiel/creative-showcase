@@ -765,39 +765,6 @@ export const projects: Project[] = [
       description: 'Prezentacja rozgrywki Atomic Cherry',
     },
   },
-  {
-    id: 13,
-    slug: 'graffiti',
-    title: 'Graffiti',
-    subtitle: 'Character Art',
-    category: 'Art',
-    thumbnail: '/projects/graffiti/doctor.jpg',
-    description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
-    fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci, karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
-    year: '2015-2025',
-    tools: ['Spray paint', 'Airbrush'],
-    externalLink: { url: 'https://www.facebook.com/max.oc.crew/', label: 'Mr.Max on Facebook' },
-    images: [
-      { src: '/projects/graffiti/manners.jpg', alt: 'Manners - character mural', caption: 'Manners', noMagnifier: true },
-      { src: '/projects/graffiti/graffi-tea.jpg', alt: 'Graffi Tea - character mural', caption: 'Graffi Tea', noMagnifier: true, objectPosition: 'center 60%' },
-      { src: '/projects/graffiti/max-taste.jpg', alt: 'Max Taste - billboard mural', caption: 'Max Taste', noMagnifier: true, objectPosition: 'center 30%' },
-      { src: '/projects/graffiti/doctor.jpg', alt: 'Doctor character mural', caption: 'Doctor', noMagnifier: true },
-      { src: '/projects/graffiti/truck.jpg', alt: 'Truck mural', caption: 'Truck piece', noMagnifier: true },
-      { src: '/projects/graffiti/architect.jpg', alt: 'Architect character mural', caption: 'Architect', noMagnifier: true },
-      { src: '/projects/graffiti/trash-king.jpg', alt: 'Trash King mural', caption: 'Trash King', noMagnifier: true, objectPosition: 'center 30%' },
-      { src: '/projects/graffiti/mural-1.jpg', alt: 'Indoor character mural', caption: 'Indoor mural', noMagnifier: true },
-    ],
-    strategicSections: [
-      {
-        title: 'Stylizowane postacie',
-        content: 'Każda postać to unikalna karykatura z wyrazistymi proporcjami, dynamicznymi pozami i charakterystycznym stylem. Proces twórczy zaczyna się od szkicu koncepcyjnego, a kończy na wielogodzinnym malowaniu sprayem.',
-      },
-      {
-        title: 'Różnorodne powierzchnie',
-        content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali — każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
-      },
-    ],
-  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
