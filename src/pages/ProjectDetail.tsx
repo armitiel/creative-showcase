@@ -119,8 +119,8 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Logo Concept Section - right after title */}
-      {project.logoConcept && (
+      {/* Logo - right after title (Atomic Cherry) */}
+      {project.logoConcept && project.slug === 'atomic-cherry' && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
