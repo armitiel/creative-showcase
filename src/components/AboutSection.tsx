@@ -6,8 +6,8 @@ import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const tools = [
-  { name: 'Adobe Illustrator', icon: 'Ai', color: '#FF9A00', bg: '#330000', level: 5 },
-  { name: 'Adobe Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
+  { name: 'Illustrator', icon: 'Ai', color: '#FF9A00', bg: '#330000', level: 5 },
+  { name: 'Photoshop', icon: 'Ps', color: '#31A8FF', bg: '#001E36', level: 4 },
   { name: 'After Effects', icon: 'Ae', color: '#9999FF', bg: '#00005B', level: 3 },
   { name: 'Figma', icon: 'figma', color: '#A259FF', bg: '#1E1E1E', level: 4 },
   { name: 'Blender', icon: 'blender', color: '#EA7600', bg: '#1A1A1A', level: 3 },
