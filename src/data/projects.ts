@@ -717,7 +717,7 @@ export const projects: Project[] = [
       },
     ],
     youtubeVideo: {
-      url: 'https://www.youtube.com/watch?v=J9SEVBRJBeY',
+      url: 'https://www.youtube.com/embed/J9SEVBRJBeY',
       title: 'Gameplay',
       description: 'Prezentacja rozgrywki Atomic Cherry',
     },
