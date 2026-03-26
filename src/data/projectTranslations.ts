@@ -568,7 +568,7 @@ export const projectTranslations: ProjectTranslations = {
   },
   'atomic-cherry': {
     pl: {
-      title: 'Atomic Cherry - Slot Machine',
+      title: 'Atomic Cherry',
       description: 'Kompletna oprawa graficzna gry slotowej: animowane symbole, splash screeny i interfejs maszyny.',
       fullDescription: 'Atomic Cherry to gra slotowa typu slot machine z dynamiczną mechaniką i bogatą oprawą wizualną. Projekt obejmował tworzenie wszystkich elementów graficznych gry: animowanych symboli, splash screenów promocyjnych, ekranów bonusowych oraz kompletnego interfejsu maszyny do gry.',
       imageCaptions: {
@@ -596,7 +596,7 @@ export const projectTranslations: ProjectTranslations = {
       logoConceptDescription: 'Logo gry Atomic Cherry łączy klasyczną stylistykę slotów z nowoczesnym, kolorowym designem.',
     },
     en: {
-      title: 'Atomic Cherry - Slot Machine',
+      title: 'Atomic Cherry',
       description: 'Complete visual design for a slot game: animated symbols, splash screens and machine interface.',
       fullDescription: 'Atomic Cherry is a slot machine game with dynamic mechanics and rich visual design. The project included creating all graphic elements: animated symbols, promotional splash screens, bonus screens, and the complete slot machine interface.',
       imageCaptions: {
