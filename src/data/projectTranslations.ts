@@ -628,7 +628,7 @@ export const projectTranslations: ProjectTranslations = {
     pl: {
       title: 'Graffiti',
       description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
-      fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci — karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
+      fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci, karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
       strategicSections: [
         {
           title: 'Stylizowane postacie',
@@ -652,7 +652,7 @@ export const projectTranslations: ProjectTranslations = {
     en: {
       title: 'Graffiti',
       description: 'A long-standing passion for painting stylized characters on walls, vehicles, and billboards using graffiti techniques.',
-      fullDescription: 'For years, my passion has been painting characters using graffiti techniques under the alias Mr.Max. I specialize in stylizing and painting distinctive characters — caricatured, dynamic, and full of expression. Each piece is a unique composition combining cartoon aesthetics with street energy, painted with spray paint on walls, trucks, billboards, and other surfaces.',
+      fullDescription: 'For years, my passion has been painting characters using graffiti techniques under the alias Mr.Max. I specialize in stylizing and painting distinctive characters, caricatured, dynamic, and full of expression. Each piece is a unique composition combining cartoon aesthetics with street energy, painted with spray paint on walls, trucks, billboards, and other surfaces.',
       strategicSections: [
         {
           title: 'Stylized Characters',
