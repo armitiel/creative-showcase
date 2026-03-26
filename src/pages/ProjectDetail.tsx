@@ -682,11 +682,8 @@ const ProjectDetail = () => {
                     <img
                       src={withBaseUrl(img.src)}
                       alt={img.alt}
-                      className={`${project.slug === 'graffiti' ? 'w-full h-[600px] md:h-[750px] object-cover' : 'h-auto'} ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
-                      style={{
-                        ...(img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : {}),
-                        ...(img.objectPosition ? { objectPosition: img.objectPosition } : {}),
-                      }}
+                      className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
+                      style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : undefined}
                     />
                   </div>
                   {img.caption && (
@@ -935,7 +932,7 @@ const ProjectDetail = () => {
                 <ImageWrapper key={index}>
                   <div className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-[#c5ddd9]'}`}>
                     <div 
-                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : image.displayMode === 'laptop' ? 'py-12 px-8' : image.fullHeight ? '' : 'aspect-video'}`}
+                      className={`flex items-center justify-center ${image.backgroundGradient ? '' : image.displayMode === 'laptop' ? 'py-12 px-8' : image.fullHeight ? '' : project.slug === 'graffiti' ? 'h-[600px] md:h-[750px]' : 'aspect-video'}`}
                       style={image.backgroundGradient 
                         ? { background: image.backgroundGradient }
                         : { 
@@ -984,6 +981,7 @@ const ProjectDetail = () => {
                           src={withBaseUrl(image.src)}
                           alt={image.alt}
                           className="w-full h-full object-cover cursor-zoom-in"
+                          style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
                           onClick={() => openLightbox(withBaseUrl(image.src), image.alt)}
                         />
                       ) : (
