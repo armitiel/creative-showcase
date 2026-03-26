@@ -652,7 +652,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 12,
+    id: 14,
     slug: 'shadow-tagger',
     title: 'Shadow Tagger',
     category: 'Game, Art, 3D',
@@ -689,7 +689,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 12,
+    id: 15,
     slug: 'atomic-cherry',
     title: 'Atomic Cherry',
     subtitle: 'Slot Machine',
