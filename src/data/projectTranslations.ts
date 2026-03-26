@@ -270,7 +270,7 @@ export const projectTranslations: ProjectTranslations = {
   'nft-generative-system': {
     pl: {
       title: 'System Generatywny NFT',
-      description: 'Mój pierwszy proces trenowania modelu AI — dobór stylu obrysów, akcentów i detali na zamówienie klienta',
+      description: 'Mój pierwszy proces trenowania modelu AI, dobór stylu obrysów, akcentów i detali na zamówienie klienta',
       fullDescription: 'Był to mój pierwszy proces trenowania własnego modelu AI w Stable Diffusion. Projekt polegał na odpowiednim doborze stylu obrysów, akcentów kolorystycznych i detali graficznych, dostosowanych do wymagań klienta. Dzięki automatyzacji post-produkcji w Photoshopie udało się wygenerować tysiące spójnych stylowo grafik NFT.',
       challenge: 'Wygenerowanie dużej kolekcji unikalnych grafik NFT przy zachowaniu spójności stylistycznej. Każda grafika musiała być wyjątkowa, ale jednocześnie rozpoznawalna jako część tej samej kolekcji.',
       solution: 'Wytrenowałem własne modele AI w Stable Diffusion na specjalnie przygotowanym zbiorze danych. Następnie stworzyłem serię zautomatyzowanych akcji Photoshop do post-produkcji - korekty kolorów, dodawania efektów i finalizacji grafik.',
@@ -280,7 +280,7 @@ export const projectTranslations: ProjectTranslations = {
     },
     en: {
       title: 'NFT Generative System',
-      description: 'My first AI model training process — selecting outline styles, accents and details tailored to client requirements',
+      description: 'My first AI model training process, selecting outline styles, accents and details tailored to client requirements',
       fullDescription: 'This was my first experience training a custom AI model in Stable Diffusion. The project focused on carefully selecting outline styles, color accents, and graphic details tailored to the client\'s specific requirements. With automated post-production in Photoshop, the system generated thousands of stylistically consistent NFT graphics.',
       challenge: 'Generating a large collection of unique NFT graphics while maintaining stylistic consistency. Each graphic had to be unique yet recognizable as part of the same collection.',
       solution: 'I trained custom AI models in Stable Diffusion on a specially prepared dataset. Then I created a series of automated Photoshop actions for post-production - color correction, adding effects, and finalizing graphics.',
@@ -315,7 +315,7 @@ export const projectTranslations: ProjectTranslations = {
           content: 'Projekt demonstruje zdolność do budowy kompletnego systemu marki od fundamentów, bez istniejących szkiców, wytycznych ani architektury informacji. Każda decyzja projektowa była podejmowana w kontekście wpływu na konwersję, zaufanie użytkownika i skalowalność komunikacji. To podejście systemowe, nie dekoracyjne.',
         },
       ],
-      typographyDescription: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
+      typographyDescription: 'System typograficzny HubbleRx opiera się na foncie Gotham, geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       colorsDescription: 'Turkusowa paleta kolorów z białym tłem tworzy świeży, medyczny wygląd budujący zaufanie i komunikujący czystość.',
       heroFollowImageCaptions: {
         0: 'Warianty logo: wersja jasna na turkusowym tle i ciemna na białym tle',
@@ -372,7 +372,7 @@ export const projectTranslations: ProjectTranslations = {
           content: 'This project demonstrates the ability to build a complete brand system from the ground up, without existing sketches, guidelines, or information architecture. Every design decision was made in the context of its impact on conversion, user trust, and communication scalability. This is a systematic approach, not decorative.',
         },
       ],
-      typographyDescription: 'HubbleRx\'s typographic system is built on Gotham — a geometric, modern typeface that combines professional authority with the accessibility of medical communication.',
+      typographyDescription: 'HubbleRx\'s typographic system is built on Gotham, a geometric, modern typeface that combines professional authority with the accessibility of medical communication.',
       colorsDescription: 'A teal color palette with white background creates a fresh, medical look that builds trust and communicates cleanliness.',
       mobileScreensDescription: 'Common elements across all marketing materials, creating a pleasant feel with a touch of modernity.',
       mobileScreensTitle: 'Minimalist Illustrations',
@@ -401,7 +401,7 @@ export const projectTranslations: ProjectTranslations = {
       deviceMockupDescription: 'Presentation of user interaction with the HubbleRx mobile application interface.',
       gifPairCaptions: {
         0: 'Paid advertisement animation',
-        1: 'Paid advertisement animation — partially made in Blender',
+        1: 'Paid advertisement animation, partially made in Blender',
       },
     },
   },
@@ -532,36 +532,36 @@ export const projectTranslations: ProjectTranslations = {
     pl: {
       title: 'Shadow Tagger',
       description: 'Gra platformowa stworzona samodzielnie w Phaser z AI-assisted coding. Kolorowanie murali, ucieczka przed przeciwnikami i gra na czas.',
-      fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie — od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
-      challenge: 'Stworzenie kompletnej gry platformowej jako solo developer — od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
+      fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie, od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
+      challenge: 'Stworzenie kompletnej gry platformowej jako solo developer, od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
       solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
       results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
       strategicSections: [
         { title: 'Tryby gry', content: 'Gra oferuje kilka trybów rozgrywki: kolorowanie murali przez numerki, ucieczka przed przeciwnikami, układanie drabin do trudno dostępnych miejsc oraz gra na czas. Każdy tryb wymaga innego podejścia taktycznego.' },
         { title: 'Postacie 3D', content: 'Wszystkie postacie w grze są modelowane w 3D w Blenderze i animowane, co nadaje grze unikalny cartoon look. Pipeline obejmuje modelowanie, rigging, animację i rendering sprite\'ów do silnika Phaser.' },
-        { title: 'AI-Assisted Development', content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry — od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.' },
+        { title: 'AI-Assisted Development', content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry, od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.' },
       ],
       imageCaptions: {
-        1: 'Rozgrywka platformowa — unikaj przeciwników i maluj murale',
-        2: 'System kolorowania numerków — maluj mural kolor po kolorze',
+        1: 'Rozgrywka platformowa, unikaj przeciwników i maluj murale',
+        2: 'System kolorowania numerków, maluj mural kolor po kolorze',
         3: 'Eksploracja poziomów z drabinami i muralami do odkrycia',
       },
     },
     en: {
       title: 'Shadow Tagger',
       description: 'A platformer game built solo with Phaser and AI-assisted coding. Paint murals, escape enemies and race against time.',
-      fullDescription: 'Shadow Tagger is a platformer game I built entirely on my own — from concept, through 3D graphics and character animation, to coding with AI assistance. The game runs on the Phaser engine and revolves around painting numbers on walls, creating murals, and avoiding enemies. Characters are modeled in 3D and animated, giving the game a unique cartoon look. AI-assisted coding gives me full control over the entire production process.',
-      challenge: 'Creating a complete platformer game as a solo developer — from 3D graphics and character animation to gameplay programming and game mechanics.',
+      fullDescription: 'Shadow Tagger is a platformer game I built entirely on my own, from concept, through 3D graphics and character animation, to coding with AI assistance. The game runs on the Phaser engine and revolves around painting numbers on walls, creating murals, and avoiding enemies. Characters are modeled in 3D and animated, giving the game a unique cartoon look. AI-assisted coding gives me full control over the entire production process.',
+      challenge: 'Creating a complete platformer game as a solo developer, from 3D graphics and character animation to gameplay programming and game mechanics.',
       solution: 'I used Phaser as the game engine, Blender for 3D character modeling and animation, and AI-assisted coding gave me full control over game logic. Combining these tools enabled studio-level solo production.',
       results: 'The game is available online with several gameplay modes, a fully playable product created by one person.',
       strategicSections: [
         { title: 'Game Modes', content: 'The game offers several gameplay modes: painting murals by numbers, escaping enemies, placing ladders to hard-to-reach spots, and time-based challenges. Each mode requires a different tactical approach.' },
         { title: '3D Characters', content: 'All characters in the game are modeled in 3D in Blender and animated, giving the game a unique cartoon look. The pipeline includes modeling, rigging, animation, and sprite rendering for the Phaser engine.' },
-        { title: 'AI-Assisted Development', content: 'I use AI to assist the coding process, which allows me as an artist to have full control over the entire game production — from visual concept to working code. This showcases how AI democratizes game development.' },
+        { title: 'AI-Assisted Development', content: 'I use AI to assist the coding process, which allows me as an artist to have full control over the entire game production, from visual concept to working code. This showcases how AI democratizes game development.' },
       ],
       imageCaptions: {
-        1: 'Platforming gameplay — avoid enemies and paint murals',
-        2: 'Number coloring system — paint the mural color by color',
+        1: 'Platforming gameplay, avoid enemies and paint murals',
+        2: 'Number coloring system, paint the mural color by color',
         3: 'Level exploration with ladders and murals to discover',
       },
     },
@@ -636,7 +636,7 @@ export const projectTranslations: ProjectTranslations = {
         },
         {
           title: 'Różnorodne powierzchnie',
-          content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali — każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
+          content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali, każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
         },
       ],
       imageCaptions: {
@@ -661,7 +661,7 @@ export const projectTranslations: ProjectTranslations = {
         },
         {
           title: 'Diverse Surfaces',
-          content: 'Murals are created on building walls, trucks, billboards, and interior spaces — each surface presents different technical and compositional challenges.',
+          content: 'Murals are created on building walls, trucks, billboards, and interior spaces, each surface presents different technical and compositional challenges.',
         },
       ],
       imageCaptions: {

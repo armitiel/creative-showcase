@@ -161,7 +161,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Różnorodne powierzchnie',
-        content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali — każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
+        content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali, każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
       },
     ],
   },
@@ -260,11 +260,11 @@ export const projects: Project[] = [
     tools: ['Illustrator', 'Photoshop', 'Blender', 'Figma', 'After Effects'],
     theme: 'light',
     challenge: 'Stworzenie brandingu dla platformy medycznej, który jednocześnie komunikuje profesjonalizm i bezpieczeństwo, ale pozostaje przyjazny i dostępny dla szerokiego grona użytkowników.',
-    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
+    solution: 'Zaprojektowałem serię ilustracji w przyjaznym stylu z charakterystycznym turkusowym kolorem marki. Ilustracje przedstawiają proces onboardingu w prosty, zrozumiały sposób. Logo nawiązuje do teleskopu Hubble, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych dla użytkowników.',
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     heroFollowImages: [
-      { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo — wersja jasna na turkusowym tle i ciemna na białym tle' },
-      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu — symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
+      { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo, wersja jasna na turkusowym tle i ciemna na białym tle' },
+      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
       
       { src: '/projects/hubble/box-mockup.webp', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0' },
       { src: '/projects/hubble/box-mockup-zoom.webp', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     ],
     gifPair: [
       { src: '/projects/hubble/ad-animation.gif', alt: 'HubbleRx Reklama', caption: 'Animacja do płatnej reklamy' },
-      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy — częściowo wykonana w Blenderze' },
+      { src: '/projects/hubble/ad-animation-2.gif', alt: 'HubbleRx Reklama 2', caption: 'Animacja do płatnej reklamy, częściowo wykonana w Blenderze' },
     ],
     mobileScreens: {
       title: 'Minimalistyczne ilustracje',
@@ -297,7 +297,7 @@ export const projects: Project[] = [
       alt: 'HubbleRx App Mockup',
     },
     typography: {
-      description: 'System typograficzny HubbleRx opiera się na foncie Gotham — geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
+      description: 'System typograficzny HubbleRx opiera się na foncie Gotham, geometrycznym, nowoczesnym kroju, który łączy profesjonalny charakter z przystępnością komunikacji medycznej.',
       fonts: [
         {
           name: 'Gotham',
@@ -658,19 +658,19 @@ export const projects: Project[] = [
     category: 'Game, Art',
     thumbnail: '/projects/shadow-tagger/logo.webp',
     description: 'Gra platformowa stworzona samodzielnie w Phaser z AI-assisted coding. Kolorowanie murali, ucieczka przed przeciwnikami i gra na czas.',
-    fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie — od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
+    fullDescription: 'Shadow Tagger to gra platformowa, którą stworzyłem samodzielnie, od koncepcji, przez grafikę 3D i animacje postaci, po kodowanie z wykorzystaniem AI. Gra oparta jest na silniku Phaser i polega na kolorowaniu numerków na ścianach, tworzeniu murali oraz unikaniu przeciwników. Postacie są modelowane w 3D i animowane, co nadaje grze unikalny, cartoon look. Dzięki AI-assisted coding mam pełną kontrolę nad całym procesem produkcji.',
     client: 'Projekt własny',
     year: '2026',
     tools: ['Phaser', 'Blender', 'AI Coding', 'Photoshop'],
     theme: 'dark',
     externalLink: { url: 'https://www.shadow-tagger.online', label: 'Zagraj / Play' },
-    challenge: 'Stworzenie kompletnej gry platformowej jako solo developer — od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
+    challenge: 'Stworzenie kompletnej gry platformowej jako solo developer, od grafiki 3D i animacji postaci po programowanie rozgrywki i mechanik gry.',
     solution: 'Wykorzystałem Phaser jako silnik gry, Blender do modelowania i animowania postaci 3D, a AI-assisted coding pozwolił mi na pełną kontrolę nad logiką gry. Połączenie tych narzędzi umożliwiło samodzielną produkcję na poziomie studyjnym.',
     results: 'Gra dostępna online z kilkoma trybami rozgrywki, w pełni grywalny produkt stworzony przez jedną osobę.',
     images: [
       { src: '/projects/shadow-tagger/logo.webp', alt: 'Shadow Tagger Logo', displayMode: 'centered' as const, backgroundColor: '#141414', imageScale: 0.6 },
-      { src: '/projects/shadow-tagger/gameplay-1.webp', alt: 'Shadow Tagger - Gameplay platformowy', caption: 'Rozgrywka platformowa — unikaj przeciwników i maluj murale', noMagnifier: true },
-      { src: '/projects/shadow-tagger/gameplay-2.webp', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków — maluj mural kolor po kolorze', noMagnifier: true },
+      { src: '/projects/shadow-tagger/gameplay-1.webp', alt: 'Shadow Tagger - Gameplay platformowy', caption: 'Rozgrywka platformowa, unikaj przeciwników i maluj murale', noMagnifier: true },
+      { src: '/projects/shadow-tagger/gameplay-2.webp', alt: 'Shadow Tagger - Malowanie muralu', caption: 'System kolorowania numerków, maluj mural kolor po kolorze', noMagnifier: true },
       { src: '/projects/shadow-tagger/gameplay-3.webp', alt: 'Shadow Tagger - Eksploracja', caption: 'Eksploracja poziomów z drabinami i muralami do odkrycia', noMagnifier: true },
     ],
     strategicSections: [
@@ -684,7 +684,7 @@ export const projects: Project[] = [
       },
       {
         title: 'AI-Assisted Development',
-        content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry — od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.',
+        content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry, od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.',
       },
     ],
   },
@@ -738,7 +738,7 @@ export const projects: Project[] = [
     title: 'System Generatywny NFT',
     category: 'Art',
     thumbnail: '/projects/nft-system/cover-card.webp',
-    description: 'Mój pierwszy proces trenowania modelu AI — dobór stylu obrysów, akcentów i detali na zamówienie klienta',
+    description: 'Mój pierwszy proces trenowania modelu AI, dobór stylu obrysów, akcentów i detali na zamówienie klienta',
     fullDescription: 'Był to mój pierwszy proces trenowania własnego modelu AI w Stable Diffusion. Projekt polegał na odpowiednim doborze stylu obrysów, akcentów kolorystycznych i detali graficznych, dostosowanych do wymagań klienta. Dzięki automatyzacji post-produkcji w Photoshopie udało się wygenerować tysiące spójnych stylowo grafik NFT.',
     client: 'Projekt NFT',
     year: '2023',
