@@ -103,11 +103,11 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-0 gap-y-5 sm:gap-5 justify-items-center">
+              <div className="flex flex-wrap justify-between lg:grid lg:grid-cols-6 gap-y-5 lg:gap-5">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
-                    className={`w-full flex flex-col items-center gap-1.5 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    className={`w-[30%] sm:w-auto flex flex-col items-center gap-1.5 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
                     style={{ animationDelay: rightVisible ? `${500 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }}
                     title={tool.name}
                   >
