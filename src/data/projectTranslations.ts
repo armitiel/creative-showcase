@@ -624,6 +624,56 @@ export const projectTranslations: ProjectTranslations = {
       logoConceptDescription: 'The Atomic Cherry logo combines classic slot machine aesthetics with a modern, colorful design.',
     },
   },
+  'graffiti': {
+    pl: {
+      title: 'Graffiti',
+      description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
+      fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci — karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
+      strategicSections: [
+        {
+          title: 'Stylizowane postacie',
+          content: 'Każda postać to unikalna karykatura z wyrazistymi proporcjami, dynamicznymi pozami i charakterystycznym stylem. Proces twórczy zaczyna się od szkicu koncepcyjnego, a kończy na wielogodzinnym malowaniu sprayem.',
+        },
+        {
+          title: 'Różnorodne powierzchnie',
+          content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali — każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
+        },
+      ],
+      imageCaptions: {
+        0: 'Graffi Tea',
+        1: 'Max Taste',
+        2: 'Doctor',
+        3: 'Truck piece',
+        4: 'Architect',
+        5: 'Trash King',
+        6: 'Indoor mural',
+      },
+    },
+    en: {
+      title: 'Graffiti',
+      description: 'A long-standing passion for painting stylized characters on walls, vehicles, and billboards using graffiti techniques.',
+      fullDescription: 'For years, my passion has been painting characters using graffiti techniques. I specialize in stylizing and painting distinctive characters — caricatured, dynamic, and full of expression. Each piece is a unique composition combining cartoon aesthetics with street energy, painted with spray paint on walls, trucks, billboards, and other surfaces.',
+      strategicSections: [
+        {
+          title: 'Stylized Characters',
+          content: 'Each character is a unique caricature with expressive proportions, dynamic poses, and a distinctive style. The creative process starts with a concept sketch and ends with hours of spray painting.',
+        },
+        {
+          title: 'Diverse Surfaces',
+          content: 'Murals are created on building walls, trucks, billboards, and interior spaces — each surface presents different technical and compositional challenges.',
+        },
+      ],
+      imageCaptions: {
+        0: 'Graffi Tea',
+        1: 'Max Taste',
+        2: 'Doctor',
+        3: 'Truck piece',
+        4: 'Architect',
+        5: 'Trash King',
+        6: 'Indoor mural',
+      },
+    },
+  },
 };
 
 export const getProjectTranslation = (slug: string, language: Language): ProjectTranslation | undefined => {
