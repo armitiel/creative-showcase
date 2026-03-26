@@ -167,11 +167,11 @@ const IllustrationSection = ({ category, language, onImageClick }: IllustrationS
               onClick={() => onImageClick(index)}
             >
               <div className="overflow-hidden">
-                <img loading="lazy"
+                <img
+                  loading="lazy"
                   src={withBaseUrl(item.src)}
                   alt={item.alt}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
                 />
               </div>
               {(language === 'pl' ? item.captionPl : item.captionEn) && (
