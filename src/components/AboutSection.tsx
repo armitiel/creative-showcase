@@ -103,16 +103,16 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 sm:px-0">
+              <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-0 gap-y-5 sm:gap-5 justify-items-center">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
-                    className={`w-full flex flex-col items-center gap-2 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
+                    className={`w-full flex flex-col items-center gap-1.5 opacity-0 ${rightVisible ? 'animate-fade-in-right' : ''}`}
                     style={{ animationDelay: rightVisible ? `${500 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }}
                     title={tool.name}
                   >
                     <div
-                       className="w-16 h-16 rounded-2xl flex items-center justify-center text-lg font-black tracking-tight cursor-default border border-white/40 shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-110 hover:shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.12),0_2px_6px_rgba(0,0,0,0.08)] bg-white/50 backdrop-blur-md text-foreground/70"
+                       className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-lg font-black tracking-tight cursor-default border border-white/40 shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-300 hover:scale-110 hover:shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.12),0_2px_6px_rgba(0,0,0,0.08)] bg-white/50 backdrop-blur-md text-foreground/70"
                     >
                       {tool.icon === 'figma' ? (
                         <svg width="18" height="26" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
