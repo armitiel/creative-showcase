@@ -2,21 +2,22 @@ import { useState, useEffect, useCallback } from 'react';
 import { projects } from '@/data/projects';
 import { withBaseUrl } from '@/lib/utils';
 
+const MAX_PRELOAD_WAIT_MS = 2200;
+const IMAGE_TIMEOUT_MS = 1800;
+
 /**
- * Collects only the images visible on the landing page (hero texture is
- * handled by Vite imports, so we only need project thumbnails + avatar).
- * Project-detail images are loaded lazily when the user navigates.
+ * Collect only lightweight above-the-fold images.
+ * Heavy animated GIF thumbnails should not block the initial render.
  */
 function collectCriticalImageUrls(): string[] {
   const urls = new Set<string>();
 
-  // Avatar shown in About section
   urls.add('/avatar.webp');
 
-  // Project thumbnails shown in the grid on the landing page
   for (const project of projects) {
-    if (project.hidden) continue;
-    if (project.thumbnail) urls.add(project.thumbnail);
+    if (project.hidden || !project.thumbnail) continue;
+    if (project.thumbnail.toLowerCase().endsWith('.gif')) continue;
+    urls.add(project.thumbnail);
   }
 
   return Array.from(urls);
@@ -29,34 +30,59 @@ export function useImagePreloader() {
   const preloadImages = useCallback(() => {
     const urls = collectCriticalImageUrls();
     const total = urls.length;
-    let loaded = 0;
+    let settled = 0;
+    let finished = false;
+    const cleanupFns: Array<() => void> = [];
 
-    if (total === 0) {
+    const finish = () => {
+      if (finished) return;
+      finished = true;
       setProgress(100);
       setIsLoaded(true);
-      return;
+      cleanupFns.forEach((cleanup) => cleanup());
+    };
+
+    if (total === 0) {
+      finish();
+      return () => undefined;
     }
 
-    const updateProgress = () => {
-      loaded++;
-      const pct = Math.round((loaded / total) * 100);
-      setProgress(pct);
-      if (loaded >= total) {
-        setIsLoaded(true);
-      }
+    const markSettled = () => {
+      if (finished) return;
+      settled += 1;
+      setProgress(Math.round((settled / total) * 100));
+      if (settled >= total) finish();
     };
+
+    const globalTimeout = window.setTimeout(finish, MAX_PRELOAD_WAIT_MS);
+    cleanupFns.push(() => window.clearTimeout(globalTimeout));
 
     urls.forEach((url) => {
       const img = new Image();
-      img.onload = updateProgress;
-      img.onerror = updateProgress; // count errors too so we don't block
+      let done = false;
+
+      const settleOnce = () => {
+        if (done) return;
+        done = true;
+        img.onload = null;
+        img.onerror = null;
+        window.clearTimeout(imageTimeout);
+        markSettled();
+      };
+
+      const imageTimeout = window.setTimeout(settleOnce, IMAGE_TIMEOUT_MS);
+      img.onload = settleOnce;
+      img.onerror = settleOnce;
       img.src = withBaseUrl(url);
     });
+
+    return () => {
+      finished = true;
+      cleanupFns.forEach((cleanup) => cleanup());
+    };
   }, []);
 
-  useEffect(() => {
-    preloadImages();
-  }, [preloadImages]);
+  useEffect(() => preloadImages(), [preloadImages]);
 
   return { progress, isLoaded };
 }
