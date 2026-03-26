@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 
 /** Hide the inline HTML splash screen (defined in index.html) */
 function dismissHtmlSplash() {

@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -167,10 +167,10 @@ const ProjectDetail = () => {
             <div className="max-w-3xl mx-auto">
               <div 
                 className="rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a] shadow-2xl cursor-zoom-in"
-                onClick={() => openLightbox(withBaseUrl('/projects/nft-system/neon-rebel-cover.jpg'), 'Neon Rebel - Cover Art')}
+                onClick={() => openLightbox(withBaseUrl('/projects/nft-system/neon-rebel-cover.webp'), 'Neon Rebel - Cover Art')}
               >
                 <img
-                  src={withBaseUrl('/projects/nft-system/neon-rebel-cover.jpg')}
+                  src={withBaseUrl('/projects/nft-system/neon-rebel-cover.webp')}
                   alt="Neon Rebel - Cover Art"
                   className="w-full h-auto object-cover"
                 />
@@ -292,7 +292,7 @@ const ProjectDetail = () => {
           {/* Background image for Olympus Defence */}
           {project.slug === 'olympus-defence' && (
             <img
-              src={withBaseUrl('/projects/olympus-defence/bckg2.png')}
+              src={withBaseUrl('/projects/olympus-defence/bckg2.webp')}
               alt=""
               className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
             />
@@ -791,7 +791,7 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto">
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
                 <img
-                  src={withBaseUrl('/projects/portal/mobile-mockup.png')}
+                  src={withBaseUrl('/projects/portal/mobile-mockup.webp')}
                   alt="Portal Mobile App Mockup"
                   className="w-full h-auto object-cover"
                 />
@@ -808,14 +808,14 @@ const ProjectDetail = () => {
             <div className="max-w-5xl mx-auto space-y-4">
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
                 <img
-                  src={withBaseUrl('/projects/portal/desktop-dashboard-1.png')}
+                  src={withBaseUrl('/projects/portal/desktop-dashboard-1.webp')}
                   alt="Portal Dashboard - Ad Manager"
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div className={`rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`}>
                 <img
-                  src={withBaseUrl('/projects/portal/desktop-dashboard-2.png')}
+                  src={withBaseUrl('/projects/portal/desktop-dashboard-2.webp')}
                   alt="Portal Dashboard - Analytics Overview"
                   className="w-full h-auto object-cover"
                 />

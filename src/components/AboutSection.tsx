@@ -42,7 +42,7 @@ export const AboutSection = () => {
           >
             <div className="flex justify-center md:justify-start">
               <img 
-                src={withBaseUrl('/avatar.png')} 
+                src={withBaseUrl('/avatar.webp')} 
                 alt="Avatar" 
                 className="w-full rounded-3xl md:max-w-[280px] lg:max-w-sm"
               />

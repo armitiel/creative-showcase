@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import brandingMouse from '@/assets/branding-mouse.png';
+import brandingMouse from '@/assets/branding-mouse.webp';
 
 export const BrandingBanner = () => {
   const ref = useRef<HTMLDivElement>(null);
