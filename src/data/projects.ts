@@ -745,6 +745,7 @@ export const projects: Project[] = [
     tools: ['Spray paint', 'Airbrush'],
     externalLink: { url: 'https://www.facebook.com/max.oc.crew/', label: 'Mr.Max on Facebook' },
     images: [
+      { src: '/projects/graffiti/manners.jpg', alt: 'Manners - character mural', caption: 'Manners', noMagnifier: true },
       { src: '/projects/graffiti/graffi-tea.jpg', alt: 'Graffi Tea - character mural', caption: 'Graffi Tea', noMagnifier: true, objectPosition: 'center 60%' },
       { src: '/projects/graffiti/max-taste.jpg', alt: 'Max Taste - billboard mural', caption: 'Max Taste', noMagnifier: true, objectPosition: 'center 30%' },
       { src: '/projects/graffiti/doctor.jpg', alt: 'Doctor character mural', caption: 'Doctor', noMagnifier: true },
