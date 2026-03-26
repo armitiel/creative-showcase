@@ -815,7 +815,7 @@ const ProjectDetail = () => {
                 {project.gifPair.map((gif, index) => (
                   <div 
                     key={index}
-                    className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
+                    className={`rounded-2xl overflow-hidden border flex flex-col ${isDark ? 'bg-[#1a1a1a] border-white/10' : project.slug === 'atomic-cherry' ? 'bg-white border-border/30' : 'bg-[#d0e8e4] border-[#c5ddd9]'}`}
                   >
                     <div className="aspect-square flex items-center justify-center p-4">
                       <img
