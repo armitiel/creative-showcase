@@ -689,7 +689,8 @@ export const projects: Project[] = [
   {
     id: 12,
     slug: 'atomic-cherry',
-    title: 'Atomic Cherry - Slot Machine',
+    title: 'Atomic Cherry',
+    subtitle: 'Slot Machine',
     category: 'Game, Art',
     thumbnail: '/projects/atomic-cherry/splash.png',
     description: 'Kompletna oprawa graficzna gry slotowej: animowane symbole, splash screeny i interfejs maszyny.',
