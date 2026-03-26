@@ -9,6 +9,7 @@ export interface ProjectImage {
   gridLayout?: '2x2';
   noMagnifier?: boolean;
   fullHeight?: boolean;
+  objectPosition?: string;
 }
 
 export interface GridImageGroup {
