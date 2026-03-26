@@ -161,7 +161,7 @@ export const translations: Record<Language, TranslationsType> = {
       education: 'Southampton Solent University, Middlesex London University',
       skillsTitle: 'Umiejętności',
       toolsTitle: 'Narzędzia',
-      skills: ['Branding', 'Grafika 3D', 'Ilustracje', 'Animacje', 'UI/UX Design', 'AI & Automatyzacja', 'Art'],
+      skills: ['Branding', 'Grafika 3D', 'Ilustracje', 'Animacje', 'UI/UX Design', 'AI & Automatyzacja', 'Sztuka'],
     },
     contact: {
       title: 'Kontakt',
