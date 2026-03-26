@@ -9,6 +9,7 @@ export interface ProjectImage {
   gridLayout?: '2x2';
   noMagnifier?: boolean;
   fullHeight?: boolean;
+  objectPosition?: string;
 }
 
 export interface GridImageGroup {
@@ -743,12 +744,12 @@ export const projects: Project[] = [
     year: '2015-2025',
     tools: ['Spray paint', 'Airbrush'],
     images: [
-      { src: '/projects/graffiti/graffi-tea.jpg', alt: 'Graffi Tea - character mural', caption: 'Graffi Tea', noMagnifier: true },
-      { src: '/projects/graffiti/max-taste.jpg', alt: 'Max Taste - billboard mural', caption: 'Max Taste', noMagnifier: true },
+      { src: '/projects/graffiti/graffi-tea.jpg', alt: 'Graffi Tea - character mural', caption: 'Graffi Tea', noMagnifier: true, objectPosition: 'center 60%' },
+      { src: '/projects/graffiti/max-taste.jpg', alt: 'Max Taste - billboard mural', caption: 'Max Taste', noMagnifier: true, objectPosition: 'center 30%' },
       { src: '/projects/graffiti/doctor.jpg', alt: 'Doctor character mural', caption: 'Doctor', noMagnifier: true },
       { src: '/projects/graffiti/truck.jpg', alt: 'Truck mural', caption: 'Truck piece', noMagnifier: true },
       { src: '/projects/graffiti/architect.jpg', alt: 'Architect character mural', caption: 'Architect', noMagnifier: true },
-      { src: '/projects/graffiti/trash-king.jpg', alt: 'Trash King mural', caption: 'Trash King', noMagnifier: true },
+      { src: '/projects/graffiti/trash-king.jpg', alt: 'Trash King mural', caption: 'Trash King', noMagnifier: true, objectPosition: 'center 30%' },
       { src: '/projects/graffiti/mural-1.jpg', alt: 'Indoor character mural', caption: 'Indoor mural', noMagnifier: true },
     ],
     strategicSections: [
