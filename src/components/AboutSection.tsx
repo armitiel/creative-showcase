@@ -102,7 +102,7 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="grid grid-cols-3 lg:grid-cols-6 gap-5 justify-items-center">
+              <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 justify-items-center px-2 sm:px-0">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
