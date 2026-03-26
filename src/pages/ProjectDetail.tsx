@@ -119,7 +119,22 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Hero Animation (GIF) - if available */}
+      {/* Logo Concept Section - right after title */}
+      {project.logoConcept && (
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <img 
+                src={withBaseUrl(project.logoConcept.image)} 
+                alt={project.logoConcept.alt}
+                className="w-full max-w-md mx-auto h-auto"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
+
       {project.heroAnimation && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
