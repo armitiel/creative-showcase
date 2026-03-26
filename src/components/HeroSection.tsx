@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import heroTexture from '@/assets/hero-texture.png';
+import heroTexture from '@/assets/hero-texture.webp';
 import { TVNoiseEffect } from './TVNoiseEffect';
 import { useParallax } from '@/hooks/useParallax';
 import { useLanguage } from '@/i18n/LanguageContext';

@@ -11,7 +11,7 @@ function collectCriticalImageUrls(): string[] {
   const urls = new Set<string>();
 
   // Avatar shown in About section
-  urls.add('/avatar.png');
+  urls.add('/avatar.webp');
 
   // Project thumbnails shown in the grid on the landing page
   for (const project of projects) {
