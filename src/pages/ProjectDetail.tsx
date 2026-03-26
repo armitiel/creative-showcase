@@ -1161,6 +1161,20 @@ const ProjectDetail = () => {
         </div>
       </footer>
 
+      {/* Lightbox — main images gallery (graffiti etc.) */}
+      <ImageLightbox
+        src={mainGallery.currentImage?.src || ''}
+        alt={mainGallery.currentImage?.alt || ''}
+        isOpen={mainGallery.isOpen}
+        onClose={mainGallery.close}
+        onPrev={mainGallery.prev}
+        onNext={mainGallery.next}
+        hasPrev={mainGallery.hasPrev}
+        hasNext={mainGallery.hasNext}
+        prevSrc={mainGallery.prevImage?.src}
+        nextSrc={mainGallery.nextImage?.src}
+      />
+
       {/* Lightbox — basic (non-gallery images) */}
       <ImageLightbox
         src={lightboxImage?.src || ''}
