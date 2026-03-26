@@ -134,26 +134,24 @@ export const SurveyPopup = ({ ready = true }: SurveyPopupProps) => {
             <div className="relative bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden w-full max-w-md pointer-events-auto">
               {/* Decorative elements */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
-              
-              {/* Close button */}
-              <button
-                onClick={handleDismiss}
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900"
-              >
-                <X className="w-5 h-5" />
-              </button>
 
               {!submitted ? (
-                <div className="p-6 sm:p-8">
-                  {/* Header */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2.5 rounded-xl bg-gray-900 text-white">
+                <div className="p-5 sm:p-8">
+                  {/* Header with close button */}
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="p-2.5 rounded-xl bg-gray-900 text-white shrink-0">
                       <MessageSquare className="w-5 h-5" />
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{t.title}</h3>
-                      <p className="text-sm text-gray-500">{t.subtitle}</p>
+                    <div className="flex-1 min-w-0 pr-8">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900">{t.title}</h3>
+                      <p className="text-xs sm:text-sm text-gray-500">{t.subtitle}</p>
                     </div>
+                    <button
+                      onClick={handleDismiss}
+                      className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900 shrink-0"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
                   </div>
 
                   {/* Rating */}
