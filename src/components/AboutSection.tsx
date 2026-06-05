@@ -103,7 +103,7 @@ export const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.about.toolsTitle}</h3>
-              <div className="flex flex-wrap justify-between lg:grid lg:grid-cols-6 gap-y-5 lg:gap-5">
+              <div className="flex flex-wrap justify-between lg:grid lg:grid-cols-7 gap-y-5 lg:gap-3">
                 {tools.map((tool, index) => (
                   <div
                     key={tool.name}
