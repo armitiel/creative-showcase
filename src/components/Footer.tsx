@@ -4,24 +4,17 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative px-4 md:px-8 pb-4">
-      <div className="relative rounded-xl bg-card text-card-foreground overflow-hidden py-4 px-4 md:px-8">
-        <div className="container mx-auto relative z-10">
-          <div className="flex flex-col items-start justify-center gap-4 text-left">
-            <p className="text-card-foreground/60 text-sm">
-              © {new Date().getFullYear()} Amitiel Angelisme.<br className="md:hidden" /> {t.footer.rights}
-            </p>
+    <footer className="footer">
+      <div className="wrap">
+        <div className="footer-grid">
+          <div className="footer-big">
+            Amitiel<span className="dot">.</span>
           </div>
-        </div>
-
-        {/* Aurora glow emerging from dark space */}
-        <div className="absolute bottom-0 left-0 w-full h-[60px] pointer-events-none rounded-b-xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,4%)] via-[hsl(220,20%,4%)]/80 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[hsl(210,100%,50%)] to-transparent opacity-90 animate-[aurora-pulse_3s_ease-in-out_infinite]" />
-          <div className="absolute bottom-0 left-0 w-full h-[25px] bg-gradient-to-t from-[hsl(210,100%,50%)]/25 to-transparent blur-[10px] animate-[aurora-pulse_3s_ease-in-out_infinite]" />
-          <div className="absolute bottom-0 left-[5%] w-[35%] h-[35px] bg-gradient-to-t from-[hsl(200,100%,60%)]/20 to-transparent blur-[14px] animate-[aurora-shift_5s_ease-in-out_infinite]" />
-          <div className="absolute bottom-0 right-[10%] w-[30%] h-[30px] bg-gradient-to-t from-[hsl(220,100%,55%)]/18 to-transparent blur-[12px] animate-[aurora-shift_4s_ease-in-out_infinite_reverse]" />
-          <div className="absolute bottom-0 left-[20%] w-[60%] h-[40px] bg-gradient-to-t from-[hsl(215,100%,50%)]/10 to-transparent blur-[20px] animate-[aurora-pulse_4s_ease-in-out_infinite]" />
+          <div className="footer-meta">
+            <div>© {new Date().getFullYear()} Amitiel Angelisme</div>
+            <div>{t.footer.rights}</div>
+            <div>{t.footer.built}</div>
+          </div>
         </div>
       </div>
     </footer>

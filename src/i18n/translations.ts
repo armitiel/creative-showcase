@@ -7,54 +7,52 @@ interface ServiceItem {
 
 interface TranslationsType {
   nav: {
-    home: string;
-    projects: string;
-    services: string;
+    work: string;
     about: string;
+    services: string;
     contact: string;
+    cv: string;
     illustrations: string;
   };
   hero: {
-    title: string;
-    name: string;
-    role: string;
-    scroll: string;
-    specializations: string[];
+    kicker: string;
+    lead: string;
+    cta: string;
+    featured: string;
   };
-  projects: {
+  work: {
+    kicker: string;
     title: string;
-    titleHighlight: string;
-    subtitle: string;
-    viewProject: string;
+    all: string;
     categories: {
-      all: string;
       branding: string;
       uiux: string;
       threeD: string;
+      game: string;
       art: string;
       motion: string;
     };
   };
-  services: {
+  about: {
+    kicker: string;
     title: string;
-    titleHighlight: string;
-    subtitle: string;
+    bio1: string;
+    bio2: string;
+    location: string;
+    eduTitle: string;
+    edu1: string;
+    edu2: string;
+    toolsTitle: string;
+  };
+  services: {
+    kicker: string;
+    title: string;
     items: ServiceItem[];
   };
-  about: {
-    title: string;
-    titleHighlight: string;
-    description: string;
-    location: string;
-    experience: string;
-    education: string;
-    skillsTitle: string;
-    toolsTitle: string;
-    skills: string[];
-  };
   contact: {
+    kicker: string;
     title: string;
-    subtitle: string;
+    lead: string;
     emailLabel: string;
     phoneLabel: string;
     locationLabel: string;
@@ -68,9 +66,7 @@ interface TranslationsType {
   };
   footer: {
     rights: string;
-    madeWith: string;
-    inPoland: string;
-    visits: string;
+    built: string;
   };
   projectDetail: {
     backToPortfolio: string;
@@ -78,237 +74,254 @@ interface TranslationsType {
     client: string;
     personalProject: string;
     year: string;
+    category: string;
     tools: string;
     challenge: string;
+    approach: string;
     solution: string;
-    typography: string;
     brandColors: string;
-    mobileApp: string;
-    verificationDevice: string;
-    generatedGraphics: string;
     realization: string;
+    result: string;
+    gallery: string;
+    typography: string;
+    colors: string;
+    video: string;
+    next: string;
+  };
+  illustrations: {
+    kicker: string;
+    title: string;
+    lead: string;
   };
 }
 
 export const translations: Record<Language, TranslationsType> = {
   pl: {
     nav: {
-      home: 'Home',
-      projects: 'Projekty',
-      services: 'Usługi',
+      work: 'Prace',
       about: 'O mnie',
+      services: 'Usługi',
       contact: 'Kontakt',
+      cv: 'CV',
       illustrations: 'Ilustracje',
     },
     hero: {
-      title: 'PORTFOLIO',
-      name: 'Amitiel Angelisme',
-      role: 'Senior Graphic Designer',
-      scroll: 'Scroll',
-      specializations: ['Branding', 'Modelowanie 3D', 'Web & App', 'Sztuka', 'Motion Design'],
+      kicker: 'Senior Graphic Designer — Branding · 3D · UI',
+      lead: 'Buduję systemy wizualne, które wytrzymują kontakt z produkcją — od idei przez 3D po wdrożenie. Marka, interfejs i ruch traktowane jako jeden język.',
+      cta: 'Zobacz prace',
+      featured: 'Wyróżniony projekt',
     },
-    projects: {
-      title: 'Moje',
-      titleHighlight: 'Projekty',
-      subtitle: 'Wybrane realizacje z ostatnich lat. Każdy projekt to unikalna historia i wyzwanie.',
-      viewProject: 'Zobacz projekt',
+    work: {
+      kicker: 'Wybrane prace',
+      title: 'Projekty',
+      all: 'Wszystko',
       categories: {
-        all: 'Wszystkie',
         branding: 'Branding',
         uiux: 'UI/UX',
         threeD: '3D',
-        art: 'Art',
+        game: 'Gry',
+        art: 'Sztuka',
         motion: 'Motion',
       },
     },
+    about: {
+      kicker: 'O mnie',
+      title: 'Projektant od marki, 3D i interfejsu — w jednej osobie.',
+      bio1: 'Multidyscyplinarny twórca z praktycznym, produkcyjnym podejściem. Prowadzę projekty od pierwszego szkicu po finalne wdrożenie, łącząc myślenie wizualne z myśleniem funkcjonalnym.',
+      bio2: 'Pracuję na styku brandingu, 3D i UI — i świadomie używam nowych technologii, w tym narzędzi AI w sprawdzonych procesach, żeby pracować szybciej i mądrzej.',
+      location: 'Warszawa, Polska',
+      eduTitle: 'Edukacja',
+      edu1: 'Southampton Solent University',
+      edu2: 'Middlesex University London',
+      toolsTitle: 'Narzędzia',
+    },
     services: {
-      title: 'Moje',
-      titleHighlight: 'Usługi',
-      subtitle: 'Oferuję szeroki zakres usług graficznych dopasowanych pod dany projekt.',
+      kicker: 'Co robię',
+      title: 'Usługi',
       items: [
         {
-          title: 'Identyfikacja Wizualna',
-          description: 'Kompleksowa identyfikacja wizualna: logo, kolory, typografia i wszystkie elementy budujące spójny wizerunek marki.',
+          title: 'Tożsamość wizualna',
+          description: 'Kompletny system marki: logo, kolory, typografia i zasady, które trzymają się razem w każdej skali.',
         },
         {
           title: 'Modelowanie 3D',
-          description: 'Tworzenie realistycznych wizualizacji 3D produktów, wnętrz i obiektów architektonicznych. Modele game-ready z mapami tekstur, UV i optymalizacją pod silniki gier.',
+          description: 'Realistyczne wizualizacje produktów, wnętrz i obiektów — z myślą o produkcji i silnikach gier.',
         },
         {
-          title: 'Strony i Aplikacje',
-          description: 'Projektowanie stron internetowych i aplikacji mobilnych z naciskiem na UX/UI i nowoczesną estetykę.',
+          title: 'Strony i aplikacje',
+          description: 'Projektowanie interfejsów z naciskiem na UX i nowoczesną estetykę — od mobile po desktop.',
         },
         {
-          title: 'Ilustracje i Art',
-          description: 'Unikalne ilustracje, grafiki koncepcyjne i asety artystyczne do gier, aplikacji i materiałów marketingowych.',
+          title: 'Ilustracja i concept art',
+          description: 'Unikalne ilustracje i assety do gier, aplikacji i materiałów marketingowych.',
         },
         {
-          title: 'AI & Kod',
-          description: 'Tworzenie rozwiązań z wykorzystaniem narzędzi AI w sprawdzonym workflow – automatyzacja, prototypowanie i integracje.',
+          title: 'AI w procesie',
+          description: 'Narzędzia AI w sprawdzonych procesach — automatyzacja, prototypowanie i integracje.',
         },
         {
-          title: 'Animacje',
-          description: 'Animuję w Spine i Blender, tworzę efekty wizualne i motion graphics. Rozwijam się również w kierunku kompozycji video z wykorzystaniem narzędzi AI.',
+          title: 'Animacja i motion',
+          description: 'Animacja w Spine i Blenderze, efekty wizualne i grafika ruchoma.',
         },
       ],
     },
-    about: {
-      title: 'O',
-      titleHighlight: 'mnie',
-      description: 'Multidyscyplinarny kreator z praktycznym podejściem. Tworzę interaktywne projekty ze zrozumieniem całego procesu produkcji, od pomysłu po finalną implementację. Łączę sztukę z funkcjonalnym myśleniem, wykorzystując <highlight>nowe technologie</highlight> do szybszej i efektywniejszej pracy.',
-      location: 'Warszawa, Polska',
-      experience: '15+ lat doświadczenia',
-      education: 'Southampton Solent University, Middlesex London University',
-      skillsTitle: 'Umiejętności',
-      toolsTitle: 'Narzędzia',
-      skills: ['Branding', 'Grafika 3D', 'Ilustracje', 'Animacje', 'UI/UX Design', 'AI & Automatyzacja', 'Sztuka'],
-    },
     contact: {
-      title: 'Kontakt',
-      subtitle: 'Zapraszam do rozmowy',
-      emailLabel: 'Email',
+      kicker: 'Kontakt',
+      title: 'Zbudujmy coś, co wygląda na przemyślane.',
+      lead: 'Otwarty na etat i ciekawe współprace. Napisz — odpowiadam szybko.',
+      emailLabel: 'E-mail',
       phoneLabel: 'Telefon',
       locationLabel: 'Lokalizacja',
       location: 'Warszawa, Polska',
       namePlaceholder: 'Twoje imię',
-      emailPlaceholder: 'Twój email',
-      messagePlaceholder: 'Twoja wiadomość...',
+      emailPlaceholder: 'Twój e-mail',
+      messagePlaceholder: 'Wiadomość…',
       send: 'Wyślij wiadomość',
       successTitle: 'Wiadomość wysłana!',
       successDescription: 'Dziękuję za kontakt. Odpowiem najszybciej jak to możliwe.',
     },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone.',
-      madeWith: 'Zaprojektowane z',
-      inPoland: 'w Polsce',
-      visits: 'Odwiedziny',
+      built: 'Projekt i kod — Amitiel Angelisme',
     },
     projectDetail: {
-      backToPortfolio: 'Powrót do portfolio',
-      notFound: 'Projekt nie znaleziony',
+      backToPortfolio: 'Wszystkie prace',
+      notFound: 'Nie znaleziono projektu',
       client: 'Klient',
-      personalProject: 'Projekt osobisty',
+      personalProject: 'Projekt własny',
       year: 'Rok',
+      category: 'Kategoria',
       tools: 'Narzędzia',
       challenge: 'Wyzwanie',
+      approach: 'Podejście',
       solution: 'Rozwiązanie',
-      typography: 'Typografia',
       brandColors: 'Kolory marki',
-      mobileApp: 'Aplikacja mobilna',
-      verificationDevice: 'Urządzenie weryfikacyjne',
-      generatedGraphics: 'Wygenerowane grafiki',
-      realization: 'Realizacja projektu',
+      realization: 'Realizacja',
+      result: 'Efekt',
+      gallery: 'Galeria',
+      typography: 'Typografia',
+      colors: 'Kolory',
+      video: 'Wideo',
+      next: 'Następny projekt',
+    },
+    illustrations: {
+      kicker: 'Ilustracje',
+      title: 'Ilustracje',
+      lead: 'Grafika wektorowa, stylizowane ilustracje i umiejętność pracy w różnych stylach, od cartoon po realistyczne.',
     },
   },
   en: {
     nav: {
-      home: 'Home',
-      projects: 'Projects',
-      services: 'Services',
+      work: 'Work',
       about: 'About',
+      services: 'Services',
       contact: 'Contact',
+      cv: 'CV',
       illustrations: 'Illustrations',
     },
     hero: {
-      title: 'PORTFOLIO',
-      name: 'Amitiel Angelisme',
-      role: 'Senior Graphic Designer',
-      scroll: 'Scroll',
-      specializations: ['Branding', '3D Modeling', 'Web & App', 'Art', 'Motion Design'],
+      kicker: 'Senior Graphic Designer — Branding · 3D · UI',
+      lead: 'I build visual systems that survive contact with production — from idea through 3D to launch. Brand, interface and motion treated as one language.',
+      cta: 'See the work',
+      featured: 'Featured project',
     },
-    projects: {
-      title: 'My',
-      titleHighlight: 'Projects',
-      subtitle: 'Selected works from recent years. Each project is a unique story and challenge.',
-      viewProject: 'View project',
+    work: {
+      kicker: 'Selected work',
+      title: 'Projects',
+      all: 'All',
       categories: {
-        all: 'All',
         branding: 'Branding',
         uiux: 'UI/UX',
         threeD: '3D',
+        game: 'Game',
         art: 'Art',
         motion: 'Motion',
       },
     },
+    about: {
+      kicker: 'About',
+      title: 'A designer of brand, 3D and interface — in one person.',
+      bio1: 'A multidisciplinary creative with a hands-on, production-first approach. I run projects from the first sketch to final delivery, combining visual thinking with functional thinking.',
+      bio2: 'I work at the intersection of branding, 3D and UI — and I deliberately use new technology, including AI tools inside proven workflows, to work faster and smarter.',
+      location: 'Warsaw, Poland',
+      eduTitle: 'Education',
+      edu1: 'Southampton Solent University',
+      edu2: 'Middlesex University London',
+      toolsTitle: 'Toolkit',
+    },
     services: {
-      title: 'My',
-      titleHighlight: 'Services',
-      subtitle: 'I offer a wide range of graphic services tailored to your needs.',
+      kicker: 'What I do',
+      title: 'Services',
       items: [
         {
           title: 'Visual Identity',
-          description: 'Comprehensive visual identity: logo, colors, typography and all elements building a cohesive brand image.',
+          description: 'A complete brand system: logo, colours, type and rules that hold together at any scale.',
         },
         {
           title: '3D Modeling',
-          description: 'Creating realistic 3D visualizations of products, interiors and architectural objects. Game-ready models with texture maps, UV mapping and optimization for game engines.',
+          description: 'Realistic product, interior and object visualizations — built with production and game engines in mind.',
         },
         {
           title: 'Websites & Apps',
-          description: 'Designing websites and mobile apps with emphasis on UX/UI and modern aesthetics.',
+          description: 'Interface design with a focus on UX and modern aesthetics — from mobile to desktop.',
         },
         {
-          title: 'Illustrations',
-          description: 'Unique illustrations, concept art and artistic assets for games, apps and marketing materials.',
+          title: 'Illustration & Concept Art',
+          description: 'Unique illustrations and assets for games, apps and marketing materials.',
         },
         {
-          title: 'AI & Code',
-          description: 'Building solutions using AI tools in proven workflows – automation, prototyping and integrations.',
+          title: 'AI in the Workflow',
+          description: 'AI tools inside proven workflows — automation, prototyping and integrations.',
         },
         {
-          title: 'Animations',
-          description: 'I animate in Spine and Blender, creating visual effects and motion graphics. Also expanding into AI-powered video composition.',
+          title: 'Animation & Motion',
+          description: 'Animation in Spine and Blender, visual effects and motion graphics.',
         },
       ],
     },
-    about: {
-      title: 'About',
-      titleHighlight: 'me',
-      description: 'Multidisciplinary creative with a fresh, hands-on approach. Creating interactive projects with a strong understanding of production, from idea to final implementation. Combining art with functional thinking, while using <highlight>new technologies</highlight> to work faster and more efficiently.',
-      location: 'Warsaw, Poland',
-      experience: '15+ years of experience',
-      education: 'Southampton Solent University, Middlesex London University',
-      skillsTitle: 'Skills',
-      toolsTitle: 'Tools',
-      skills: ['Branding', '3D Graphics', 'Illustrations', 'Animations', 'UI/UX Design', 'AI & Automation', 'Art'],
-    },
     contact: {
-      title: 'Contact',
-      subtitle: 'Have a project in mind? Write to me!',
+      kicker: 'Contact',
+      title: "Let's build something that looks considered.",
+      lead: 'Open to full-time roles and interesting collaborations. Write — I reply fast.',
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       locationLabel: 'Location',
       location: 'Warsaw, Poland',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
-      messagePlaceholder: 'Your message...',
+      messagePlaceholder: 'Your message…',
       send: 'Send message',
       successTitle: 'Message sent!',
-      successDescription: 'Thank you for reaching out. I will respond as soon as possible.',
+      successDescription: 'Thank you for reaching out. I will reply as soon as possible.',
     },
     footer: {
       rights: 'All rights reserved.',
-      madeWith: 'Designed with',
-      inPoland: 'in Poland',
-      visits: 'Visits',
+      built: 'Designed & built by Amitiel Angelisme',
     },
     projectDetail: {
-      backToPortfolio: 'Back to portfolio',
+      backToPortfolio: 'All work',
       notFound: 'Project not found',
       client: 'Client',
       personalProject: 'Personal project',
       year: 'Year',
+      category: 'Category',
       tools: 'Tools',
       challenge: 'Challenge',
+      approach: 'Approach',
       solution: 'Solution',
-      typography: 'Typography',
       brandColors: 'Brand Colors',
-      mobileApp: 'Mobile App',
-      verificationDevice: 'Verification Device',
-      generatedGraphics: 'Generated Graphics',
-      realization: 'Project Realization',
+      realization: 'Realization',
+      result: 'Result',
+      gallery: 'Gallery',
+      typography: 'Typography',
+      colors: 'Colors',
+      video: 'Video',
+      next: 'Next project',
+    },
+    illustrations: {
+      kicker: 'Illustrations',
+      title: 'Illustrations',
+      lead: 'Vector graphics, stylized illustrations and the ability to work in various styles, from cartoon to realistic.',
     },
   },
 };
-
-export type Translations = typeof translations.pl;

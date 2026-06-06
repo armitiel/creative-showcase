@@ -1,121 +1,78 @@
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { Reveal } from '@/components/Reveal';
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
   const { t } = useLanguage();
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t.contact.successTitle, {
-      description: t.contact.successDescription,
-    });
+    const subject = encodeURIComponent(`Portfolio — ${formData.name}`);
+    const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name} (${formData.email})`);
+    window.location.href = `mailto:armitiel@gmail.com?subject=${subject}&body=${body}`;
+    toast.success(t.contact.successTitle, { description: t.contact.successDescription });
     setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20">
-      <div className="container mx-auto px-4 md:px-8">
-        <div
-          ref={contentRef}
-          className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto"
-        >
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <div
-                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
-                style={contentVisible ? { animationDelay: '150ms', animationFillMode: 'both' } : undefined}
-              >
-                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
-                  <Mail className="w-5 h-5 text-foreground/70" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">{t.contact.emailLabel}</p>
-                  <p className="font-medium">armitiel@gmail.com</p>
-                </div>
+    <section className="sec sec-alt" id="contact">
+      <div className="wrap">
+        <Reveal className="section-head">
+          <div>
+            <div className="kicker">{t.contact.kicker}</div>
+          </div>
+          <div className="section-num">/ 04</div>
+        </Reveal>
+        <div className="contact-grid">
+          <Reveal>
+            <h2 className="contact-title">{t.contact.title}</h2>
+            <p className="contact-lead">{t.contact.lead}</p>
+            <div className="contact-rows">
+              <div className="contact-row">
+                <span className="lbl">{t.contact.emailLabel}</span>
+                <a className="val" href="mailto:armitiel@gmail.com">
+                  armitiel@gmail.com
+                </a>
               </div>
-
-              <div
-                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
-                style={contentVisible ? { animationDelay: '300ms', animationFillMode: 'both' } : undefined}
-              >
-                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
-                  <Phone className="w-5 h-5 text-foreground/70" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">{t.contact.phoneLabel}</p>
-                  <p className="font-medium">+48 577 237 417</p>
-                </div>
+              <div className="contact-row">
+                <span className="lbl">{t.contact.phoneLabel}</span>
+                <a className="val" href="tel:+48577237417">
+                  +48 577 237 417
+                </a>
               </div>
-
-              <div
-                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
-                style={contentVisible ? { animationDelay: '450ms', animationFillMode: 'both' } : undefined}
-              >
-                <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
-                  <MapPin className="w-5 h-5 text-foreground/70" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">{t.contact.locationLabel}</p>
-                  <p className="font-medium">{t.contact.location}</p>
-                </div>
+              <div className="contact-row">
+                <span className="lbl">{t.contact.locationLabel}</span>
+                <span className="val">{t.contact.location}</span>
               </div>
             </div>
-
-          </div>
-
-          {/* Contact Form - jeden element (karta) */}
-          <form
-            onSubmit={handleSubmit}
-            className={`space-y-3 rounded-2xl border border-border/50 bg-muted/30 p-6 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
-            style={contentVisible ? { animationDelay: '600ms', animationFillMode: 'both' } : undefined}
-          >
-            <div>
-              <Input
+          </Reveal>
+          <Reveal delay={0.09}>
+            <form className="cform" onSubmit={handleSubmit}>
+              <input
+                type="text"
                 placeholder={t.contact.namePlaceholder}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 rounded-xl"
               />
-            </div>
-            <div>
-              <Input
+              <input
                 type="email"
                 placeholder={t.contact.emailPlaceholder}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 rounded-xl"
               />
-            </div>
-            <div>
-              <Textarea
+              <textarea
                 placeholder={t.contact.messagePlaceholder}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
-                rows={5}
-                className="bg-muted/50 text-foreground placeholder:text-muted-foreground border-border/50 focus:border-primary focus:bg-muted/70 resize-none rounded-xl"
               />
-            </div>
-            <Button type="submit" className="w-full gap-2">
-              <Send className="w-4 h-4" />
-              {t.contact.send}
-            </Button>
-          </form>
+              <button type="submit">{t.contact.send}</button>
+            </form>
+          </Reveal>
         </div>
       </div>
     </section>

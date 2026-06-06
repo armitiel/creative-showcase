@@ -1,39 +1,36 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HeroSection } from '@/components/HeroSection';
-import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
+import { AboutSection } from '@/components/AboutSection';
+import { ServicesSection } from '@/components/ServicesSection';
 import { ContactSection } from '@/components/ContactSection';
-import { BrandingBanner } from '@/components/BrandingBanner';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const state = location.state as { scrollTo?: string } | null;
-    if (state?.scrollTo) {
-      // Small delay to ensure DOM is ready
+    const state = location.state as { scrollTo?: string; scrollToProjects?: boolean } | null;
+    const target = state?.scrollTo ?? (state?.scrollToProjects ? 'work' : undefined);
+    if (target) {
       setTimeout(() => {
-        const el = document.getElementById(state.scrollTo!);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const el = document.getElementById(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
-      // Clear the state so it doesn't re-scroll on re-render
       window.history.replaceState({}, '');
     }
   }, [location.state]);
 
   return (
-    <div className="min-h-screen bg-background bg-noise">
+    <main>
       <HeroSection />
-      <AboutSection />
       <ProjectsSection />
+      <AboutSection />
+      <ServicesSection />
       <ContactSection />
-      {/* <BrandingBanner /> */}
       <Footer />
-    </div>
+    </main>
   );
 };
 

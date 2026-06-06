@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { withBaseUrl } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslatedProject } from '@/hooks/useTranslatedProject';
 import { ImageMagnifier } from '@/components/ImageMagnifier';
 import { ImageLightbox, useLightbox, useGalleryLightbox } from '@/components/ImageLightbox';
+import { Footer } from '@/components/Footer';
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = useTranslatedProject(slug);
@@ -87,42 +87,27 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
-      {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b shadow-md ${isDark ? 'bg-[#141414]/80 border-white/10 shadow-black/20' : 'bg-[#f0f0f0]/80 border-border shadow-black/5'}`}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link 
-              to="/" 
-              state={{ scrollToProjects: true }}
-              className={`flex items-center gap-2 transition-colors ${isDark ? 'text-white/60 hover:text-primary' : 'text-muted-foreground hover:text-primary'}`}
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span className="font-medium">{t.projectDetail.backToPortfolio}</span>
-            </Link>
-            <div className="flex items-center gap-4">
-              <LanguageSwitcher />
-              <span className="text-xl font-bold text-primary font-['Poppins']">Portfolio</span>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className={`min-h-screen ${isDark ? 'bg-[#141414]' : 'bg-[var(--paper)]'}`}>
 
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className={`pt-24 pb-12 opacity-0 ${heroVisible ? 'animate-fade-in' : ''}`}
+        className={`pt-10 pb-12 opacity-0 ${heroVisible ? 'animate-fade-in' : ''}`}
       >
         <div className="container mx-auto px-4">
+          <Link to="/" state={{ scrollToProjects: true }} className="cs-back">
+            <ArrowLeft className="h-4 w-4" />
+            <span>{t.projectDetail.backToPortfolio}</span>
+          </Link>
           <div className="max-w-4xl mx-auto text-center">
             <Badge className={`mb-4 ${isDark ? 'bg-primary/30 text-primary border-primary/40' : 'bg-primary/20 text-primary border-primary/30'}`}>
               {project.category}
             </Badge>
-            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-2 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-2 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>
               {project.title}
             </h1>
             {project.subtitle && (
-              <p className={`text-xl md:text-2xl lg:text-3xl font-light mb-6 font-['Poppins'] ${isDark ? 'text-white/50' : 'text-muted-foreground'}`}>
+              <p className={`text-xl md:text-2xl lg:text-3xl font-light mb-6 font-['Syne'] ${isDark ? 'text-white/50' : 'text-muted-foreground'}`}>
                 {project.subtitle}
               </p>
             )}
@@ -195,7 +180,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.thumbnailGrid.title && (
-                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                <h2 className={`text-3xl font-bold mb-4 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.thumbnailGrid.title}
                 </h2>
               )}
@@ -208,7 +193,7 @@ const ProjectDetail = () => {
                 {project.thumbnailGrid.images.map((image, index) => (
                   <div 
                     key={index}
-                    className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[#e0e0e0] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards] cursor-zoom-in"
+                    className="w-[28%] md:w-auto aspect-square overflow-hidden rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-105 bg-[var(--paper-2)] shadow-md p-1.5 md:p-2 opacity-0 animate-[fall-in_0.6s_ease-out_forwards] cursor-zoom-in"
                     style={{ animationDelay: `${index * 150}ms` }}
                     onClick={() => gallery.openAt(index)}
                   >
@@ -231,7 +216,7 @@ const ProjectDetail = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.parallaxImage.title && (
-                <h2 className={`text-3xl font-bold mb-8 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                <h2 className={`text-3xl font-bold mb-8 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.parallaxImage.title}
                 </h2>
               )}
@@ -381,7 +366,7 @@ const ProjectDetail = () => {
       {/* Project Info */}
       <section 
         ref={infoRef}
-        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}
+        className={`py-12 opacity-0 ${infoVisible ? 'animate-fade-in' : ''} ${isDark ? 'bg-[#1e1e1e]' : 'bg-[var(--paper-2)]'}`}
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -451,13 +436,13 @@ const ProjectDetail = () => {
               <div className="grid md:grid-cols-2 gap-12">
                 {project.challenge && (
                   <div>
-                    <h2 className={`text-2xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.challenge}</h2>
+                    <h2 className={`text-2xl font-bold mb-4 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.challenge}</h2>
                     <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.challenge}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div>
-                    <h2 className={`text-2xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.solution}</h2>
+                    <h2 className={`text-2xl font-bold mb-4 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.solution}</h2>
                     <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.solution}</p>
                   </div>
                 )}
@@ -469,12 +454,12 @@ const ProjectDetail = () => {
 
       {/* Strategic Sections */}
       {project.strategicSections && project.strategicSections.length > 0 && (
-        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[var(--paper-2)]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
               {project.strategicSections.map((section, index) => (
                 <div key={index}>
-                  <h3 className={`text-xl font-bold mb-3 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+                  <h3 className={`text-xl font-bold mb-3 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>
                     {section.title}
                   </h3>
                   <p className={`leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
@@ -496,7 +481,7 @@ const ProjectDetail = () => {
                                 <div key={imgIndex} className={`rounded-2xl overflow-hidden border ${isDark ? 'border-white/10' : 'border-border/30'}`}>
                                   <img loading="lazy" src={withBaseUrl(img.src)} alt={img.alt} className="w-full h-auto block" />
                                   {img.caption && (
-                                    <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                                    <div className={`py-2 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                                     </div>
                                   )}
@@ -536,7 +521,7 @@ const ProjectDetail = () => {
                         return (
                           <div 
                             key={imgIndex}
-                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f0f0f0] border-border/30'}`}
+                            className={`rounded-2xl overflow-hidden border flex flex-col ${isLandscape ? 'cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all' : ''} ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[var(--paper)] border-border/30'}`}
                             onClick={isLandscape ? () => {
                               const mapImages = section.images!.filter(i => i.src.includes('map-'));
                               const mapIndex = mapImages.findIndex(i => i.src === img.src);
@@ -551,7 +536,7 @@ const ProjectDetail = () => {
                               />
                             </div>
                           {img.caption && (
-                            <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                            <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                               <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                             </div>
                           )}
@@ -569,10 +554,10 @@ const ProjectDetail = () => {
       )}
 
       {project.typography && (
-        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[var(--paper-2)]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.typography}</h2>
+              <h2 className={`text-3xl font-bold mb-4 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.typography}</h2>
               <p className={`mb-12 max-w-2xl ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                 {project.typography.description}
               </p>
@@ -601,7 +586,7 @@ const ProjectDetail = () => {
                       {font.weights.map((weight, weightIndex) => (
                         <div 
                           key={weightIndex}
-                          className={`flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[#f5f5f5] border-border/50'}`}
+                          className={`flex flex-col md:flex-row md:items-center gap-4 p-6 rounded-xl border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-[var(--card)] border-border/50'}`}
                         >
                           <div className="md:w-32 flex-shrink-0">
                             <span className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>{weight.name}</span>
@@ -634,7 +619,7 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.brandColors}</h2>
+              <h2 className={`text-3xl font-bold mb-4 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>{t.projectDetail.brandColors}</h2>
               <p className={`mb-12 max-w-2xl ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
                 {project.colors.description}
               </p>
@@ -643,7 +628,7 @@ const ProjectDetail = () => {
                 {project.colors.palette.map((color, index) => (
                   <div 
                     key={index}
-                    className={`group rounded-xl overflow-hidden border hover:border-primary/50 transition-all duration-300 ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border bg-[#f5f5f5]'}`}
+                    className={`group rounded-xl overflow-hidden border hover:border-primary/50 transition-all duration-300 ${isDark ? 'border-white/10 bg-[#1a1a1a]' : 'border-border bg-[var(--card)]'}`}
                   >
                     <div 
                       className="aspect-square w-full"
@@ -695,7 +680,7 @@ const ProjectDetail = () => {
                     />
                   </div>
                   {img.caption && (
-                    <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                    <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                     </div>
                   )}
@@ -708,11 +693,11 @@ const ProjectDetail = () => {
 
       {/* Mobile Screens Section - Phone Mockups */}
       {project.mobileScreens && (
-        <section className={`py-16 ${isDark ? 'bg-gradient-to-b from-[#141414] to-[#1a1a1a]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-gradient-to-b from-[#f0f0f0] to-[#e5e5e5]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               {project.mobileScreens.title && (
-                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                <h2 className={`text-3xl font-bold mb-4 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.mobileScreens.title}
                 </h2>
               )}
@@ -780,7 +765,7 @@ const ProjectDetail = () => {
                         className="w-full h-auto object-cover"
                       />
                       {sImg.caption && (
-                        <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                        <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                           <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{sImg.caption}</p>
                         </div>
                       )}
@@ -854,7 +839,7 @@ const ProjectDetail = () => {
                       />
                     </div>
                     {gif.caption && (
-                      <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                      <div className={`p-3 text-center mt-auto ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{gif.caption}</p>
                       </div>
                     )}
@@ -869,10 +854,10 @@ const ProjectDetail = () => {
 
       {/* Logo Concept Section */}
       {project.logoConcept && project.slug !== 'atomic-cherry' && (
-        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[var(--paper-2)]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+              <h2 className={`text-3xl font-bold mb-4 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                 {project.logoConcept.title || 'Logo Concept'}
               </h2>
               <p className={`mb-10 max-w-2xl mx-auto text-center leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>
@@ -891,7 +876,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Project Gallery */}
-      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e8e8e8]'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[var(--paper-2)]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto space-y-8">
             {project.images.filter((img, idx) => !(idx === 0 && img.displayMode === 'centered')).map((image, index) => {
@@ -929,7 +914,7 @@ const ProjectDetail = () => {
                             className="w-full h-auto object-cover"
                           />
                           {img.caption && (
-                            <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                            <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                               <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>
                             </div>
                           )}
@@ -1009,7 +994,7 @@ const ProjectDetail = () => {
                       )}
                     </div>
                     {image.caption && (
-                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-white'}`}>
+                      <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                         <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{image.caption}</p>
                       </div>
                     )}
@@ -1024,11 +1009,11 @@ const ProjectDetail = () => {
 
       {/* YouTube Video Section */}
       {project.youtubeVideo && (
-        <section className={`py-16 ${isDark ? 'bg-[#141414]' : 'bg-[#f0f0f0]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#141414]' : 'bg-[var(--paper)]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               {project.youtubeVideo.title && (
-                <h2 className={`text-3xl font-bold mb-4 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                <h2 className={`text-3xl font-bold mb-4 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {project.youtubeVideo.title}
                 </h2>
               )}
@@ -1058,7 +1043,7 @@ const ProjectDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className={`text-3xl font-bold mb-6 font-['Poppins'] ${isDark ? 'text-white' : 'text-foreground'}`}>
+              <h2 className={`text-3xl font-bold mb-6 font-['Syne'] ${isDark ? 'text-white' : 'text-foreground'}`}>
                 {t.projectDetail.solution}
               </h2>
               <p className={`text-xl leading-relaxed ${isDark ? 'text-white/70' : 'text-muted-foreground'}`}>{project.results}</p>
@@ -1069,11 +1054,11 @@ const ProjectDetail = () => {
 
       {/* Real Photos 2x2 Grid - at bottom */}
       {project.realPhotos && (
-        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[#e5e5e5]'}`}>
+        <section className={`py-16 ${isDark ? 'bg-[#0f0f0f]' : 'bg-[var(--paper-2)]'}`}>
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {project.realPhotos.title && (
-                <h2 className={`text-3xl font-bold mb-8 font-['Poppins'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
+                <h2 className={`text-3xl font-bold mb-8 font-['Syne'] text-center ${isDark ? 'text-white' : 'text-foreground'}`}>
                   {t.projectDetail.realization}
                 </h2>
               )}
@@ -1099,7 +1084,7 @@ const ProjectDetail = () => {
 
       {/* HubbleRx Bottom Illustration - Levitating creature centered */}
       {project.slug === 'hubble-rx' && (
-        <section className={`pt-16 pb-8 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#f0f0f0]'}`}>
+        <section className={`pt-16 pb-8 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[var(--paper)]'}`}>
           <div className="flex justify-center">
             <div className="w-[14%] animate-[levitate_4s_ease-in-out_infinite]">
               <img loading="lazy"
@@ -1113,7 +1098,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Back to Portfolio */}
-      <section className={`py-16 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[#e0e0e0]'}`}>
+      <section className={`py-16 ${isDark ? 'bg-[#1e1e1e]' : 'bg-[var(--paper-2)]'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1124,8 +1109,8 @@ const ProjectDetail = () => {
                 </Button>
               </Link>
               <Link to="/#contact" state={{ scrollToContact: true }}>
-                <Button size="lg" className="glow-cyan">
-                  {t.contact.title}
+                <Button size="lg">
+                  {t.nav.contact}
                 </Button>
               </Link>
             </div>
@@ -1152,14 +1137,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* Footer */}
-      <footer className={`py-8 border-t ${isDark ? 'border-white/10' : 'border-border'}`}>
-        <div className="container mx-auto px-4 text-center">
-          <p className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
-            © {new Date().getFullYear()} Amitiel Angelisme. {t.footer.rights}
-          </p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Lightbox — main images gallery (graffiti etc.) */}
       <ImageLightbox

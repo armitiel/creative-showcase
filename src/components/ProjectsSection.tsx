@@ -1,182 +1,153 @@
-import { Link } from 'react-router-dom';
-import { Badge } from '@/components/ui/badge';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useState, useEffect, type ReactNode } from 'react';
-import { withBaseUrl } from '@/lib/utils';
+import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useTranslatedProjects } from '@/hooks/useTranslatedProject';
-import { Paintbrush } from 'lucide-react';
-import { usePrefetchProject } from '@/hooks/useProjectPrefetch';
+import { useTranslatedProjects, TranslatedProject } from '@/hooks/useTranslatedProject';
+import { Reveal } from '@/components/Reveal';
+import { withBaseUrl } from '@/lib/utils';
 
-// Each card reveals on its own when it scrolls into view, with a small per-row
-// stagger so cards within a row pop in one after another — both on first reveal
-// and after a filter change.
-const RevealCard = ({ index, children }: { index: number; children: ReactNode }) => {
-  const { ref, isVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.25 });
-  return (
-    <div
-      ref={ref}
-      className={`h-full opacity-0 ${isVisible ? 'animate-scale-in' : ''}`}
-      style={{ animationDelay: isVisible ? `${250 + (index % 3) * 150}ms` : '0ms', animationFillMode: 'both' }}
-    >
-      {children}
-    </div>
-  );
+type FilterKey = 'all' | 'branding' | 'uiux' | 'threeD' | 'game' | 'art' | 'motion';
+
+/** Maps filter keys to tokens found in project.category strings. */
+const CATEGORY_TOKEN: Record<Exclude<FilterKey, 'all'>, string> = {
+  branding: 'branding',
+  uiux: 'ui/ux',
+  threeD: '3d',
+  game: 'game',
+  art: 'art',
+  motion: 'motion',
+};
+
+/** Wide (featured) cards. */
+const FEATURED_SLUGS = new Set(['hubble-rx', 'olympus-defence']);
+
+/** Thumbnails shown "as before": logos centered on their own background. */
+const THUMB_STYLE: Record<string, { background: string; scale?: number }> = {
+  'shadow-tagger': { background: '#141414', scale: 0.7 },
+};
+
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17 17 7M9 7h8v8" />
+  </svg>
+);
+
+const matchesFilter = (p: TranslatedProject, f: FilterKey) => {
+  if (f === 'all') return true;
+  return p.category.toLowerCase().includes(CATEGORY_TOKEN[f]);
 };
 
 export const ProjectsSection = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const projects = useTranslatedProjects();
-  // Use 'all' as internal state to avoid language-dependent state issues
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { prefetch, cancel } = usePrefetchProject();
+  const [filter, setFilter] = useState<FilterKey>('all');
 
-  // Odbior wyboru kategorii z odnosnikow w hero (np. klik "Branding" ustawia
-  // aktywny filtr, tak jakby zostal recznie wybrany).
-  useEffect(() => {
-    const handleSelectCategory = (e: Event) => {
-      const category = (e as CustomEvent<string>).detail;
-      if (category) setActiveCategory(category);
-    };
-    window.addEventListener('select-project-category', handleSelectCategory);
-    return () => window.removeEventListener('select-project-category', handleSelectCategory);
-  }, []);
+  const filters: { key: FilterKey; label: string }[] = useMemo(
+    () => [
+      { key: 'all', label: t.work.all },
+      { key: 'branding', label: t.work.categories.branding },
+      { key: 'uiux', label: t.work.categories.uiux },
+      { key: 'threeD', label: t.work.categories.threeD },
+      { key: 'game', label: t.work.categories.game },
+      { key: 'art', label: t.work.categories.art },
+      { key: 'motion', label: t.work.categories.motion },
+    ],
+    [t]
+  );
 
-  // Get unique categories from actual projects data (support comma-separated)
-  const projectCategories = [...new Set(projects.flatMap(p => p.category.split(', ').map(c => c.trim())))];
-  
-  // Create display categories with 'all' as special key
-  const categoryOptions = [
-    { key: 'all', label: t.projects.categories.all },
-    ...projectCategories.map(cat => ({ key: cat, label: cat }))
-  ];
-
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter((p) => p.category.split(', ').map(c => c.trim()).includes(activeCategory));
+  const showIllustrations = filter === 'all' || filter === 'art';
+  const total = String(projects.length + 1).padStart(2, '0'); // +1 = Illustrations card
 
   return (
-    <section id="projects" className="py-16 md:py-20">
-      <div className="container mx-auto px-4 md:px-8">
-        <div
-          ref={headerRef}
-          className={`flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
-        >
-          <h2 className="text-3xl md:text-4xl font-normal font-['Righteous'] text-center md:text-left">
-            {t.projects.title} <span className="text-gradient">{t.projects.titleHighlight}</span>
-          </h2>
-
-          {/* Filters */}
-          <div className="flex flex-wrap justify-center md:justify-end gap-2">
-            {categoryOptions.map((option) => (
-              <button
-                key={option.key}
-                type="button"
-                onClick={() => setActiveCategory(option.key)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  activeCategory === option.key
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
+    <section className="sec" id="work">
+      <div className="wrap">
+        <Reveal className="section-head">
+          <div>
+            <div className="kicker" style={{ marginBottom: 14 }}>
+              {t.work.kicker}
+            </div>
+            <h2>{t.work.title}</h2>
           </div>
+          <div className="section-num">/ 01 — {total}</div>
+        </Reveal>
+
+        <div className="filters">
+          {filters.map((f) => (
+            <button
+              key={f.key}
+              className={`filter-btn ${filter === f.key ? 'active' : ''}`}
+              onClick={() => setFilter(f.key)}
+            >
+              {f.label}
+            </button>
+          ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <RevealCard key={`${activeCategory}-${project.id}`} index={index}>
-            <Link
-              to={`/project/${project.slug}`}
-              onMouseEnter={() => prefetch(project.slug)}
-              onMouseLeave={cancel}
-              className="group block h-full bg-secondary rounded-xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              <div className={`aspect-[4/3] relative overflow-hidden ${project.slug === 'shadow-tagger' ? 'bg-[#141414] flex items-center justify-center' : 'bg-secondary'}`}>
-                <img
-                  src={withBaseUrl(project.thumbnail)}
-                  alt={project.title}
-                  className={`transition-all duration-500 grayscale-[0.4] group-hover:grayscale-0 ${
-                    project.slug === 'shadow-tagger'
-                      ? 'w-[70%] h-auto object-contain group-hover:scale-110'
-                      : 'w-full h-full object-cover group-hover:scale-110'
-                  }`}
-                />
-                {/* Delikatny biały overlay dla ciemnych miniatur */}
-                {(project.slug === 'portal-smart-checkout' || project.slug === 'nfc-card') && (
-                  <div className="absolute inset-0 bg-white/25 pointer-events-none" />
-                )}
-                {project.slug === 'selva-rape' && (
-                  <div className="absolute inset-0 bg-white/10 pointer-events-none" />
-                )}
-                {project.slug === 'nft-generative-system' && (
-                  <div className="absolute inset-0 bg-white/20 pointer-events-none" />
-                )}
-                {project.slug === 'aloha-centrum' && (
-                  <div className="absolute inset-0 bg-white/20 pointer-events-none" />
-                )}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="px-4 py-2 bg-background/90 rounded-xl text-sm font-medium">
-                    {t.projects.viewProject}
+        <div className="work-grid">
+          {projects.map((p, i) => {
+            if (!matchesFilter(p, filter)) return null;
+            const style = THUMB_STYLE[p.slug];
+            return (
+              <Reveal
+                key={p.slug}
+                as="article"
+                className={`card ${FEATURED_SLUGS.has(p.slug) ? 'feat' : ''}`}
+                delay={(i % 2) * 0.09}
+                onClick={() => navigate(`/project/${p.slug}`)}
+              >
+                <div className={`media ${style ? 'pad' : ''}`} style={style ? { background: style.background } : undefined}>
+                  <span className="card-idx">
+                    {String(i + 1).padStart(2, '0')} / {total}
+                  </span>
+                  <img
+                    src={withBaseUrl(p.thumbnail)}
+                    alt={p.title}
+                    loading="lazy"
+                    style={style?.scale ? { maxWidth: `${style.scale * 100}%`, maxHeight: `${style.scale * 100}%` } : undefined}
+                  />
+                  <span className="card-go">
+                    <ArrowIcon />
                   </span>
                 </div>
-              </div>
-              <div className="p-6">
-                <Badge variant="outline" className="mb-2 text-xs border-border text-muted-foreground">
-                  {project.category}
-                </Badge>
-                <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                  {project.description}
-                </p>
-              </div>
-            </Link>
-            </RevealCard>
-          ))}
+                <div className="card-body">
+                  <div>
+                    <div className="card-title">{p.title}</div>
+                    <div className="card-sub">{p.description}</div>
+                  </div>
+                  <div className="card-tags">{p.category}</div>
+                </div>
+              </Reveal>
+            );
+          })}
 
-          {/* Illustrations card — visible in 'all' or 'Art' category */}
-          {(activeCategory === 'all' || activeCategory === 'Art' || activeCategory === 'Ilustracje') && (
-            <RevealCard key={`${activeCategory}-illustrations`} index={filteredProjects.length}>
-            <Link
-              to="/illustrations"
-              className="group block h-full bg-secondary rounded-xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              <div className="aspect-[4/3] bg-secondary relative overflow-hidden">
+          {/* Illustrations card — as in the previous layout */}
+          {showIllustrations && (
+            <Reveal as="article" className="card" delay={0.09} onClick={() => navigate('/illustrations')}>
+              <div className="media">
+                <span className="card-idx">
+                  {total} / {total}
+                </span>
                 <img
                   src={withBaseUrl('/illustrations/cartoon/gentleman-portrait.webp')}
-                  alt={language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale-[0.4] group-hover:grayscale-0"
+                  alt={t.nav.illustrations}
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="px-4 py-2 bg-background/90 rounded-xl text-sm font-medium">
-                    {t.projects.viewProject}
-                  </span>
+                <span className="card-go">
+                  <ArrowIcon />
+                </span>
+              </div>
+              <div className="card-body">
+                <div>
+                  <div className="card-title">{t.nav.illustrations}</div>
+                  <div className="card-sub">
+                    {language === 'pl'
+                      ? 'Stylizowane ilustracje wektorowe, cartoon i grafiki do gier, praca w różnych stylach.'
+                      : 'Stylized vector illustrations, cartoon and game graphics, working in various styles.'}
+                  </div>
                 </div>
+                <div className="card-tags">{t.work.categories.art}</div>
               </div>
-              <div className="p-6">
-                <Badge variant="outline" className="mb-2 text-xs border-border text-muted-foreground">
-                  <Paintbrush className="w-3 h-3 mr-1" />
-                  {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-                </Badge>
-                <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                  {language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                  {language === 'pl'
-                    ? 'Stylizowane ilustracje wektorowe, cartoon i grafiki do gier, praca w różnych stylach.'
-                    : 'Stylized vector illustrations, cartoon and game graphics, working in various styles.'}
-                </p>
-              </div>
-            </Link>
-            </RevealCard>
+            </Reveal>
           )}
         </div>
       </div>

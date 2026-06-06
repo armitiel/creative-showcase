@@ -1,121 +1,128 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useTheme } from '@/i18n/ThemeContext';
 import logo from '@/assets/logo.webp';
 
+const MoonIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
+  </svg>
+);
+
 export const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { t } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const id = href.replace('#', '');
-
+  const goTo = (id: string) => {
+    setMenuOpen(false);
     if (location.pathname !== '/') {
-      // Navigate to index, then scroll after render
       navigate('/', { state: { scrollTo: id } });
     } else {
       const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { href: '#hero', label: t.nav.home },
-    { href: '#about', label: t.nav.about },
-    { href: '#projects', label: t.nav.projects },
-    { href: '#contact', label: t.nav.contact },
+  const links: { id: string; label: string }[] = [
+    { id: 'work', label: t.nav.work },
+    { id: 'about', label: t.nav.about },
+    { id: 'services', label: t.nav.services },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30 transition-shadow duration-300 ${
-        isScrolled || isOpen ? 'shadow-[0_8px_30px_rgba(0,0,0,0.3)]' : 'shadow-none'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14 md:h-16">
-          <a href="#hero" onClick={(e) => smoothScroll(e, '#hero')} className="flex items-center ml-4">
-            <img src={logo} alt="Amitiel Angelisme" className="h-10 w-auto" />
+    <>
+      <header className="nav">
+        <a
+          className="brand"
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            if (location.pathname !== '/') navigate('/');
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <img className="brand-logo" src={logo} alt="Amitiel Angelisme" />
+        </a>
+
+        <nav className="nav-links">
+          {links.map((l) => (
+            <a
+              key={l.id}
+              href={`/#${l.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo(l.id);
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="nav-tools">
+          <button className="pill-btn" onClick={toggleTheme} aria-label="Toggle theme">
+            <MoonIcon />
+            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+          </button>
+          <a className="pill-btn is-cv" href="https://www.amitiel.cv" target="_blank" rel="noopener noreferrer">
+            {t.nav.cv}
           </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => smoothScroll(e, link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="https://www.amitiel.cv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium"
-            >
-              CV
-            </a>
-            <LanguageSwitcher />
+          <div className="lang-seg" role="group" aria-label="Language">
+            <button className={language === 'pl' ? 'active' : ''} onClick={() => setLanguage('pl')}>
+              PL
+            </button>
+            <button className={language === 'en' ? 'active' : ''} onClick={() => setLanguage('en')}>
+              EN
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-3 md:hidden">
-            <LanguageSwitcher />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
+          <button className="pill-btn nav-burger" onClick={() => setMenuOpen(true)} aria-label="Menu">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+          </button>
         </div>
+      </header>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 px-4 border-t border-border animate-fade-in">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
-                onClick={(e) => { smoothScroll(e, link.href); setIsOpen(false); }}
-              >
-                {link.label}
-              </a>
-            ))}
+      {/* mobile menu */}
+      <div className={`mmenu ${menuOpen ? 'open' : ''}`}>
+        <div className="mmenu-top">
+          <span className="brand">
+            <img className="brand-logo" src={logo} alt="Amitiel Angelisme" />
+          </span>
+          <button className="pill-btn" onClick={() => setMenuOpen(false)} aria-label="Close">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav>
+          {links.map((l) => (
             <a
-              href="https://www.amitiel.cv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block py-3 text-muted-foreground hover:text-primary transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
+              key={l.id}
+              href={`/#${l.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo(l.id);
+              }}
             >
-              CV
+              {l.label}
             </a>
-          </div>
-        )}
+          ))}
+          <a
+            href="https://www.amitiel.cv"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+          >
+            {t.nav.cv}
+          </a>
+        </nav>
       </div>
-    </nav>
+    </>
   );
 };
