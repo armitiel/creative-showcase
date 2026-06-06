@@ -71,7 +71,7 @@ export const HeroSection = () => {
                 <p className="text-base text-white/60 tracking-widest uppercase">
                   <span className="hidden md:inline">{t.hero.role}</span>
                   <span className="md:hidden">
-                    Senior Graphic Designer<br />Game Artist
+                    Senior Graphic Designer
                   </span>
                 </p>
               </div>

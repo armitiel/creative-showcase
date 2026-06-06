@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
             <p className="text-card-foreground/60 text-sm">
-              © 2026 Amitiel Angelisme.<br className="md:hidden" /> {t.footer.rights}
+              © {new Date().getFullYear()} Amitiel Angelisme.<br className="md:hidden" /> {t.footer.rights}
             </p>
             <p className="text-card-foreground/60 text-sm">
               {t.footer.madeWith} <span className="text-primary">♥</span> {t.footer.inPoland}

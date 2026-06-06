@@ -1156,7 +1156,7 @@ const ProjectDetail = () => {
       <footer className={`py-8 border-t ${isDark ? 'border-white/10' : 'border-border'}`}>
         <div className="container mx-auto px-4 text-center">
           <p className={`text-sm ${isDark ? 'text-white/60' : 'text-muted-foreground'}`}>
-            © 2025 Amitiel Angelisme. {t.footer.rights}
+            © {new Date().getFullYear()} Amitiel Angelisme. {t.footer.rights}
           </p>
         </div>
       </footer>
