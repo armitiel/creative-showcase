@@ -50,7 +50,21 @@ export const projectTranslations: ProjectTranslations = {
       fullDescription: 'Projekt wizytówek NFC łączących tradycyjny design z nowoczesną technologią. Wizytówki pozwalają na natychmiastowe udostępnianie danych kontaktowych poprzez zbliżenie telefonu. Byłem odpowiedzialny za projektowanie logo, animacji oraz całego brandingu produktu.',
       challenge: 'Stworzenie brandingu dla innowacyjnego produktu technologicznego, który komunikuje nowoczesność i łatwość użycia wizytówek NFC.',
       solution: 'Zaprojektowałem minimalistyczne logo z animacjami podkreślającymi technologiczny charakter produktu. Animacje wizualizują działanie technologii NFC - transfer danych przy zbliżeniu urządzeń.',
-      results: 'Branding skutecznie pozycjonuje produkt jako nowoczesne rozwiązanie dla profesjonalistów ceniących innowacje w networkingu.',
+      strategicSections: [
+        {
+          title: 'Moja rola i zakres',
+          content: 'Pełna odpowiedzialność za warstwę wizualną produktu: logo z systemem wariantów, język animacji, paleta i zasady użycia marki. Animacje projektowane od storyboardu po finalny render w After Effects — bez zewnętrznych szablonów.',
+        },
+        {
+          title: 'Proces decyzyjny',
+          content: 'Logo musiało działać w trzech kontekstach jednocześnie: na fizycznej karcie (druk, mały rozmiar), w aplikacji (ekran, tryb ciemny) i w animacji (ruch). Stąd decyzja o minimalistycznej formie z jednym gestem ruchu — łukiem transferu danych, który stał się motywem przewodnim całego brandingu. Czerń jako baza: produkt premium, technologia bez krzyku.',
+        },
+        {
+          title: 'Dlaczego to istotne',
+          content: 'Branding produktu fizyczno-cyfrowego wymaga myślenia o marce w ruchu: logo nie jest statycznym znakiem, tylko zachowaniem. Ten projekt pokazuje przejście od identyfikacji statycznej do systemu motion identity — kierunku, w którym idzie branding technologiczny.',
+        },
+      ],
+      results: 'Branding spójnie pozycjonuje produkt w trzech kontekstach jednocześnie — na fizycznej karcie, w aplikacji i w animacji — budując rozpoznawalny, motion-first język marki dla profesjonalistów ceniących innowacje w networkingu.',
       colorsDescription: 'Nowoczesna paleta kolorów oparta na kontrastach - głęboka czerń z akcentami podkreślającymi technologiczny charakter produktu.',
       gifPairCaptions: {
         0: 'Animacja logo z efektem transferu danych',
@@ -63,7 +77,21 @@ export const projectTranslations: ProjectTranslations = {
       fullDescription: 'NFC business card project combining traditional design with modern technology. The cards allow instant sharing of contact information by tapping a phone. I was responsible for designing the logo, animations, and the entire product branding.',
       challenge: 'Creating branding for an innovative tech product that communicates modernity and ease of use of NFC business cards.',
       solution: 'I designed a minimalist logo with animations emphasizing the technological character of the product. The animations visualize NFC technology - data transfer when devices are brought together.',
-      results: 'The branding effectively positions the product as a modern solution for professionals who value innovation in networking.',
+      strategicSections: [
+        {
+          title: 'My Role & Scope',
+          content: 'Full responsibility for the product\'s visual layer: logo with a system of variants, animation language, palette, and brand usage rules. Animations designed from storyboard to final render in After Effects — no external templates.',
+        },
+        {
+          title: 'Decision-Making Process',
+          content: 'The logo had to work in three contexts at once: on the physical card (print, small size), in the app (screen, dark mode), and in animation (motion). Hence the decision for a minimalist form with a single motion gesture — a data-transfer arc that became the leitmotif of the entire branding. Black as the base: a premium product, technology without shouting.',
+        },
+        {
+          title: 'Why It Matters',
+          content: 'Branding a physical-digital product requires thinking about the brand in motion: the logo is not a static mark but a behavior. This project shows the transition from a static identity to a motion identity system — the direction in which technology branding is heading.',
+        },
+      ],
+      results: 'The branding cohesively positions the product across three contexts at once — on the physical card, in the app, and in animation — building a recognizable, motion-first brand language for professionals who value innovation in networking.',
       colorsDescription: 'A modern color palette based on contrasts - deep black with accents emphasizing the technological character of the product.',
       gifPairCaptions: {
         0: 'Logo animation with data transfer effect',
@@ -571,6 +599,7 @@ export const projectTranslations: ProjectTranslations = {
       title: 'Atomic Cherry',
       description: 'Kompletna oprawa graficzna gry slotowej: animowane symbole, splash screeny i interfejs maszyny.',
       fullDescription: 'Atomic Cherry to gra slotowa typu slot machine z dynamiczną mechaniką i bogatą oprawą wizualną. Projekt obejmował tworzenie wszystkich elementów graficznych gry: animowanych symboli, splash screenów promocyjnych, ekranów bonusowych oraz kompletnego interfejsu maszyny do gry.',
+      challenge: 'Gry slotowe w środowisku social casino podlegają ścisłym ograniczeniom — technicznym, wizualnym i regulacyjnym. Każdy aset musi mieścić się w budżecie wydajnościowym silnika, a jednocześnie konkurować o uwagę gracza w gatunku, gdzie o utrzymaniu decydują pierwsze sekundy kontaktu z ekranem.',
       imageCaptions: {
         1: 'Maszyna slotowa - gameplay',
         2: 'Ekran bonusowy Free Spins',
@@ -582,14 +611,19 @@ export const projectTranslations: ProjectTranslations = {
       },
       strategicSections: [
         {
-          title: 'Animowane symbole',
-          content: 'Każdy symbol gry został zaprojektowany w Illustratorze i zanimowany w Spine. Animacje nadają grze dynamiczny, przyciągający wzrok charakter typowy dla nowoczesnych gier slotowych.',
+          title: 'Moja rola i zakres',
+          content: 'Kompletna oprawa graficzna gry: projekt głównej ramy tematycznej (cabinet) oraz interfejsu maszyny, zestaw 9 unikalnych symboli (Illustrator → Spine), splash screeny promocyjne i ekrany bonusowe. Praca w pipeline produkcyjnym Huuuge Games z regularnymi review i twardymi wymaganiami technicznymi.',
         },
         {
-          title: 'Splash screeny i promocje',
-          content: 'Ekrany powitalne i promocyjne zaprojektowane tak, aby natychmiast przyciągnąć uwagę gracza. Splash screen prezentuje logo gry na tle charakterystycznego wzoru z motywem atomu.',
+          title: 'Proces decyzyjny',
+          content: 'Symbole projektowane warstwowo pod animację w Spine — każdy element (poświata, odbicie, ruch wtórny) na osobnej warstwie już na etapie Illustratora. Hierarchia czytelności: symbole low-pay, high-pay i specjalne (Wild, Scatter, Bonus) zaprojektowane tak, by były rozpoznawalne podczas szybkich obrotów bębnów. Każdy z 9 symboli dostał pętlę idle oraz dynamiczną sekwencję wygranej, a dla kamieni milowych Big Win i Mega Win — dedykowane efekty (VFX) wzmacniające pętlę nagrody i retencję. Wszystkie sprite sheety zoptymalizowane pod płynne 60 FPS na iOS/Android przy minimalnym zużyciu pamięci.',
+        },
+        {
+          title: 'Dlaczego to istotne',
+          content: 'Produkcja w regulowanym, komercyjnym środowisku to inna dyscyplina niż projekt autorski: deadliny, compliance, budżety wydajnościowe i praca w cudzym pipeline. Atomic Cherry trafił do flagowych aplikacji Huuuge Games (Core Franchises) zasilających ekosystem nastawiony głównie na wartościowy rynek USA. Ten projekt dokumentuje zdolność dowożenia jakości produkcyjnej w ramach twardych ograniczeń — kompetencję, której nie widać w projektach własnych.',
         },
       ],
+      results: '2 miesiące produkcji. Gra trafiła do live, dostarczając gotowe do wdrożenia assety dla globalnego ekosystemu o jednych z najwyższych w branży wskaźnikach monetyzacji (ARPDAU 2,30 USD, ARPU 51,20 USD na płacącego użytkownika).',
       youtubeVideoTitle: 'Gameplay',
       youtubeVideoDescription: 'Prezentacja rozgrywki Atomic Cherry',
       logoConceptTitle: 'Logo',
@@ -599,6 +633,7 @@ export const projectTranslations: ProjectTranslations = {
       title: 'Atomic Cherry',
       description: 'Complete visual design for a slot game: animated symbols, splash screens and machine interface.',
       fullDescription: 'Atomic Cherry is a slot machine game with dynamic mechanics and rich visual design. The project included creating all graphic elements: animated symbols, promotional splash screens, bonus screens, and the complete slot machine interface.',
+      challenge: 'Slot games in a social casino environment are subject to strict constraints — technical, visual, and regulatory. Every asset must fit within the engine\'s performance budget while competing for the player\'s attention in a genre where retention is decided in the first seconds on screen.',
       imageCaptions: {
         1: 'Slot machine - gameplay',
         2: 'Free Spins bonus screen',
@@ -610,14 +645,19 @@ export const projectTranslations: ProjectTranslations = {
       },
       strategicSections: [
         {
-          title: 'Animated symbols',
-          content: 'Each game symbol was designed in Illustrator and animated in Spine. The animations give the game a dynamic, eye-catching feel typical of modern slot games.',
+          title: 'My Role & Scope',
+          content: 'Complete visual design for the game: the main thematic frame (cabinet) and machine interface, a set of 9 unique symbols (Illustrator → Spine), promotional splash screens, and bonus screens. Work within the Huuuge Games production pipeline with regular reviews and demanding technical requirements.',
         },
         {
-          title: 'Splash screens & promotions',
-          content: 'Welcome and promotional screens designed to immediately grab the player\'s attention. The splash screen showcases the game logo against a distinctive atomic-themed pattern.',
+          title: 'Decision-Making Process',
+          content: 'Symbols designed in layers for animation in Spine — each element (glow, reflection, secondary motion) on a separate layer already at the Illustrator stage. Readability hierarchy: low-pay, high-pay, and special symbols (Wild, Scatter, Bonus) designed to stay legible during high-speed reel spins. Each of the 9 symbols received an idle loop and a dynamic win sequence, with dedicated VFX for Big Win and Mega Win milestones to reinforce the reward loop and player retention. All sprite sheets optimized for a smooth 60 FPS on iOS/Android with a minimal memory footprint.',
+        },
+        {
+          title: 'Why It Matters',
+          content: 'Production in a regulated, commercial environment is a different discipline than a personal project: deadlines, compliance, performance budgets, and working within someone else\'s pipeline. Atomic Cherry shipped into Huuuge Games\' flagship apps (Core Franchises) powering an ecosystem primarily targeting the high-value US market. This project documents the ability to deliver production quality within hard constraints — a competence invisible in personal projects.',
         },
       ],
+      results: 'Two months of production. The game went live, delivering production-ready assets for a global ecosystem with industry-leading monetization metrics (ARPDAU $2.30, ARPU $51.20 per paying user).',
       youtubeVideoTitle: 'Gameplay',
       youtubeVideoDescription: 'Atomic Cherry gameplay presentation',
       logoConceptTitle: 'Logo',
@@ -628,17 +668,23 @@ export const projectTranslations: ProjectTranslations = {
     pl: {
       title: 'Graffiti',
       description: 'Wieloletnia pasja malowania stylizowanych postaci na ścianach, pojazdach i billboardach w technice graffiti.',
-      fullDescription: 'Przez lata moją pasją jest malowanie postaci w technice graffiti pod pseudonimem Mr.Max. Specjalizuję się w stylizacji i malowaniu charakterystycznych postaci, karykaturalnych, dynamicznych i pełnych ekspresji. Każda praca to unikalna kompozycja łącząca cartoon aesthetics z uliczną energią, malowana sprayem na ścianach, ciężarówkach, billboardach i innych powierzchniach.',
+      fullDescription: 'Od ponad 20 lat maluję stylizowane postacie w technice graffiti pod pseudonimem Mr.Max. Karykaturalne proporcje, dynamiczne pozy, cartoonowa ekspresja — przeniesione ze szkicownika na ściany, ciężarówki i billboardy. Każda realizacja to kompozycja projektowana pod konkretną powierzchnię i kontekst miejsca.',
+      challenge: 'Praca w skali wielkoformatowej bez możliwości korekty. Spray nie wybacza: kompozycja musi być rozplanowana zanim padnie pierwsza linia, a proporcje postaci muszą działać zarówno z dystansu 50 metrów, jak i z bliska. Każda powierzchnia — falista blacha ciężarówki, chropowata elewacja, wnętrze lokalu — wymaga innej techniki nakładania i innego planowania świateł.',
       strategicSections: [
         {
-          title: 'Stylizowane postacie',
-          content: 'Każda postać to unikalna karykatura z wyrazistymi proporcjami, dynamicznymi pozami i charakterystycznym stylem. Proces twórczy zaczyna się od szkicu koncepcyjnego, a kończy na wielogodzinnym malowaniu sprayem.',
+          title: 'Moja rola i zakres',
+          content: 'Pełny proces autorski: koncept postaci, szkic kompozycyjny, dobór palety, wykonanie. Prace realizowane samodzielnie, również na powierzchniach wymagających pracy na wysokości — na podnośnikach i rusztowaniach.',
         },
         {
-          title: 'Różnorodne powierzchnie',
-          content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali, każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
+          title: 'Proces decyzyjny',
+          content: 'Każda postać zaczyna się od karykatury — wyolbrzymienia jednej cechy, która niesie charakter. Kontur prowadzony grubością linii budującą głębię bez cieniowania, tak aby kompozycja czytała się zarówno z bliska, jak i z dużego dystansu.',
+        },
+        {
+          title: 'Dlaczego to istotne',
+          content: 'Graffiti to fundament mojego warsztatu: pewność linii, myślenie skalą, kompozycja czytelna z dystansu. Te same umiejętności przenoszę do pracy cyfrowej — character design, ilustracja, oprawa gier. Odwrotnie niż większość grafików cyfrowych, zaczynałem od ściany, nie od tabletu.',
         },
       ],
+      results: 'Ponad 20 lat praktyki w technice graffiti — od prac autorskich po realizacje komercyjne. Współpracowałem komercyjnie z SPI przy realizacjach na całym świecie, a doświadczenie obejmuje pracę wielkoformatową na wysokości, na podnośnikach i rusztowaniach.',
       imageCaptions: {
         0: 'Manners',
         1: 'Graffi Tea',
@@ -653,17 +699,23 @@ export const projectTranslations: ProjectTranslations = {
     en: {
       title: 'Graffiti',
       description: 'A long-standing passion for painting stylized characters on walls, vehicles, and billboards using graffiti techniques.',
-      fullDescription: 'For years, my passion has been painting characters using graffiti techniques under the alias Mr.Max. I specialize in stylizing and painting distinctive characters, caricatured, dynamic, and full of expression. Each piece is a unique composition combining cartoon aesthetics with street energy, painted with spray paint on walls, trucks, billboards, and other surfaces.',
+      fullDescription: 'For over 20 years I have been painting stylized characters using graffiti techniques under the alias Mr.Max. Caricatured proportions, dynamic poses, cartoon expression — taken from the sketchbook onto walls, trucks, and billboards. Each piece is a composition designed for a specific surface and the context of its location.',
+      challenge: 'Working at large scale with no room for corrections. Spray paint is unforgiving: the composition must be planned before the first line is laid down, and character proportions have to work both from 50 meters away and up close. Every surface — the corrugated metal of a truck, a rough façade, a venue interior — demands a different application technique and different light planning.',
       strategicSections: [
         {
-          title: 'Stylized Characters',
-          content: 'Each character is a unique caricature with expressive proportions, dynamic poses, and a distinctive style. The creative process starts with a concept sketch and ends with hours of spray painting.',
+          title: 'My Role & Scope',
+          content: 'A fully authorial process: character concept, compositional sketch, palette selection, execution. Work carried out independently, including on surfaces requiring work at height — on lifts and scaffolding.',
         },
         {
-          title: 'Diverse Surfaces',
-          content: 'Murals are created on building walls, trucks, billboards, and interior spaces, each surface presents different technical and compositional challenges.',
+          title: 'Decision-Making Process',
+          content: 'Every character starts from a caricature — exaggerating the one trait that carries its character. The outline is drawn with line weight that builds depth without shading, so the composition reads both up close and from a long distance.',
+        },
+        {
+          title: 'Why It Matters',
+          content: 'Graffiti is the foundation of my craft: confidence of line, thinking in scale, composition legible from a distance. I carry the same skills into digital work — character design, illustration, game art. Unlike most digital artists, I started on the wall, not the tablet.',
         },
       ],
+      results: 'Over 20 years of practice in graffiti — from personal pieces to commercial projects. I have worked commercially with SPI on projects around the world, and my experience includes large-format work at height, on lifts and scaffolding.',
       imageCaptions: {
         0: 'Manners',
         1: 'Graffi Tea',
