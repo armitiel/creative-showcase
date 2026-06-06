@@ -204,7 +204,7 @@ export const projects: Project[] = [
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
-  },,
+  },
   {
     id: 11,
     slug: 'olympus-defence',
@@ -280,7 +280,7 @@ export const projects: Project[] = [
         content: 'Ten projekt podsumowuje mój dotychczasowy warsztat. Łączy modelowanie 3D, animację, compositing i produkcję w jednym spójnym pipeline. Pokazuje zdolność do samodzielnego prowadzenia kompleksowej produkcji graficznej na skalę pełnej gry, z regularnymi iteracjami i współpracą z zespołem developerskim.',
       },
     ],
-  },,
+  },
   {
     id: 10,
     slug: 'selva-rape',
@@ -362,7 +362,7 @@ export const projects: Project[] = [
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
-  },,
+  },
   {
     id: 7,
     slug: 'portal-smart-checkout',
@@ -430,7 +430,7 @@ export const projects: Project[] = [
         { name: 'Text Primary', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
-  },,
+  },
   {
     id: 1,
     slug: 'v17-vision-branding',
@@ -493,7 +493,7 @@ export const projects: Project[] = [
         { name: 'Dark Gray', hex: '#333333', rgb: '51 51 51', cmyk: '0 0 0 80' },
       ],
     },
-  },,
+  },
   {
     id: 2,
     slug: 'aloha-centrum-desk',
@@ -525,7 +525,7 @@ export const projects: Project[] = [
         { src: '/projects/aloha-centrum/real-interior.webp', alt: 'Biurko we wnętrzu', noMagnifier: true },
       ],
     },
-  },,
+  },
   {
     id: 14,
     slug: 'shadow-tagger',
@@ -562,7 +562,7 @@ export const projects: Project[] = [
         content: 'Wykorzystuję AI do wspomagania procesu kodowania, co pozwala mi jako grafikowi mieć pełną kontrolę nad całym procesem produkcji gry, od koncepcji wizualnej po działający kod. To pokazuje, jak AI demokratyzuje game development.',
       },
     ],
-  },,
+  },
   {
     id: 8,
     slug: 'nft-generative-system',
@@ -596,7 +596,6 @@ export const projects: Project[] = [
     },
     images: [],
   },
-,
   {
     id: 15,
     slug: 'atomic-cherry',
@@ -640,7 +639,7 @@ export const projects: Project[] = [
       title: 'Gameplay',
       description: 'Prezentacja rozgrywki Atomic Cherry',
     },
-  },,
+  },
   {
     id: 6,
     slug: 'nfc-card',
@@ -672,7 +671,7 @@ export const projects: Project[] = [
         { name: 'Pure White', hex: '#FFFFFF', rgb: '255 255 255', cmyk: '0 0 0 0' },
       ],
     },
-  },,
+  },
   {
     id: 13,
     slug: 'graffiti',
@@ -706,7 +705,7 @@ export const projects: Project[] = [
         content: 'Murale powstają na ścianach budynków, ciężarówkach, billboardach, wnętrzach lokali, każda powierzchnia stawia inne wyzwania techniczne i kompozycyjne.',
       },
     ],
-  },,
+  },
   {
     id: 12,
     slug: 'tsq-portal',
