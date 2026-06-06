@@ -17,6 +17,18 @@ export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
     const element = ref.current;
     if (!element) return;
 
+    // Reveal immediately if the element is already in the viewport on mount.
+    // On direct page loads the IntersectionObserver's initial callback can be
+    // missed (there's no scroll event to re-trigger it), which leaves
+    // above-the-fold content like the hero stuck at opacity-0 until the user
+    // scrolls. This makes the fade-in fire on load, not only on scroll.
+    const rect = element.getBoundingClientRect();
+    const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inViewport) {
+      setIsVisible(true);
+      if (triggerOnce) return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

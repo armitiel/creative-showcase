@@ -31,7 +31,7 @@ export const ProjectsSection = () => {
     : projects.filter((p) => p.category.split(', ').map(c => c.trim()).includes(activeCategory));
 
   return (
-    <section id="projects" className="py-32">
+    <section id="projects" className="py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
         <div
           ref={headerRef}
@@ -82,7 +82,7 @@ export const ProjectsSection = () => {
                 <img
                   src={withBaseUrl(project.thumbnail)}
                   alt={project.title}
-                  className={`transition-all duration-500 grayscale group-hover:grayscale-0 ${
+                  className={`transition-all duration-500 grayscale-[0.4] group-hover:grayscale-0 ${
                     project.slug === 'shadow-tagger'
                       ? 'w-[70%] h-auto object-contain group-hover:scale-110'
                       : 'w-full h-full object-cover group-hover:scale-110'
@@ -135,7 +135,7 @@ export const ProjectsSection = () => {
                 <img
                   src={withBaseUrl('/illustrations/cartoon/gentleman-portrait.webp')}
                   alt={language === 'pl' ? 'Ilustracje' : 'Illustrations'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500 grayscale-[0.4] group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
