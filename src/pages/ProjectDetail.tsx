@@ -1149,7 +1149,7 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      <Footer />
+      <Footer dark={isDark} />
 
       {/* Lightbox — main images gallery (graffiti etc.) */}
       <ImageLightbox
