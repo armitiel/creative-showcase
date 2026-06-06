@@ -37,12 +37,12 @@ export const ServicesSection = () => {
                 style={{ animationDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
               >
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 bg-white/50 backdrop-blur-md border border-white/40 shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_8px_24px_hsl(var(--primary)/0.15)]">
-                    <Icon className={`w-7 h-7 text-primary opacity-0 ${cardsVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: cardsVisible ? `${300 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }} />
+                  <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl group-hover:scale-105 transition-all duration-300 bg-white/50 backdrop-blur-md border border-white/40 shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[inset_0_2px_3px_rgba(255,255,255,0.9),inset_0_-1px_2px_rgba(0,0,0,0.05),0_8px_24px_hsl(var(--primary)/0.15)]">
+                    <Icon className={`w-6 h-6 shrink-0 text-primary opacity-0 ${cardsVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: cardsVisible ? `${300 + index * 100}ms` : '0ms', animationFillMode: 'forwards' }} />
+                    <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
                   </div>
-                  <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-muted-foreground leading-relaxed">

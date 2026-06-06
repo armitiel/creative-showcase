@@ -5,20 +5,17 @@ export const Footer = () => {
 
   return (
     <footer className="relative px-4 md:px-8 pb-4">
-      <div className="relative rounded-3xl bg-card text-card-foreground overflow-hidden py-4 px-4 md:px-8">
+      <div className="relative rounded-xl bg-card text-card-foreground overflow-hidden py-4 px-4 md:px-8">
         <div className="container mx-auto relative z-10">
-          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+          <div className="flex flex-col items-start justify-center gap-4 text-left">
             <p className="text-card-foreground/60 text-sm">
               © {new Date().getFullYear()} Amitiel Angelisme.<br className="md:hidden" /> {t.footer.rights}
-            </p>
-            <p className="text-card-foreground/60 text-sm">
-              {t.footer.madeWith} <span className="text-primary">♥</span> {t.footer.inPoland}
             </p>
           </div>
         </div>
 
         {/* Aurora glow emerging from dark space */}
-        <div className="absolute bottom-0 left-0 w-full h-[60px] pointer-events-none rounded-b-3xl overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full h-[60px] pointer-events-none rounded-b-xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,4%)] via-[hsl(220,20%,4%)]/80 to-transparent" />
           <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[hsl(210,100%,50%)] to-transparent opacity-90 animate-[aurora-pulse_3s_ease-in-out_infinite]" />
           <div className="absolute bottom-0 left-0 w-full h-[25px] bg-gradient-to-t from-[hsl(210,100%,50%)]/25 to-transparent blur-[10px] animate-[aurora-pulse_3s_ease-in-out_infinite]" />

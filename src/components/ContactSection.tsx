@@ -13,7 +13,6 @@ export const ContactSection = () => {
     email: '',
     message: '',
   });
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
   const { t } = useLanguage();
 
@@ -29,27 +28,16 @@ export const ContactSection = () => {
     <section id="contact" className="py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
         <div
-          ref={headerRef}
-          className={`text-center mb-12 opacity-0 ${headerVisible ? 'animate-fade-in' : ''}`}
-        >
-          <h2 className="text-3xl md:text-4xl font-normal mb-4 font-['Righteous']">
-            <span className="text-gradient">{t.contact.title}</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t.contact.subtitle}
-          </p>
-        </div>
-
-        <div
           ref={contentRef}
-          className={`grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto opacity-0 ${
-            contentVisible ? 'animate-fade-in' : ''
-          }`}
+          className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto"
         >
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
+              <div
+                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
+                style={contentVisible ? { animationDelay: '150ms', animationFillMode: 'both' } : undefined}
+              >
                 <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
                   <Mail className="w-5 h-5 text-foreground/70" />
                 </div>
@@ -59,7 +47,10 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div
+                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
+                style={contentVisible ? { animationDelay: '300ms', animationFillMode: 'both' } : undefined}
+              >
                 <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
                   <Phone className="w-5 h-5 text-foreground/70" />
                 </div>
@@ -69,7 +60,10 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div
+                className={`flex items-center gap-4 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
+                style={contentVisible ? { animationDelay: '450ms', animationFillMode: 'both' } : undefined}
+              >
                 <div className="w-12 h-12 bg-muted/60 rounded-2xl flex items-center justify-center border border-border/50">
                   <MapPin className="w-5 h-5 text-foreground/70" />
                 </div>
@@ -82,8 +76,12 @@ export const ContactSection = () => {
 
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Contact Form - jeden element (karta) */}
+          <form
+            onSubmit={handleSubmit}
+            className={`space-y-3 rounded-2xl border border-border/50 bg-muted/30 p-6 opacity-0 ${contentVisible ? 'animate-fade-in' : ''}`}
+            style={contentVisible ? { animationDelay: '600ms', animationFillMode: 'both' } : undefined}
+          >
             <div>
               <Input
                 placeholder={t.contact.namePlaceholder}

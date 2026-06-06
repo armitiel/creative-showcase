@@ -83,6 +83,10 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "fade-in-opacity": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         "fade-in-left": {
           "0%": { opacity: "0", transform: "translateX(-30px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
@@ -136,15 +140,41 @@ export default {
           "0%, 100%": { transform: "translateX(0)", opacity: "0.3" },
           "50%": { transform: "translateX(20px)", opacity: "0.6" },
         },
+        "dot-fill": {
+          "0%": { opacity: "0", transform: "scale(0)" },
+          "60%": { opacity: "1", transform: "scale(1.4)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "aurora-base": {
+          "0%, 100%": { transform: "scale(1)", filter: "brightness(1) hue-rotate(0deg)" },
+          "50%": { transform: "scale(1.08)", filter: "brightness(1.15) hue-rotate(12deg)" },
+        },
+        "aurora-blob-1": {
+          "0%, 100%": { transform: "translate(-15%, -10%) scale(1.1)" },
+          "33%": { transform: "translate(22%, 14%) scale(1.4)" },
+          "66%": { transform: "translate(8%, 28%) scale(1.15)" },
+        },
+        "aurora-blob-2": {
+          "0%, 100%": { transform: "translate(20%, 10%) scale(1.25)" },
+          "33%": { transform: "translate(-22%, -14%) scale(1.45)" },
+          "66%": { transform: "translate(-10%, 20%) scale(1.1)" },
+        },
+        "aurora-blob-3": {
+          "0%, 100%": { transform: "translate(2%, 22%) scale(1.2)" },
+          "33%": { transform: "translate(18%, -18%) scale(1.1)" },
+          "66%": { transform: "translate(-18%, 4%) scale(1.4)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
+        "fade-in-opacity": "fade-in-opacity 0.6s ease-out forwards",
         "fade-in-left": "fade-in-left 0.6s ease-out forwards",
         "fade-in-right": "fade-in-right 0.6s ease-out forwards",
         "scale-in": "scale-in 0.5s ease-out forwards",
         "bounce": "bounce 1s infinite",
+        "dot-fill": "dot-fill 0.6s ease-out both",
       },
     },
   },

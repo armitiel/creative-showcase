@@ -130,6 +130,10 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    /* Rezerwuj miejsce na pasek przewijania, aby szerokość kontenera nie
+       skakała, gdy pasek pojawia się/znika podczas ladowania. W przeciwienstwie
+       do overflow-y: scroll nie rysuje pustego toru paska. */
+    scrollbar-gutter: stable;
   }
 
   body {
