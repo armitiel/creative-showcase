@@ -1,18 +1,7 @@
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useEffect, useState } from 'react';
 
 export const Footer = () => {
   const { t } = useLanguage();
-  const [visits, setVisits] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch('/api/visits?site=portfolio', { cache: 'no-store' })
-      .then(r => r.json())
-      .then(data => {
-        if (data.count != null) setVisits(data.count);
-      })
-      .catch(() => {});
-  }, []);
 
   return (
     <footer className="relative px-4 md:px-8 pb-4">
@@ -25,11 +14,6 @@ export const Footer = () => {
             <p className="text-card-foreground/60 text-sm">
               {t.footer.madeWith} <span className="text-primary">♥</span> {t.footer.inPoland}
             </p>
-            {visits !== null && (
-              <p className="text-card-foreground/40 text-xs">
-                {t.footer.visits}: {visits.toLocaleString()}
-              </p>
-            )}
           </div>
         </div>
 
