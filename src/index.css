@@ -535,6 +535,8 @@ section.sec { padding: clamp(64px, 9vw, 130px) 0; }
   .about-meta { grid-template-columns: 1fr; }
   .cs-meta { grid-template-columns: 1fr 1fr; }
   .masonry { columns: 1; }
+  /* Imie w hero: plynne skalowanie z viewportem, zeby "Angelisme" sie miescilo */
+  .hero h1 { font-size: clamp(32px, 13vw, 64px); letter-spacing: -.02em; }
 }
 @media (min-width: 641px) and (max-width: 900px) {
   .card, .card.feat { grid-column: span 6; }
