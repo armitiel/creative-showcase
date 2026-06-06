@@ -654,31 +654,43 @@ const ProjectDetail = () => {
       {project.heroFollowImages && project.heroFollowImages.length > 0 && (
         <section className="pb-8">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto space-y-4">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.heroFollowImages.map((img, index) => (
-                <div 
+                <div
                   key={index}
-                  className={index === 0 && project.slug === 'portal-smart-checkout'
-                    ? 'rounded-2xl overflow-hidden border-none'
-                    : `rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`
-                  }
+                  className={`${img.gridHalf ? 'sm:col-span-1' : 'sm:col-span-2'} ${
+                    index === 0 && project.slug === 'portal-smart-checkout'
+                      ? 'rounded-2xl overflow-hidden border-none'
+                      : `rounded-2xl overflow-hidden border ${isDark ? 'bg-[#1a1a1a] border-white/10' : 'bg-image-card border-border'}`
+                  }`}
                   style={
                     index === 0 && project.slug === 'portal-smart-checkout'
                       ? { backgroundColor: isDark ? '#141414' : '#f0f0f0' }
                       : img.backgroundColor ? { backgroundColor: img.backgroundColor } : undefined
                   }
                 >
-                  <div 
-                    className={img.displayMode === 'centered' && img.imageScale ? 'flex items-center justify-center' : ''}
-                    style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(4, (1 - img.imageScale) * 12 + 3)}rem 0` } : undefined}
-                  >
-                    <img loading="lazy"
-                      src={withBaseUrl(img.src)}
-                      alt={img.alt}
-                      className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
-                      style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : undefined}
-                    />
-                  </div>
+                  {img.gridHalf ? (
+                    // Komorka siatki 2x2 - jednolita proporcja, obraz w calosci (bez kadrowania)
+                    <div className="aspect-[4/3] flex items-center justify-center p-6">
+                      <img loading="lazy"
+                        src={withBaseUrl(img.src)}
+                        alt={img.alt}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={img.displayMode === 'centered' && img.imageScale ? 'flex items-center justify-center' : ''}
+                      style={img.displayMode === 'centered' && img.imageScale ? { padding: `${Math.max(4, (1 - img.imageScale) * 12 + 3)}rem 0` } : undefined}
+                    >
+                      <img loading="lazy"
+                        src={withBaseUrl(img.src)}
+                        alt={img.alt}
+                        className={`h-auto ${img.displayMode === 'centered' && !(index === 0 && project.slug === 'portal-smart-checkout') ? 'object-contain mx-auto' : 'w-full object-cover'}`}
+                        style={img.imageScale ? { width: `${img.imageScale * 100}%`, display: 'block', margin: '0 auto' } : undefined}
+                      />
+                    </div>
+                  )}
                   {img.caption && (
                     <div className={`p-4 text-center ${isDark ? 'bg-[#151515]' : 'bg-[var(--card)]'}`}>
                       <p className={`text-sm italic ${isDark ? 'text-white/70' : 'text-foreground/70'}`}>{img.caption}</p>

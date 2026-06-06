@@ -97,7 +97,7 @@ export interface Project {
   deviceMockup?: DeviceMockupSection;
   thumbnailGrid?: ThumbnailGrid;
   heroAnimation?: string;
-  heroFollowImages?: { src: string; alt: string; caption?: string; displayMode?: 'cover' | 'centered'; backgroundColor?: string; imageScale?: number }[];
+  heroFollowImages?: { src: string; alt: string; caption?: string; displayMode?: 'cover' | 'centered'; backgroundColor?: string; imageScale?: number; gridHalf?: boolean }[];
   retailerImages?: RetailerImage[];
   gifPair?: GifPairItem[];
   parallaxImage?: ParallaxImage;
@@ -149,11 +149,11 @@ export const projects: Project[] = [
     results: 'Branding skutecznie pozycjonuje HubbleRx jako przyjazną i godną zaufania platformę medyczną. Materiały reklamowe z animacjami znacząco poprawiły konwersję kampanii.',
     heroFollowImages: [
       { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx Logo Versions', caption: 'Warianty logo, wersja jasna na turkusowym tle i ciemna na białym tle' },
-      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15 },
-      
-      { src: '/projects/hubble/box-mockup.webp', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0' },
-      { src: '/projects/hubble/box-mockup-zoom.webp', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0' },
-      { src: '/projects/hubble/logo-3d-icon.webp', alt: 'HubbleRx 3D Logo Icon', caption: 'Trójwymiarowa ikona logo HubbleRx' },
+      { src: '/projects/hubble/logo-icon.webp', alt: 'HubbleRx Logo Icon', caption: 'Znak graficzny marki nawiązujący do teleskopu, symbolizuje odkrywanie i wyszukiwanie najlepszych rozwiązań medycznych', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.15, gridHalf: true },
+
+      { src: '/projects/hubble/box-mockup.webp', alt: 'HubbleRx Box Mockup', caption: 'HubbleRx subscription box mockup with capsules', backgroundColor: '#f0f0f0', gridHalf: true },
+      { src: '/projects/hubble/box-mockup-zoom.webp', alt: 'HubbleRx Box Mockup Close-up', caption: 'Zbliżenie na pudełko subskrypcyjne z detalami brandingu', backgroundColor: '#f0f0f0', gridHalf: true },
+      { src: '/projects/hubble/logo-3d-icon.webp', alt: 'HubbleRx 3D Logo Icon', caption: 'Trójwymiarowa ikona logo HubbleRx', gridHalf: true },
       { src: '/projects/hubble/website-presentation.webp', alt: 'HubbleRx - Prezentacja strony', caption: 'Kompleksowa prezentacja layoutu strony i elementów UI' },
       
       { src: '/projects/hubble/ui-elements.webp', alt: 'HubbleRx UI Elements', caption: 'Ilustracje procesu onboardingu i badge członkowski', displayMode: 'centered', backgroundColor: '#ffffff', imageScale: 0.9 },
