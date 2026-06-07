@@ -7,6 +7,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
+import HubbleCase from "./pages/HubbleCase";
 import Illustrations from "./pages/Illustrations";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +23,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/project/hubble-rx" element={<HubbleCase />} />
             <Route path="/project/:slug" element={<ProjectDetail />} />
             <Route path="/illustrations" element={<Illustrations />} />
             <Route path="*" element={<NotFound />} />

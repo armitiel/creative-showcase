@@ -66,6 +66,7 @@ export interface TranslatedProject extends Omit<Project, 'title' | 'description'
     displayMode?: 'cover' | 'centered';
     backgroundColor?: string;
     imageScale?: number;
+    gridHalf?: boolean;
   }[];
   youtubeVideo?: {
     url: string;
