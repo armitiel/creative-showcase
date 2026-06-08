@@ -7,8 +7,6 @@ import { Footer } from '@/components/Footer';
 import { withBaseUrl } from '@/lib/utils';
 import '@/styles/case-hubble.css';
 
-const IMG = '/projects/hubble/hub/';
-
 const BackIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M19 12H5M11 18l-6-6 6-6" />
@@ -37,14 +35,14 @@ const HubbleCase = () => {
   /* every zoomable image, in page order */
   const zoomables = useMemo(
     () => [
-      { src: `${IMG}logo-lockup.png`, alt: 'HubbleRx logo lockup' },
-      { src: `${IMG}mark-tile.png`, alt: 'Primary mark' },
-      { src: `${IMG}icon-3d.png`, alt: '3D variant' },
-      { src: `${IMG}close-box.png`, alt: 'Packaging detail' },
-      { src: `${IMG}packaging.png`, alt: 'Subscription box' },
-      { src: `${IMG}website.png`, alt: 'Website layout' },
-      { src: `${IMG}howto.png`, alt: 'Onboarding' },
-      { src: `${IMG}illustration.png`, alt: 'Hero illustration' },
+      { src: '/projects/hubble/logo-variants.webp', alt: 'HubbleRx logo lockup' },
+      { src: '/projects/hubble/logo-icon.webp', alt: 'Primary mark' },
+      { src: '/projects/hubble/logo-3d-icon.webp', alt: '3D variant' },
+      { src: '/projects/hubble/box-mockup-zoom.webp', alt: 'Packaging detail' },
+      { src: '/projects/hubble/box-mockup.webp', alt: 'Subscription box' },
+      { src: '/projects/hubble/website-presentation.webp', alt: 'Website layout' },
+      { src: '/projects/hubble/ui-elements.webp', alt: 'Onboarding' },
+      { src: '/projects/hubble/hero-illustration.webp', alt: 'Hero illustration' },
       { src: '/projects/hubble/ad-animation.gif', alt: 'Paid ad animation' },
       { src: '/projects/hubble/ad-animation-2.gif', alt: 'Paid ad animation — Blender' },
       { src: '/projects/hubble/mobile-mockup.gif', alt: 'App interaction' },
@@ -76,7 +74,7 @@ const HubbleCase = () => {
   ];
 
   const steps: [string, string][] = [
-    [L('Audyt kategorii', 'Category audit'), L('Przegląd konkurencji i mapa tonu. Gdzie kategoria jest chłodna — tam szukamy ciepła.', 'Competitive review and a tone map. Where the category is cold, we find warmth.')],
+    [L('Audyt kategorii', 'Category audit'), L('Przegląd konkurencji i mapa tonu — szukamy przestrzeni na ciepło i ludzki głos.', 'Competitive review and a tone map — finding room for warmth and a human voice.')],
     [L('System wizualny', 'Visual system'), L('Siatka, skala typograficzna, paleta i ikonografia jako fundament skalowalności.', 'Grid, type scale, palette and iconography as the foundation for scale.')],
     [L('Logo i znak', 'Logo & mark'), L('Motyw orbity / „hubble" łączy ideę opieki i precyzji. Warianty i zasady.', "An orbit / 'hubble' motif fuses care and precision. Variants and rules.")],
     [L('Wdrożenie w produkcie', 'Into the product'), L('System przeniesiony na komponenty UI i realne ekrany subskrypcji.', 'The system carried into UI components and real subscription screens.')],
@@ -100,21 +98,6 @@ const HubbleCase = () => {
     [L('Jeden ton głosu', 'One tone of voice'), L('Branding i interfejs mówią tym samym językiem — ta sama paleta, ten sam rytm.', 'Brand and interface speak one language — same palette, same rhythm.')],
     [L('Decyzja w 1 dotyk', '1-tap decisions'), L('Wybór planu i zamówienie skrócone do minimum kroków i pól.', 'Plan choice and reorder reduced to the fewest steps and fields.')],
     [L('Zaufanie przez czytelność', 'Trust through clarity'), L('Hierarchia, kontrast i mikrokopiowanie obniżające niepokój pacjenta.', 'Hierarchy, contrast and microcopy that lower patient anxiety.')],
-  ];
-
-  const stats: [string, string][] = [
-    ['40+', L('assetów marki', 'brand assets')],
-    ['9', L('ekranów UI', 'UI screens')],
-    ['3', L('platformy', 'platforms')],
-    ['1', L('spójny język', 'coherent language')],
-  ];
-
-  const timeline: [string, string, string][] = [
-    [L('Tydz. 1', 'Wk 1'), L('Strategia', 'Strategy'), L('Audyt i ton', 'Audit & tone')],
-    [L('Tydz. 2–3', 'Wk 2–3'), L('System', 'System'), L('Siatka, typo, kolor', 'Grid, type, colour')],
-    [L('Tydz. 4', 'Wk 4'), L('Znak', 'Mark'), L('Logo i warianty', 'Logo & variants')],
-    [L('Tydz. 5–7', 'Wk 5–7'), L('Interfejs', 'Interface'), L('Komponenty i ekrany', 'Components & screens')],
-    [L('Tydz. 8', 'Wk 8'), L('Wdrożenie', 'Handoff'), L('Packaging i przekazanie', 'Packaging & delivery')],
   ];
 
   const Fig = ({ def }: { def: HubFigDef }) => (
@@ -171,7 +154,7 @@ const HubbleCase = () => {
 
         {/* cover */}
         <Reveal className="hub-cover">
-          <img src={withBaseUrl(`${IMG}logo-lockup.png`)} alt="HubbleRx logo lockup" onClick={() => zoom(`${IMG}logo-lockup.png`)} style={{ cursor: 'zoom-in' }} />
+          <img src={withBaseUrl('/projects/hubble/logo-variants.webp')} alt="HubbleRx logo lockup" onClick={() => zoom('/projects/hubble/logo-variants.webp')} style={{ cursor: 'zoom-in' }} />
           <div className="cap">{L('Lockup logo — wersja na tle teal i na bieli', 'Logo lockup — teal and light versions')}</div>
         </Reveal>
 
@@ -180,8 +163,8 @@ const HubbleCase = () => {
           <div className="hub-cs2">
             <Reveal className="panel">
               <h3>{L('Wyzwanie', 'Challenge')}</h3>
-              <p>{L('Start-up z branży zdrowotnej musiał wyjść poza chłodny, kliniczny ton kategorii.', 'A health start-up needed to break out of the cold, clinical tone of the category.')}</p>
-              <p>{L('Marka musiała budzić zaufanie regulowanego produktu medycznego, a jednocześnie być na tyle ciepła, by korzystać z niej co miesiąc.', 'The brand had to carry the trust of a regulated medical product while staying warm enough to use every month.')}</p>
+              <p>{L('Start-up z branży zdrowotnej chciał wnieść do swojej kategorii ciepło i ludzki ton.', 'A health start-up wanted to bring warmth and a human tone to its category.')}</p>
+              <p>{L('Marka musiała budzić zaufanie regulowanego produktu medycznego, a jednocześnie być na tyle przyjazna, by korzystać z niej co miesiąc.', 'The brand had to carry the trust of a regulated medical product while staying friendly enough to use every month.')}</p>
             </Reveal>
             <Reveal className="panel solution">
               <h3>{L('Rozwiązanie', 'Solution')}</h3>
@@ -231,9 +214,9 @@ const HubbleCase = () => {
         <section className="hub-sec">
           <Reveal>
             <p className="hub-statement">
-              {L('Dostarczony system to nie dekoracja — to ', "The delivered system isn't decoration — it's a ")}
+              {L('Dostarczony system to ', 'The delivered system is a ')}
               <em>{L('kompletny język marki', 'complete brand language')}</em>
-              {L(', który zespół produktowy rozwija bez utraty charakteru.', ' the product team grows without losing its character.')}
+              {L(', który zespół produktowy rozwija, zachowując jego charakter.', ' the product team grows while keeping its character.')}
             </p>
           </Reveal>
         </section>
@@ -246,10 +229,10 @@ const HubbleCase = () => {
             lede={L('Znak nawiązuje do teleskopu — symbolizuje odnajdywanie najlepszego rozwiązania medycznego.', 'The mark references a telescope — it symbolizes finding the best medical solution.')}
           />
           <div className="hub-grid">
-            <Fig def={{ src: `${IMG}mark-tile.png`, ratio: '1/1', capPl: 'Znak podstawowy', capEn: 'Primary mark', col: 'span 4' }} />
-            <Fig def={{ src: `${IMG}icon-3d.png`, ratio: '16/11', capPl: 'Wariant 3D', capEn: '3D variant', col: 'span 8' }} />
-            <Fig def={{ src: `${IMG}close-box.png`, ratio: '16/10', capPl: 'Detal opakowania', capEn: 'Packaging detail', col: 'span 7' }} />
-            <Fig def={{ src: `${IMG}packaging.png`, ratio: '16/11', capPl: 'Pudełko subskrypcji', capEn: 'Subscription box', col: 'span 5' }} />
+            <Fig def={{ src: '/projects/hubble/logo-icon.webp', ratio: '1/1', capPl: 'Znak podstawowy', capEn: 'Primary mark', col: 'span 4' }} />
+            <Fig def={{ src: '/projects/hubble/logo-3d-icon.webp', ratio: '16/11', capPl: 'Wariant 3D', capEn: '3D variant', col: 'span 8' }} />
+            <Fig def={{ src: '/projects/hubble/box-mockup-zoom.webp', ratio: '16/10', capPl: 'Detal opakowania', capEn: 'Packaging detail', col: 'span 7' }} />
+            <Fig def={{ src: '/projects/hubble/box-mockup.webp', ratio: '16/11', capPl: 'Pudełko subskrypcji', capEn: 'Subscription box', col: 'span 5' }} />
           </div>
         </section>
 
@@ -315,8 +298,8 @@ const HubbleCase = () => {
             lede={L('System przeniesiony na stronę, materiały onboardingowe i komunikację.', 'The system carried into the website, onboarding materials and communication.')}
           />
           <div className="hub-grid">
-            <Fig def={{ src: `${IMG}website.png`, ratio: '16/7', capPl: 'Layout strony i prezentacja UI', capEn: 'Website layout & UI presentation', col: 'span 12' }} />
-            <Fig def={{ src: `${IMG}howto.png`, ratio: '16/10', capPl: 'Onboarding — „Jak zacząć"', capEn: "Onboarding — 'How to start'", col: 'span 12' }} />
+            <Fig def={{ src: '/projects/hubble/website-presentation.webp', ratio: '16/7', capPl: 'Layout strony i prezentacja UI', capEn: 'Website layout & UI presentation', col: 'span 12' }} />
+            <Fig def={{ src: '/projects/hubble/ui-elements.webp', ratio: '16/10', capPl: 'Onboarding — „Jak zacząć"', capEn: "Onboarding — 'How to start'", col: 'span 12' }} />
           </div>
         </section>
 
@@ -328,7 +311,7 @@ const HubbleCase = () => {
             lede={L('Wspólny, minimalistyczny język ilustracji daje przyjemny, nowoczesny charakter materiałom.', 'A shared, minimalist illustration language gives materials a pleasant, modern character.')}
           />
           <div className="hub-grid">
-            <Fig def={{ src: `${IMG}illustration.png`, ratio: '16/9', capPl: 'Ilustracja w sekcjach hero', capEn: 'Illustration used in hero sections', col: 'span 12' }} />
+            <Fig def={{ src: '/projects/hubble/hero-illustration.webp', ratio: '16/9', capPl: 'Ilustracja w sekcjach hero', capEn: 'Illustration used in hero sections', col: 'span 12' }} />
             <Fig def={{ src: '/projects/hubble/ad-animation.gif', ratio: '4/5', capPl: 'Animacja do płatnej reklamy', capEn: 'Paid ad animation', col: 'span 6' }} />
             <Fig def={{ src: '/projects/hubble/ad-animation-2.gif', ratio: '4/5', capPl: 'Animacja do płatnej reklamy — częściowo w Blenderze', capEn: 'Paid ad animation — partly made in Blender', col: 'span 6' }} />
           </div>
@@ -360,60 +343,16 @@ const HubbleCase = () => {
           </div>
         </section>
 
-        {/* 09 business impact */}
-        <section className="hub-sec">
-          <Head
-            ix="09"
-            title={L('Dlaczego to ma znaczenie', 'Why it matters')}
-            lede={L('Projekt pokazuje umiejętność zbudowania kompletnego systemu marki od zera — z myślą o zaufaniu, konwersji i skalowaniu.', 'The project shows the ability to build a complete brand system from the ground up — designed around trust, conversion and scale.')}
-          />
-          <div className="hub-impact">
-            <Reveal>
-              <p className="hub-statement" style={{ fontSize: 'clamp(20px, 2.4vw, 32px)' }}>
-                {L('To podejście ', 'A ')}
-                <em>{L('systemowe', 'systematic')}</em>
-                {L(', nie dekoracyjne — każda decyzja ma uzasadnienie biznesowe.', ' approach, not a decorative one — every decision has a business rationale.')}
-              </p>
-            </Reveal>
-            <div className="hub-stats">
-              {stats.map((s) => (
-                <Reveal key={s[1]} className="hub-stat">
-                  <div className="big">{s[0]}</div>
-                  <div className="lab">{s[1]}</div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* quote */}
         <section className="hub-sec">
           <Reveal className="hub-quote">
             <blockquote>
-              {L('Zaufanie w medycynie buduje się ', 'Trust in medicine is built on ')}
-              <span className="mk">{L('precyzją', 'precision')}</span>
-              {L(' — nie chłodem.', ' — not coldness.')}
+              {L('Poważny temat zasługuje na ', 'A serious topic deserves a ')}
+              <span className="mk">{L('miłą formę', 'friendly form')}</span>
+              {L(' — kreskówkowa ilustracja zamienia zdrowie w coś bliskiego.', ' — cartoon illustration turns health into something close.')}
             </blockquote>
             <div className="who">{L('Zasada projektu — HubbleRx', 'Project principle — HubbleRx')}</div>
           </Reveal>
-        </section>
-
-        {/* 10 timeline */}
-        <section className="hub-sec">
-          <Head
-            ix="10"
-            title={L('Oś czasu', 'Timeline')}
-            lede={L('Osiem tygodni od strategii do przekazania gotowego systemu.', 'Eight weeks from strategy to handing over a ready system.')}
-          />
-          <div className="hub-timeline">
-            {timeline.map((tl) => (
-              <Reveal key={tl[0]} className="hub-tl">
-                <div className="ph">{tl[0]}</div>
-                <h4>{tl[1]}</h4>
-                <p>{tl[2]}</p>
-              </Reveal>
-            ))}
-          </div>
         </section>
 
         {/* next project */}
